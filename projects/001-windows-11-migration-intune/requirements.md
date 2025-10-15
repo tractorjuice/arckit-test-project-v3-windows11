@@ -2,8 +2,8 @@
 
 **Document Type**: Business and Technical Requirements
 **Project ID**: 001
-**Version**: 1.0
-**Date**: 2025-10-14
+**Version**: 2.0
+**Date**: 2025-10-15
 **Status**: DRAFT
 **Owner**: IT Operations & Enterprise Architecture
 **Stakeholders**: CIO, CISO, IT Operations, End Users, Finance, HR
@@ -417,6 +417,354 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 
 ---
 
+### FR-006: Configuration Manager Co-Management Setup
+
+**Description**: System must enable Configuration Manager co-management to allow hybrid management of devices during the 18-month transition from on-premises Configuration Manager to cloud-native InTune.
+
+**Relates To**: BR-002 (Cloud-Native Endpoint Management)
+
+**Acceptance Criteria**:
+- [ ] Given Configuration Manager site server, when co-management enabled, then devices can be managed by both ConfigMgr and InTune simultaneously
+- [ ] Given co-management configuration, when workload slider set, then specific workloads (Compliance policies, Device configuration, Endpoint Protection, Resource access, Client apps, Office Click-to-Run, Windows Update policies) can be shifted to InTune incrementally
+- [ ] Given device in co-management, when workload assigned to InTune, then Configuration Manager no longer manages that workload on the device
+- [ ] Given co-management dashboard, when viewed in InTune admin center, then shows percentage of workloads managed by InTune vs Configuration Manager per device
+- [ ] Given 18-month decommissioning timeline, when Month 6 reached, then 50% of workloads shifted to InTune; when Month 12 reached, then 80% of workloads shifted to InTune; when Month 18 reached, then 100% of workloads shifted to InTune
+
+**Priority**: MUST_HAVE
+**Complexity**: HIGH
+**Dependencies**: Existing Configuration Manager infrastructure, InTune tenant, Hybrid Azure AD join or Azure AD join
+**Aligns with Architecture Principles**: Principle 1 (Cloud-First Endpoint Management)
+
+---
+
+### FR-007: Group Policy to InTune Migration
+
+**Description**: System must migrate existing Group Policy Objects (GPOs) to InTune configuration policies using Group Policy Analytics to maintain policy parity during cloud transition.
+
+**Relates To**: BR-002 (Cloud-Native Endpoint Management)
+
+**Acceptance Criteria**:
+- [ ] Given existing GPOs in on-premises Active Directory, when Group Policy Analytics tool run in InTune, then all GPOs analyzed and categorized as: Supported | Partially Supported | Not Supported | Deprecated
+- [ ] Given Group Policy Analytics report, when reviewed, then InTune policy recommendations provided for each supported GPO setting
+- [ ] Given 100+ GPOs identified in analysis, when migration planned, then critical GPOs prioritized for migration first (security, compliance, user experience)
+- [ ] Given supported GPO setting, when migrated to InTune, then implemented as InTune Configuration Profile (Administrative Template, Settings Catalog, or Device Configuration policy)
+- [ ] Given unsupported GPO, when identified, then alternative approach documented (custom script, registry setting, or business process change)
+- [ ] Given InTune policy equivalent, when deployed, then policy applies to Azure AD joined devices and hybrid Azure AD joined devices
+- [ ] Given migration complete, when validated, then no policy gaps between old GPO settings and new InTune policies
+
+**Data Requirements**:
+- **Inputs**: Exported GPO settings from Group Policy Management Console, Group Policy Analytics report
+- **Outputs**: InTune Configuration Profiles, Settings Catalog policies, migration documentation with unsupported GPO workarounds
+- **Validations**: Policy settings tested in pilot group before production deployment
+
+**Priority**: MUST_HAVE
+**Complexity**: HIGH
+**Dependencies**: Group Policy Analytics tool, InTune tenant, pilot device group
+**Aligns with Architecture Principles**: Principle 8 (Configuration Management via InTune Policies)
+
+---
+
+### FR-008: Application Packaging for InTune
+
+**Description**: System must package and deploy business applications via InTune Win32 app management for automated installation during Autopilot provisioning and on-demand deployment.
+
+**Relates To**: BR-004 (User Productivity), Architecture Principle 5 (Application Compatibility)
+
+**Acceptance Criteria**:
+- [ ] Given top 20 business applications, when packaged for InTune, then applications wrapped as .intunewin files with detection rules, install commands, and uninstall commands
+- [ ] Given Win32 app package, when uploaded to InTune, then includes: App information (name, publisher, version), installation requirements (OS version, disk space, RAM), detection rules (file version, registry key, MSI product code), install command, uninstall command, return codes
+- [ ] Given packaged app, when assigned to device group, then app deploys automatically via InTune during Autopilot provisioning or as available in Company Portal
+- [ ] Given app installation, when monitored via InTune, then installation status tracked (Pending, Installing, Installed, Failed) and failures generate alerts
+- [ ] Given legacy .MSI installer, when packaged, then wrapped as .intunewin with silent install parameters
+- [ ] Given modern MSIX app, when deployed, then deployed directly to InTune without repackaging
+- [ ] Given detection rule, when app already installed, then InTune skips reinstallation
+
+**Data Requirements**:
+- **Inputs**: Application installers (.exe, .msi, .msix), silent install parameters, detection logic
+- **Outputs**: .intunewin packages, deployment policies, installation success/failure reports
+- **Validations**: Each app tested on pilot devices before production deployment
+
+**Priority**: MUST_HAVE
+**Complexity**: HIGH
+**Dependencies**: Microsoft Win32 Content Prep Tool, application compatibility testing (FR-013)
+**Aligns with Architecture Principles**: Principle 5 (Application Compatibility and Testing), Principle 7 (Automated Deployment)
+
+---
+
+### FR-009: Security Baseline Deployment
+
+**Description**: System must deploy Microsoft Security Baseline for Windows 11 via InTune to enforce hardened security settings across all devices.
+
+**Relates To**: BR-001 (Security Compliance), NFR-SEC-001/002/003
+
+**Acceptance Criteria**:
+- [ ] Given Microsoft Security Baseline for Windows 11, when imported to InTune, then baseline profile includes 100+ security settings (BitLocker, Windows Defender, Firewall, User Account Control, Credential Guard, Attack Surface Reduction rules)
+- [ ] Given security baseline, when customized for organization, then documented exceptions/deviations from Microsoft baseline with risk acceptance sign-off
+- [ ] Given security baseline policy, when assigned to device group, then policy deploys to all Windows 11 devices
+- [ ] Given device with security baseline applied, when InTune checks compliance, then non-compliant settings flagged and reported
+- [ ] Given security baseline updates from Microsoft, when new baseline released, then organization reviews and applies updated baseline within 30 days
+- [ ] Given pilot devices, when security baseline applied, then tested for application compatibility issues before production rollout
+
+**Priority**: MUST_HAVE
+**Complexity**: MEDIUM
+**Dependencies**: InTune tenant, Windows 11 devices, security team review
+**Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model)
+
+---
+
+### FR-010: Conditional Access Policy Configuration
+
+**Description**: System must configure Conditional Access policies in Azure AD to enforce Zero Trust access controls based on device compliance, user risk, location, and application sensitivity.
+
+**Relates To**: BR-001 (Security Compliance), NFR-SEC-001
+
+**Acceptance Criteria**:
+- [ ] Given Azure AD Premium P1/P2 licenses, when Conditional Access policies created, then policies enforce: Require compliant device OR Hybrid Azure AD joined device, Require MFA for all users, Block legacy authentication, Require approved client app for mobile devices
+- [ ] Given device marked non-compliant by InTune, when user attempts to access corporate resources, then Conditional Access blocks access and displays remediation instructions
+- [ ] Given user sign-in from unusual location, when Azure AD Identity Protection detects risk, then Conditional Access requires step-up authentication or blocks access
+- [ ] Given sensitive application (HR system, finance system), when user accesses, then Conditional Access requires MFA + compliant device + corporate network or approved location
+- [ ] Given emergency access (break-glass) accounts, when configured, then excluded from Conditional Access policies to prevent lockout
+- [ ] Given Conditional Access policy changes, when deployed, then staged rollout to pilot group first, then production after validation
+
+**Priority**: MUST_HAVE
+**Complexity**: MEDIUM
+**Dependencies**: Azure AD Premium P1/P2, InTune device compliance policies (FR-005), Azure AD Identity Protection (optional for risk-based policies)
+**Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model), Principle 11 (Azure AD Integration)
+
+---
+
+### FR-011: Microsoft Defender for Endpoint Onboarding
+
+**Description**: System must automatically onboard Windows 11 devices to Microsoft Defender for Endpoint via InTune for endpoint threat protection, EDR, and security analytics.
+
+**Relates To**: BR-001 (Security Compliance), NFR-SEC-003, INT-002
+
+**Acceptance Criteria**:
+- [ ] Given Microsoft Defender for Endpoint tenant, when onboarding policy created in InTune, then policy includes Defender for Endpoint configuration package
+- [ ] Given Windows 11 device enrolled in InTune, when onboarding policy assigned, then device auto-onboards to Defender for Endpoint without user intervention
+- [ ] Given onboarded device, when reporting to Defender portal, then device visible in Defender portal with health status (Active, Inactive, Misconfigured)
+- [ ] Given Defender for Endpoint, when threat detected, then alert generated in Defender portal and optionally forwarded to SIEM/SOC
+- [ ] Given device risk level (Low, Medium, High, Severe), when Defender assesses, then risk level exposed to Conditional Access for access control decisions
+- [ ] Given Attack Surface Reduction (ASR) rules, when enabled, then specific rules configured per device group (pilot: audit mode, production: block mode)
+
+**Priority**: MUST_HAVE
+**Complexity**: MEDIUM
+**Dependencies**: Microsoft Defender for Endpoint license (M365 E5 or standalone), InTune tenant, SOC/SIEM integration (optional)
+**Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model)
+
+---
+
+### FR-012: Update Ring Configuration
+
+**Description**: System must configure Windows Update for Business policies in InTune with 4 update rings to staged-deploy quality updates and feature updates before production rollout.
+
+**Relates To**: BR-001 (Security Compliance), Architecture Principle 9 (Update Management and Patching)
+
+**Acceptance Criteria**:
+- [ ] Given InTune tenant, when update rings configured, then 4 rings created: Ring 1 (Preview - IT Staff), Ring 2 (Broad - Early Adopters), Ring 3 (Production), Ring 4 (Critical Systems)
+- [ ] Given Ring 1 (Preview), when configured, then quality update deferral: 0 days, feature update deferral: 0 days, assigned to: IT staff device group (~100 devices)
+- [ ] Given Ring 2 (Broad), when configured, then quality update deferral: 3 days, feature update deferral: 7 days, assigned to: Early adopter device group (~10% of users)
+- [ ] Given Ring 3 (Production), when configured, then quality update deferral: 7 days, feature update deferral: 14 days, assigned to: General user population (~80% of users)
+- [ ] Given Ring 4 (Critical Systems), when configured, then quality update deferral: 14 days, feature update deferral: 30 days, assigned to: Executive devices, kiosks, critical workstations (~10% of users)
+- [ ] Given update ring, when quality update deadline reached (7 days after installation available), then device forced to restart to complete update installation
+- [ ] Given active hours, when configured for organization (8 AM - 6 PM), then devices avoid automatic restarts during active hours
+- [ ] Given problematic update detected, when Ring 1 devices experience issues, then IT can pause update rollout for Ring 2/3/4 before widespread impact
+
+**Priority**: MUST_HAVE
+**Complexity**: MEDIUM
+**Dependencies**: InTune tenant, Azure AD device groups, Windows Update for Business policies
+**Aligns with Architecture Principles**: Principle 9 (Update Management and Patching)
+
+---
+
+### FR-013: Application Compatibility Testing Lab Setup
+
+**Description**: System must provide application compatibility testing lab environment (Azure Virtual Desktop or physical devices) to test top 100 business applications on Windows 11 before user migration.
+
+**Relates To**: BR-004 (User Productivity), Architecture Principle 5 (Application Compatibility and Testing)
+
+**Acceptance Criteria**:
+- [ ] Given top 100 business applications identified, when test lab setup, then lab includes: Windows 11 22H2/23H2 VMs or physical devices, InTune enrolled devices with production policies applied, Access to production data (sanitized/anonymized), Test user accounts for each persona
+- [ ] Given application under test, when test executed, then test validates: Application installs successfully, Application launches without errors, Core functionality works (create, read, update, delete operations), Application performance acceptable (<5s launch time), No crashes or hangs during 1-hour usage test
+- [ ] Given test results, when documented, then application categorized as: Compatible (no issues), Compatible with minor issues (cosmetic issues, workarounds available), Requires update (vendor update available for Windows 11), Incompatible (no Windows 11 version, requires replacement)
+- [ ] Given incompatible application, when identified, then alternative application researched or vendor escalation initiated
+- [ ] Given Copilot+ PC with ARM64 processor (Qualcomm Snapdragon), when ARM64 compatibility tested, then validate: Native ARM64 app available OR x64 emulation works with acceptable performance, VPN client, security software, and LOB apps function correctly
+- [ ] Given application compatibility test results, when complete, then test report published with Pass/Fail status for each application
+
+**Data Requirements**:
+- **Inputs**: Application inventory (top 100 apps), vendor compatibility statements, test scripts
+- **Outputs**: Application compatibility matrix, test reports, remediation plan for incompatible apps
+- **Validations**: Each app tested by app owner or business user representative
+
+**Priority**: MUST_HAVE
+**Complexity**: HIGH
+**Dependencies**: Azure Virtual Desktop (AVD) subscription OR physical Windows 11 test devices, InTune tenant, test user accounts
+**Aligns with Architecture Principles**: Principle 5 (Application Compatibility and Testing)
+
+---
+
+### FR-014: User Communication and Training Material Delivery
+
+**Description**: System must deliver user communication campaign and training materials to prepare users for Windows 11 migration and minimize resistance to change.
+
+**Relates To**: BR-007 (Change Management and User Adoption), Architecture Principle 14 (Change Management and Communication)
+
+**Acceptance Criteria**:
+- [ ] Given migration timeline, when communication campaign launched, then communication delivered per schedule: T-90 days (executive sponsorship message from CIO), T-60 days (migration FAQ published on intranet), T-30 days (user webinars scheduled and recorded), T-14 days (personalized migration schedule email to each user), T-7 days (reminder email with pre-migration checklist), T-1 day (final reminder with helpdesk contact info), T+1 day (post-migration survey link sent)
+- [ ] Given training materials, when created, then include: "What's New in Windows 11" PDF guide (10-15 pages), Video training (5-10 minutes) covering Start menu, taskbar, Settings app, Snap layouts, Quick reference card (1-page laminated card) with common tasks
+- [ ] Given user webinar, when delivered, then includes: Windows 11 UI walkthrough, Q&A session, Helpdesk contact information, Migration schedule overview
+- [ ] Given training material, when published, then available via: SharePoint intranet site, Microsoft Viva Learning module, Email attachment (PDF/video link)
+- [ ] Given departmental champions, when trained, then act as peer support resources for their departments
+
+**Priority**: MUST_HAVE
+**Complexity**: MEDIUM
+**Dependencies**: Change management team, training content creation, communication platform (email, SharePoint, Viva Learning)
+**Aligns with Architecture Principles**: Principle 14 (Change Management and Communication)
+
+---
+
+### FR-015: Helpdesk Training and Enablement
+
+**Description**: System must train helpdesk staff on Windows 11 and InTune troubleshooting before pilot phase to ensure support readiness for user migrations.
+
+**Relates To**: BR-007 (Change Management), Architecture Principle 13 (Helpdesk and User Support)
+
+**Acceptance Criteria**:
+- [ ] Given helpdesk staff (~20-30 staff), when training delivered, then 100% of staff attend training sessions before pilot phase begins
+- [ ] Given training curriculum, when developed, then includes: Windows 11 features and UI changes (4 hours), InTune device management basics (4 hours), Troubleshooting device compliance issues (2 hours), Troubleshooting Autopilot enrollment failures (2 hours), Troubleshooting Conditional Access blocks (2 hours), Using InTune Remote Help for remote support (1 hour), Common application compatibility issues (2 hours), Rollback procedures (1 hour)
+- [ ] Given helpdesk tools, when deployed, then include: InTune Remote Help (remote control with user consent), InTune admin center access (read-only for tier-1, full access for tier-2), Endpoint Analytics dashboard for proactive insights, Knowledge base articles for common issues (SharePoint or ServiceNow)
+- [ ] Given helpdesk support tiers, when defined, then: Tier 1 (basic troubleshooting, password resets, device compliance checks), Tier 2 (application issues, policy conflicts, InTune remediation), Tier 3 (InTune platform issues, Azure AD problems, escalation to Microsoft)
+- [ ] Given support ticket categories, when updated in ServiceNow, then new categories added: Windows 11 UI issue, InTune enrollment failure, Conditional Access blocked, Application compatibility issue, Autopilot provisioning failure
+
+**Priority**: MUST_HAVE
+**Complexity**: MEDIUM
+**Dependencies**: Helpdesk staff availability, training materials, InTune Remote Help licenses, ServiceNow configuration
+**Aligns with Architecture Principles**: Principle 13 (Helpdesk and User Support)
+
+---
+
+### FR-016: Migration Dashboard and Reporting
+
+**Description**: System must provide real-time migration dashboard (Power BI or InTune dashboard) to track migration progress, device compliance, issue trends, and success metrics.
+
+**Relates To**: BR-008 (Phased Rollout), Architecture Principle 10 (Monitoring, Reporting, and Compliance)
+
+**Acceptance Criteria**:
+- [ ] Given migration dashboard, when viewed, then displays key metrics: Total devices migrated to Windows 11 (count and %), Devices remaining on Windows 10 (count and %), Migration success rate (%), Devices in each migration wave, Devices compliant vs non-compliant, Top 10 compliance issues, Top 10 application compatibility issues, Support ticket volume per wave, User satisfaction score (NPS)
+- [ ] Given Power BI dashboard, when configured, then connects to InTune API and Azure AD reporting to pull device inventory, OS versions, compliance status, enrollment status
+- [ ] Given dashboard refresh, when scheduled, then updates hourly during active migration waves, daily outside migration waves
+- [ ] Given dashboard access, when controlled, then viewable by: IT Operations leadership (full access), Project managers (full access), Helpdesk (view-only), Executives (executive summary view)
+- [ ] Given migration wave, when paused due to >10% failure rate or P1 incident, then dashboard displays "PAUSED" status with pause reason
+- [ ] Given weekly project status meeting, when held, then dashboard used as primary reporting artifact
+
+**Data Requirements**:
+- **Inputs**: InTune device inventory, Azure AD device data, ServiceNow ticket data, user survey responses
+- **Outputs**: Power BI dashboard, weekly status reports (PDF export)
+- **Validations**: Data accuracy verified weekly against InTune and Azure AD source data
+
+**Priority**: MUST_HAVE
+**Complexity**: MEDIUM
+**Dependencies**: Power BI Pro licenses, InTune reporting API, Azure AD reporting, ServiceNow API (for ticket data)
+**Aligns with Architecture Principles**: Principle 10 (Monitoring, Reporting, and Compliance)
+
+---
+
+### FR-017: Rollback Capability Implementation
+
+**Description**: System must provide rollback capability to revert devices from Windows 11 to Windows 10 within 10-day window if critical issues detected during pilot or production phases.
+
+**Relates To**: BR-008 (Phased Rollout), Architecture Principle 15 (Incident Response and Rollback)
+
+**Acceptance Criteria**:
+- [ ] Given Windows 11 device <10 days post-upgrade, when rollback initiated, then user can use "Go Back" feature via Settings > System > Recovery to revert to Windows 10
+- [ ] Given Windows.old folder, when preserved, then folder retained for 10 days post-upgrade (default Windows behavior) to enable rollback
+- [ ] Given bulk rollback scenario (e.g., critical application incompatibility affecting 100+ users), when IT initiates rollback, then InTune script deployed to automate rollback across affected device group
+- [ ] Given device >10 days post-upgrade, when rollback required, then device must be wiped and re-imaged with Windows 10 Autopilot profile as Windows.old folder auto-deleted
+- [ ] Given rollback executed, when user reboots, then device reverts to Windows 10 with: User data preserved (via OneDrive KFM), Applications reinstalled from ConfigMgr or InTune, User settings preserved via Enterprise State Roaming
+- [ ] Given rollback metrics, when tracked, then rollback rate monitored per wave with target <5% rollback rate
+- [ ] Given P1 incident requiring rollback, when triggered, then rollback procedure tested and available for all devices in affected wave
+
+**Priority**: MUST_HAVE
+**Complexity**: MEDIUM
+**Dependencies**: Windows.old folder preservation, InTune scripting capability, OneDrive KFM (FR-003), Autopilot profiles
+**Aligns with Architecture Principles**: Principle 15 (Incident Response and Rollback)
+
+---
+
+### FR-018: Configuration Manager Decommissioning Process
+
+**Description**: System must execute Configuration Manager decommissioning process after 100% of Windows 11 devices transitioned to InTune-exclusive management (18-month timeline).
+
+**Relates To**: BR-002 (Cloud-Native Endpoint Management), BR-003 (Cost Optimization)
+
+**Acceptance Criteria**:
+- [ ] Given co-management workload transition (FR-006), when Month 18 reached, then 100% of workloads managed by InTune and 0% by Configuration Manager
+- [ ] Given Configuration Manager decommissioning plan, when executed, then includes phases: Phase 1 (Month 16-17): Verify 100% workload transition, document any remaining dependencies, obtain stakeholder sign-off for decommission; Phase 2 (Month 17): Disable client deployments, disable software updates, set ConfigMgr to read-only mode; Phase 3 (Month 18): Backup Configuration Manager database for archival, Uninstall ConfigMgr client from remaining devices, Decommission site servers and database, Reclaim server licenses and hardware
+- [ ] Given Configuration Manager infrastructure, when decommissioned, then includes: Primary site server(s) decommissioned, SQL Server database backed up and archived for 7 years, Distribution points decommissioned, Software Update Point decommissioned, Reporting Services decommissioned
+- [ ] Given cost savings, when Configuration Manager decommissioned, then annual savings realized: Server hardware/VM licenses, SQL Server licenses, ConfigMgr CALs, Datacenter rack space and power, IT staff time (estimated 1-2 FTEs reallocated)
+- [ ] Given archived ConfigMgr data, when retained, then database backup stored for audit/compliance purposes (7 years) with documented restore procedure if needed
+
+**Priority**: MUST_HAVE
+**Complexity**: MEDIUM
+**Dependencies**: Co-management workload transition complete (FR-006), 100% InTune management achieved
+**Aligns with Architecture Principles**: Principle 1 (Cloud-First Endpoint Management), Principle 16 (Licensing and Cost Management)
+
+---
+
+### FR-019: Copilot+ PC Pilot Deployment
+
+**Description**: System must execute Copilot+ PC pilot deployment (50-100 devices) to IT staff and early adopters to validate AI features, ARM64 compatibility, and user satisfaction before broad procurement.
+
+**Relates To**: BR-005 (Hardware Modernization), Architecture Principle 3A (Copilot+ PC Hardware)
+
+**Acceptance Criteria**:
+- [ ] Given pilot user selection, when identified, then pilot includes: 50-100 IT staff and early adopters, Mix of user personas (executives, knowledge workers, developers), Geographically distributed (if applicable), Willing to provide feedback and tolerate minor issues
+- [ ] Given Copilot+ PC hardware, when procured for pilot, then mix of: x64 Copilot+ PCs (Intel Core Ultra or AMD Ryzen AI) - 60% of pilot, ARM64 Copilot+ PCs (Qualcomm Snapdragon X Elite) - 40% of pilot
+- [ ] Given ARM64 devices in pilot, when application compatibility tested, then top 20 business apps validated for: Native ARM64 app availability OR x64 emulation compatibility with acceptable performance, VPN client ARM64 compatibility, Security software ARM64 compatibility
+- [ ] Given pilot devices, when deployed, then AI features enabled for testing: Windows Studio Effects (background blur, eye contact, auto-framing), Live Captions with translation (40+ languages), Copilot in Windows, Paint Cocreator, Recall (opt-in only, privacy controls configured per NFR-C-001)
+- [ ] Given pilot user, when device delivered, then White Glove Autopilot pre-provisioning used for executive/VIP users to minimize setup time
+- [ ] Given pilot completion (90 days), when evaluated, then success criteria: >80% user satisfaction with AI features, <5% application compatibility issues (ARM64 devices), Measurable productivity improvements (survey-based), Recommendation for broad procurement (Yes/No)
+- [ ] Given pilot feedback, when collected, then inform: Copilot+ PC procurement strategy (% of new device budget), ARM64 vs x64 procurement mix, AI feature enablement policy for production rollout
+
+**Data Requirements**:
+- **Inputs**: Pilot user nominations, device procurement, application compatibility test results (FR-013)
+- **Outputs**: Pilot evaluation report, user satisfaction surveys, AI feature usage analytics, procurement recommendations
+- **Validations**: Pilot success criteria met before scaling Copilot+ PC procurement
+
+**Priority**: SHOULD_HAVE
+**Complexity**: MEDIUM
+**Dependencies**: Copilot+ PC hardware procurement, application compatibility testing (FR-013), InTune Autopilot (FR-002), privacy controls (NFR-C-001)
+**Aligns with Architecture Principles**: Principle 3A (Copilot+ PC Hardware and AI-Ready Devices), Principle 5 (Application Compatibility)
+
+---
+
+### FR-020: ARM64 Application Compatibility Testing
+
+**Description**: System must validate ARM64 application compatibility for Copilot+ PCs with Qualcomm Snapdragon processors to ensure business-critical applications run natively or via x64 emulation.
+
+**Relates To**: BR-005 (Hardware Modernization), FR-019 (Copilot+ PC Pilot), Architecture Principle 3A (Copilot+ PC Hardware)
+
+**Acceptance Criteria**:
+- [ ] Given top 20 business-critical applications, when tested on ARM64 Copilot+ PC, then validate: Native ARM64 version available (best performance), x64 version runs via Prism emulator with acceptable performance (<20% performance degradation vs native x64 device), x86 (32-bit) version runs via emulator if no x64 available (acceptable for non-performance-critical apps)
+- [ ] Given kernel-mode drivers (VPN client, security software, device drivers), when tested, then ARM64-native driver required (emulation not supported for kernel drivers)
+- [ ] Given VPN client, when tested on ARM64, then validate vendor provides ARM64-native client OR alternative VPN solution identified
+- [ ] Given Microsoft Defender for Endpoint, when deployed on ARM64, then native ARM64 support validated (Microsoft provides ARM64 agent)
+- [ ] Given line-of-business application, when vendor contacted, then vendor ARM64 roadmap documented (native ARM64 version available, planned, or no plans)
+- [ ] Given application compatibility matrix, when complete, then documents: Application name, Native ARM64 available (Yes/No), x64 emulation tested (Pass/Fail/Not Tested), Performance acceptable (Yes/No/N/A), Recommendation (Deploy on ARM64 / Deploy on x64 Copilot+ PC only / Block ARM64 deployment)
+- [ ] Given ARM64 incompatibility identified, when blocking, then x64 Copilot+ PCs (Intel/AMD) procured for affected users instead of ARM64 devices
+
+**Data Requirements**:
+- **Inputs**: Application inventory (top 20 business apps), vendor compatibility statements, ARM64 test devices
+- **Outputs**: ARM64 compatibility matrix, vendor escalation list for incompatible apps, procurement guidance (ARM64 vs x64 Copilot+ PC mix)
+- **Validations**: Each app tested on physical ARM64 Copilot+ PC (Qualcomm Snapdragon) before pilot deployment
+
+**Priority**: SHOULD_HAVE
+**Complexity**: MEDIUM
+**Dependencies**: ARM64 Copilot+ PC hardware (Qualcomm Snapdragon), application compatibility test lab (FR-013), vendor engagement
+**Aligns with Architecture Principles**: Principle 3A (Copilot+ PC Hardware), Principle 5 (Application Compatibility and Testing)
+
+---
+
 ## Non-Functional Requirements (NFRs)
 
 ### Performance Requirements
@@ -567,6 +915,178 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 
 ---
 
+### Availability and Disaster Recovery Requirements
+
+#### NFR-A-001: InTune Service Availability
+
+**Requirement**: Microsoft InTune cloud service must maintain 99.9% uptime per Microsoft SLA. Organization must have documented contingency procedures for InTune service disruptions.
+
+**Service Level Objectives**:
+- **Target Availability**: 99.9% per Microsoft Azure SLA (43.2 minutes downtime per month maximum)
+- **Recovery Time Objective (RTO)**: <15 minutes for InTune service restoration by Microsoft
+- **Recovery Point Objective (RPO)**: N/A (cloud service, no data loss)
+
+**Contingency Procedures**:
+- **During InTune outage**: Devices continue to operate with last-applied policies (no immediate impact), Users can access corporate resources via cached credentials (90-day refresh token), No new device enrollments or policy changes until service restored, Helpdesk monitors Microsoft Service Health Dashboard for status updates
+- **Extended outage (>4 hours)**: Executive communication issued via email/Teams, Delay non-critical migrations until service restored, Critical device issues escalated to Microsoft Premier Support
+- **Fallback capability**: Configuration Manager remains available during 18-month co-management period as fallback (Month 0-18 only), After ConfigMgr decommissioning (Month 18+), no on-premises fallback available (cloud-only dependency accepted)
+
+**Monitoring**:
+- Subscribe to Microsoft Service Health Dashboard notifications
+- Monitor InTune service status via Azure portal
+- Alert IT Operations if InTune API calls fail for >15 minutes
+
+**Priority**: HIGH
+
+**Aligns with Architecture Principles**: Principle 1 (Cloud-First Endpoint Management), Principle 10 (Monitoring and Reporting)
+
+---
+
+#### NFR-A-002: Business Continuity During Migration
+
+**Requirement**: Business operations must continue uninterrupted during Windows 11 migration with <2 hours downtime per device and no data loss.
+
+**Continuity Measures**:
+- **Data Protection**: OneDrive KFM ensures 100% user data preserved during migration (FR-003)
+- **Application Availability**: Applications reinstall automatically via InTune during migration (<30 minutes via Autopilot)
+- **User Downtime**: <2 hours per device (1 hour for upgrade, 30 minutes for app installation, 30 minutes for user validation)
+- **Rollback Capability**: 10-day rollback window available if critical issues detected (FR-017)
+- **Wave Pause Criteria**: Pause migration if >10% failure rate or P1 incident affects business operations (BR-008)
+
+**Impact Mitigation**:
+- Schedule migrations during off-hours or low-usage periods where possible
+- Prioritize non-critical users first (task workers, field workers) before mission-critical users (executives, revenue-generating roles)
+- Maintain support staff availability during migration windows (extended hours)
+
+**Priority**: CRITICAL
+
+**Aligns with Architecture Principles**: Principle 4 (User-Centric Migration Experience), Principle 6 (Phased Rollout Strategy)
+
+---
+
+### Scalability Requirements
+
+#### NFR-S-001: Concurrent Device Provisioning Capacity
+
+**Requirement**: InTune infrastructure must support concurrent provisioning of 500 devices simultaneously during peak migration waves without performance degradation.
+
+**Scalability Targets**:
+- **Peak Load**: 500 devices provisioning simultaneously (Wave deployment scenario)
+- **Average Load**: 50 devices per day (new hires, replacements)
+- **Burst Capacity**: 1,000 devices upgrading simultaneously during production wave (Windows 11 feature update deployment)
+- **Network Bandwidth**: 100 Mbps per device minimum for Autopilot app downloads, aggregate bandwidth: 50 Gbps (500 devices Ã— 100 Mbps)
+
+**Performance Validation**:
+- Test concurrent provisioning with 500 pilot devices before production waves
+- Monitor Autopilot provisioning time via Endpoint Analytics (target <30 minutes per NFR-P-001)
+- Monitor InTune API throttling limits (Microsoft imposes rate limits per tenant)
+
+**Scalability Constraints**:
+- **Microsoft InTune**: Cloud service scales automatically, no tenant-side capacity planning required
+- **Network Bandwidth**: Primary constraint - ensure corporate internet bandwidth supports 50 Gbps aggregate during peak waves
+- **Application Hosting**: InTune-hosted apps have size limits (8 GB per Win32 app), large apps require Azure Blob Storage or CDN
+
+**Priority**: HIGH
+
+**Aligns with Architecture Principles**: Principle 7 (Automated Deployment with Windows Autopilot)
+
+---
+
+#### NFR-S-002: Long-Term Device Growth
+
+**Requirement**: InTune tenant must scale to support [NUMBER] devices initially and accommodate 10% annual growth for 5 years.
+
+**Growth Projections**:
+- **Year 0**: [NUMBER] devices (current Windows 10 estate)
+- **Year 1**: [NUMBER] Ã— 1.10 devices (+10% growth from new hires, acquisitions)
+- **Year 5**: [NUMBER] Ã— 1.61 devices (+61% cumulative growth over 5 years)
+
+**Scalability Considerations**:
+- **InTune Licensing**: Ensure sufficient Microsoft 365 E3/E5 or InTune standalone licenses procured with annual true-up
+- **Azure AD Objects**: Each device creates Azure AD device object (no practical limit for InTune tenants)
+- **Policy Assignments**: Use dynamic Azure AD groups for policy assignments to automatically include new devices
+- **Reporting**: Power BI dashboards must scale to accommodate growing device counts without performance degradation
+
+**Priority**: MEDIUM
+
+**Aligns with Architecture Principles**: Principle 16 (Licensing and Cost Management)
+
+---
+
+### Maintainability and Supportability Requirements
+
+#### NFR-M-001: Configuration Documentation
+
+**Requirement**: All InTune policies, Autopilot profiles, and configuration settings must be documented and version-controlled to enable audit, troubleshooting, and disaster recovery.
+
+**Documentation Requirements**:
+- **InTune Policies**: Export all policies as JSON monthly and commit to Git repository with change log
+- **Autopilot Profiles**: Document deployment profiles (User-Driven, Self-Deploying, White Glove) with assigned device groups
+- **Conditional Access Policies**: Document all CA policies with business justification and affected user groups
+- **Application Packages**: Maintain application catalog with package versions, detection rules, install commands
+- **Group Membership**: Document Azure AD group membership criteria (static vs dynamic) and group owners
+
+**Version Control**:
+- **Git Repository**: Store InTune policy exports in Git repository (Azure DevOps, GitHub Enterprise, or GitLab)
+- **Change Management**: Require pull request + peer review for production policy changes
+- **Rollback Capability**: Ability to restore previous policy version from Git history if change causes issues
+
+**Disaster Recovery**:
+- **InTune Tenant Backup**: No native InTune tenant backup; rely on Git repository for policy restore
+- **Tenant Rebuild Scenario**: If InTune tenant corrupted, restore policies from Git repository (estimated 40 hours to fully restore)
+
+**Priority**: MEDIUM
+
+**Aligns with Architecture Principles**: Principle 8 (Configuration Management via InTune Policies)
+
+---
+
+#### NFR-M-002: Knowledge Transfer and Documentation
+
+**Requirement**: Comprehensive knowledge transfer documentation must be created to enable IT staff to independently manage InTune environment post-migration without vendor dependency.
+
+**Documentation Deliverables**:
+- **Architecture Documentation**: HLD and DLD (vendor-provided per SOW)
+- **Operational Runbooks**: Step-by-step procedures for: New device enrollment, Policy changes and testing, Application packaging and deployment, Troubleshooting common issues, Disaster recovery procedures
+- **Training Materials**: Helpdesk training materials (FR-015), User training materials (FR-014), IT administrator training (InTune management, Azure AD, Conditional Access)
+- **Knowledge Base Articles**: SharePoint or ServiceNow knowledge base with 50+ articles for common support scenarios
+
+**Knowledge Transfer Process**:
+- **Phase 1 (Pilot)**: Shadow vendor during pilot phase, document lessons learned
+- **Phase 2 (Production)**: IT staff lead production waves with vendor oversight
+- **Phase 3 (Handoff)**: Vendor provides final knowledge transfer session, IT staff independently manage environment
+
+**Success Criteria**:
+- IT staff can independently perform 90% of operational tasks without vendor assistance
+- Helpdesk can resolve 70% of tier-1 issues without escalation
+- Documentation complete with zero critical gaps
+
+**Priority**: HIGH
+
+**Aligns with Architecture Principles**: Principle 13 (Helpdesk and User Support)
+
+---
+
+#### NFR-M-003: Ongoing Maintenance and Updates
+
+**Requirement**: InTune environment must be maintained with quarterly policy reviews, monthly security baseline updates, and continuous optimization.
+
+**Maintenance Cadence**:
+- **Weekly**: Monitor device compliance reports, review InTune service health
+- **Monthly**: Apply Microsoft Security Baseline updates, review and patch application packages, analyze Endpoint Analytics recommendations
+- **Quarterly**: Review and update InTune policies based on business changes, audit Conditional Access policies, review Azure AD group memberships, license true-up and optimization
+- **Annually**: Architecture review and principle updates, disaster recovery plan testing, vendor roadmap alignment (Microsoft InTune/Windows 11 feature updates)
+
+**Maintenance Effort**:
+- **Steady State**: 0.5-1 FTE for InTune administration post-migration
+- **Peak Periods**: 2-3 FTEs during Windows 11 feature update deployments (annual)
+
+**Priority**: MEDIUM
+
+**Aligns with Architecture Principles**: Principle 8 (Configuration Management via InTune Policies), Principle 9 (Update Management and Patching)
+
+---
+
 ## Integration Requirements
 
 ### INT-001: Integration with Azure Active Directory
@@ -700,8 +1220,8 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 
 | Category | Estimated Cost | Notes |
 |----------|----------------|-------|
-| **Hardware Refreshes** | $[X] | 30% of devices require replacement (~1,800 devices × $[unit cost]) |
-| **Copilot+ PC Procurement** | $[Y] | 30% of refreshes as Copilot+ PCs (~540 devices × $[unit cost]) |
+| **Hardware Refreshes** | $[X] | 30% of devices require replacement (~1,800 devices ï¿½ $[unit cost]) |
+| **Copilot+ PC Procurement** | $[Y] | 30% of refreshes as Copilot+ PCs (~540 devices ï¿½ $[unit cost]) |
 | **Microsoft 365 Licensing** | $0 (existing) | Existing E3/E5 licenses include InTune, Azure AD Premium P1, OneDrive |
 | **Microsoft Defender for Endpoint** | $0 (existing) | Included in Microsoft 365 E5 or purchased separately |
 | **Professional Services / Consulting** | $[Z] | External consulting for InTune configuration, app packaging, migration execution |
@@ -744,7 +1264,8 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | 2025-10-14 | Enterprise Architecture Team | Complete requirements aligned with 18 architecture principles |
+| 1.0 | 2025-10-14 | Enterprise Architecture Team | Initial requirements with 8 BR, 5 FR, 7 NFR, 3 INT aligned with 18 architecture principles |
+| 2.0 | 2025-10-15 | Enterprise Architecture Team | Added 15 missing functional requirements (FR-006 to FR-020: Co-Management, GPO Migration, App Packaging, Security Baseline, Conditional Access, Defender Onboarding, Update Rings, App Testing Lab, User Communication, Helpdesk Training, Migration Dashboard, Rollback, ConfigMgr Decommission, Copilot+ Pilot, ARM64 Compatibility) and 5 missing non-functional requirements (NFR-A-001/002: Availability/DR, NFR-S-001/002: Scalability, NFR-M-001/002/003: Maintainability). Total: 8 BR, 20 FR, 12 NFR, 3 INT = 43 requirements |
 
 ---
 
