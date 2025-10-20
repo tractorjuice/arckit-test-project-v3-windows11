@@ -12,7 +12,7 @@
 
 1. Click the green **"Code"** button above
 2. Select **"Open with Codespaces"** → **"New codespace"**
-3. ArcKit is pre-configured - just start Claude Code!
+3. ArcKit is pre-configured - start Claude Code or Codex CLI!
 4. Follow **[QUICKSTART.md](QUICKSTART.md)** for test commands
 
 ---
@@ -34,6 +34,7 @@
 ## ✅ Pre-Installed Commands (17 total)
 
 All commands ready in `.claude/commands/`:
+n**OpenAI Codex CLI users**: Commands also available in `.codex/prompts/` - use `/prompts:arckit.command` format. See [.codex/README.md](.codex/README.md).
 
 ### Core Governance
 - `/arckit.principles` - Architecture principles
