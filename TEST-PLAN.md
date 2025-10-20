@@ -6,13 +6,14 @@
 
 ---
 
-## Test Scenario: UK Government AI Chatbot Project
+## Test Scenario: UK Government Windows 11 Deployment Project
 
-We'll test all ArcKit commands by simulating a realistic UK Government project:
+We'll test all ArcKit commands by simulating a realistic large-scale infrastructure deployment:
 
-**Project**: Benefits Eligibility Chatbot for Department for Work and Pensions (DWP)
-**Type**: HIGH-RISK AI system (affects access to benefits)
-**Requirements**: TCoP compliance, AI Playbook compliance, ATRS publication
+**Project**: Windows 11 Enterprise Deployment for Home Office
+**Type**: LOW-RISK system (infrastructure upgrade, no AI)
+**Scope**: Deploy Windows 11 Enterprise to 15,000 Home Office workstations with Modern Device Management (Intune), BitLocker encryption, and Windows Hello for Business
+**Requirements**: TCoP compliance, NCSC security controls, UK data residency, zero-trust architecture, accessibility (WCAG 2.2 AA)
 
 ---
 
