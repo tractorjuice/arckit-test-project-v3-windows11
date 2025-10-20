@@ -8,10 +8,11 @@ This is a **full test project** for ArcKit demonstrating all features with a rea
 
 ## Test Scenario
 
-**Project**: Benefits Eligibility Chatbot for Department for Work and Pensions (DWP)
-- **Type**: HIGH-RISK AI system using GPT-4
-- **Users**: Citizens seeking benefits advice
-- **Compliance**: TCoP, AI Playbook, ATRS required
+**Project**: Windows 11 Enterprise Deployment for Home Office
+- **Type**: LOW-RISK infrastructure upgrade (no AI)
+- **Scope**: Deploy Windows 11 Enterprise to 15,000 Home Office workstations
+- **Features**: Modern Device Management (Intune), BitLocker, Windows Hello, zero-trust
+- **Compliance**: TCoP, NCSC security controls, accessibility (WCAG 2.2 AA)
 - **Procurement**: Via G-Cloud Digital Marketplace
 
 ---
@@ -38,7 +39,7 @@ uv pip install git+https://github.com/tractorjuice/arc-kit.git
 # Check commands installed
 ls -1 .claude/commands/
 
-# Should show 14 commands:
+# Should show 16 commands:
 # - arckit.principles.md
 # - arckit.requirements.md
 # - arckit.sow.md
@@ -144,7 +145,7 @@ tree projects/
 wc -l projects/001-benefits-chatbot/*.md
 
 # Check command count
-ls -1 .claude/commands/ | wc -l  # Should be 14
+ls -1 .claude/commands/ | wc -l  # Should be 16
 
 # Check template count
 ls -1 .arckit/templates/ | wc -l  # Should be 19
