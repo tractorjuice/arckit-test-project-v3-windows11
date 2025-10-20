@@ -31,12 +31,13 @@
 
 ---
 
-## ✅ Pre-Installed Commands (16 total)
+## ✅ Pre-Installed Commands (17 total)
 
 All commands ready in `.claude/commands/`:
 
 ### Core Governance
 - `/arckit.principles` - Architecture principles
+- `/arckit.stakeholders` - Stakeholder drivers, goals, and outcomes analysis
 - `/arckit.requirements` - Comprehensive requirements
 
 ### Strategic Planning
