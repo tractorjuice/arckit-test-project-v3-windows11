@@ -38,7 +38,7 @@ uv pip install git+https://github.com/tractorjuice/arc-kit.git
 # Check commands installed
 ls -1 .claude/commands/
 
-# Should show 13 commands:
+# Should show 14 commands:
 # - arckit.principles.md
 # - arckit.requirements.md
 # - arckit.sow.md
@@ -51,7 +51,8 @@ ls -1 .claude/commands/
 # - arckit.atrs.md
 # - arckit.analyze.md
 # - arckit.wardley.md
-# - arckit.diagram.md (NEW!)
+# - arckit.diagram.md
+# - arckit.servicenow.md (NEW!)
 ```
 
 ### 4. Start Claude Code
@@ -74,7 +75,7 @@ Follow the test plan in `TEST-PLAN.md`:
 # Phase 2b: Wardley Mapping
 /arckit.wardley Create procurement strategy Wardley Map for DWP benefits eligibility chatbot showing build vs buy decisions
 
-# Phase 2c: Architecture Diagrams (NEW!)
+# Phase 2c: Architecture Diagrams
 /arckit.diagram context Generate C4 context diagram for DWP benefits eligibility chatbot
 /arckit.diagram dataflow Generate data flow diagram showing UK GDPR PII handling for benefits chatbot
 
@@ -93,10 +94,13 @@ Follow the test plan in `TEST-PLAN.md`:
 # Phase 4b: Vendor Evaluation (optional)
 /arckit.evaluate Create evaluation framework for benefits chatbot vendors
 
-# Phase 5: Quality Analysis
+# Phase 5: ServiceNow Service Management (NEW!)
+/arckit.servicenow Generate ServiceNow design for DWP benefits eligibility chatbot - Tier 1 HIGH-RISK AI service with 24/7 support
+
+# Phase 6: Quality Analysis
 /arckit.analyze
 
-# Phase 6: Traceability
+# Phase 7: Traceability
 /arckit.traceability Generate traceability matrix from requirements through design to tests
 ```
 
@@ -111,7 +115,7 @@ projects/001-benefits-chatbot/
 ├── requirements.md                  # 50+ comprehensive requirements
 ├── wardley-maps/
 │   └── procurement-strategy.md      # Build vs buy Wardley Map
-├── diagrams/                        # Architecture diagrams (NEW!)
+├── diagrams/                        # Architecture diagrams
 │   ├── context-benefits-chatbot.md  # C4 context diagram
 │   └── dataflow-pii-handling.md     # UK GDPR data flow
 ├── tcop-assessment.md               # All 13 TCoP points assessed
@@ -119,6 +123,7 @@ projects/001-benefits-chatbot/
 ├── atrs-record.md                   # Full ATRS (Tier 1 + Tier 2)
 ├── sow.md                           # Vendor RFP for G-Cloud
 ├── evaluation-criteria.md           # Vendor scoring framework
+├── servicenow-design.md             # Service management design (NEW!)
 └── traceability-matrix.md           # Requirements traceability
 
 .arckit/memory/
@@ -139,10 +144,10 @@ tree projects/
 wc -l projects/001-benefits-chatbot/*.md
 
 # Check command count
-ls -1 .claude/commands/ | wc -l  # Should be 13
+ls -1 .claude/commands/ | wc -l  # Should be 14
 
 # Check template count
-ls -1 .arckit/templates/ | wc -l  # Should be 18
+ls -1 .arckit/templates/ | wc -l  # Should be 19
 ```
 
 ---
@@ -203,7 +208,8 @@ This test project validates:
 - ✅ Architecture principles generation
 - ✅ Comprehensive requirements documentation
 - ✅ Wardley Mapping for strategic planning
-- ✅ Architecture diagrams with Mermaid (NEW!)
+- ✅ Architecture diagrams with Mermaid
+- ✅ ServiceNow service management design (NEW!)
 - ✅ Vendor procurement (SOW, evaluation)
 - ✅ Design reviews (HLD, DLD)
 - ✅ Requirements traceability
@@ -215,7 +221,16 @@ This test project validates:
 - ✅ Digital Marketplace - G-Cloud procurement
 - ✅ GOV.UK services integration
 
-### Quality Assurance (NEW!)
+### ServiceNow Service Management (NEW!)
+- ✅ CMDB design from architecture diagrams
+- ✅ SLA definitions from NFRs
+- ✅ Incident management (P1-P5 priority matrix)
+- ✅ Change management with risk assessment
+- ✅ Monitoring & alerting plan
+- ✅ Service transition and go-live checklist
+- ✅ ITIL v4 alignment
+
+### Quality Assurance
 - ✅ Governance quality analysis
 - ✅ Requirements quality checks
 - ✅ Principles alignment validation

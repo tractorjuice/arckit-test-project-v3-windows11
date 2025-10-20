@@ -30,7 +30,7 @@
 
 ---
 
-## ✅ Pre-Installed Commands (13 total)
+## ✅ Pre-Installed Commands (14 total)
 
 All commands ready in `.claude/commands/`:
 
@@ -40,7 +40,7 @@ All commands ready in `.claude/commands/`:
 
 ### Strategic Planning
 - `/arckit.wardley` - Wardley Mapping for build vs buy decisions
-- `/arckit.diagram` - Architecture diagrams with Mermaid (NEW!)
+- `/arckit.diagram` - Architecture diagrams with Mermaid
 
 ### Vendor Management
 - `/arckit.sow` - Statement of Work (RFP)
@@ -49,6 +49,9 @@ All commands ready in `.claude/commands/`:
 ### Design Review
 - `/arckit.hld-review` - High-level design review
 - `/arckit.dld-review` - Detailed design review
+
+### Service Management
+- `/arckit.servicenow` - ServiceNow service design (NEW!)
 
 ### Traceability
 - `/arckit.traceability` - Requirements traceability matrix
@@ -84,13 +87,22 @@ All commands ready in `.claude/commands/`:
 - ✅ UK Government Digital Marketplace procurement strategy
 - ✅ GOV.UK services reuse identification
 
-### Architecture Diagrams (NEW!)
+### Architecture Diagrams
 - ✅ C4 Model diagrams (Context, Container, Component)
 - ✅ Deployment diagrams (Cloud First compliance)
 - ✅ Sequence diagrams (API interactions)
 - ✅ Data flow diagrams (UK GDPR/PII handling)
 - ✅ Integration with Wardley Map evolution stages
 - ✅ Mermaid syntax for GitHub rendering
+
+### ServiceNow Service Management (NEW!)
+- ✅ CMDB design from architecture diagrams
+- ✅ SLA definitions from NFRs
+- ✅ Incident management design (P1-P5 priority matrix)
+- ✅ Change management plan with risk assessment
+- ✅ Monitoring & alerting plan
+- ✅ Service transition plan and go-live checklist
+- ✅ ITIL v4 alignment
 
 ### UK Government Features
 - ✅ Technology Code of Practice - All 13 points
@@ -124,6 +136,7 @@ projects/001-benefits-chatbot/
 ├── atrs-record.md (Complete ATRS)
 ├── sow.md (Vendor RFP)
 ├── evaluation-criteria.md (Scoring framework)
+├── servicenow-design.md (Service management design)
 └── traceability-matrix.md (Requirements mapping)
 
 .arckit/memory/
@@ -137,7 +150,7 @@ Plus analysis report from `/arckit.analyze` showing governance health score (B g
 ## 📖 More Information
 
 - **ArcKit Repository**: https://github.com/tractorjuice/arc-kit
-- **Latest Release**: v0.2.1 - Architecture Diagrams Edition
+- **Latest Release**: v0.3.0 - ServiceNow Service Management Edition
 - **Issues**: https://github.com/tractorjuice/arc-kit/issues
 
 ---
