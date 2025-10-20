@@ -30,7 +30,7 @@
 
 ---
 
-## ✅ Pre-Installed Commands (12 total)
+## ✅ Pre-Installed Commands (13 total)
 
 All commands ready in `.claude/commands/`:
 
@@ -40,6 +40,7 @@ All commands ready in `.claude/commands/`:
 
 ### Strategic Planning
 - `/arckit.wardley` - Wardley Mapping for build vs buy decisions
+- `/arckit.diagram` - Architecture diagrams with Mermaid (NEW!)
 
 ### Vendor Management
 - `/arckit.sow` - Statement of Work (RFP)
@@ -83,6 +84,14 @@ All commands ready in `.claude/commands/`:
 - ✅ UK Government Digital Marketplace procurement strategy
 - ✅ GOV.UK services reuse identification
 
+### Architecture Diagrams (NEW!)
+- ✅ C4 Model diagrams (Context, Container, Component)
+- ✅ Deployment diagrams (Cloud First compliance)
+- ✅ Sequence diagrams (API interactions)
+- ✅ Data flow diagrams (UK GDPR/PII handling)
+- ✅ Integration with Wardley Map evolution stages
+- ✅ Mermaid syntax for GitHub rendering
+
 ### UK Government Features
 - ✅ Technology Code of Practice - All 13 points
 - ✅ AI Playbook - 10 principles + 6 ethical themes
@@ -106,6 +115,10 @@ projects/001-benefits-chatbot/
 ├── requirements.md (~50+ requirements)
 ├── wardley-maps/
 │   └── procurement-strategy.md (Build vs Buy analysis)
+├── diagrams/
+│   ├── context-benefits-chatbot.md (C4 context diagram)
+│   ├── container-benefits-chatbot.md (Technical architecture)
+│   └── dataflow-pii-handling.md (UK GDPR compliance)
 ├── tcop-assessment.md (TCoP score ~70-90%)
 ├── ai-playbook-assessment.md (HIGH-RISK assessment)
 ├── atrs-record.md (Complete ATRS)
@@ -124,7 +137,7 @@ Plus analysis report from `/arckit.analyze` showing governance health score (B g
 ## 📖 More Information
 
 - **ArcKit Repository**: https://github.com/tractorjuice/arc-kit
-- **Latest Release**: v0.2.0 - UK Government Compliance Edition
+- **Latest Release**: v0.2.1 - Architecture Diagrams Edition
 - **Issues**: https://github.com/tractorjuice/arc-kit/issues
 
 ---

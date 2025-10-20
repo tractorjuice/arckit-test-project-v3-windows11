@@ -38,7 +38,7 @@ uv pip install git+https://github.com/tractorjuice/arc-kit.git
 # Check commands installed
 ls -1 .claude/commands/
 
-# Should show 11 commands:
+# Should show 13 commands:
 # - arckit.principles.md
 # - arckit.requirements.md
 # - arckit.sow.md
@@ -50,6 +50,8 @@ ls -1 .claude/commands/
 # - arckit.ai-playbook.md
 # - arckit.atrs.md
 # - arckit.analyze.md
+# - arckit.wardley.md
+# - arckit.diagram.md (NEW!)
 ```
 
 ### 4. Start Claude Code
@@ -68,6 +70,13 @@ Follow the test plan in `TEST-PLAN.md`:
 
 # Phase 2: Requirements
 /arckit.requirements Build a benefits eligibility chatbot for DWP that uses GPT-4 to answer citizen questions about Universal Credit, Job Seekers Allowance, and disability benefits. Must handle 10,000 concurrent users, comply with UK GDPR, WCAG 2.2 AA accessibility, integrate with existing DWP systems, provide accurate eligibility guidance, support English and Welsh languages, and include human-in-the-loop review before advice is shown to citizens.
+
+# Phase 2b: Wardley Mapping
+/arckit.wardley Create procurement strategy Wardley Map for DWP benefits eligibility chatbot showing build vs buy decisions
+
+# Phase 2c: Architecture Diagrams (NEW!)
+/arckit.diagram context Generate C4 context diagram for DWP benefits eligibility chatbot
+/arckit.diagram dataflow Generate data flow diagram showing UK GDPR PII handling for benefits chatbot
 
 # Phase 3a: Technology Code of Practice
 /arckit.tcop Assess Technology Code of Practice compliance for DWP benefits eligibility chatbot in Private Beta phase
@@ -100,6 +109,11 @@ After running all commands, you should have:
 ```
 projects/001-benefits-chatbot/
 ├── requirements.md                  # 50+ comprehensive requirements
+├── wardley-maps/
+│   └── procurement-strategy.md      # Build vs buy Wardley Map
+├── diagrams/                        # Architecture diagrams (NEW!)
+│   ├── context-benefits-chatbot.md  # C4 context diagram
+│   └── dataflow-pii-handling.md     # UK GDPR data flow
 ├── tcop-assessment.md               # All 13 TCoP points assessed
 ├── ai-playbook-assessment.md        # 10 principles + 6 themes
 ├── atrs-record.md                   # Full ATRS (Tier 1 + Tier 2)
@@ -125,10 +139,10 @@ tree projects/
 wc -l projects/001-benefits-chatbot/*.md
 
 # Check command count
-ls -1 .claude/commands/ | wc -l  # Should be 11
+ls -1 .claude/commands/ | wc -l  # Should be 13
 
 # Check template count
-ls -1 .arckit/templates/ | wc -l  # Should be 16
+ls -1 .arckit/templates/ | wc -l  # Should be 18
 ```
 
 ---
@@ -177,7 +191,7 @@ For detailed test plan with expected outputs and success criteria, see:
 
 - **ArcKit Issues**: https://github.com/tractorjuice/arc-kit/issues
 - **ArcKit Documentation**: https://github.com/tractorjuice/arc-kit
-- **Latest Release**: https://github.com/tractorjuice/arc-kit/releases/tag/v0.2.0
+- **Latest Release**: https://github.com/tractorjuice/arc-kit/releases/tag/v0.2.1
 
 ---
 
@@ -188,6 +202,8 @@ This test project validates:
 ### Core Features
 - ✅ Architecture principles generation
 - ✅ Comprehensive requirements documentation
+- ✅ Wardley Mapping for strategic planning
+- ✅ Architecture diagrams with Mermaid (NEW!)
 - ✅ Vendor procurement (SOW, evaluation)
 - ✅ Design reviews (HLD, DLD)
 - ✅ Requirements traceability
