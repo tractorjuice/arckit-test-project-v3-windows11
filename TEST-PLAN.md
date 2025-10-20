@@ -1,8 +1,8 @@
 # ArcKit Full Test Plan
 
-**Test Repository**: `/tmp/arckit-test-project`
-**Date**: 2025-10-14
-**Version**: Latest (includes v0.2.0 + ATRS + analyze features)
+**Test Repository**: `/tmp/arckit-test-project-v3-windows11`
+**Date**: 2025-10-20
+**Version**: v0.2.1 (all 16 commands including ServiceNow, Wardley Maps, Diagrams, and Security Assessments)
 
 ---
 
@@ -189,6 +189,89 @@ We'll test all ArcKit commands by simulating a realistic UK Government project:
 - ✅ Publication checklist provided
 - ✅ Ready for GOV.UK repository publication
 
+### Test 3d: `/arckit.secure`
+
+**Command**:
+```bash
+/arckit.secure Generate UK Government Secure by Design assessment for DWP benefits chatbot in Beta phase handling OFFICIAL-SENSITIVE data
+```
+
+**Expected Output**:
+- File: `projects/001-benefits-chatbot/ukgov-secure-by-design.md`
+- **NCSC CAF Assessment** (14 principles, 4 objectives):
+  - Objective A: Managing Security Risk (4 principles)
+  - Objective B: Protecting Against Cyber Attack (6 principles)
+  - Objective C: Detecting Cyber Security Events (2 principles)
+  - Objective D: Minimising Impact of Incidents (2 principles)
+- **Cyber Essentials** compliance (5 controls)
+- **UK GDPR** compliance assessment
+- Data classification: OFFICIAL-SENSITIVE
+- SIRO sign-off requirements
+- CAF Score: X/14 principles achieved
+- Critical security issues and remediation actions
+
+**Success Criteria**:
+- ✅ All 14 NCSC CAF principles assessed
+- ✅ Cyber Essentials 5 controls checked
+- ✅ UK GDPR compliance verified (DPIA, DPO, ICO reporting)
+- ✅ Data classification appropriate for personal benefits data
+- ✅ Actionable security remediation plan
+
+---
+
+## Phase 3.5: Strategic Planning & Architecture
+
+### Test 3.5a: `/arckit.wardley`
+
+**Command**:
+```bash
+/arckit.wardley Create procurement strategy Wardley Map for DWP benefits eligibility chatbot showing build vs buy decisions
+```
+
+**Expected Output**:
+- File: `projects/001-benefits-chatbot/wardley-maps/procurement-strategy.md`
+- Wardley Map in OnlineWardleyMaps format
+- Components positioned by evolution stage:
+  - BUILD: Benefits rules engine (Custom 0.42) - domain expertise
+  - BUILD: Human review queue (Custom 0.45) - HIGH-RISK AI requirement
+  - BUY (G-Cloud): GPT-4 (Product 0.72) - commercial LLM
+  - BUY (G-Cloud): Cloud hosting (Commodity 0.95)
+  - REUSE: GOV.UK Notify (Commodity 0.92)
+  - REUSE: GOV.UK Design System (Product 0.75)
+- Strategic recommendations (% build/buy/reuse)
+- Visualization link to create.wardleymaps.ai
+
+**Success Criteria**:
+- ✅ Map shows clear build vs buy rationale
+- ✅ UK Government Digital Marketplace alignment
+- ✅ Evolution stages correct (Genesis → Custom → Product → Commodity)
+- ✅ Strategic recommendations actionable
+
+### Test 3.5b: `/arckit.diagram`
+
+**Command**:
+```bash
+/arckit.diagram container Generate C4 container diagram for DWP benefits chatbot showing GOV.UK services and AWS infrastructure
+```
+
+**Expected Output**:
+- File: `projects/001-benefits-chatbot/diagrams/container-benefits-chatbot.md`
+- Mermaid C4 container diagram showing:
+  - Frontend: GOV.UK Design System
+  - Backend: Node.js API, GPT-4 integration
+  - Custom: Benefits rules engine, Human review queue
+  - Data: PostgreSQL RDS, S3 audit logs
+  - External: GOV.UK Notify, DWP legacy systems
+- Component inventory with evolution stages
+- Architecture decisions and rationale
+- UK GDPR compliance notes
+
+**Success Criteria**:
+- ✅ Valid Mermaid syntax
+- ✅ Components annotated with evolution stages from Wardley Map
+- ✅ GOV.UK services clearly marked [REUSE]
+- ✅ Renders correctly on GitHub/mermaid.live
+
 ---
 
 ## Phase 4: Vendor Procurement (Optional - can test if desired)
@@ -243,6 +326,46 @@ We'll test all ArcKit commands by simulating a realistic UK Government project:
 - ✅ Fair and unbiased scoring
 - ✅ All critical requirements weighted
 - ✅ Decision matrix provided
+
+---
+
+## Phase 4.5: ServiceNow Service Management
+
+### Test: `/arckit.servicenow`
+
+**Command**:
+```bash
+/arckit.servicenow Generate ServiceNow service design for DWP benefits eligibility chatbot - Tier 1 HIGH-RISK AI service with 24/7 support
+```
+
+**Expected Output**:
+- File: `projects/001-benefits-chatbot/servicenow-design.md`
+- **Service Overview**: Tier 1 (99.95% SLA)
+- **CMDB Design**: 8+ CIs derived from architecture
+  - Web Application CI
+  - API Gateway CI
+  - GPT-4 Integration CI
+  - Benefits Rules Engine CI (Custom)
+  - Human Review Queue CI (Custom)
+  - PostgreSQL RDS CI (Commodity)
+  - GOV.UK Notify CI (External REUSE)
+  - DWP Legacy System CI (External)
+- **SLA Definitions**: Derived from NFRs
+  - Availability: 99.95% (Tier 1)
+  - Performance: <500ms p95 response time
+  - Incident response: P1 15 min, P2 4 hours
+- **Incident Management**: Priority matrix, categories, assignment groups, runbooks
+- **Change Management**: HIGH-RISK AI requires ECAB + senior leadership approval
+- **Monitoring & Alerting**: Bias metrics, human-in-loop SLA tracking
+- **Service Transition Plan**: Go-live checklist (40+ items)
+
+**Success Criteria**:
+- ✅ CMDB structure maps 1:1 to architecture diagrams
+- ✅ SLAs derived from NFRs (not arbitrary)
+- ✅ HIGH-RISK AI reflected in change control (ECAB required)
+- ✅ Human-in-the-loop monitoring included
+- ✅ ITIL v4 aligned
+- ✅ UK Government compliance (DPIA, ATRS) referenced
 
 ---
 
@@ -331,21 +454,46 @@ We'll test all ArcKit commands by simulating a realistic UK Government project:
 ## Expected Test Results Summary
 
 ### Installation Verification
-- ✅ 11 commands installed
-- ✅ 16 templates installed
+- ✅ 16 commands installed (complete set)
+- ✅ 6 security/compliance templates installed
 - ✅ Project structure correct
 - ✅ Git repository initialized
 
-### Command Functionality
+### Command Functionality (All 16 Commands)
+
+**Core Commands**:
 - ✅ `/arckit.principles` - Creates architecture principles
 - ✅ `/arckit.requirements` - Creates comprehensive requirements (50+ reqs)
+- ✅ `/arckit.sow` - Generates vendor RFP
+
+**Vendor Management**:
+- ✅ `/arckit.evaluate` - Creates evaluation framework and scores vendors
+
+**Design Review**:
+- ✅ `/arckit.hld-review` - Reviews High-Level Design
+- ✅ `/arckit.dld-review` - Reviews Detailed Design
+
+**Strategic Planning**:
+- ✅ `/arckit.wardley` - Creates strategic Wardley Maps for build vs buy
+
+**Architecture Diagrams**:
+- ✅ `/arckit.diagram` - Generates Mermaid diagrams (C4, deployment, sequence, data flow)
+
+**Service Management**:
+- ✅ `/arckit.servicenow` - Generates ServiceNow service design (CMDB, SLAs, monitoring)
+
+**Traceability & Quality**:
+- ✅ `/arckit.traceability` - Generates traceability matrix
+- ✅ `/arckit.analyze` - Performs comprehensive governance analysis
+
+**UK Government Compliance**:
 - ✅ `/arckit.tcop` - Assesses all 13 TCoP points
 - ✅ `/arckit.ai-playbook` - Assesses 10 principles + 6 themes for AI
 - ✅ `/arckit.atrs` - Generates complete ATRS record (Tier 1 + Tier 2)
-- ✅ `/arckit.sow` - Generates vendor RFP
-- ✅ `/arckit.evaluate` - Creates evaluation framework
-- ✅ `/arckit.analyze` - Performs comprehensive governance analysis
-- ✅ `/arckit.traceability` - Generates traceability matrix
+
+**Security Assessment**:
+- ✅ `/arckit.secure` - UK Gov Secure by Design (NCSC CAF, Cyber Essentials, UK GDPR)
+- ✅ `/arckit.mod-secure` - MOD Secure by Design (JSP 440, IAMM, security clearances)
 
 ### UK Government Features
 - ✅ TCoP: All 13 points assessed with scoring
@@ -411,9 +559,10 @@ To run the full test:
 ## Success Metrics
 
 **Overall Test Pass Criteria**:
-- ✅ All 11 commands execute without errors
+- ✅ All 16 commands execute without errors
 - ✅ All expected files created
-- ✅ UK Government features work correctly (TCoP, AI Playbook, ATRS)
+- ✅ UK Government features work correctly (TCoP, AI Playbook, ATRS, Security Assessments)
+- ✅ ServiceNow, Wardley Maps, and Diagram commands work correctly
 - ✅ Analyze command detects real issues
 - ✅ Output quality is high (comprehensive, actionable, realistic)
 - ✅ Ready for real-world UK Government project use
@@ -441,26 +590,36 @@ These are **expected findings** that demonstrate the analyze command is working 
 
 ## Test Repository Location
 
-**Path**: `/tmp/arckit-test-project`
+**Path**: `/tmp/arckit-test-project-v3-windows11`
 
 **Contents**:
 ```
-/tmp/arckit-test-project/
+/tmp/arckit-test-project-v3-windows11/
 ├── .arckit/
 │   ├── memory/
 │   │   └── architecture-principles.md (after /arckit.principles)
 │   ├── scripts/
-│   └── templates/ (16 templates)
+│   └── templates/ (6 security & compliance templates)
+│       ├── servicenow-design-template.md
+│       ├── tcop-review-template.md
+│       ├── ukgov-secure-by-design-template.md
+│       ├── mod-secure-by-design-template.md
+│       ├── wardley-map-template.md
+│       └── architecture-diagram-template.md
 ├── .claude/
-│   └── commands/ (11 commands)
+│   └── commands/ (16 commands - complete set)
 ├── projects/
 │   └── 001-benefits-chatbot/ (after /arckit.requirements)
 │       ├── requirements.md
+│       ├── wardley-maps/ (after /arckit.wardley)
+│       ├── diagrams/ (after /arckit.diagram)
 │       ├── sow.md (after /arckit.sow)
 │       ├── evaluation-criteria.md (after /arckit.evaluate)
-│       ├── tcop-assessment.md (after /arckit.tcop)
+│       ├── tcop-review.md (after /arckit.tcop)
 │       ├── ai-playbook-assessment.md (after /arckit.ai-playbook)
 │       ├── atrs-record.md (after /arckit.atrs)
+│       ├── ukgov-secure-by-design.md (after /arckit.secure)
+│       ├── servicenow-design.md (after /arckit.servicenow)
 │       └── traceability-matrix.md (after /arckit.traceability)
 └── README.md
 ```
