@@ -5,9 +5,55 @@
 **Project ID**: 001
 **Issue Date**: [DATE]
 **Proposal Due Date**: [DATE + 6 weeks]
-**Version**: 1.0
+**Version**: 2.0
 **Issuing Organization**: [ORGANIZATION_NAME]
 **Point of Contact**: [NAME], [EMAIL], [PHONE]
+**Last Updated**: 2025-10-21 (Added MOD Secure by Design security requirements - CRITICAL UPDATE for vendor proposals)
+
+## Document Change History
+
+| Version | Date | Author | Changes Summary | Impact on Vendor Proposals |
+|---------|------|--------|-----------------|---------------------------|
+| 1.0 | 2025-10-15 | [AUTHOR] | Initial SOW creation | N/A - Initial baseline |
+| **2.0** | **2025-10-21** | **Claude/ArcKit** | **CRITICAL UPDATE: Added MOD Secure by Design security requirements (NFR-SEC-004 through NFR-SEC-010) based on MOD SbD assessment findings.** | **MAJOR IMPACT: Vendors must now account for MOD accreditation activities including security governance, threat modeling, RMADS documentation, penetration testing (CREST/CHECK vendors Â£20K-50K), SBOM creation, supplier attestations, incident response planning, SOC integration, and MOD CERT integration. Estimated additional cost Â£100K-Â£200K and 3-6 month timeline impact for accreditation activities. Vendors without MOD/UK Government security experience will be automatically disqualified (MQ-11).** |
+
+### Summary of Version 2.0 Changes
+
+**Section 2 (Scope of Work) - Added MOD SbD Security Activities**:
+- Phase 1: Security governance establishment (Week 1), threat modeling (Month 1), security architecture documentation and IAA approval (Month 1), supplier attestations (Month 1), penetration testing vendor procurement (Month 1)
+- Phase 2: SBOM creation (Month 2), penetration testing execution and remediation (Month 2), incident response planning (Month 2), PAM/DLP configuration (Month 2), vulnerability scanning (Month 2)
+- Phase 3: RMADS documentation (Month 3), Security Aspects Letter (SAL) and interim accreditation (Month 3-4), SOC integration (Month 3), IR tabletop exercise (Month 3)
+
+**Section 3 (Requirements) - Added 7 New Security Requirements**:
+- NFR-SEC-004: Security Governance & MOD SbD Compliance (CRITICAL - accreditation blocker)
+- NFR-SEC-005: Threat Modeling & Security Architecture Approval (CRITICAL - accreditation blocker)
+- NFR-SEC-006: Security Testing & Penetration Testing (CRITICAL - accreditation blocker)
+- NFR-SEC-007: Supply Chain Security & SBOM (HIGH - accreditation requirement)
+- NFR-SEC-008: Incident Response & MOD CERT Integration (CRITICAL - accreditation requirement)
+- NFR-SEC-009: Privileged Access Management & Insider Threat (HIGH)
+- NFR-SEC-010: Data Loss Prevention for OFFICIAL-SENSITIVE (HIGH)
+
+**Section 4 (Deliverables) - Added MOD SbD Security Deliverables**:
+- Phase 1: Security Governance Framework, Threat Model, Security Architecture Document, IAA Approval Letter, Microsoft Supplier Security Attestation, Penetration Testing Procurement (6 deliverables)
+- Phase 2: SBOM, Penetration Test Report, Incident Response Plan, PAM Configuration, DLP Configuration, Vulnerability Scanning Configuration (6 deliverables)
+- Phase 3: RMADS Documentation, Security Aspects Letter (SAL), SOC Integration Documentation, IR Tabletop Exercise Report, MOD CERT Integration Documentation (5 deliverables)
+
+**Section 6 (Vendor Qualifications) - Added MOD Security Expertise**:
+- **NEW MQ-11 (Mandatory)**: MOD Secure by Design security expertise including 2+ UK Government projects (OFFICIAL/OFFICIAL-SENSITIVE), RMADS experience, CREST/CHECK penetration testing coordination, SBOM/supply chain security, at least 1 SC/DV cleared CLAS Consultant
+- **NEW PQ-7-9 (Preferred)**: Full MOD accreditation experience (10 pts), UK Government security frameworks expertise (5 pts), SOC/MOD CERT integration experience (5 pts)
+- **Updated Team Requirements**: Added Delivery Team Security Lead (CRITICAL ROLE), enhanced Security Architect requirements for MOD SbD/RMADS, added Supply Chain Security Specialist for SBOM/supplier attestations
+- **Updated Personnel Constraints**: All key security roles must be 100% UK-based, SC clearance required for OFFICIAL-SENSITIVE data access, NO offshore resources permitted
+
+**Impact Assessment**:
+- **Cost Impact**: Estimated Â£100K-Â£200K additional costs for MOD accreditation activities (penetration testing Â£20K-50K, security governance roles, SBOM creation, RMADS documentation, SOC integration)
+- **Timeline Impact**: 3-6 months for MOD accreditation activities (RMADS Month 3, interim accreditation Month 3-4, full accreditation post-pilot)
+- **Vendor Qualification Impact**: Vendors without MOD/UK Government security experience will be automatically disqualified; strong preference for vendors with proven MOD SbD accreditation track record
+
+**Rationale for Version 2.0 Update**:
+- MOD Secure by Design assessment (completed 2025-10-20) identified 9 CRITICAL accreditation blockers that were not reflected in original SOW v1.0
+- Original SOW would have resulted in vendor proposals that did NOT account for mandatory MOD accreditation requirements
+- Accreditation is non-negotiable for MOD systems handling OFFICIAL-SENSITIVE data per JSP 440 Leaflet 5C
+- Updated SOW ensures vendors accurately scope and budget for full accreditation requirements
 
 ---
 
@@ -50,6 +96,8 @@ The migration encompasses approximately [NUMBER] devices across [NUMBER] locatio
 The selected vendor will be responsible for:
 
 #### **Phase 1: Assessment and Planning (Months 1-3)**
+
+**Technical Assessment**:
 - Hardware compatibility assessment for all Windows 10 devices using InTune inventory and PC Health Check tools
 - Device categorization (Compatible | Upgradeable with BIOS update | Requires Replacement)
 - Hardware replacement recommendations and cost-benefit analysis
@@ -61,7 +109,41 @@ The selected vendor will be responsible for:
 - Migration timeline and wave planning with risk mitigation strategies
 - Copilot+ PC pilot strategy and procurement recommendations
 
+**MOD Secure by Design Security Activities (NFR-SEC-004 through NFR-SEC-010) - CRITICAL**:
+- **Security Governance Establishment (Week 1)**:
+  - Assist client in appointing Delivery Team Security Lead (CISO delegate or Senior Security Architect)
+  - Assist client in appointing Project Security Officer (PSyO) for OFFICIAL-SENSITIVE data handling
+  - Assist client in formally appointing Information Assurance Owner (IAO)
+  - Engage MOD Accreditation Service to assign Information Assurance Architect (IAA) (Week 2)
+  - Create security governance RACI matrix (Responsible/Accountable/Consulted/Informed for each security control)
+  - Document security incident escalation matrix (when to notify CISO, IAO, MOD CERT, Accreditation Service)
+  - Define security risk acceptance authority (who can accept LOW/MEDIUM/HIGH/CRITICAL risks)
+- **Threat Modeling (Month 1)**:
+  - Document formal threat model using STRIDE methodology (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege)
+  - Analyze threat actors: Nation-state APT (Advanced Persistent Threat), insider threat (malicious employee/contractor), criminal ransomware gangs, hacktivist groups
+  - Identify attack vectors: Supply chain compromise (SolarWinds-style), phishing/social engineering, unpatched vulnerabilities (CVEs), misconfigured Conditional Access policies
+  - Conduct attack surface analysis: InTune API endpoints, Azure AD authentication flows, OneDrive data storage, ServiceNow integration, third-party applications
+  - Rate threats using DREAD methodology (Damage, Reproducibility, Exploitability, Affected Users, Discoverability)
+  - Map threats to security controls and test evidence
+- **Security Architecture Documentation (Month 1)**:
+  - Create security architecture document including:
+    - Zero Trust architecture diagram (Conditional Access, BitLocker, Defender for Endpoint flows)
+    - Network architecture diagram (InTune, Azure AD, Defender, OneDrive, ServiceNow integration)
+    - Data flow diagram showing OFFICIAL-SENSITIVE data flows
+    - Security control mapping (threat â†’ control â†’ test evidence)
+    - MOD network integration architecture (firewall rules, PSN connectivity if applicable)
+  - Submit security architecture to IAA for review
+  - Remediate IAA findings and obtain approval before Beta phase
+- **Supplier Security Attestations (Month 1)**:
+  - Obtain Microsoft security attestation per ISN 2023/10 confirming InTune, Azure AD, Defender for Endpoint, OneDrive meet Secure by Design principles
+  - Verify Microsoft Azure UK South cloud suitability for OFFICIAL-SENSITIVE data (or document compensating controls)
+- **Penetration Testing Vendor Procurement (Month 1)**:
+  - Procure CREST-certified or CHECK-approved penetration testing vendor (required for MOD systems handling OFFICIAL-SENSITIVE data)
+  - Define penetration testing scope (InTune configuration, Conditional Access, Azure AD, Defender, BitLocker, OneDrive, ServiceNow, top 10 business apps)
+
 #### **Phase 2: Design and Configuration (Months 4-6)**
+
+**InTune Configuration**:
 - InTune policy design (device compliance, configuration profiles, security baseline, update rings)
 - Windows Autopilot deployment profile configuration (User-Driven, Self-Deploying, White Glove)
 - Azure AD join strategy (pure Azure AD vs. hybrid AD join for legacy app support)
@@ -73,7 +155,59 @@ The selected vendor will be responsible for:
 - Configuration Manager co-management setup with workload transition plan
 - Windows Update for Business ring configuration (Ring 1: IT Staff, Ring 2: Early Adopters, Ring 3: Production, Ring 4: Critical Systems)
 
+**MOD Secure by Design Security Activities (Continued) - CRITICAL**:
+- **Supply Chain Security & SBOM (Month 2)**:
+  - Create Software Bill of Materials (SBOM) for ALL InTune-deployed applications using SPDX or CycloneDX format
+  - SBOM contents: Application name/version, vendor, open source components, dependencies, known CVEs, license information
+  - Establish SBOM maintenance process (update whenever applications added/updated in InTune catalog)
+  - Implement automated SBOM vulnerability correlation against NVD (National Vulnerability Database) for new CVEs
+  - Complete third-party risk assessments for top 100 business applications (vendor security questionnaires, ISO 27001/SOC 2 certifications)
+  - Obtain hardware vendor security attestations from Dell/HP/Lenovo (firmware security, TPM 2.0 provenance, supply chain security)
+  - Document supply chain attack threat model (SolarWinds, Kaseya, Log4Shell scenarios) and mitigations
+- **Penetration Testing Execution (Month 2)**:
+  - Execute penetration testing of InTune deployment with CREST/CHECK-approved vendor
+  - Penetration testing scope: InTune configuration bypass attempts, Conditional Access bypass, Azure AD authentication bypass (MFA), Defender for Endpoint detection evasion, BitLocker key theft, OneDrive data exfiltration, ServiceNow API security, top 10 application security
+  - Deliver penetration test report with executive summary, findings, CVSS scores, remediation recommendations
+  - Remediate ALL CRITICAL penetration test findings before Beta phase
+  - Remediate HIGH penetration test findings before production deployment
+  - Re-test CRITICAL findings to validate remediation effectiveness
+- **Incident Response Planning (Month 2)**:
+  - Document comprehensive incident response plan including:
+    - Incident response team (roles, responsibilities, contact details)
+    - Incident severity classification (P1-Critical, P2-High, P3-Medium, P4-Low)
+    - Incident response phases: Detection â†’ Containment â†’ Eradication â†’ Recovery â†’ Lessons Learned
+    - Escalation criteria (when to notify CISO, IAO, MOD CERT, Accreditation Service, senior leadership)
+    - Communication protocols (internal notifications, user communications, regulatory reporting)
+  - Create incident response playbooks for common scenarios:
+    - **Ransomware**: Device isolation, BitLocker key validation, OneDrive versioning recovery, user communication
+    - **Data breach**: Scope determination, OFFICIAL-SENSITIVE data exposure assessment, ICO notification (72 hours), user notification
+    - **Insider threat**: User access revocation, device wipe, forensic evidence preservation, HR/legal notification
+    - **Supply chain compromise**: Affected application identification via SBOM, incident correlation across devices, vendor notification
+    - **Phishing campaign**: User credential reset, MFA re-enrollment, security awareness training
+  - Document MOD CERT integration (contact details, reporting criteria, reporting process for OFFICIAL-SENSITIVE incidents)
+- **Privileged Access Management (Month 2)**:
+  - Review InTune administrator roles and enforce least privilege (Global Administrator, Intune Administrator, Helpdesk Administrator, Security Administrator)
+  - Configure Just-In-Time (JIT) access via Azure AD Privileged Identity Management (PIM) for admin role elevation
+  - Implement approval workflow for Global Administrator elevation with time-limited access (4 hours maximum)
+  - Enable Azure AD Identity Protection to detect risky user behavior (impossible travel, atypical travel, anonymous IP, leaked credentials)
+  - Configure Defender for Endpoint behavioral analytics for insider threat detection (mass file deletion, unusual data exfiltration, lateral movement)
+- **Data Loss Prevention (DLP) Deployment (Month 2)**:
+  - Deploy DLP policies for OneDrive (block external sharing of OFFICIAL-SENSITIVE documents)
+  - Deploy DLP policies for Exchange Online (block/encrypt emails with OFFICIAL-SENSITIVE data to external recipients)
+  - Deploy DLP policies for Endpoints via Defender (block USB transfers, block uploads to personal cloud storage)
+  - Configure DLP sensitive information types (UK National Insurance numbers, UK passport numbers, security clearance keywords, "OFFICIAL-SENSITIVE" markings)
+  - Implement DLP policy tips to warn users before violations
+  - Establish weekly DLP reporting to CISO (policy violations, top violators, data types at risk)
+- **Continuous Vulnerability Scanning (Month 2)**:
+  - Enable Defender Vulnerability Management on all Windows 11 devices
+  - Configure weekly vulnerability scans during Beta/production deployment, daily scans post-Live
+  - Establish vulnerability remediation SLAs: CRITICAL CVEs 7 days, HIGH CVEs 30 days, MEDIUM CVEs 90 days
+  - Implement weekly vulnerability reporting to PSyO/IAO showing open CVEs by severity
+  - Document CVE exception process for accepting risk on un-remediatable vulnerabilities (requires IAO approval)
+
 #### **Phase 3: Testing and Pilot (Months 7-9)**
+
+**Application and Device Testing**:
 - Application compatibility testing for top 100 business applications in Windows 11 test environment
 - Document compatibility status (Compatible | Vendor Certified | Needs Update | Incompatible | Retire)
 - Remediation planning for incompatible applications
@@ -84,6 +218,34 @@ The selected vendor will be responsible for:
 - Pilot success criteria validation (zero P1/P2 incidents, >80% user satisfaction)
 - Helpdesk training on Windows 11, InTune troubleshooting, Autopilot, and common issues
 - Runbook creation for device provisioning, migration, rollback, and incident response
+
+**MOD Secure by Design Security Activities (Continued) - CRITICAL**:
+- **RMADS Documentation & Accreditation (Month 3)**:
+  - Complete Risk Management and Accreditation Documentation Set (RMADS) including:
+    - Business Impact Assessment (BIA): Criticality of endpoint management system, impact of compromise, data classification
+    - Risk Assessment: Comprehensive risk analysis using threat model, vulnerability assessment, residual risk calculation
+    - Security Operating Procedures (SyOPs): Operational security procedures for InTune administrators, PSyO, IAO
+    - Residual Risk Statement: Acceptance of residual risks by IAO after all mitigations implemented
+  - Submit RMADS to IAA for review by end of Month 3
+  - Remediate IAA findings and address questions/clarifications
+  - Obtain Security Aspects Letter (SAL) from IAA
+  - Obtain interim or conditional accreditation before pilot deployment (Month 3-4)
+  - Plan full accreditation after successful pilot (Month 6-9)
+- **SOC Integration (Month 3)**:
+  - Integrate InTune alerts with Security Operations Centre (SOC) or establish 24/7 security monitoring capability
+  - Forward InTune alerts to SOC: device compliance violations, policy failures, enrollment failures
+  - Forward Defender for Endpoint alerts to SOC: malware detections, suspicious behavior, attack surface reduction (ASR) rule violations
+  - Forward Azure AD Conditional Access alerts to SOC: authentication failures, impossible travel, sign-in risk detections
+  - Integrate ServiceNow security incidents with SOC ticketing system
+  - Configure SOC monitoring SLAs: P1 (CRITICAL) 15-minute response, P2 (HIGH) 1-hour response, P3 (MEDIUM) 4-hour response
+  - Test SOC escalation workflows and incident response playbooks
+- **Incident Response Tabletop Exercise (Month 3)**:
+  - Conduct tabletop exercise simulating ransomware incident affecting Windows 11 devices
+  - Validate incident response team roles and responsibilities
+  - Test escalation procedures (CISO, IAO, MOD CERT notification)
+  - Validate incident response playbook effectiveness (device isolation, BitLocker recovery, OneDrive versioning)
+  - Measure incident response metrics: Mean Time to Detect (MTTD) target <1 hour, Mean Time to Contain (MTTC) target <4 hours
+  - Document lessons learned and update incident response plan based on exercise findings
 
 #### **Phase 4: Production Migration Waves (Months 10-22)**
 - Early adopter phase migration (10% of users, tech-savvy champions)
@@ -166,11 +328,55 @@ The selected vendor MUST deliver a solution that complies with **all** requireme
 - FR-005: Device Compliance Policies (MUST_HAVE)
 - _(Additional 15+ FRs documented in requirements.md)_
 
-**Non-Functional Requirements**:
-- **Performance**: Autopilot provisioning <30 min, Windows 11 upgrade <90 min
-- **Security**: Zero Trust (MFA, Conditional Access, BitLocker AES-256, Defender for Endpoint)
-- **Compliance**: GDPR/CCPA data privacy, audit logging (7-year retention), monthly compliance reports
-- **Usability**: <2 hr user downtime, >80% user satisfaction, WCAG 2.1 accessibility
+**Non-Functional Requirements - Performance (2 total)**:
+- NFR-P-001: Autopilot Provisioning Time <30 minutes (MUST_HAVE)
+- NFR-P-002: Windows 11 Upgrade Duration <90 minutes (MUST_HAVE)
+
+**Non-Functional Requirements - Security (10 total - CRITICAL)**:
+- NFR-SEC-001: Authentication and MFA (100% MFA enforcement) (CRITICAL)
+- NFR-SEC-002: Data Encryption (BitLocker AES-256, TLS 1.2+) (CRITICAL)
+- NFR-SEC-003: Endpoint Threat Protection (Defender for Endpoint EDR) (CRITICAL)
+- **NFR-SEC-004: Security Governance & MOD Secure by Design Compliance** (CRITICAL - ACCREDITATION BLOCKER)
+  - Appoint Delivery Team Security Lead, PSyO, IAO, IAA by Week 1
+  - Establish security governance framework (RACI, escalation, risk acceptance)
+  - Engage MOD Accreditation Service and complete RMADS by Month 3
+  - Obtain interim accreditation before pilot deployment (Month 3-4)
+- **NFR-SEC-005: Threat Modeling & Security Architecture Approval** (CRITICAL - ACCREDITATION BLOCKER)
+  - Document formal threat model using STRIDE/DREAD by Month 1
+  - Analyze threat actors: Nation-state APT, insider threat, ransomware, hacktivists
+  - Create security architecture document with Zero Trust diagrams
+  - Obtain IAA approval before Beta phase
+- **NFR-SEC-006: Security Testing & Penetration Testing** (CRITICAL - ACCREDITATION BLOCKER)
+  - Procure CREST-certified or CHECK-approved pen testing vendor by Month 1
+  - Complete penetration testing by Month 2, remediate ALL CRITICAL findings
+  - Implement continuous vulnerability scanning with CVE remediation SLAs
+- **NFR-SEC-007: Supply Chain Security & SBOM** (HIGH - ACCREDITATION REQUIREMENT)
+  - Create Software Bill of Materials (SBOM) for all InTune applications by Month 2
+  - Obtain Microsoft supplier security attestations per ISN 2023/10 by Month 1
+  - Complete third-party risk assessments for top 100 applications by Month 3
+- **NFR-SEC-008: Incident Response & MOD CERT Integration** (CRITICAL - ACCREDITATION REQUIREMENT)
+  - Document incident response plan with 5 playbooks by Month 2
+  - Establish SOC integration with 24/7 monitoring by Month 3
+  - Integrate with MOD CERT for OFFICIAL-SENSITIVE incident reporting
+- **NFR-SEC-009: Privileged Access Management & Insider Threat** (HIGH)
+  - Implement JIT access via Azure AD PIM for InTune administrators
+  - Enable Azure AD Identity Protection for insider threat detection
+  - Enforce least privilege with dedicated admin accounts
+- **NFR-SEC-010: Data Loss Prevention for OFFICIAL-SENSITIVE** (HIGH)
+  - Deploy DLP policies for OneDrive, Email, Endpoints by Month 2
+  - Detect UK National Insurance numbers, security clearance data
+  - Block external sharing of OFFICIAL-SENSITIVE documents
+
+**Non-Functional Requirements - Compliance (2 total)**:
+- NFR-C-001: Data Privacy Compliance (GDPR/CCPA) (CRITICAL)
+- NFR-C-002: Audit Logging (7-year retention) (CRITICAL)
+
+**Non-Functional Requirements - Availability (2 total)**:
+- NFR-A-001: InTune Service Availability (99.9% SLA) (HIGH)
+- NFR-A-002: Business Continuity During Migration (<2 hr downtime) (CRITICAL)
+
+**Non-Functional Requirements - Usability (1 total)**:
+- NFR-U-001: User Satisfaction (>80%) and Accessibility (WCAG 2.1) (MUST_HAVE)
 
 **Integration Requirements (5 total)**:
 - INT-001: Azure Active Directory (authentication, Conditional Access)
@@ -238,6 +444,17 @@ The vendor's solution MUST comply with all **18 Enterprise Architecture Principl
 | **Migration Project Plan** | Detailed project plan with phases, milestones, wave schedule, resource allocation, risk register | MS Project or PDF | Month 3 | Approved by Project Owner and Enterprise Architect |
 | **InTune Architecture Design (HLD)** | High-level architecture including InTune policies, Autopilot configuration, security baseline, Conditional Access | PDF + C4 Diagrams | Month 4 | Approved by Architecture Review Board |
 
+### 4.1.1 Phase 1 MOD Secure by Design Security Deliverables (CRITICAL - ACCREDITATION BLOCKERS)
+
+| Deliverable | Description | Format | Due Date | Acceptance Criteria |
+|-------------|-------------|--------|----------|---------------------|
+| **Security Governance Framework** | Security governance RACI matrix, incident escalation matrix, risk acceptance authority matrix | PDF Document | Week 1 | All 4 security roles appointed (Security Lead, PSyO, IAO, IAA), governance framework documented |
+| **Threat Model Document** | Formal threat model using STRIDE/DREAD methodology with threat actors, attack vectors, attack surface analysis, threat ratings | PDF Document + Threat Modeling Tool Export | Month 1 | 20+ threats identified and rated, mitigations mapped to security controls, approved by Security Lead |
+| **Security Architecture Document** | Security architecture with Zero Trust diagrams, network architecture, data flow diagrams, security control mapping, MOD network integration | PDF Document + Visio/Draw.io Diagrams | Month 1 | Submitted to IAA for review, includes all diagrams and control mappings |
+| **IAA Approval Letter** | Formal approval from Information Assurance Architect (IAA) for security architecture | PDF Letter from IAA | End of Month 1 | IAA approval obtained with 0 CRITICAL findings remaining, approval to proceed to Beta |
+| **Microsoft Supplier Security Attestation** | Security attestation from Microsoft per ISN 2023/10 confirming InTune, Azure AD, Defender, OneDrive meet SbD principles | PDF Document from Microsoft | Month 1 | Microsoft attestation obtained, Azure UK South confirmed suitable for OFFICIAL-SENSITIVE or compensating controls documented |
+| **Penetration Testing Procurement** | Procurement of CREST-certified or CHECK-approved penetration testing vendor with defined scope | Contract + SOW | Month 1 | Pen testing vendor contracted, scope agreed (InTune, Conditional Access, Azure AD, Defender, BitLocker, OneDrive, ServiceNow, top 10 apps) |
+
 ### 4.2 Phase 2 Deliverables (Design and Configuration)
 
 | Deliverable | Description | Format | Due Date | Acceptance Criteria |
@@ -247,6 +464,20 @@ The vendor's solution MUST comply with all **18 Enterprise Architecture Principl
 | **Autopilot Deployment Profiles** | Configured Autopilot profiles for User-Driven, Self-Deploying, White Glove scenarios | InTune Configuration | Month 6 | Profiles tested successfully with test devices |
 | **GPO Migration Report** | GPO to InTune policy migration status using Group Policy Analytics | Excel + PDF Report | Month 6 | All critical GPOs converted or documented with alternatives |
 | **Application Packaging** | Win32 app packages for InTune deployment (top 20 business-critical apps) | .intunewin files + documentation | Month 6 | Apps deploy successfully in test environment |
+
+### 4.2.1 Phase 2 MOD Secure by Design Security Deliverables (CRITICAL - ACCREDITATION BLOCKERS)
+
+| Deliverable | Description | Format | Due Date | Acceptance Criteria |
+|-------------|-------------|--------|----------|---------------------|
+| **Software Bill of Materials (SBOM)** | SBOM for ALL InTune-deployed applications in SPDX or CycloneDX format with vulnerability correlation | SPDX/CycloneDX JSON + PDF Report | Month 2 | SBOM created for 100% of InTune applications, automated CVE scanning configured |
+| **Hardware Vendor Security Attestations** | Security attestations from Dell/HP/Lenovo confirming firmware security, TPM provenance, supply chain security | PDF Documents from Vendors | Month 3 | Attestations obtained from all hardware vendors confirming CESG-approved data destruction guidance |
+| **Third-Party Risk Assessment Report** | Security questionnaires and risk assessments for top 100 business applications | Excel + PDF Report | Month 3 | 100% of top 100 apps assessed, ISO 27001/SOC 2 certifications verified, high-risk apps identified |
+| **Penetration Test Report** | Comprehensive penetration test report from CREST/CHECK vendor with findings, CVSS scores, remediation recommendations | PDF Report from Pen Testing Vendor | Month 2 | Penetration test completed, ALL CRITICAL findings remediated and re-tested, HIGH findings remediation plan approved |
+| **Penetration Test Remediation Evidence** | Evidence of CRITICAL finding remediation with re-test validation | PDF Document + Screenshots | Month 2 | 100% of CRITICAL findings remediated, re-test confirms fixes effective, approval to proceed to Beta |
+| **Incident Response Plan** | Comprehensive incident response plan with 5 playbooks (ransomware, data breach, insider threat, supply chain, phishing) | PDF Document | Month 2 | IR plan approved by CISO, playbooks documented, IR team assigned, MOD CERT integration documented |
+| **Privileged Access Management (PAM) Configuration** | Azure AD PIM configuration for InTune administrators with JIT access, Identity Protection enabled | InTune/Azure AD Configuration + PDF Documentation | Month 2 | PIM configured for all privileged roles, JIT access tested, Identity Protection alerts forwarded to SOC |
+| **Data Loss Prevention (DLP) Configuration** | DLP policies deployed for OneDrive, Email, Endpoints detecting OFFICIAL-SENSITIVE data (UK NI numbers, security clearances) | InTune/Microsoft 365 Policy Export + PDF Documentation | Month 2 | DLP policies deployed and tested, external sharing blocked, weekly DLP reports configured to CISO |
+| **Continuous Vulnerability Scanning Configuration** | Defender Vulnerability Management configured with CVE remediation SLAs (CRITICAL 7d, HIGH 30d, MEDIUM 90d) | Defender for Endpoint Configuration + PDF Documentation | Month 2 | Weekly vulnerability scans operational, CVE remediation SLAs configured, weekly reporting to PSyO/IAO |
 
 ### 4.3 Phase 3 Deliverables (Testing and Pilot)
 
@@ -258,6 +489,16 @@ The vendor's solution MUST comply with all **18 Enterprise Architecture Principl
 | **Helpdesk Training Materials** | Training decks, knowledge base articles, troubleshooting guides for helpdesk staff | PowerPoint + Markdown | Month 9 | Helpdesk trained and certified on Windows 11/InTune support |
 | **User Communication Templates** | Email templates, FAQ, training materials ("What's New in Windows 11"), quick reference cards | HTML/PDF | Month 9 | Approved by Change Management Lead and Communications team |
 | **Runbook Documentation** | Operational runbooks for device provisioning, migration, rollback, incident response | Markdown/PDF | Month 9 | Runbooks tested successfully during pilot phase |
+
+### 4.3.1 Phase 3 MOD Secure by Design Security Deliverables (CRITICAL - ACCREDITATION REQUIREMENT)
+
+| Deliverable | Description | Format | Due Date | Acceptance Criteria |
+|-------------|-------------|--------|----------|---------------------|
+| **RMADS Documentation** | Complete Risk Management and Accreditation Documentation Set including BIA, Risk Assessment, SyOPs, Residual Risk Statement | PDF Document Package (4 documents) | Month 3 | RMADS submitted to IAA for review, all required sections complete, residual risks accepted by IAO |
+| **Security Aspects Letter (SAL)** | Formal approval letter from IAA granting interim or conditional accreditation for pilot deployment | PDF Letter from IAA | Month 3-4 | SAL obtained from IAA, interim accreditation granted, conditions documented, approval to proceed to pilot |
+| **SOC Integration Documentation** | SOC integration configuration with alert forwarding from InTune, Defender, Azure AD, ServiceNow to SOC with monitoring SLAs | PDF Documentation + Network Diagrams | Month 3 | SOC integration operational, 24/7 monitoring confirmed, SOC SLAs agreed (P1 15min, P2 1hr, P3 4hr) |
+| **Incident Response Tabletop Exercise Report** | Results from ransomware tabletop exercise with team performance, lessons learned, IR plan updates | PDF Report | Month 3 | Tabletop exercise completed, all IR team members participated, MTTD/MTTC targets met, IR plan updated based on findings |
+| **MOD CERT Integration Documentation** | MOD CERT contact details, reporting criteria, reporting process for OFFICIAL-SENSITIVE incidents | PDF Document | Month 3 | MOD CERT contact details confirmed, reporting criteria defined (P1/P2 incidents within 1 hour), reporting process tested |
 
 ### 4.4 Phase 4 Deliverables (Production Migration)
 
@@ -356,6 +597,16 @@ Vendors MUST meet ALL of the following minimum qualifications to be considered:
 - [ ] Microsoft Certified: Azure Administrator Associate (at least 1 team member)
 - [ ] CISSP, CEH, or equivalent security certification (at least 1 team member)
 
+**MQ-11 - MOD Secure by Design Security Expertise (CRITICAL)**: Vendor must demonstrate MOD/UK Government security experience:
+- [ ] Minimum **2 completed UK Government projects** handling OFFICIAL or OFFICIAL-SENSITIVE data (past 3 years)
+- [ ] Experience with **MOD Secure by Design (JSP 440 Leaflet 5C)** or equivalent security accreditation framework
+- [ ] Experience with **RMADS documentation** and MOD Accreditation Service engagement
+- [ ] Demonstrable experience with **CREST-certified or CHECK-approved penetration testing** vendor procurement and coordination
+- [ ] Experience with **Supply Chain Security** including SBOM creation (SPDX or CycloneDX format) and supplier attestations (ISN 2023/10)
+- [ ] At least **1 CLAS Consultant (SC/DV cleared)** or demonstrable experience supporting MOD/UK Government security accreditation processes
+
+**Failure to meet MQ-11 is grounds for automatic disqualification as the project requires MOD accreditation.**
+
 **MQ-7 - Financial Stability**: Vendor must provide evidence of financial stability:
 - Company in business for minimum **5 years**
 - Audited financial statements or D&B rating demonstrating financial health
@@ -388,11 +639,18 @@ Preference will be given to vendors with:
 
 **PQ-6**: **On-site presence** in client's geographic region for in-person support during critical phases (3 bonus points)
 
+**PQ-7**: **MOD Secure by Design Advanced Expertise** - Vendor has successfully delivered MOD projects that achieved **full accreditation** (not interim) with Security Aspects Letter (SAL) from MOD Accreditation Service (10 bonus points - HIGHLY VALUED)
+
+**PQ-8**: **UK Government Security Frameworks Expertise** - Demonstrable experience with UK Government security frameworks beyond MOD SbD, such as NCSC Cloud Security Principles, Cyber Essentials Plus, or HMG Security Policy Framework (5 bonus points)
+
+**PQ-9**: **Incident Response and SOC Integration Experience** - Prior experience integrating Microsoft 365/Azure/InTune with UK Government SOCs or MOD CERT (5 bonus points)
+
 ### 6.3 Team Requirements
 
 **Minimum Team Composition** (Vendor must propose adequate team size):
 - **1 Solution Architect**: Senior (10+ years experience), Microsoft Certified Endpoint Administrator, leads technical design
-- **1 Security Architect**: Experienced with Zero Trust, Conditional Access, Microsoft Defender for Endpoint
+- **1 Security Architect**: Experienced with Zero Trust, Conditional Access, Microsoft Defender for Endpoint, **MOD Secure by Design framework**, RMADS documentation, threat modeling (STRIDE/DREAD), **UK Government security accreditation** (CRITICAL ROLE)
+- **1 Delivery Team Security Lead**: CISO delegate or Senior Security Architect responsible for security governance, liaison with PSyO/IAO/IAA, RMADS coordination, penetration testing coordination (CRITICAL ROLE - NFR-SEC-004)
 - **1 Technical Lead**: (8+ years experience), leads InTune configuration and Autopilot deployment
 - **2-4 Senior InTune Engineers**: (5+ years experience), responsible for policy configuration, app packaging, testing
 - **2-3 Migration Engineers**: (3+ years experience), execute migration waves, troubleshooting, user support
@@ -400,17 +658,20 @@ Preference will be given to vendors with:
 - **1-2 QA Engineers**: Execute application testing, document results
 - **1 Change Management Lead**: Develops communication plan, training materials, manages user adoption
 - **1 Technical Writer**: Creates documentation, runbooks, knowledge base articles
+- **1 Supply Chain Security Specialist**: Responsible for SBOM creation, supplier attestations (ISN 2023/10), third-party risk assessments (CRITICAL ROLE - NFR-SEC-007)
 
 **Key Personnel Requirements**:
 - **Solution Architect and Technical Lead** must be dedicated **50% minimum** to this project
-- **Resumes for all key personnel** (Solution Architect, Technical Lead, Security Architect, Change Management Lead) must be included in proposal
+- **Security Architect and Delivery Team Security Lead** must be dedicated **40% minimum** to this project (CRITICAL for MOD accreditation)
+- **Resumes for all key personnel** (Solution Architect, Technical Lead, Security Architect, Delivery Team Security Lead, Change Management Lead) must be included in proposal
 - **Key personnel cannot be changed** without client approval; substitutions require equivalent qualifications
-- **On-site presence**: Solution Architect and Technical Lead required on-site during critical phases (Pilot, first 3 production waves, Go-Live)
+- **On-site presence**: Solution Architect, Technical Lead, Security Architect, and Delivery Team Security Lead required on-site during critical phases (Pilot, first 3 production waves, Go-Live, IAA reviews, penetration testing)
 
 **Onshore/Offshore Mix**:
-- Minimum **70% onshore resources** (US-based for US client, EU-based for EU client)
-- **Solution Architect, Technical Lead, Security Architect must be 100% onshore**
-- Offshore resources acceptable for application testing, documentation, non-critical support tasks
+- Minimum **70% onshore resources** (UK-based for UK MOD client given OFFICIAL-SENSITIVE data classification)
+- **Solution Architect, Technical Lead, Security Architect, Delivery Team Security Lead, Supply Chain Security Specialist must be 100% UK-based** (CRITICAL for MOD accreditation and security vetting)
+- All personnel with access to OFFICIAL-SENSITIVE data must be **UK nationals with SC clearance** or eligible for SC vetting
+- Offshore resources NOT acceptable for this project due to OFFICIAL-SENSITIVE data handling requirements
 
 ---
 
@@ -637,15 +898,15 @@ Cost will be evaluated using **Best Value approach** (not lowest price wins):
 **Final Score Calculation**:
 - **Technical Score**: 70% weight (from Phase 2 evaluation, 0-100 points)
 - **Cost Score**: 30% weight (calculated below, 0-100 points)
-- **Final Score** = (Technical Score × 0.70) + (Cost Score × 0.30)
+- **Final Score** = (Technical Score ï¿½ 0.70) + (Cost Score ï¿½ 0.30)
 
 **Cost Scoring Method**:
 - **Lowest cost proposal receives 100 points**
-- **Other proposals scored proportionally**: Cost Score = (Lowest Price / Vendor Price) × 100
+- **Other proposals scored proportionally**: Cost Score = (Lowest Price / Vendor Price) ï¿½ 100
 - **Example**:
-  - Vendor A: $1,500,000 ’ Cost Score = (1,500,000 / 1,500,000) × 100 = 100 points
-  - Vendor B: $1,800,000 ’ Cost Score = (1,500,000 / 1,800,000) × 100 = 83.3 points
-  - Vendor C: $2,000,000 ’ Cost Score = (1,500,000 / 2,000,000) × 100 = 75 points
+  - Vendor A: $1,500,000 ï¿½ Cost Score = (1,500,000 / 1,500,000) ï¿½ 100 = 100 points
+  - Vendor B: $1,800,000 ï¿½ Cost Score = (1,500,000 / 1,800,000) ï¿½ 100 = 83.3 points
+  - Vendor C: $2,000,000 ï¿½ Cost Score = (1,500,000 / 2,000,000) ï¿½ 100 = 75 points
 
 **Value Considerations**:
 - Client seeks **best value** (technical quality + reasonable cost), not necessarily lowest price
