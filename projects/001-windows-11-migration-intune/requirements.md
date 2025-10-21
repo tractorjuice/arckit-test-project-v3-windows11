@@ -2,12 +2,12 @@
 
 **Document Type**: Business and Technical Requirements
 **Project ID**: 001
-**Version**: 3.0
+**Version**: 4.0
 **Date**: 2025-10-21
 **Status**: DRAFT
 **Owner**: IT Operations & Enterprise Architecture
-**Stakeholders**: CIO, CISO, IT Operations, End Users, Finance, HR
-**Last Updated**: 2025-10-21 (Added MOD Secure by Design security requirements based on SbD assessment)
+**Stakeholders**: CIO, CISO, IT Operations, End Users, Finance, HR, Enterprise Architect
+**Last Updated**: 2025-10-21 (Updated NFR-SEC-004/005/007 based on MOD SbD Assessment v2.0 - replaced RMADS with CAAT continuous assurance, added Three Lines of Defence governance, enhanced ISN 2023/10 supplier attestation requirements, added Requirement Conflicts & Resolutions section)
 
 ---
 
@@ -864,54 +864,115 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 
 ---
 
-#### NFR-SEC-004: Security Governance and MOD Secure by Design Compliance
+#### NFR-SEC-004: Security Governance and MOD Secure by Design Continuous Assurance
 
-**Requirement**: Project must establish security governance structure aligned with JSP 440 Leaflet 5C Secure by Design (SbD) mandate and achieve accreditation readiness before Beta phase.
+**Requirement**: Project must establish security governance structure aligned with JSP 440 Leaflet 5C Secure by Design (SbD) mandate using continuous assurance framework via CAAT (Cyber Activity and Assurance Tracker) and Three Lines of Defence model before Beta phase.
 
-**Source**: MOD Secure by Design Assessment (mod-secure-by-design.md) - Critical Finding #1-3
+**Source**: MOD Secure by Design Assessment v2.0 (mod-secure-by-design.md) - Critical Finding #1-3, Post-August 2023 Changes
 
-**Security Governance Roles** (must appoint within Week 1):
-- [ ] **Delivery Team Security Lead**: CISO delegate or Senior Security Architect appointed to lead security design, threat modeling, security testing, and IAA liaison (JSP 440 Leaflet 5C mandatory requirement)
-- [ ] **Project Security Officer (PSyO)**: Dedicated role reporting to CISO to provide security oversight, RMADS preparation, and MOD Accreditation Service liaison (required for OFFICIAL-SENSITIVE data per JSP 440)
-- [ ] **Information Assurance Owner (IAO)**: IT Operations Director formally appointed as accountable for system security and risk acceptance
-- [ ] **Information Assurance Architect (IAA)**: MOD Accreditation Service engaged to assign independent security architecture reviewer (required for OFFICIAL-SENSITIVE systems)
+**CRITICAL CHANGE (August 2023)**: MOD has replaced point-in-time RMADS accreditation with **continuous assurance** through Secure by Design. This project must:
+- Register on CAAT (not submit RMADS)
+- Appoint Delivery Team Security Lead (DTSL) as First Line of Defence
+- Conduct continuous risk management (not one-time accreditation)
+- Obtain supplier attestation that systems are secure (ISN 2023/10)
+- Undergo regular Security Governance Reviews (not single accreditation approval)
+
+**CAAT (Cyber Activity and Assurance Tracker) Registration**:
+- [ ] **CAAT Registration** completed by Week 1 (mandatory for all MOD programmes from Discovery/Alpha)
+- [ ] **Business Impact Assessment (BIA)** completed by Week 2 (required for CAAT)
+- [ ] **CAAT Self-Assessment** (7 SbD Principles question sets) completed by Month 1
+- [ ] **CAAT Continuous Updates** as security controls implemented throughout lifecycle (not one-time submission)
+- [ ] Access to CAAT via MOD Secure by Design portal (requires DefenceGateway account for suppliers)
+
+**Three Lines of Defence - Security Governance Roles**:
+
+**First Line of Defence: Delivery Team Owns Security** (must appoint within Week 1):
+- [ ] **Delivery Team Security Lead (DTSL)**: CISO delegate or Senior Security Architect appointed to:
+  - Own security for delivery team
+  - Complete CAAT self-assessments
+  - Manage day-to-day security
+  - Lead threat modeling and security testing
+  - **Accountability**: Delivery team and capability owner are accountable for security posture (not delegated to accreditation authority)
+  - **Note**: JSP 440 Leaflet 5C mandatory requirement - First Line of Defence
+- [ ] **Project Security Officer (PSyO)**: Dedicated role reporting to CISO (may be combined with DTSL role for OFFICIAL-SENSITIVE systems) to:
+  - Provide security oversight
+  - Complete CAAT self-assessment support
+  - Liaise with Security Governance (Second Line)
+  - **Note**: Required for OFFICIAL-SENSITIVE data per JSP 440; for SECRET+ must be separate role
+- [ ] **Senior Responsible Owner (SRO) / Capability Owner**: Formally document (likely CIO)
+  - **Accountability**: SROs and capability owners are accountable for security posture under SbD
+  - **Responsibility**: Cannot delegate or trade out cyber security - it is a "licence to operate"
+
+**Second Line of Defence: Assurance and Oversight** (establish by Month 3):
+- [ ] **Technical Coherence Assurance**: Establish independent security review process
+  - **Role**: Security Governance Reviews, policy compliance, architecture governance
+  - **Owner**: Enterprise Architect
+- [ ] **Security Policies and Standards**: Document project-specific security standards and baselines
+- [ ] **Security Governance Review Schedule**: Quarterly during Development, Annually in Live
+
+**Third Line of Defence: Independent Audit** (establish by Month 4):
+- [ ] **Internal Audit**: Schedule internal audit for Month 4 (before Beta deployment)
+  - **Role**: Audit security controls, validate CAAT self-assessments, provide assurance to SRO
+  - **Owner**: Internal Audit
+- [ ] **External Audit / Penetration Testing**: Procure external pen testing
+  - **Role**: Penetration testing, vulnerability assessment, red team exercises
+  - **Owner**: DTSL
+
+**Legacy Roles (Deprecated Post-August 2023)**:
+- **Information Assurance Owner (IAO)**: ROLE DEPRECATED - replaced by SRO and capability owner accountability
+- **Information Assurance Architect (IAA)**: ROLE DEPRECATED - replaced by Security Governance Reviews (Second Line assurance)
+- **Accreditation Authority**: ROLE DEPRECATED - point-in-time accreditation replaced by continuous assurance and supplier attestation
 
 **Security Governance Framework**:
-- [ ] Security governance RACI matrix published (Responsible/Accountable/Consulted/Informed for each security control)
-- [ ] Security incident escalation matrix documented (when to notify CISO, IAO, MOD CERT, Accreditation Service)
+- [ ] Security governance RACI matrix published (Three Lines of Defence roles)
+- [ ] Security incident escalation matrix documented (when to notify CISO, SRO, MOD CERT, Second Line)
 - [ ] Security risk acceptance authority defined (who can accept LOW/MEDIUM/HIGH/CRITICAL risks)
-- [ ] Monthly security review meetings scheduled with Steering Committee
+- [ ] Quarterly Security Governance Review meetings scheduled (not one-time accreditation)
 
-**Accreditation Requirements**:
-- [ ] MOD Accreditation Service engaged by Week 2
-- [ ] Security Aspects Letter (SAL) obtained from MOD Accreditation Service
-- [ ] RMADS (Risk Management and Accreditation Documentation Set) completed by Month 3
-- [ ] Interim or conditional accreditation obtained before pilot deployment
-- [ ] Full accreditation obtained after successful pilot (Month 6)
-- [ ] Annual re-accreditation process established for through-life assurance
+**Continuous Assurance Requirements** (Replaces Point-in-Time Accreditation):
+- [ ] **Week 1**: DTSL, PSyO, SRO appointed
+- [ ] **Week 1**: Register programme on CAAT
+- [ ] **Week 2**: Complete Business Impact Assessment (BIA) for CAAT
+- [ ] **Month 1**: Complete CAAT self-assessment (7 SbD Principles question sets)
+- [ ] **Month 2**: Obtain supplier security attestations (Microsoft, hardware vendors) per ISN 2023/10
+- [ ] **Month 3**: Security Governance Review (Second Line assurance)
+- [ ] **Month 4**: Internal audit (Third Line - validate CAAT self-assessment)
+- [ ] **Ongoing**: Update CAAT continuously as deployment progresses
+- [ ] **Quarterly**: Security Governance Reviews during Development
+- [ ] **Annually**: Security Governance Reviews in Live phase
+- [ ] **Through-Life**: Supplier continuous attestation (not one-time)
 
 **Acceptance Criteria**:
-- [ ] Given security governance requirement, when Week 1 complete, then all 4 security roles appointed with documented responsibilities
-- [ ] Given MOD Accreditation Service engagement, when Week 2 complete, then IAA assigned and initial accreditation meeting held
-- [ ] Given RMADS documentation, when Month 3 complete, then RMADS submitted to IAA for review
-- [ ] Given accreditation readiness, when assessed, then 0 CRITICAL blockers remain and project ready for interim accreditation
-- [ ] Given pilot deployment, when authorized, then interim accreditation obtained and security monitoring operational
+- [ ] Given security governance requirement, when Week 1 complete, then DTSL, PSyO, SRO appointed with documented responsibilities (Three Lines of Defence)
+- [ ] Given CAAT registration, when Week 1 complete, then programme registered on CAAT and DefenceGateway access established
+- [ ] Given BIA completion, when Week 2 complete, then Business Impact Assessment submitted to CAAT
+- [ ] Given CAAT self-assessment, when Month 1 complete, then 7 SbD Principles question sets completed in CAAT
+- [ ] Given Security Governance Review, when Month 3 complete, then Second Line review conducted with 0 CRITICAL blockers
+- [ ] Given Third Line audit, when Month 4 complete, then internal audit validates CAAT self-assessment accuracy
+- [ ] Given continuous assurance, when assessed, then CAAT updated monthly and Security Governance Reviews held quarterly
 
-**Priority**: CRITICAL (accreditation blocker)
+**Priority**: CRITICAL (deployment blocker for Beta)
 
 **Related Risks**: R-001 (Migration timeline slips), R-011 (GDPR non-compliance)
 
+**Related Stakeholder Drivers**: SD-1 (CISO security compliance), SD-7 (Enterprise Architect governance)
+
 **Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model)
 
-**SbD Compliance**: JSP 440 Leaflet 5C Principles 1-2 (Understand Context, Security from Start)
+**SbD Compliance**:
+- JSP 440 Leaflet 5C Principles 1-2 (Understand Context, Security from Start)
+- ISN 2023/09 (Secure by Design Requirements)
+- ISN 2023/10 (Supplier Attestation and Legacy Accreditation Withdrawal)
 
 ---
 
-#### NFR-SEC-005: Threat Modeling and Security Architecture Approval
+#### NFR-SEC-005: Threat Modeling and Security Architecture Review
 
-**Requirement**: Formal threat model must be documented using STRIDE/DREAD methodology and security architecture must be approved by IAA before Beta phase.
+**Requirement**: Formal threat model must be documented using STRIDE/DREAD methodology and security architecture must be reviewed by Second Line (Technical Coherence) before Beta phase.
 
-**Source**: MOD Secure by Design Assessment (mod-secure-by-design.md) - Critical Finding #4, #7
+**Source**: MOD Secure by Design Assessment v2.0 (mod-secure-by-design.md) - Critical Finding #4, #7
+
+**CRITICAL CHANGE (August 2023)**: IAA approval replaced by Security Governance Reviews (Second Line assurance). Security architecture no longer requires external accreditation authority approval, but must undergo Technical Coherence review by Enterprise Architect (Second Line of Defence).
 
 **Threat Modeling Requirements**:
 - [ ] **Threat model documented by Month 1** using STRIDE methodology:
@@ -937,24 +998,32 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
   - Network architecture diagram (InTune, Azure AD, Defender, OneDrive, ServiceNow integration)
   - Data flow diagram showing OFFICIAL-SENSITIVE data flows
   - Security control mapping (threat → control → test evidence)
-  - MOD network integration architecture (firewall rules, PSN connectivity if applicable)
-- [ ] **Security architecture submitted to IAA for review** by Month 1
-- [ ] **IAA approval obtained** before proceeding to Beta phase
-- [ ] **Security architecture updates** require IAA re-approval for significant changes
+  - MOD network integration architecture (firewall rules, cloud connectivity assurance)
+  - Alignment with 7 SbD Principles (Understand Context, Security from Start, Defence in Depth, Secure Design Patterns, Continuous Risk, Secure Supply Chain, Through-Life Assurance)
+- [ ] **Security architecture submitted for Security Governance Review (Second Line)** by Month 1
+- [ ] **Security Governance Review completed** before proceeding to Beta phase (Month 3)
+- [ ] **Security architecture updates** require Second Line re-review for significant changes (continuous assurance)
+- [ ] **Quarterly Security Governance Reviews** during Development to validate architecture evolution
 
 **Acceptance Criteria**:
 - [ ] Given threat model requirement, when Month 1 complete, then formal threat model documented with 20+ identified threats rated by DREAD
-- [ ] Given security architecture, when submitted to IAA, then architecture document includes diagrams, data flows, security controls, and threat mitigations
-- [ ] Given IAA review, when complete, then IAA approval obtained with 0 CRITICAL findings remaining
-- [ ] Given threat model updates, when new threats identified, then threat model updated quarterly and reviewed with Security Lead
+- [ ] Given security architecture, when submitted for Security Governance Review, then architecture document includes diagrams, data flows, security controls, threat mitigations, and SbD alignment
+- [ ] Given Security Governance Review, when Month 3 complete, then Second Line review conducted with 0 CRITICAL findings remaining
+- [ ] Given threat model updates, when new threats identified, then threat model updated quarterly and reviewed with DTSL and Second Line
+- [ ] Given continuous assurance, when security architecture changes, then Second Line re-review conducted before implementation
 
-**Priority**: CRITICAL (accreditation blocker)
+**Priority**: CRITICAL (deployment blocker for Beta)
 
-**Dependencies**: NFR-SEC-004 (Security governance must be established first)
+**Dependencies**: NFR-SEC-004 (Security governance must be established first - DTSL appointed, Second Line established)
+
+**Related Stakeholder Drivers**: SD-1 (CISO security), SD-7 (Enterprise Architect governance)
 
 **Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model)
 
-**SbD Compliance**: JSP 440 Leaflet 5C Principles 1-2 (Understand Context, Security from Start), NCSC Secure Design Principles
+**SbD Compliance**:
+- JSP 440 Leaflet 5C Principles 1-2 (Understand Context, Security from Start)
+- NCSC Secure Design Principles
+- NIST CSF Identify function
 
 ---
 
@@ -1024,16 +1093,38 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 - [ ] **SBOM vulnerability correlation**: Automated scanning of SBOM against NVD (National Vulnerability Database) for new CVEs
 - [ ] **SBOM storage**: SBOM repository maintained in version control (Git) with change tracking
 
-**Supplier Security Attestations (ISN 2023/10)**:
-- [ ] **Microsoft security attestation** obtained by Month 1 confirming:
-  - InTune, Azure AD, Defender for Endpoint, OneDrive meet Secure by Design principles
-  - Microsoft Azure UK South cloud is suitable for OFFICIAL-SENSITIVE data (or compensating controls documented)
-  - Microsoft supplier security practices meet MOD requirements
-- [ ] **Hardware vendor security attestations** obtained by Month 3 from Dell/HP/Lenovo confirming:
+**Supplier Security Attestations (ISN 2023/10 - Continuous Attestation)**:
+
+**CRITICAL CHANGE (August 2023)**: ISN 2023/10 mandates that **suppliers must attest that systems are secure**. This is a fundamental shift from MOD-led accreditation to supplier-owned continuous assurance. Attestation must be **continuous** (not one-time) - suppliers re-attest as systems evolve.
+
+**ISN 2023/10 Requirements**:
+1. Suppliers must attest that delivered systems meet MOD Secure by Design principles
+2. Supplier attestation replaces legacy MOD-led accreditation for supplier-delivered systems
+3. Attestation must be **continuous** (not one-time) - suppliers re-attest as systems evolve
+4. Attestation must cover: security architecture, threat model, security testing, vulnerability management
+5. Suppliers must demonstrate ongoing security posture maintenance
+
+- [ ] **Microsoft security attestation** obtained by Month 2 (not Month 1 due to continuous attestation requirement) confirming:
+  - InTune, Azure AD, Defender for Endpoint, OneDrive, Windows 11 OS meet MOD Secure by Design principles
+  - Microsoft Azure UK Government cloud assurance status (MOD-assured cloud or compensating controls)
+  - Microsoft supplier security practices meet MOD requirements (ISN 2023/10)
+  - **Continuous attestation commitment**: Microsoft re-attests quarterly as services evolve
+  - Supplier-owned continuous assurance process documented (not MOD-led accreditation)
+- [ ] **Hardware vendor security attestations** obtained by Month 2 from Dell/HP/Lenovo confirming:
   - Firmware security (UEFI Secure Boot signature validation, no backdoors)
   - TPM 2.0 provenance (genuine TPM chips, not counterfeit)
-  - Supply chain security (components sourced from trusted suppliers)
+  - Supply chain security (components sourced from trusted suppliers, country-of-origin verification)
   - Hardware decommissioning support (CESG-approved data destruction guidance)
+  - **Continuous attestation commitment**: Hardware vendors re-attest annually for firmware/BIOS updates
+- [ ] **Third-party ISV security attestations** obtained by Month 3 for top 100 business applications deployed via InTune:
+  - Application meets Secure by Design principles
+  - Security testing completed (pen testing, vulnerability scanning)
+  - Incident response capability documented
+  - **Continuous attestation**: ISVs re-attest with each major application version update
+- [ ] **Continuous attestation tracking**: Supplier attestation register maintained showing:
+  - Supplier name, product/service, attestation date, next re-attestation due date
+  - Attestation status (current, expiring soon, expired)
+  - Escalation process for expired attestations (block deployment until re-attestation obtained)
 
 **Third-Party Risk Assessments**:
 - [ ] **Microsoft third-party risk assessment** completed by Month 1:
@@ -1628,6 +1719,100 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 
 ---
 
+## Requirement Conflicts & Resolutions
+
+This section documents conflicting requirements arising from competing stakeholder drivers and shows how conflicts were resolved.
+
+**Source**: Stakeholder Drivers Analysis (`stakeholder-drivers.md`) - Conflict Analysis & Resolution sections
+
+### Summary of Key Conflicts
+
+| Conflict | Competing Requirements | Stakeholders | Resolution Strategy | Winner |
+|----------|----------------------|--------------|-------------------|--------|
+| **Speed vs. Security Rigor** | BR-003 (12-month timeline) vs NFR-SEC-004 (3-month security prep) | CFO vs CISO | COMPROMISE: 18-month timeline with mandatory 3-month security gates upfront | CISO wins on security gates, CFO wins on faster deployment after gates |
+| **Innovation vs. Stability** | BR-004 (Copilot+ PCs) vs NFR-P-003 (App compatibility) | CIO vs IT Ops | INNOVATE: x64 Copilot+ PCs (not ARM64) for 30% users, pilot validates ROI | CIO wins 30% adoption, IT Ops wins x64 risk mitigation |
+| **Security vs. User Experience** | NFR-SEC-001 (MFA all users) vs FR-004 (Seamless UX) | CISO vs End Users | INNOVATE: Windows Hello passwordless (biometric + PIN) | Win-Win-Win: Security + UX + Helpdesk |
+| **Governance vs. Agility** | BR-006 (Zero exceptions) vs FR-007 (Deployment flexibility) | Enterprise Architect vs IT Ops | COMPROMISE: Documented exception process with approval authority by risk level | Both win: Governance with pragmatic escape valve |
+
+---
+
+### Conflict 1: Speed vs. Security Rigor (Timeline Tension)
+
+**Conflicting Requirements**:
+- **BR-003**: CFO wants 12-month timeline for rapid cost savings
+- **NFR-SEC-004**: CISO requires 3-month security preparation (CAAT, DTSL, BIA, threat model, Security Governance Review) before Beta
+- **FR-007**: IT Ops needs 24-month phased rollout for risk mitigation
+
+**Resolution**: **COMPROMISE** - 18-month timeline with mandatory security gates
+- **Month 0-3**: Security preparation (CAAT registration, DTSL appointment, BIA, threat model, Security Governance Review) - NO deployment
+- **Month 4-18**: Aggressive phased deployment (500-1000 devices/week) after security gates passed
+
+**Decision Authority**: CIO (Executive Sponsor)
+
+**Rationale**: CAAT and JSP 440 Leaflet 5C security governance are mandatory and cannot be rushed. However, deployment can be accelerated once security gates passed. Failed migration costs £[Y]M >> savings from speed.
+
+**Which Stakeholder "Won"**:
+- ✅ **CISO wins**: 3-month security preparation non-negotiable
+- ⚠️ **CFO partially wins**: 18 months vs IT Ops' 24-month preference
+- ⚠️ **IT Ops partially loses**: Accepts 18 months with pause criteria (>10% failure rate triggers deployment freeze)
+
+---
+
+### Conflict 2: Innovation vs. Stability (Copilot+ PC Adoption)
+
+**Conflicting Requirements**:
+- **BR-004**: CIO wants 30% Copilot+ PC adoption for AI productivity and strategic modernization
+- **NFR-P-003**: IT Ops requires 100% app compatibility testing
+- **BR-003**: CFO resists £100-300/device premium pricing
+
+**Resolution**: **INNOVATE + RISK REDUCTION** - 30% Copilot+ PCs, prioritize x64 (Intel/AMD) over ARM64 (Qualcomm)
+- **Pilot (Month 1-3)**: 50-100 Copilot+ PCs (both x64 and ARM64) to validate app compatibility and productivity gains
+- **Targeted Rollout**: Copilot+ for executives/knowledge workers (30%), Standard Windows 11 for task workers (70%)
+- **Risk Mitigation**: x64 Copilot+ PCs (full app compatibility) prioritized over ARM64 (requires testing)
+
+**Decision Authority**: CFO (Budget Owner) + CIO (Strategic Owner) - Joint decision
+
+**Which Stakeholder "Won"**:
+- ✅ **CIO wins**: 30% Copilot+ adoption achieves strategic goal
+- ✅ **IT Ops wins**: x64 prioritization reduces ARM64 compatibility risk
+- ⚠️ **CFO partially wins**: 30% vs 100% saves £[Y], but still premium cost vs standard devices
+
+---
+
+### Conflict 3: Security vs. User Experience (MFA and Access Controls)
+
+**Conflicting Requirements**:
+- **NFR-SEC-001**: CISO requires MFA for ALL sign-ins (Zero Trust mandate)
+- **FR-004**: End Users want seamless experience, minimal authentication friction
+- **NFR-P-001**: <2 hours downtime, zero productivity loss
+
+**Resolution**: **INNOVATE** - Windows Hello for Business (passwordless authentication)
+- **Primary**: PIN + biometric (face/fingerprint) on device with TPM 2.0
+- **Fallback**: PIN-only on devices without biometric hardware
+- **User Experience**: Single PIN entry at startup, then SSO to all Azure AD apps (seamless)
+- **Security**: PIN protected by TPM 2.0, biometric local-only, satisfies Zero Trust
+
+**Decision Authority**: CISO (Security Executive) - Accountable for MFA enforcement
+
+**Which Stakeholder "Won"**:
+- ✅ **CISO wins**: MFA enforced for 100%, Zero Trust achieved
+- ✅ **End Users win**: Passwordless faster/simpler than legacy password + MFA
+- ✅ **Helpdesk wins**: Fewer lockouts (no forgotten passwords), self-service PIN reset
+
+**Outcome**: Win-Win-Win solution - security AND user experience both improve
+
+---
+
+### Conflict Resolution Principles
+
+1. **Security is non-negotiable**: CAAT, continuous assurance, and JSP 440 Leaflet 5C compliance cannot be compromised
+2. **Seek innovative solutions**: Windows Hello, x64 Copilot+ PCs solve conflicts rather than forcing trade-offs
+3. **Phase when possible**: Pilot before scaling, validate ROI before full investment
+4. **Document exceptions rigorously**: Exceptions allowed only with documented approval, time limits, and remediation plans
+5. **Stakeholder transparency**: Explicitly communicate who "won" and who "lost" in conflicts, manage expectations
+
+---
+
 ## Appendices
 
 ### Appendix A: Glossary
@@ -1648,8 +1833,8 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 
 **Project Documentation**:
 - **Architecture Principles**: `.arckit/memory/architecture-principles.md` (18 principles governing this project)
-- **MOD Secure by Design Assessment**: `projects/001-windows-11-migration-intune/mod-secure-by-design.md` (Security assessment identifying 9 accreditation blockers - SOURCE for NFR-SEC-004 through NFR-SEC-010)
-- **Stakeholder Drivers**: `projects/001-windows-11-migration-intune/stakeholder-drivers.md` (Stakeholder goals and success criteria)
+- **MOD Secure by Design Assessment v2.0**: `projects/001-windows-11-migration-intune/mod-secure-by-design.md` (Security assessment with CAAT continuous assurance framework, Three Lines of Defence governance, ISN 2023/10 supplier attestation - SOURCE for NFR-SEC-004 through NFR-SEC-010)
+- **Stakeholder Drivers & Conflict Analysis**: `projects/001-windows-11-migration-intune/stakeholder-drivers.md` (Stakeholder goals, competing drivers, conflict resolutions - SOURCE for Requirement Conflicts section)
 - **Risk Register**: `projects/001-windows-11-migration-intune/risk-register.md` (HM Treasury Orange Book risk management)
 
 **MOD Security Standards**:

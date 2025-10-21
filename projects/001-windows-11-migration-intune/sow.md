@@ -5,55 +5,90 @@
 **Project ID**: 001
 **Issue Date**: [DATE]
 **Proposal Due Date**: [DATE + 6 weeks]
-**Version**: 2.0
+**Version**: 3.0
 **Issuing Organization**: [ORGANIZATION_NAME]
 **Point of Contact**: [NAME], [EMAIL], [PHONE]
-**Last Updated**: 2025-10-21 (Added MOD Secure by Design security requirements - CRITICAL UPDATE for vendor proposals)
+**Last Updated**: 2025-10-21 (Updated to MOD Secure by Design CAAT continuous assurance framework - CRITICAL UPDATE replacing RMADS)
 
 ## Document Change History
 
 | Version | Date | Author | Changes Summary | Impact on Vendor Proposals |
 |---------|------|--------|-----------------|---------------------------|
 | 1.0 | 2025-10-15 | [AUTHOR] | Initial SOW creation | N/A - Initial baseline |
-| **2.0** | **2025-10-21** | **Claude/ArcKit** | **CRITICAL UPDATE: Added MOD Secure by Design security requirements (NFR-SEC-004 through NFR-SEC-010) based on MOD SbD assessment findings.** | **MAJOR IMPACT: Vendors must now account for MOD accreditation activities including security governance, threat modeling, RMADS documentation, penetration testing (CREST/CHECK vendors £20K-50K), SBOM creation, supplier attestations, incident response planning, SOC integration, and MOD CERT integration. Estimated additional cost £100K-£200K and 3-6 month timeline impact for accreditation activities. Vendors without MOD/UK Government security experience will be automatically disqualified (MQ-11).** |
+| 2.0 | 2025-10-21 | Claude/ArcKit | CRITICAL UPDATE: Added MOD Secure by Design security requirements (NFR-SEC-004 through NFR-SEC-010) based on MOD SbD assessment findings. | MAJOR IMPACT: Vendors must account for MOD accreditation activities including RMADS, penetration testing, SBOM creation, etc. |
+| **3.0** | **2025-10-21** | **Claude/ArcKit** | **CRITICAL UPDATE (Post-August 2023 Changes): Replaced RMADS point-in-time accreditation with CAAT (Cyber Activity and Assurance Tracker) continuous assurance framework per JSP 440 Leaflet 5C. Updated to Three Lines of Defence governance model, ISN 2023/10 continuous supplier attestation requirements, and Security Governance Reviews (replacing IAA approval).** | **MAJOR IMPACT: Vendors must now understand CAAT self-assessment process (not RMADS submission), appoint Delivery Team Security Lead (DTSL) as First Line of Defence, implement continuous Security Governance Reviews (not one-time accreditation), obtain continuous supplier attestations per ISN 2023/10 (Microsoft re-attests quarterly). Cost impact similar (£100K-£200K) but different deliverables - CAAT self-assessment instead of RMADS documents, Second Line Technical Coherence reviews instead of IAA approval, continuous supplier attestation instead of one-time. Timeline shift: 3-month security preparation (CAAT registration, DTSL appointment, BIA, threat model) before pilot instead of 6-month RMADS accreditation. Vendors without CAAT/continuous assurance experience will be at disadvantage (PQ-7 scoring criteria updated).** |
 
-### Summary of Version 2.0 Changes
+### Summary of Version 3.0 Changes (Post-August 2023 MOD SbD Framework)
 
-**Section 2 (Scope of Work) - Added MOD SbD Security Activities**:
+**CRITICAL CHANGE**: MOD replaced point-in-time RMADS accreditation with **continuous assurance** via CAAT (Cyber Activity and Assurance Tracker) in August 2023. All references to RMADS, IAA approval, and Accreditation Service have been replaced with CAAT, Security Governance Reviews (Second Line), and Three Lines of Defence model.
+
+**Section 2 (Scope of Work) - Replaced RMADS with CAAT Continuous Assurance Activities**:
+- **Phase 1 (Month 0-1)**:
+  - CAAT registration (Week 1) - REPLACES MOD Accreditation Service engagement
+  - Delivery Team Security Lead (DTSL) appointment (Week 1) - NEW First Line of Defence role
+  - Business Impact Assessment (BIA) for CAAT (Week 2) - REPLACES BIA for RMADS
+  - Threat modeling (Month 1) - UNCHANGED
+  - Security architecture documentation for Security Governance Review (Month 1) - REPLACES IAA approval
+  - CAAT self-assessment (7 SbD Principles question sets) (Month 1) - REPLACES RMADS preparation
+  - Supplier attestations (Month 2 - continuous, not one-time) - ENHANCED per ISN 2023/10
+  - Penetration testing vendor procurement (Month 1) - UNCHANGED
+- **Phase 2 (Month 2-3)**:
+  - SBOM creation (Month 2) - UNCHANGED
+  - Penetration testing execution and remediation (Month 2) - UNCHANGED
+  - Incident response planning (Month 2) - UNCHANGED
+  - PAM/DLP configuration (Month 2) - UNCHANGED
+  - Vulnerability scanning (Month 2) - UNCHANGED
+  - Update CAAT with implemented controls (Month 2) - REPLACES RMADS documentation
+  - Establish Second Line Technical Coherence review process (Month 3) - REPLACES IAA engagement
+- **Phase 3 (Month 3-4)**:
+  - Security Governance Review (Second Line) (Month 3) - REPLACES IAA approval and interim accreditation
+  - Third Line internal audit (Month 4) - NEW requirement to validate CAAT self-assessment
+  - SOC integration (Month 3) - UNCHANGED
+  - IR tabletop exercise (Month 3) - UNCHANGED
+  - Continuous CAAT updates throughout deployment - REPLACES annual re-accreditation
+
+### Summary of Version 2.0 Changes (SUPERSEDED by v3.0 - Historical Reference Only)
+
+**Section 2 (Scope of Work) - Added MOD SbD Security Activities** (NOTE: v2.0 used deprecated RMADS process):
 - Phase 1: Security governance establishment (Week 1), threat modeling (Month 1), security architecture documentation and IAA approval (Month 1), supplier attestations (Month 1), penetration testing vendor procurement (Month 1)
 - Phase 2: SBOM creation (Month 2), penetration testing execution and remediation (Month 2), incident response planning (Month 2), PAM/DLP configuration (Month 2), vulnerability scanning (Month 2)
 - Phase 3: RMADS documentation (Month 3), Security Aspects Letter (SAL) and interim accreditation (Month 3-4), SOC integration (Month 3), IR tabletop exercise (Month 3)
 
-**Section 3 (Requirements) - Added 7 New Security Requirements**:
-- NFR-SEC-004: Security Governance & MOD SbD Compliance (CRITICAL - accreditation blocker)
-- NFR-SEC-005: Threat Modeling & Security Architecture Approval (CRITICAL - accreditation blocker)
-- NFR-SEC-006: Security Testing & Penetration Testing (CRITICAL - accreditation blocker)
-- NFR-SEC-007: Supply Chain Security & SBOM (HIGH - accreditation requirement)
-- NFR-SEC-008: Incident Response & MOD CERT Integration (CRITICAL - accreditation requirement)
-- NFR-SEC-009: Privileged Access Management & Insider Threat (HIGH)
-- NFR-SEC-010: Data Loss Prevention for OFFICIAL-SENSITIVE (HIGH)
+**Section 3 (Requirements) - Updated Security Requirements to v3.0 (CAAT Continuous Assurance)**:
+- **NFR-SEC-004 (UPDATED)**: Security Governance & MOD SbD Continuous Assurance (CRITICAL - deployment blocker) - NOW requires CAAT registration, DTSL appointment, BIA, continuous CAAT updates, Three Lines of Defence model (REPLACES RMADS, IAA, Accreditation Service)
+- **NFR-SEC-005 (UPDATED)**: Threat Modeling & Security Architecture Review (CRITICAL - deployment blocker) - NOW requires Security Governance Review (Second Line) instead of IAA approval
+- **NFR-SEC-006**: Security Testing & Penetration Testing (CRITICAL) - UNCHANGED
+- **NFR-SEC-007 (UPDATED)**: Supply Chain Security & SBOM (HIGH) - NOW requires ISN 2023/10 continuous supplier attestation (Microsoft quarterly, hardware vendors annually, ISVs per version)
+- **NFR-SEC-008**: Incident Response & MOD CERT Integration (CRITICAL) - UNCHANGED
+- **NFR-SEC-009**: Privileged Access Management & Insider Threat (HIGH) - UNCHANGED
+- **NFR-SEC-010**: Data Loss Prevention for OFFICIAL-SENSITIVE (HIGH) - UNCHANGED
 
-**Section 4 (Deliverables) - Added MOD SbD Security Deliverables**:
-- Phase 1: Security Governance Framework, Threat Model, Security Architecture Document, IAA Approval Letter, Microsoft Supplier Security Attestation, Penetration Testing Procurement (6 deliverables)
-- Phase 2: SBOM, Penetration Test Report, Incident Response Plan, PAM Configuration, DLP Configuration, Vulnerability Scanning Configuration (6 deliverables)
-- Phase 3: RMADS Documentation, Security Aspects Letter (SAL), SOC Integration Documentation, IR Tabletop Exercise Report, MOD CERT Integration Documentation (5 deliverables)
+**Section 4 (Deliverables) - Updated MOD SbD Deliverables to v3.0 (CAAT Framework)**:
+- **Phase 1**: Security Governance Framework (Three Lines of Defence), Threat Model, Security Architecture Document for Security Governance Review, CAAT Registration Confirmation, CAAT BIA, Microsoft/Hardware Vendor Continuous Supplier Attestation (ISN 2023/10), Penetration Testing Procurement (7 deliverables - REPLACED IAA Approval Letter with CAAT Registration/BIA)
+- **Phase 2**: SBOM, Penetration Test Report, CAAT Self-Assessment (7 SbD Principles), Incident Response Plan, PAM Configuration, DLP Configuration, Vulnerability Scanning Configuration, Second Line Technical Coherence Process (8 deliverables - REPLACED RMADS Documentation with CAAT Self-Assessment + Second Line Process)
+- **Phase 3**: Security Governance Review Report (Second Line), Third Line Internal Audit Report, SOC Integration Documentation, IR Tabletop Exercise Report, MOD CERT Integration Documentation, Continuous CAAT Update Schedule (6 deliverables - REPLACED RMADS/SAL/Interim Accreditation with Security Governance Review + Third Line Audit)
 
-**Section 6 (Vendor Qualifications) - Added MOD Security Expertise**:
-- **NEW MQ-11 (Mandatory)**: MOD Secure by Design security expertise including 2+ UK Government projects (OFFICIAL/OFFICIAL-SENSITIVE), RMADS experience, CREST/CHECK penetration testing coordination, SBOM/supply chain security, at least 1 SC/DV cleared CLAS Consultant
-- **NEW PQ-7-9 (Preferred)**: Full MOD accreditation experience (10 pts), UK Government security frameworks expertise (5 pts), SOC/MOD CERT integration experience (5 pts)
-- **Updated Team Requirements**: Added Delivery Team Security Lead (CRITICAL ROLE), enhanced Security Architect requirements for MOD SbD/RMADS, added Supply Chain Security Specialist for SBOM/supplier attestations
-- **Updated Personnel Constraints**: All key security roles must be 100% UK-based, SC clearance required for OFFICIAL-SENSITIVE data access, NO offshore resources permitted
+**Section 6 (Vendor Qualifications) - Updated to v3.0 (CAAT Expertise)**:
+- **UPDATED MQ-11 (Mandatory)**: MOD Secure by Design continuous assurance expertise including 2+ UK Government projects (OFFICIAL/OFFICIAL-SENSITIVE), **CAAT self-assessment experience** (REPLACES RMADS experience), Three Lines of Defence governance implementation, CREST/CHECK penetration testing coordination, ISN 2023/10 continuous supplier attestation, SBOM/supply chain security, at least 1 SC/DV cleared CLAS Consultant
+- **UPDATED PQ-7-9 (Preferred)**: Full MOD continuous assurance experience with CAAT (10 pts - REPLACES "accreditation experience"), UK Government security frameworks expertise (JSP 440 Leaflet 5C, ISN 2023/09-10) (5 pts), SOC/MOD CERT integration experience (5 pts)
+- **UPDATED Team Requirements**: Added **Delivery Team Security Lead (DTSL)** (CRITICAL ROLE - First Line of Defence), enhanced Security Architect requirements for MOD SbD/CAAT (REPLACES RMADS expertise), added Supply Chain Security Specialist for ISN 2023/10 continuous supplier attestations (REPLACES one-time attestations), added Second Line Technical Coherence Lead (NEW role)
+- **UNCHANGED Personnel Constraints**: All key security roles must be 100% UK-based, SC clearance required for OFFICIAL-SENSITIVE data access, NO offshore resources permitted
 
-**Impact Assessment**:
-- **Cost Impact**: Estimated £100K-£200K additional costs for MOD accreditation activities (penetration testing £20K-50K, security governance roles, SBOM creation, RMADS documentation, SOC integration)
-- **Timeline Impact**: 3-6 months for MOD accreditation activities (RMADS Month 3, interim accreditation Month 3-4, full accreditation post-pilot)
-- **Vendor Qualification Impact**: Vendors without MOD/UK Government security experience will be automatically disqualified; strong preference for vendors with proven MOD SbD accreditation track record
+**Impact Assessment (v3.0 vs v2.0)**:
+- **Cost Impact**: Estimated £100K-£200K (UNCHANGED from v2.0, but different cost breakdown - CAAT self-assessment training/expertise vs RMADS documentation, Second Line Technical Coherence reviews vs IAA engagement fees, continuous supplier attestation management vs one-time)
+- **Timeline Impact**: 3-month security preparation (FASTER than v2.0's 6-month RMADS timeline) - CAAT registration Week 1, BIA Week 2, self-assessment Month 1, Security Governance Review Month 3 (REPLACES Month 3-4 interim accreditation)
+- **Vendor Qualification Impact**: Vendors without CAAT/continuous assurance experience will be at disadvantage in scoring (PQ-7); vendors with only RMADS experience (pre-August 2023) will need to demonstrate understanding of new CAAT framework
 
-**Rationale for Version 2.0 Update**:
-- MOD Secure by Design assessment (completed 2025-10-20) identified 9 CRITICAL accreditation blockers that were not reflected in original SOW v1.0
-- Original SOW would have resulted in vendor proposals that did NOT account for mandatory MOD accreditation requirements
-- Accreditation is non-negotiable for MOD systems handling OFFICIAL-SENSITIVE data per JSP 440 Leaflet 5C
-- Updated SOW ensures vendors accurately scope and budget for full accreditation requirements
+**Rationale for Version 3.0 Update**:
+- MOD replaced RMADS point-in-time accreditation with CAAT continuous assurance framework in **August 2023** (JSP 440 Leaflet 5C, ISN 2023/09, ISN 2023/10)
+- Version 2.0 SOW (based on MOD SbD Assessment v1.0) referenced deprecated RMADS process
+- Requirements document updated to v4.0 (2025-10-21) with CAAT continuous assurance - SOW v3.0 aligns with updated requirements
+- Continuous assurance is fundamentally different from point-in-time accreditation:
+  - **CAAT self-assessment** (delivery team owns) vs RMADS submission (external IAA reviews)
+  - **Three Lines of Defence** (First/Second/Third) vs legacy IAO/IAA/Accreditation Authority roles
+  - **Continuous Security Governance Reviews** (quarterly during Dev, annually in Live) vs one-time interim + full accreditation
+  - **Continuous supplier attestation** (ISN 2023/10) vs one-time supplier security questionnaires
+- Updated SOW ensures vendors understand modern MOD SbD framework and can accurately propose continuous assurance approach
 
 ---
 
@@ -1220,11 +1255,20 @@ Vendor **indemnifies and holds harmless** [ORGANIZATION_NAME] against:
 - **Autopilot**: Windows Autopilot, zero-touch device provisioning service
 - **Azure AD Join**: Device joined to Azure Active Directory for cloud-native management
 - **BitLocker**: Full disk encryption (AES-256) for Windows
+- **CAAT (Cyber Activity and Assurance Tracker)**: MOD self-assessment tool for cyber security maturity used for continuous assurance (replaced RMADS post-August 2023)
 - **Co-Management**: Hybrid management (Configuration Manager + InTune) during transition
 - **Copilot+ PC**: Windows 11 device with Neural Processing Unit (NPU) for AI acceleration (40+ TOPS)
+- **DTSL (Delivery Team Security Lead)**: First Line of Defence role that owns security for the delivery team under MOD Secure by Design continuous assurance framework
+- **IAA (Information Assurance Architect)**: DEPRECATED ROLE - Pre-August 2023 MOD role for security architecture approval, replaced by Security Governance Reviews (Second Line)
+- **IAO (Information Assurance Owner)**: DEPRECATED ROLE - Pre-August 2023 MOD role for system security ownership, replaced by SRO/Capability Owner accountability
 - **InTune**: Microsoft Endpoint Manager, cloud-native MDM/MAM service
+- **ISN (Industry Security Notice)**: MOD supplier security requirements - ISN 2023/09 (SbD Requirements), ISN 2023/10 (Supplier Attestation)
 - **Known Folder Move (KFM)**: OneDrive feature syncing Desktop, Documents, Pictures to cloud
 - **NPU**: Neural Processing Unit for AI acceleration in Copilot+ PCs
+- **PSyO (Project Security Officer)**: Security subject matter expert role for MOD projects handling OFFICIAL-SENSITIVE+ data
+- **RMADS (Risk Management and Accreditation Documentation Set)**: DEPRECATED PROCESS - Pre-August 2023 MOD point-in-time accreditation process, replaced by CAAT continuous assurance
+- **SRO (Senior Responsible Owner)**: Accountable executive for security posture under MOD Secure by Design framework (cannot delegate cyber security)
+- **Three Lines of Defence**: MOD governance model - First Line (delivery team owns security), Second Line (assurance/oversight), Third Line (independent audit)
 - **TPM**: Trusted Platform Module, hardware security chip (TPM 2.0 required for Windows 11)
 - **Zero Trust**: Security model assuming breach, no implicit trust, continuous verification
 

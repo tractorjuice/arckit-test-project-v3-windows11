@@ -3,10 +3,11 @@
 **Document Type**: Vendor Evaluation Framework
 **RFP ID**: RFP-WIN11-001
 **Project ID**: 001
-**Version**: 1.0
-**Date**: 2025-10-15
+**Version**: 2.0
+**Date**: 2025-10-21
 **Evaluation Lead**: [NAME]
 **Evaluation Committee**: [LIST_MEMBERS]
+**Last Updated**: 2025-10-21 (Updated for SOW v3.0 - CAAT continuous assurance framework, CRITICAL changes to MQ-11 and PQ-7 scoring)
 
 ---
 
@@ -58,29 +59,29 @@ All voting evaluators must disclose any conflicts of interest with vendors by co
 
 ```
 1. Proposals Received (Deadline: [DATE])
-   �
+   �
 2. Mandatory Qualifications Check (Pass/Fail) (2 days)
-   � (Qualified vendors only proceed)
+   � (Qualified vendors only proceed)
 3. Individual Technical Scoring (Blind to Cost) (1 week)
-   �
+   �
 4. Consensus Technical Scoring Meeting (1 day)
-   �
+   �
 5. Shortlist Top 3-5 Vendors (1 day)
-   �
+   �
 6. Cost Proposals Opened (Shortlisted only) (1 day)
-   �
+   �
 7. Cost Scoring (2 days)
-   �
+   �
 8. Combined Technical + Cost Scoring (1 day)
-   �
+   �
 9. Vendor Presentations & Q&A (1 week)
-   �
+   �
 10. Reference Checks (Parallel with presentations) (1 week)
-   �
+   �
 11. Final Scoring Adjustment & Selection (2 days)
-   �
+   �
 12. Selection Approval & Notification (1 day)
-   �
+   �
 13. Contract Negotiation & Award (2-3 weeks)
 ```
 
@@ -108,7 +109,9 @@ All voting evaluators must disclose any conflicts of interest with vendors by co
 
 ## 3. Mandatory Qualifications (Pass/Fail)
 
-Before scoring, vendors must meet ALL mandatory qualifications (MQ-1 through MQ-10 from SOW Section 6.1). **Failure on any item results in automatic disqualification.**
+Before scoring, vendors must meet ALL mandatory qualifications (MQ-1 through **MQ-11** from SOW v3.0 Section 6.1). **Failure on any item results in automatic disqualification.**
+
+**CRITICAL UPDATE (v2.0)**: MQ-11 added based on SOW v3.0 - MOD Secure by Design continuous assurance expertise is now MANDATORY.
 
 ### 3.1 Mandatory Qualification Checklist
 
@@ -124,6 +127,7 @@ Before scoring, vendors must meet ALL mandatory qualifications (MQ-1 through MQ-
 | **MQ-8** | **Insurance coverage**: Professional liability ($5M), Cyber liability ($2M), General liability ($2M) | Certificates of insurance with coverage amounts and expiration dates | [ ] Pass [ ] Fail | |
 | **MQ-9** | **SOC 2 Type II or ISO 27001** certification | SOC 2 report or ISO 27001 certificate (not expired) | [ ] Pass [ ] Fail | |
 | **MQ-10** | **Background checks** policy for staff accessing client systems | Background check policy document, sample background check certificate | [ ] Pass [ ] Fail | |
+| **MQ-11** | **MOD Secure by Design Continuous Assurance Expertise** (NEW v2.0 - CRITICAL)<br><br>Vendor MUST demonstrate ALL of the following:<br>• **2+ UK Government/MOD projects** handling OFFICIAL/OFFICIAL-SENSITIVE data<br>• **CAAT (Cyber Activity and Assurance Tracker) self-assessment experience** - NOT legacy RMADS<br>• **Three Lines of Defence governance** implementation (First/Second/Third Line roles)<br>• **CREST or CHECK-approved penetration testing** coordination<br>• **ISN 2023/10 continuous supplier attestation** management (NOT one-time)<br>• **SBOM creation** and vulnerability tracking<br>• **At least 1 SC/DV cleared CLAS Consultant** on proposed team<br>• **Delivery Team Security Lead (DTSL)** role filled by qualified individual | Evidence required:<br>• 2+ case studies from UK Gov/MOD projects (OFFICIAL/OFFICIAL-SENSITIVE) with client references<br>• CAAT self-assessment completion screenshots OR MOD project completion certificates (post-Aug 2023)<br>• Team member CV demonstrating DTSL role on prior MOD project<br>• Penetration test coordination experience (CREST/CHECK vendor engagement)<br>• ISN 2023/10 continuous attestation process documentation<br>• SBOM samples (SPDX/CycloneDX format)<br>• SC/DV clearance certificates for at least 1 proposed team member | [ ] Pass [ ] Fail | **CRITICAL**: Vendors with only legacy RMADS experience (pre-August 2023) MUST also demonstrate understanding of CAAT framework via written attestation from DTSL candidate explaining CAAT vs RMADS differences. Vendors with NO UK Gov/MOD security experience will be automatically DISQUALIFIED. |
 
 ### 3.2 Disqualification Procedure
 
@@ -161,13 +165,14 @@ Technical proposals are scored **blind to cost** to ensure unbiased evaluation. 
 
 | Subcriterion | Points | Evaluation Questions |
 |--------------|--------|---------------------|
-| **1.1 InTune Architecture Quality** | 10 | " Does the InTune architecture follow Microsoft best practices?<br>" Is the Azure AD join strategy appropriate?<br>" Are Autopilot profiles designed for all scenarios?<br>" Does the architecture align with Principles 1, 7, 8?<br>" Are C4 diagrams provided and clear? |
-| **1.2 Security and Zero Trust Design** | 9 | " Does the security design implement Zero Trust elements?<br>" Is Microsoft Security Baseline properly applied?<br>" Are device compliance policies comprehensive?<br>" Does the design align with Principle 2? |
-| **1.3 Migration Methodology** | 7 | " Is the phased rollout approach sound?<br>" Are wave sizes appropriate (500-1000)?<br>" Are pause/resume criteria defined?<br>" Is rollback capability described? |
-| **1.4 Application Compatibility Testing** | 5 | " Is the test lab approach appropriate?<br>" Is testing methodology comprehensive?<br>" Is ARM64 testing included for Copilot+ PCs?<br>" Is remediation strategy clear? |
-| **1.5 Data Protection Strategy** | 4 | " Is OneDrive KFM deployment well-designed?<br>" Are pre-migration checks included?<br>" Is 100% data preservation guarantee credible? |
+| **1.1 InTune Architecture Quality** | 8 | " Does the InTune architecture follow Microsoft best practices?<br>" Is the Azure AD join strategy appropriate?<br>" Are Autopilot profiles designed for all scenarios?<br>" Does the architecture align with Principles 1, 7, 8?<br>" Are C4 diagrams provided and clear? |
+| **1.2 Security and Zero Trust Design** | 8 | " Does the security design implement Zero Trust elements?<br>" Is Microsoft Security Baseline properly applied?<br>" Are device compliance policies comprehensive?<br>" Does the design align with Principle 2? |
+| **1.3 MOD Secure by Design Continuous Assurance Approach** (NEW v2.0) | 8 | " Does vendor demonstrate understanding of CAAT (NOT RMADS)?<br>" Is Three Lines of Defence governance model proposed (DTSL, Second Line, Third Line)?<br>" Is 3-month security preparation timeline (CAAT registration, BIA, threat model) accurate?<br>" Is continuous supplier attestation per ISN 2023/10 documented (Microsoft quarterly, hardware annually)?<br>" Does approach align with NFR-SEC-004, NFR-SEC-005, NFR-SEC-007?<br>" Are Security Governance Reviews (NOT IAA approval) proposed?<br>" Is continuous CAAT update schedule documented? |
+| **1.4 Migration Methodology** | 6 | " Is the phased rollout approach sound?<br>" Are wave sizes appropriate (500-1000)?<br>" Are pause/resume criteria defined?<br>" Is rollback capability described? |
+| **1.5 Application Compatibility Testing** | 3 | " Is the test lab approach appropriate?<br>" Is testing methodology comprehensive?<br>" Is ARM64 testing included for Copilot+ PCs?<br>" Is remediation strategy clear? |
+| **1.6 Data Protection Strategy** | 2 | " Is OneDrive KFM deployment well-designed?<br>" Are pre-migration checks included?<br>" Is 100% data preservation guarantee credible? |
 
-### Scoring Rubric
+### Scoring Rubric (General)
 
 | Score Range | Description |
 |-------------|-------------|
@@ -176,6 +181,18 @@ Technical proposals are scored **blind to cost** to ensure unbiased evaluation. 
 | **Adequate (60-74%)** | Meets most expectations; workable; some concerns; partial principle alignment |
 | **Weak (40-59%)** | Minimum expectations; significant concerns; poor principle alignment |
 | **Unacceptable (0-39%)** | Major flaws; unworkable approach; violates principles; high risk |
+
+### Detailed Scoring: Subcriterion 1.3 - MOD CAAT Continuous Assurance (8 points)
+
+**CRITICAL SUBCRITERION**: This evaluates vendor understanding of modern MOD Secure by Design continuous assurance framework (post-August 2023).
+
+| Score | Description | Indicators |
+|-------|-------------|------------|
+| **8 points (Excellent)** | Comprehensive understanding of CAAT continuous assurance framework with detailed implementation plan | • Explicitly proposes CAAT self-assessment (7 SbD Principles question sets) by Month 1<br>• Three Lines of Defence roles clearly defined (DTSL, Second Line, Third Line)<br>• 3-month security preparation timeline (Week 1: CAAT registration, Week 2: BIA, Month 1: self-assessment)<br>• Security Governance Reviews (Second Line) proposed instead of IAA approval<br>• Continuous supplier attestation schedule documented (Microsoft quarterly, hardware annually)<br>• Demonstrates understanding that CAAT ≠ RMADS<br>• References NFR-SEC-004, NFR-SEC-005, NFR-SEC-007 explicitly |
+| **6 points (Good)** | Good CAAT understanding with minor gaps | • Proposes CAAT but lacks detail on self-assessment process<br>• Three Lines of Defence mentioned but roles not fully defined<br>• Timeline generally correct but lacks granularity<br>• Some confusion between CAAT and legacy RMADS terminology |
+| **4 points (Adequate)** | Basic CAAT awareness but significant gaps | • Mentions CAAT but approach unclear<br>• Proposes some MOD security activities but misses key elements (e.g., BIA, Second Line)<br>• Timeline inaccurate (e.g., 6 months instead of 3 months)<br>• Conflates CAAT with RMADS processes |
+| **2 points (Weak)** | Minimal CAAT understanding, proposes deprecated RMADS approach | • Proposes RMADS documentation instead of CAAT self-assessment<br>• References IAA approval instead of Security Governance Review<br>• Proposes one-time supplier attestation instead of continuous<br>• Uses legacy IAO/IAA/Accreditation Authority terminology<br>• Timeline assumes 6-month accreditation process |
+| **0 points (Unacceptable)** | No MOD security approach OR fundamental misunderstanding | • No MOD Secure by Design approach documented<br>• Completely incorrect understanding of CAAT/continuous assurance<br>• Proposes non-compliant security approach |
 
 ---
 
@@ -199,10 +216,11 @@ Technical proposals are scored **blind to cost** to ensure unbiased evaluation. 
 
 | Subcriterion | Points | Evaluation Questions |
 |--------------|--------|---------------------|
-| **3.1 Key Personnel Qualifications** | 12 | " Do key personnel have strong Windows 11/InTune experience?<br>" Are Microsoft certifications current?<br>" Is team composition appropriate?<br>" Are Solution Architect and Technical Lead dedicated 50%+? |
-| **3.2 Team Size & Allocation** | 5 | " Is team size adequate for 24-month project?<br>" Are key personnel not spread thin?<br>" Are backup resources identified?<br>" Is on-site presence committed? |
-| **3.3 Domain Expertise** | 5 | " Does team have Windows 11 migration expertise?<br>" Have they solved similar challenges?<br>" Is InTune expertise deep? |
-| **3.4 Onshore/Offshore Model** | 3 | " Is the mix appropriate (min 70% onshore)?<br>" Are key roles 100% onshore as required?<br>" Is time zone coverage adequate? |
+| **3.1 Key Personnel Qualifications** | 10 | " Do key personnel have strong Windows 11/InTune experience?<br>" Are Microsoft certifications current?<br>" Is team composition appropriate?<br>" Are Solution Architect and Technical Lead dedicated 50%+? |
+| **3.2 MOD Security Roles (DTSL, Second Line, PSyO)** (NEW v2.0) | 7 | " Is **Delivery Team Security Lead (DTSL)** role filled by qualified individual with CAAT self-assessment experience (NOT just RMADS)?<br>" Does proposed DTSL have SC clearance and MOD project experience?<br>" Is **Second Line Technical Coherence Lead** identified for Security Governance Reviews?<br>" Is **PSyO (Project Security Officer)** role filled (may be combined with DTSL for OFFICIAL-SENSITIVE)?<br>" Do security roles demonstrate understanding of Three Lines of Defence model?<br>" Are CREST/CHECK pen testing coordinators identified? |
+| **3.3 Team Size & Allocation** | 4 | " Is team size adequate for 24-month project?<br>" Are key personnel not spread thin?<br>" Are backup resources identified?<br>" Is on-site presence committed? |
+| **3.4 Domain Expertise** | 3 | " Does team have Windows 11 migration expertise?<br>" Have they solved similar challenges?<br>" Is InTune expertise deep? |
+| **3.5 Onshore/UK-Based Model** | 1 | " Is the mix appropriate (min 70% onshore)?<br>" Are all MOD security roles 100% UK-based (MQ-11 requirement)?<br>" Is time zone coverage adequate? |
 
 ---
 
@@ -237,12 +255,12 @@ Technical proposals are scored **blind to cost** to ensure unbiased evaluation. 
 **Method**: **Lowest Price Best Value** (proportional scoring)
 
 - Lowest cost proposal receives **100 cost points**
-- **Formula**: `Cost Score = (Lowest Price / Vendor Price) � 100`
+- **Formula**: `Cost Score = (Lowest Price / Vendor Price) � 100`
 
 **Example**:
-- Vendor A: $1,500,000 � Cost Score = **100 points**
-- Vendor B: $1,800,000 � Cost Score = **83.3 points**
-- Vendor C: $2,000,000 � Cost Score = **75 points**
+- Vendor A: $1,500,000 � Cost Score = **100 points**
+- Vendor B: $1,800,000 � Cost Score = **83.3 points**
+- Vendor C: $2,000,000 � Cost Score = **75 points**
 
 ### 5.2 Cost Reasonableness Check
 
@@ -260,7 +278,7 @@ Finance evaluator verifies cost reasonableness before scoring:
 
 ### 6.1 Final Scoring Formula
 
-**Final Score = (Technical Score � 0.70) + (Cost Score � 0.30)**
+**Final Score = (Technical Score � 0.70) + (Cost Score � 0.30)**
 
 **Weights**: Technical 70%, Cost 30%
 
@@ -464,6 +482,7 @@ References do **NOT add points** but may:
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2025-10-15 | Enterprise Architecture Team + Procurement | Initial version for Windows 11 migration vendor selection |
+| **2.0** | **2025-10-21** | **Enterprise Architecture Team** | **CRITICAL UPDATE for SOW v3.0 alignment**:<br><br>**Section 3: Mandatory Qualifications**<br>• Added **MQ-11**: MOD Secure by Design Continuous Assurance Expertise (MANDATORY qualification)<br>• Vendors must demonstrate CAAT self-assessment experience (NOT legacy RMADS)<br>• Vendors must propose qualified DTSL (Delivery Team Security Lead) with SC clearance<br>• Vendors must have 2+ UK Gov/MOD projects (OFFICIAL/OFFICIAL-SENSITIVE)<br>• Vendors without UK Gov/MOD security experience will be DISQUALIFIED<br><br>**Section 4.2: Technical Solution**<br>• Added **Subcriterion 1.3** (8 points): MOD CAAT Continuous Assurance Approach<br>• Reweighted subcriteria (1.1: 10→8, 1.2: 9→8, 1.4: 7→6, 1.5: 5→3, 1.6: 4→2 to accommodate new 1.3)<br>• Added detailed scoring rubric for 1.3 distinguishing CAAT (post-Aug 2023) from legacy RMADS<br>• Vendors proposing RMADS (deprecated) will score 2/8 or 0/8 on subcriterion 1.3<br><br>**Section 4.4: Team Qualifications**<br>• Added **Subcriterion 3.2** (7 points): MOD Security Roles (DTSL, Second Line, PSyO)<br>• Reweighted subcriteria (3.1: 12→10, 3.2: 5→4, 3.3: 5→3, 3.4: 3→1 to accommodate new 3.2)<br>• DTSL role with CAAT experience (NOT just RMADS) is now critical evaluation criterion<br>• Second Line Technical Coherence Lead role added (NEW for continuous assurance)<br><br>**Rationale**: Updated to align with Requirements v4.0 (NFR-SEC-004/005/007 CAAT requirements), SOW v3.0 (CAAT continuous assurance framework), and MOD SbD Assessment v2.0. Post-August 2023 MOD framework replaced RMADS point-in-time accreditation with CAAT continuous assurance. Vendors must understand this fundamental shift or risk low scores/disqualification. |
 
 **Approvals**
 
