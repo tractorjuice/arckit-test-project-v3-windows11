@@ -2,11 +2,12 @@
 
 **Document Type**: Business and Technical Requirements
 **Project ID**: 001
-**Version**: 2.0
-**Date**: 2025-10-15
+**Version**: 3.0
+**Date**: 2025-10-21
 **Status**: DRAFT
 **Owner**: IT Operations & Enterprise Architecture
 **Stakeholders**: CIO, CISO, IT Operations, End Users, Finance, HR
+**Last Updated**: 2025-10-21 (Added MOD Secure by Design security requirements based on SbD assessment)
 
 ---
 
@@ -863,6 +864,400 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 
 ---
 
+#### NFR-SEC-004: Security Governance and MOD Secure by Design Compliance
+
+**Requirement**: Project must establish security governance structure aligned with JSP 440 Leaflet 5C Secure by Design (SbD) mandate and achieve accreditation readiness before Beta phase.
+
+**Source**: MOD Secure by Design Assessment (mod-secure-by-design.md) - Critical Finding #1-3
+
+**Security Governance Roles** (must appoint within Week 1):
+- [ ] **Delivery Team Security Lead**: CISO delegate or Senior Security Architect appointed to lead security design, threat modeling, security testing, and IAA liaison (JSP 440 Leaflet 5C mandatory requirement)
+- [ ] **Project Security Officer (PSyO)**: Dedicated role reporting to CISO to provide security oversight, RMADS preparation, and MOD Accreditation Service liaison (required for OFFICIAL-SENSITIVE data per JSP 440)
+- [ ] **Information Assurance Owner (IAO)**: IT Operations Director formally appointed as accountable for system security and risk acceptance
+- [ ] **Information Assurance Architect (IAA)**: MOD Accreditation Service engaged to assign independent security architecture reviewer (required for OFFICIAL-SENSITIVE systems)
+
+**Security Governance Framework**:
+- [ ] Security governance RACI matrix published (Responsible/Accountable/Consulted/Informed for each security control)
+- [ ] Security incident escalation matrix documented (when to notify CISO, IAO, MOD CERT, Accreditation Service)
+- [ ] Security risk acceptance authority defined (who can accept LOW/MEDIUM/HIGH/CRITICAL risks)
+- [ ] Monthly security review meetings scheduled with Steering Committee
+
+**Accreditation Requirements**:
+- [ ] MOD Accreditation Service engaged by Week 2
+- [ ] Security Aspects Letter (SAL) obtained from MOD Accreditation Service
+- [ ] RMADS (Risk Management and Accreditation Documentation Set) completed by Month 3
+- [ ] Interim or conditional accreditation obtained before pilot deployment
+- [ ] Full accreditation obtained after successful pilot (Month 6)
+- [ ] Annual re-accreditation process established for through-life assurance
+
+**Acceptance Criteria**:
+- [ ] Given security governance requirement, when Week 1 complete, then all 4 security roles appointed with documented responsibilities
+- [ ] Given MOD Accreditation Service engagement, when Week 2 complete, then IAA assigned and initial accreditation meeting held
+- [ ] Given RMADS documentation, when Month 3 complete, then RMADS submitted to IAA for review
+- [ ] Given accreditation readiness, when assessed, then 0 CRITICAL blockers remain and project ready for interim accreditation
+- [ ] Given pilot deployment, when authorized, then interim accreditation obtained and security monitoring operational
+
+**Priority**: CRITICAL (accreditation blocker)
+
+**Related Risks**: R-001 (Migration timeline slips), R-011 (GDPR non-compliance)
+
+**Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model)
+
+**SbD Compliance**: JSP 440 Leaflet 5C Principles 1-2 (Understand Context, Security from Start)
+
+---
+
+#### NFR-SEC-005: Threat Modeling and Security Architecture Approval
+
+**Requirement**: Formal threat model must be documented using STRIDE/DREAD methodology and security architecture must be approved by IAA before Beta phase.
+
+**Source**: MOD Secure by Design Assessment (mod-secure-by-design.md) - Critical Finding #4, #7
+
+**Threat Modeling Requirements**:
+- [ ] **Threat model documented by Month 1** using STRIDE methodology:
+  - **Spoofing**: Azure AD authentication bypass, device impersonation
+  - **Tampering**: InTune policy manipulation, BitLocker key theft
+  - **Repudiation**: Audit log deletion, non-attributable actions
+  - **Information Disclosure**: OFFICIAL-SENSITIVE data exfiltration, OneDrive data breach
+  - **Denial of Service**: InTune service disruption, device enrollment blocking
+  - **Elevation of Privilege**: Local admin compromise, Azure AD privilege escalation
+- [ ] **Threat actors analyzed**: Nation-state APT (Advanced Persistent Threat), insider threat (malicious employee/contractor), criminal ransomware gangs, hacktivist groups
+- [ ] **Attack vectors identified**: Supply chain compromise (SolarWinds-style), phishing/social engineering, unpatched vulnerabilities (CVEs), misconfigured Conditional Access policies
+- [ ] **Attack surface analysis**: InTune API endpoints, Azure AD authentication flows, OneDrive data storage, ServiceNow integration, third-party applications
+- [ ] **Threat ratings** calculated using DREAD:
+  - **Damage**: Impact if exploited (LOW/MEDIUM/HIGH/CRITICAL)
+  - **Reproducibility**: How easy to reproduce attack
+  - **Exploitability**: Skill/resources required
+  - **Affected Users**: Scope of impact
+  - **Discoverability**: How easy to discover vulnerability
+
+**Security Architecture Documentation**:
+- [ ] **Security architecture document** created including:
+  - Zero Trust architecture diagram (Conditional Access, BitLocker, Defender for Endpoint flows)
+  - Network architecture diagram (InTune, Azure AD, Defender, OneDrive, ServiceNow integration)
+  - Data flow diagram showing OFFICIAL-SENSITIVE data flows
+  - Security control mapping (threat → control → test evidence)
+  - MOD network integration architecture (firewall rules, PSN connectivity if applicable)
+- [ ] **Security architecture submitted to IAA for review** by Month 1
+- [ ] **IAA approval obtained** before proceeding to Beta phase
+- [ ] **Security architecture updates** require IAA re-approval for significant changes
+
+**Acceptance Criteria**:
+- [ ] Given threat model requirement, when Month 1 complete, then formal threat model documented with 20+ identified threats rated by DREAD
+- [ ] Given security architecture, when submitted to IAA, then architecture document includes diagrams, data flows, security controls, and threat mitigations
+- [ ] Given IAA review, when complete, then IAA approval obtained with 0 CRITICAL findings remaining
+- [ ] Given threat model updates, when new threats identified, then threat model updated quarterly and reviewed with Security Lead
+
+**Priority**: CRITICAL (accreditation blocker)
+
+**Dependencies**: NFR-SEC-004 (Security governance must be established first)
+
+**Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model)
+
+**SbD Compliance**: JSP 440 Leaflet 5C Principles 1-2 (Understand Context, Security from Start), NCSC Secure Design Principles
+
+---
+
+#### NFR-SEC-006: Security Testing and Penetration Testing
+
+**Requirement**: Comprehensive security testing including penetration testing must be completed before Beta phase using CREST or CHECK-approved vendors.
+
+**Source**: MOD Secure by Design Assessment (mod-secure-by-design.md) - Critical Finding #5, High Priority Action #1
+
+**Penetration Testing Requirements**:
+- [ ] **Penetration testing vendor**: Procure CREST-certified or CHECK-approved penetration testing vendor by Month 1 (required for MOD systems handling OFFICIAL-SENSITIVE data)
+- [ ] **Penetration testing scope**:
+  - InTune configuration and policy enforcement (can policies be bypassed?)
+  - Conditional Access policies (can authentication be bypassed?)
+  - Azure AD authentication flows (MFA bypass attempts)
+  - Defender for Endpoint detection/response (can it be disabled?)
+  - BitLocker encryption (can keys be stolen?)
+  - OneDrive Known Folder Move (can data be exfiltrated?)
+  - ServiceNow integration (API authentication security)
+  - Third-party application security (top 10 business apps)
+- [ ] **Penetration testing execution**: Complete by Month 2 with full report delivered
+- [ ] **Penetration testing remediation**: ALL CRITICAL findings remediated before Beta phase, HIGH findings remediated before production deployment
+- [ ] **Re-test after remediation**: Validate CRITICAL findings fixed before proceeding
+
+**Vulnerability Scanning Requirements**:
+- [ ] **Defender Vulnerability Management** enabled on all Windows 11 devices
+- [ ] **Vulnerability scanning schedule**: Weekly scans during Beta/production deployment, daily scans post-Live
+- [ ] **Vulnerability remediation SLAs**:
+  - **CRITICAL CVEs**: 7 days (e.g., actively exploited zero-days)
+  - **HIGH CVEs**: 30 days (e.g., remote code execution vulnerabilities)
+  - **MEDIUM CVEs**: 90 days (e.g., privilege escalation)
+  - **LOW CVEs**: Best effort (tracked but not SLA-bound)
+- [ ] **Vulnerability reporting**: Weekly vulnerability report to PSyO/IAO showing open CVEs by severity
+- [ ] **CVE exception process**: Documented process for accepting risk on un-remediatable vulnerabilities (requires IAO approval)
+
+**Security Testing Documentation**:
+- [ ] Penetration test report with executive summary, findings, remediation recommendations
+- [ ] Vulnerability scan reports (weekly) showing open CVEs and remediation status
+- [ ] Security testing remediation tracker (CRITICAL/HIGH findings → remediation actions → validation)
+
+**Acceptance Criteria**:
+- [ ] Given penetration testing requirement, when Month 2 complete, then penetration test executed with full report delivered
+- [ ] Given penetration test findings, when CRITICAL findings identified, then 100% CRITICAL findings remediated and re-tested before Beta
+- [ ] Given vulnerability scanning, when enabled, then weekly scans operational with vulnerability reports delivered to PSyO
+- [ ] Given CVE remediation, when CRITICAL CVE identified, then remediation completed within 7 days or IAO risk acceptance obtained
+
+**Priority**: CRITICAL (accreditation blocker)
+
+**Dependencies**: NFR-SEC-004 (PSyO appointed), NFR-SEC-005 (Security architecture documented)
+
+**Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model)
+
+**SbD Compliance**: JSP 440 Leaflet 5C Principle 5 (Continuously Manage Risk), NIST CSF Detect function
+
+---
+
+#### NFR-SEC-007: Supply Chain Security and Software Bill of Materials (SBOM)
+
+**Requirement**: Comprehensive supply chain security program must be established including Software Bill of Materials (SBOM), supplier security attestations per ISN 2023/10, and third-party risk assessments.
+
+**Source**: MOD Secure by Design Assessment (mod-secure-by-design.md) - Principle 6 (Secure Supply Chain) 15% compliance, Critical Finding
+
+**Software Bill of Materials (SBOM)**:
+- [ ] **SBOM created by Month 2** for ALL InTune-deployed applications using SPDX or CycloneDX format
+- [ ] **SBOM contents**: Application name/version, vendor, open source components, dependencies, known CVEs, license information
+- [ ] **SBOM maintenance**: SBOM updated whenever applications added/updated in InTune catalog
+- [ ] **SBOM vulnerability correlation**: Automated scanning of SBOM against NVD (National Vulnerability Database) for new CVEs
+- [ ] **SBOM storage**: SBOM repository maintained in version control (Git) with change tracking
+
+**Supplier Security Attestations (ISN 2023/10)**:
+- [ ] **Microsoft security attestation** obtained by Month 1 confirming:
+  - InTune, Azure AD, Defender for Endpoint, OneDrive meet Secure by Design principles
+  - Microsoft Azure UK South cloud is suitable for OFFICIAL-SENSITIVE data (or compensating controls documented)
+  - Microsoft supplier security practices meet MOD requirements
+- [ ] **Hardware vendor security attestations** obtained by Month 3 from Dell/HP/Lenovo confirming:
+  - Firmware security (UEFI Secure Boot signature validation, no backdoors)
+  - TPM 2.0 provenance (genuine TPM chips, not counterfeit)
+  - Supply chain security (components sourced from trusted suppliers)
+  - Hardware decommissioning support (CESG-approved data destruction guidance)
+
+**Third-Party Risk Assessments**:
+- [ ] **Microsoft third-party risk assessment** completed by Month 1:
+  - FedRAMP High certification status reviewed (US Government equivalent of MOD assurance)
+  - ISO 27001, ISO 27017, ISO 27018 certifications verified
+  - Microsoft Trustworthy Computing security documentation reviewed
+  - Microsoft cloud data residency confirmed (UK South region for OFFICIAL-SENSITIVE)
+- [ ] **Application vendor security questionnaires** completed for top 100 business applications:
+  - Vendor security practices (SDLC, pen testing, vulnerability management)
+  - Data handling and privacy compliance (GDPR, DPA 2018)
+  - Incident response capabilities
+  - Vendor security certifications (ISO 27001, SOC 2, Cyber Essentials Plus)
+
+**Supply Chain Attack Mitigations**:
+- [ ] **Supply chain attack threat model** documented (SolarWinds, Kaseya, Log4Shell scenarios)
+- [ ] **Supply chain monitoring**: Automated alerts for unexpected network connections from InTune-deployed apps
+- [ ] **Code signing verification**: All InTune-deployed applications verified with valid code signatures
+- [ ] **Open Source Software (OSS) vetting**: OSS components scanned for known vulnerabilities before deployment
+
+**Acceptance Criteria**:
+- [ ] Given SBOM requirement, when Month 2 complete, then SBOM created for 100% of InTune applications in SPDX format
+- [ ] Given supplier attestations, when Month 1 complete, then Microsoft security attestation obtained confirming SbD compliance
+- [ ] Given third-party risk assessments, when Month 3 complete, then security questionnaires completed for 100% of top 100 business applications
+- [ ] Given supply chain monitoring, when operational, then automated alerts configured for unexpected network connections from applications
+
+**Priority**: HIGH (accreditation requirement)
+
+**Dependencies**: NFR-SEC-004 (PSyO appointed to manage supplier attestations)
+
+**Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model)
+
+**SbD Compliance**: JSP 440 Leaflet 5C Principle 6 (Secure Supply Chain), ISN 2023/10 supplier attestation requirements
+
+---
+
+#### NFR-SEC-008: Incident Response and MOD CERT Integration
+
+**Requirement**: Comprehensive incident response capability must be established with documented incident response plan, playbooks, and integration with MOD CERT (Computer Emergency Response Team).
+
+**Source**: MOD Secure by Design Assessment (mod-secure-by-design.md) - NIST CSF Respond function 45% compliance, Critical Gap
+
+**Incident Response Plan**:
+- [ ] **Incident response plan documented by Month 2** including:
+  - Incident response team (roles, responsibilities, contact details)
+  - Incident severity classification (P1-Critical, P2-High, P3-Medium, P4-Low)
+  - Incident response phases: Detection → Containment → Eradication → Recovery → Lessons Learned
+  - Escalation criteria (when to notify CISO, IAO, MOD CERT, Accreditation Service, senior leadership)
+  - Communication protocols (internal notifications, user communications, regulatory reporting)
+- [ ] **Incident response playbooks** created for common scenarios:
+  - **Ransomware**: Device isolation, BitLocker key validation, OneDrive versioning recovery, user communication
+  - **Data breach**: Scope determination, OFFICIAL-SENSITIVE data exposure assessment, ICO notification (72 hours), user notification
+  - **Insider threat**: User access revocation, device wipe, forensic evidence preservation, HR/legal notification
+  - **Supply chain compromise**: Affected application identification via SBOM, incident correlation across devices, vendor notification
+  - **Phishing campaign**: User credential reset, MFA re-enrollment, security awareness training
+- [ ] **Incident response testing**: Tabletop exercise completed by Month 3 simulating ransomware incident
+
+**MOD CERT Integration**:
+- [ ] **MOD CERT contact details** documented (email, phone, secure reporting portal)
+- [ ] **MOD CERT reporting criteria** defined:
+  - P1/P2 security incidents involving OFFICIAL-SENSITIVE data → Report within 1 hour
+  - Data breach affecting >100 users → Report within 1 hour
+  - Nation-state APT indicators detected → Report immediately
+  - Supply chain compromise (e.g., InTune application backdoor) → Report immediately
+- [ ] **MOD CERT reporting process** documented:
+  - Initial notification (within SLA)
+  - Incident details (who, what, when, where, scope, impact)
+  - Containment actions taken
+  - Ongoing updates (every 4 hours for P1 incidents)
+  - Final incident report (within 5 business days)
+
+**Security Operations Centre (SOC) Integration**:
+- [ ] **SOC integration completed by Month 3**:
+  - InTune alerts forwarded to SOC (device compliance violations, policy failures)
+  - Defender for Endpoint alerts forwarded to SOC (malware detections, suspicious behavior)
+  - Azure AD Conditional Access alerts forwarded to SOC (authentication failures, impossible travel)
+  - ServiceNow security incidents integrated with SOC ticketing
+- [ ] **24/7 security monitoring**: SOC monitors alerts with defined SLAs:
+  - P1 (CRITICAL): 15-minute response time
+  - P2 (HIGH): 1-hour response time
+  - P3 (MEDIUM): 4-hour response time
+  - P4 (LOW): Next business day
+
+**Incident Response Metrics**:
+- [ ] Mean Time to Detect (MTTD): Target <1 hour for P1 incidents
+- [ ] Mean Time to Contain (MTTC): Target <4 hours for P1 incidents
+- [ ] Mean Time to Recover (MTTR): Target <24 hours for P1 incidents
+- [ ] Incident response plan testing: Tabletop exercise every 6 months, full simulation annually
+
+**Acceptance Criteria**:
+- [ ] Given incident response requirement, when Month 2 complete, then incident response plan documented with 5 playbooks created
+- [ ] Given MOD CERT integration, when Month 1 complete, then MOD CERT contact details documented and reporting criteria defined
+- [ ] Given SOC integration, when Month 3 complete, then InTune and Defender alerts forwarded to SOC with 24/7 monitoring operational
+- [ ] Given incident response testing, when tabletop exercise complete, then all team members know their roles and response times meet targets
+
+**Priority**: CRITICAL (accreditation requirement)
+
+**Dependencies**: NFR-SEC-004 (PSyO responsible for incident response plan), NFR-SEC-003 (Defender for Endpoint for detection)
+
+**Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model), Principle 15 (Incident Response and Rollback)
+
+**SbD Compliance**: JSP 440 Leaflet 5C Principle 7 (Through-Life Assurance), NIST CSF Respond function
+
+---
+
+#### NFR-SEC-009: Privileged Access Management (PAM) and Insider Threat Controls
+
+**Requirement**: Privileged Access Management (PAM) must be implemented for InTune administrators with just-in-time access, MFA, and insider threat monitoring via Azure AD Identity Protection.
+
+**Source**: MOD Secure by Design Assessment (mod-secure-by-design.md) - Defence in Depth gaps, Insider threat risk identified
+
+**Privileged Access Management (PAM)**:
+- [ ] **InTune administrator roles reviewed** and least privilege enforced:
+  - **Global Administrator**: Limit to 2-3 emergency break-glass accounts (stored in secure vault)
+  - **Intune Administrator**: Device management, policy deployment (10-15 users)
+  - **Helpdesk Administrator**: Read-only device info, remote help (20-30 users)
+  - **Security Administrator**: Conditional Access, Defender for Endpoint (5-10 users)
+  - **Custom roles**: Principle of least privilege (application deployment only, compliance only, etc.)
+- [ ] **Just-In-Time (JIT) access**: Privileged roles elevated only when needed via Azure AD Privileged Identity Management (PIM):
+  - Request approval required for Global Administrator elevation
+  - Time-limited elevation (4 hours maximum)
+  - MFA required for privilege activation
+  - Audit log of all privilege escalations
+- [ ] **Privileged workstations**: InTune administrators use dedicated Privileged Access Workstations (PAWs) or Azure AD Conditional Access requires compliant devices for admin roles
+- [ ] **Admin account separation**: Administrators use separate accounts for admin tasks (admin-john.doe@) vs regular work (john.doe@)
+
+**Insider Threat Monitoring**:
+- [ ] **Azure AD Identity Protection** enabled to detect risky user behavior:
+  - Impossible travel (user in London, then New York 1 hour later)
+  - Atypical travel (user normally in UK, suddenly signs in from Russia)
+  - Anonymous IP addresses (Tor, VPN, proxy usage)
+  - Leaked credentials (user password found in breach database)
+  - Unfamiliar sign-in properties (new device, new location, new browser)
+- [ ] **Defender for Endpoint behavioral analytics** detects:
+  - Mass file deletion (potential ransomware or data destruction)
+  - Unusual data exfiltration (large OneDrive uploads, USB transfers)
+  - Lateral movement (accessing devices/data outside normal scope)
+  - Privilege escalation attempts (local admin exploitation)
+- [ ] **User and Entity Behavior Analytics (UEBA)**: Azure Sentinel or Microsoft 365 Defender correlates user behavior across InTune, Azure AD, OneDrive, Defender to detect insider threats
+
+**Insider Threat Response**:
+- [ ] **Automated response** for high-risk users:
+  - User account disabled automatically if Identity Protection risk = HIGH
+  - Device isolated from network if Defender detects mass file deletion
+  - Alert to SOC and CISO for manual investigation
+- [ ] **Forensic evidence preservation**: Defender for Endpoint Live Response captures memory dump, running processes, network connections for investigation
+
+**Acceptance Criteria**:
+- [ ] Given PAM requirement, when Month 1 complete, then InTune admin roles reviewed with least privilege enforced and PIM configured for JIT access
+- [ ] Given insider threat monitoring, when Month 2 complete, then Azure AD Identity Protection and Defender behavioral analytics enabled with alerts forwarded to SOC
+- [ ] Given high-risk user detection, when Identity Protection detects impossible travel, then user account disabled automatically and SOC alerted for investigation
+- [ ] Given admin access audit, when monthly audit conducted, then 100% of privilege escalations logged with business justification
+
+**Priority**: HIGH (defence-in-depth control)
+
+**Dependencies**: NFR-SEC-003 (Defender for Endpoint), NFR-SEC-008 (SOC integration for alerts)
+
+**Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model)
+
+**SbD Compliance**: JSP 440 Leaflet 5C Principle 3 (Defence in Depth), NCSC Secure Design Principle 4 (Least Privilege)
+
+---
+
+#### NFR-SEC-010: Data Loss Prevention (DLP) for OFFICIAL-SENSITIVE Data
+
+**Requirement**: Data Loss Prevention (DLP) policies must be deployed to prevent unauthorized exfiltration of OFFICIAL-SENSITIVE data from OneDrive, email, and endpoints.
+
+**Source**: MOD Secure by Design Assessment (mod-secure-by-design.md) - Defence in Depth gap, Data Security control
+
+**DLP Policy Scope**:
+- [ ] **OneDrive DLP**: Prevent sharing of OFFICIAL-SENSITIVE documents externally
+  - Detect sensitive information types: UK National Insurance numbers, personnel records, security clearance data
+  - Block external sharing (share with anyone links)
+  - Require authentication for internal sharing
+  - Audit all sharing activities
+- [ ] **Email DLP (Exchange Online)**: Prevent sending OFFICIAL-SENSITIVE data to external email addresses
+  - Detect OFFICIAL-SENSITIVE keywords and patterns in email body/attachments
+  - Block or encrypt emails containing OFFICIAL-SENSITIVE data to external recipients
+  - Require manager approval for exceptions
+  - Audit all DLP policy violations
+- [ ] **Endpoint DLP (Defender for Endpoint)**: Prevent copying OFFICIAL-SENSITIVE data to USB drives, personal cloud storage, printers
+  - Detect OFFICIAL-SENSITIVE file transfers to removable media
+  - Block USB transfers (or require BitLocker To Go encryption)
+  - Block uploads to personal cloud storage (Dropbox, Google Drive, personal OneDrive)
+  - Audit all endpoint data transfers
+
+**DLP Sensitive Information Types**:
+- [ ] **UK-specific patterns**:
+  - UK National Insurance numbers (AB123456C format)
+  - UK passport numbers
+  - UK driver's license numbers
+  - Personnel security clearance levels (SC, DV keywords)
+- [ ] **Custom patterns**:
+  - "OFFICIAL-SENSITIVE" document classification markings
+  - Project codenames or classified project names
+  - Personnel records (employee ID + salary/performance data combinations)
+
+**DLP Policy Enforcement**:
+- [ ] **Policy tips**: Users warned before violating DLP policy (e.g., "You're sharing a document marked OFFICIAL-SENSITIVE externally")
+- [ ] **User education**: Users required to provide business justification for override requests
+- [ ] **Manager approval workflow**: Sensitive data sharing requires manager approval for legitimate business needs
+- [ ] **False positive feedback**: Users can report false positives to improve DLP accuracy
+
+**DLP Monitoring and Reporting**:
+- [ ] Weekly DLP report to CISO: Number of policy violations, top violators, data types at risk
+- [ ] Monthly DLP policy review: Tune policies based on false positives, add new sensitive information types
+- [ ] Integration with SOC: DLP alerts forwarded to SOC for investigation (potential data breach or insider threat)
+
+**Acceptance Criteria**:
+- [ ] Given DLP requirement, when Month 2 complete, then DLP policies deployed for OneDrive, Email, and Endpoints covering OFFICIAL-SENSITIVE data
+- [ ] Given OneDrive DLP, when user attempts external sharing of OFFICIAL-SENSITIVE document, then sharing blocked with policy tip displayed
+- [ ] Given Email DLP, when user sends email with UK National Insurance number to external recipient, then email blocked or encrypted
+- [ ] Given Endpoint DLP, when user copies OFFICIAL-SENSITIVE file to USB drive, then transfer blocked and alert sent to SOC
+- [ ] Given DLP monitoring, when policy violations occur, then weekly DLP report generated showing violations by user/data type
+
+**Priority**: HIGH (data protection control for OFFICIAL-SENSITIVE data)
+
+**Dependencies**: NFR-SEC-003 (Defender for Endpoint for endpoint DLP), NFR-SEC-008 (SOC for DLP alert monitoring)
+
+**Aligns with Architecture Principles**: Principle 2 (Zero Trust Security Model), Principle 12 (Data Protection)
+
+**SbD Compliance**: JSP 440 Leaflet 5C Principle 3 (Defence in Depth), GDPR/DPA 2018 data protection
+
+---
+
 ### Compliance and Regulatory Requirements
 
 #### NFR-C-001: Data Privacy Compliance (GDPR, CCPA)
@@ -1251,12 +1646,29 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 
 ### Appendix B: Reference Documents
 
+**Project Documentation**:
 - **Architecture Principles**: `.arckit/memory/architecture-principles.md` (18 principles governing this project)
+- **MOD Secure by Design Assessment**: `projects/001-windows-11-migration-intune/mod-secure-by-design.md` (Security assessment identifying 9 accreditation blockers - SOURCE for NFR-SEC-004 through NFR-SEC-010)
+- **Stakeholder Drivers**: `projects/001-windows-11-migration-intune/stakeholder-drivers.md` (Stakeholder goals and success criteria)
+- **Risk Register**: `projects/001-windows-11-migration-intune/risk-register.md` (HM Treasury Orange Book risk management)
+
+**MOD Security Standards**:
+- **JSP 440**: Defence Manual of Security (primary MOD security policy framework)
+- **JSP 440 Leaflet 5C**: Secure by Design mandate (effective August 2023)
+- **JSP 453**: Digital Policies and Standards for Defence (cloud-first, modern endpoint management)
+- **ISN 2023/09**: Secure by Design Requirements (industry guidance)
+- **ISN 2023/10**: Supplier Attestation and Legacy Accreditation Withdrawal
+- **NCSC Secure Design Principles**: https://www.ncsc.gov.uk/collection/cyber-security-design-principles
+- **NIST Cybersecurity Framework**: https://www.nist.gov/cyberframework (CSF v1.1: Identify, Protect, Detect, Respond, Recover)
+
+**Microsoft Documentation**:
 - **Microsoft Windows 11 Requirements**: https://learn.microsoft.com/windows/whats-new/windows-11-requirements
 - **Microsoft InTune Documentation**: https://learn.microsoft.com/mem/intune/
 - **Windows Autopilot Documentation**: https://learn.microsoft.com/autopilot/
 - **Copilot+ PC Requirements**: https://www.microsoft.com/windows/copilot-plus-pcs
 - **Microsoft Security Baselines**: https://learn.microsoft.com/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines
+- **Microsoft Defender for Endpoint**: https://learn.microsoft.com/microsoft-365/security/defender-endpoint/
+- **Azure AD Conditional Access**: https://learn.microsoft.com/entra/identity/conditional-access/
 
 ---
 
@@ -1266,6 +1678,7 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 |---------|------|--------|---------|
 | 1.0 | 2025-10-14 | Enterprise Architecture Team | Initial requirements with 8 BR, 5 FR, 7 NFR, 3 INT aligned with 18 architecture principles |
 | 2.0 | 2025-10-15 | Enterprise Architecture Team | Added 15 missing functional requirements (FR-006 to FR-020: Co-Management, GPO Migration, App Packaging, Security Baseline, Conditional Access, Defender Onboarding, Update Rings, App Testing Lab, User Communication, Helpdesk Training, Migration Dashboard, Rollback, ConfigMgr Decommission, Copilot+ Pilot, ARM64 Compatibility) and 5 missing non-functional requirements (NFR-A-001/002: Availability/DR, NFR-S-001/002: Scalability, NFR-M-001/002/003: Maintainability). Total: 8 BR, 20 FR, 12 NFR, 3 INT = 43 requirements |
+| 3.0 | 2025-10-21 | Enterprise Architecture Team | **MAJOR UPDATE**: Added 7 critical MOD Secure by Design (SbD) security requirements based on mod-secure-by-design.md assessment findings. New requirements: NFR-SEC-004 (Security Governance & JSP 440 Compliance - CRITICAL), NFR-SEC-005 (Threat Modeling & Security Architecture Approval - CRITICAL), NFR-SEC-006 (Security Testing & Penetration Testing - CRITICAL), NFR-SEC-007 (Supply Chain Security & SBOM - HIGH), NFR-SEC-008 (Incident Response & MOD CERT Integration - CRITICAL), NFR-SEC-009 (Privileged Access Management & Insider Threat - HIGH), NFR-SEC-010 (Data Loss Prevention for OFFICIAL-SENSITIVE - HIGH). These address 9 accreditation blockers identified in SbD assessment. Total: 8 BR, 20 FR, 19 NFR (10 security), 3 INT = 50 requirements. **Action Required**: Appoint Security Lead, PSyO, IAO by Week 1 to avoid project delays. |
 
 ---
 
