@@ -28,28 +28,43 @@
 **Secure by Design Maturity**: **Level 2 - Repeatable** (Target: Level 3 - Defined)
 
 **Critical Findings**:
-- ❌ **No Delivery Team Security Lead appointed** (JSP 440 Leaflet 5C requirement)
+- ❌ **Not registered on CAAT** (Cyber Activity and Assurance Tracker) - mandatory for all programmes
+- ❌ **No Delivery Team Security Lead (DTSL) appointed** (JSP 440 Leaflet 5C requirement - First Line of Defence)
 - ❌ **No Project Security Officer (PSyO) appointed** (required for OFFICIAL-SENSITIVE data)
+- ❌ **No Business Impact Assessment (BIA) completed** (required for CAAT self-assessment)
 - ❌ **No formal threat model documented** (NCSC/NIST CSF requirement)
+- ❌ **No supplier attestation obtained** (ISN 2023/10 requirement for supplier-delivered components)
 - ❌ **Supply chain security incomplete** (no SBOM, limited third-party assessment)
-- ⚠️ **Cloud accreditation status unclear** (Microsoft Azure UK Government unclear if MOD-assured)
+- ⚠️ **Cloud assurance status unclear** (Microsoft Azure UK South - need MOD-assured cloud confirmation)
 - ⚠️ **Insider threat controls not documented** (critical MOD concern)
 - ✅ **Strong GDPR compliance** (DPIA planned, data protection designed in)
 - ✅ **Comprehensive risk register** (HM Treasury Orange Book compliant)
 
-### Accreditation Readiness
+### Secure by Design Maturity and CAAT Assessment
 
-**Current Status**: ❌ **NOT READY for Security Accreditation**
+**Current SbD Maturity**: **Level 2 - Repeatable** (Target: Level 3 - Defined for Beta deployment)
 
-**Blockers for Accreditation**:
-1. No Delivery Team Security Lead appointed (CRITICAL)
-2. No PSyO appointed for OFFICIAL-SENSITIVE data handling (CRITICAL)
-3. No formal threat model or attack surface analysis (HIGH)
-4. No security testing completed (pen test, vulnerability scan) (HIGH)
-5. No supplier security attestations obtained (ISN 2023/10) (HIGH)
-6. No documented security architecture approved by IAA (HIGH)
+**CAAT Registration Status**: ❌ **NOT REGISTERED** (Mandatory for all MOD programmes from Discovery/Alpha)
 
-**Estimated Time to Accreditation Readiness**: 3-6 months (assuming immediate action)
+**Critical SbD Process Gaps**:
+1. ❌ Not registered on CAAT (Cyber Activity and Assurance Tracker) - CRITICAL
+2. ❌ No Delivery Team Security Lead (DTSL) appointed (CRITICAL - First Line of Defence)
+3. ❌ No PSyO appointed for OFFICIAL-SENSITIVE data handling (CRITICAL)
+4. ❌ No Business Impact Assessment (BIA) completed (CRITICAL for CAAT)
+5. ❌ No formal threat model or attack surface analysis (HIGH)
+6. ❌ No supplier security attestations obtained per ISN 2023/10 (HIGH)
+7. ⚠️ Security architecture designed but not subject to Security Governance Review (HIGH)
+
+**Continuous Assurance Approach (Post-August 2023)**:
+Since August 2023, MOD has replaced point-in-time RMADS accreditation with **continuous assurance** through the Secure by Design framework. This project must:
+- Register on CAAT and complete self-assessment question sets
+- Appoint Delivery Team Security Lead (DTSL) as First Line of Defence
+- Conduct continuous risk management (not one-time accreditation)
+- Obtain supplier attestation that systems are secure (for supplier-delivered components)
+- Undergo regular Security Governance Reviews (not single accreditation approval)
+- Maintain continuous security monitoring and testing throughout lifecycle
+
+**Estimated Time to SbD Readiness for Beta**: 2-3 months (assuming immediate action)
 
 ### Risk Summary
 
@@ -78,23 +93,29 @@
 ### Recommendations Summary
 
 **Critical Actions (0-30 days) - Must complete before proceeding to Beta**:
-1. Appoint Delivery Team Security Lead (CISO delegate) - Owner: CIO - Due: Week 1
-2. Appoint Project Security Officer (PSyO) for OFFICIAL-SENSITIVE data - Owner: CISO - Due: Week 1
-3. Engage MOD Accreditation Service / Information Assurance Authority - Owner: PSyO - Due: Week 2
-4. Complete formal threat model (STRIDE/DREAD methodology) - Owner: Security Lead - Due: Month 1
-5. Document security architecture and obtain IAA approval - Owner: Enterprise Architect - Due: Month 1
+1. **Register programme on CAAT** (Cyber Activity and Assurance Tracker) - Owner: CIO/SRO - Due: Week 1
+2. **Appoint Delivery Team Security Lead (DTSL)** as First Line of Defence - Owner: CIO - Due: Week 1
+3. **Appoint Project Security Officer (PSyO)** for OFFICIAL-SENSITIVE data - Owner: CISO - Due: Week 1
+4. **Complete Business Impact Assessment (BIA)** for CAAT - Owner: DTSL - Due: Week 2
+5. **Complete CAAT self-assessment** (7 SbD Principles question sets) - Owner: DTSL - Due: Month 1
+6. **Complete formal threat model** (STRIDE/DREAD methodology) - Owner: DTSL - Due: Month 1
+7. **Document security architecture** for Security Governance Review - Owner: Enterprise Architect - Due: Month 1
 
-**High Priority (1-3 months) - Required for accreditation**:
-1. Conduct penetration testing of InTune deployment - Owner: Security Lead - Due: Month 2
-2. Obtain Microsoft Azure UK Government cloud assurance documentation - Owner: PSyO - Due: Month 2
-3. Create Software Bill of Materials (SBOM) for all third-party components - Owner: IT Operations - Due: Month 2
-4. Implement insider threat monitoring (Azure AD Identity Protection, Defender for Endpoint) - Owner: CISO - Due: Month 3
-5. Obtain supplier security attestations (Microsoft, hardware vendors) per ISN 2023/10 - Owner: Procurement - Due: Month 3
+**High Priority (1-3 months) - Required for Security Governance Review**:
+1. **Conduct penetration testing** of InTune deployment - Owner: DTSL - Due: Month 2
+2. **Obtain supplier security attestations** (Microsoft, Dell/HP/Lenovo) per ISN 2023/10 - Owner: Procurement - Due: Month 2
+3. **Create Software Bill of Materials (SBOM)** for all third-party components - Owner: IT Operations - Due: Month 2
+4. **Verify Microsoft Azure UK Government cloud assurance** (MOD-assured cloud status) - Owner: PSyO - Due: Month 2
+5. **Implement insider threat monitoring** (Azure AD Identity Protection, Defender for Endpoint behavioral analytics) - Owner: CISO - Due: Month 3
+6. **Establish Second Line assurance process** (Technical Coherence reviews) - Owner: Enterprise Architect - Due: Month 3
+7. **Update CAAT continuously** as security controls implemented - Owner: DTSL - Due: Ongoing
 
-**Medium Priority (3-6 months) - Continuous improvement**:
-1. Establish Security Operations Centre (SOC) integration for InTune alerts - Owner: Security Lead - Due: Month 4
-2. Conduct red team exercise simulating nation-state attack - Owner: CISO - Due: Month 6
-3. Implement continuous security monitoring dashboard - Owner: IT Operations - Due: Month 4
+**Medium Priority (3-6 months) - Continuous assurance through-life**:
+1. **Establish Third Line independent audit** (internal audit, external pen testing) - Owner: Internal Audit - Due: Month 4
+2. **Implement continuous vulnerability scanning** (Defender Vulnerability Management) - Owner: IT Operations - Due: Month 4
+3. **Establish Security Governance Review cadence** (quarterly during Dev, annually in Live) - Owner: DTSL - Due: Month 4
+4. **Conduct red team exercise** simulating nation-state attack - Owner: CISO - Due: Month 6
+5. **Integrate with MOD Cyber Defence Operations** for 24/7 monitoring - Owner: DTSL - Due: Month 6
 
 ---
 
@@ -137,29 +158,83 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 
 ### 1.3 Security Governance Structure
 
-**Delivery Team Security Lead**: ❌ **NOT APPOINTED**
-- **Required**: Yes (JSP 440 Leaflet 5C mandatory for all SbD projects)
-- **Recommendation**: Appoint CISO delegate or Senior Security Architect as Security Lead (Week 1)
+**IMPORTANT: Post-August 2023 Changes**
+Since August 2023, MOD has transitioned from RMADS point-in-time accreditation to **Secure by Design continuous assurance** using the **Three Lines of Defence** model.
+
+#### CAAT (Cyber Activity and Assurance Tracker) Registration
+
+**CAAT Status**: ❌ **NOT REGISTERED**
+- **Required**: YES - All programmes MUST register on CAAT from Discovery/Alpha phase (JSP 440 Leaflet 5C)
+- **Purpose**: Self-assessment tool for cyber security maturity throughout lifecycle
+- **Access**: Available through MOD Secure by Design portal (requires DefenceGateway account)
+- **Action**: Register programme on CAAT immediately - Owner: CIO/SRO - Due: Week 1
+
+#### Three Lines of Defence Model
+
+**First Line of Defence: Delivery Team Owns Security**
+
+**Delivery Team Security Lead (DTSL)**: ❌ **NOT APPOINTED**
+- **Required**: YES (JSP 440 Leaflet 5C mandatory - First Line of Defence)
+- **Role**: Owns security for the delivery team, completes CAAT self-assessments, manages day-to-day security
+- **Recommendation**: Appoint CISO delegate or Senior Security Architect as DTSL (Week 1)
+- **Accountability**: Delivery team and capability owner accountable for security posture (not delegated to accreditation authority)
 
 **Project Security Officer (PSyO)**: ❌ **NOT APPOINTED**
-- **Required**: Yes (OFFICIAL-SENSITIVE data classification requires PSyO per JSP 440)
-- **Recommendation**: Appoint dedicated PSyO reporting to CISO (Week 1)
+- **Required**: YES (OFFICIAL-SENSITIVE data classification requires PSyO per JSP 440)
+- **Role**: Security subject matter expert for SECRET+ systems; for OFFICIAL-SENSITIVE, PSyO may be combined with DTSL role
+- **Recommendation**: Appoint dedicated PSyO or combine with DTSL role (Week 1)
 
-**Information Assurance Owner (IAO)**: ⚠️ **UNCLEAR** (likely IT Operations Director, but not documented)
-- **Required**: Yes (all MOD systems require IAO)
-- **Recommendation**: Formally appoint IT Operations Director as IAO (Week 1)
+**Senior Responsible Owner (SRO) / Capability Owner**: ⚠️ **UNCLEAR**
+- **Required**: YES - SROs and capability owners are **accountable** for security posture under SbD
+- **Responsibility**: Cannot delegate or trade out cyber security - it is a "licence to operate"
+- **Recommendation**: Formally document SRO (likely CIO) and capability owner (likely IT Operations Director) - Week 1
 
-**Information Assurance Architect (IAA)**: ❌ **NOT ENGAGED**
-- **Required**: Yes (OFFICIAL-SENSITIVE systems require IAA approval)
-- **Recommendation**: Engage MOD Accreditation Service to assign IAA (Week 2)
+**Second Line of Defence: Assurance and Oversight**
+
+**Technical Coherence Assurance**: ❌ **NOT ESTABLISHED**
+- **Required**: YES - Second Line provides assurance and oversight
+- **Role**: Independent security reviews, policy compliance, architecture governance
+- **Recommendation**: Establish Technical Coherence review process - Owner: Enterprise Architect - Month 3
+
+**Security Policies and Standards**: ⚠️ **PARTIALLY ESTABLISHED**
+- **Status**: JSP 440, JSP 453 referenced, but no project-specific security standards documented
+- **Recommendation**: Document project security standards and baselines - Owner: DTSL - Month 2
+
+**Third Line of Defence: Independent Audit**
+
+**Internal Audit**: ❌ **NOT PLANNED**
+- **Required**: YES - Third Line provides independent audit
+- **Role**: Audit security controls, validate CAAT self-assessments, provide assurance to SRO
+- **Recommendation**: Schedule internal audit for Month 4 (before Beta deployment) - Owner: Internal Audit
+
+**External Audit / Penetration Testing**: ❌ **NOT PLANNED**
+- **Required**: YES - Independent security testing by third parties
+- **Role**: Penetration testing, vulnerability assessment, red team exercises
+- **Recommendation**: Procure external pen testing for Month 2 - Owner: DTSL - Due: Month 2
+
+#### Legacy Roles (Pre-August 2023 - Now Deprecated)
+
+**Information Assurance Owner (IAO)**: ⚠️ **ROLE DEPRECATED**
+- **Note**: IAO role deprecated under SbD - replaced by SRO and capability owner accountability
+- **Current Status**: IT Operations Director acts as de facto capability owner
+
+**Information Assurance Architect (IAA)**: ⚠️ **ROLE DEPRECATED**
+- **Note**: IAA approval replaced by Security Governance Reviews (Second Line assurance)
+- **Current Status**: Security Architect performs this function informally
+
+**Accreditation Authority**: ⚠️ **ROLE DEPRECATED**
+- **Note**: Point-in-time accreditation replaced by continuous assurance and supplier attestation
+- **Current Status**: No longer required under SbD (supplier attests systems are secure)
 
 **Current Stakeholder Security Roles** (from stakeholder-drivers.md):
 - ✅ CISO identified (Security Executive)
 - ✅ Security Architect identified (Zero Trust design lead)
-- ❌ No Delivery Team Security Lead
-- ❌ No PSyO
-- ❌ No IAO formally appointed
-- ❌ No IAA engaged
+- ❌ No Delivery Team Security Lead (DTSL) - CRITICAL GAP
+- ❌ No PSyO appointed - CRITICAL GAP
+- ❌ No SRO/Capability Owner formally documented - CRITICAL GAP
+- ❌ No Second Line (Technical Coherence) established
+- ❌ No Third Line (Internal Audit) planned
+- ❌ Not registered on CAAT - CRITICAL GAP
 
 ### 1.4 Project Phase and Lifecycle
 
@@ -172,24 +247,57 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 - ✅ Risk register created (HM Treasury Orange Book compliant - risk-register.md)
 - ✅ Data model designed with GDPR compliance (data-model.md)
 - ✅ Stakeholder analysis completed (stakeholder-drivers.md)
-- ⚠️ Security architecture designed but not formally approved by IAA
+- ⚠️ Security architecture designed but not formally reviewed by Second Line
+- ❌ **NOT registered on CAAT** (CRITICAL GAP)
+- ❌ **CAAT self-assessment NOT completed** (CRITICAL GAP)
+- ❌ **Business Impact Assessment (BIA) NOT completed** (CRITICAL GAP)
 - ❌ Threat model NOT documented
 - ❌ Security testing NOT completed
-- ❌ RMADS documentation NOT started
+- ❌ Supplier attestations NOT obtained
 
 **Next Phase Requirements (Beta)**:
-- Appoint Security Lead and PSyO (CRITICAL)
-- Complete threat model (HIGH)
-- Obtain interim or conditional accreditation (HIGH)
-- Conduct security testing (pen test, vulnerability scan) (HIGH)
-- Pilot deployment with security monitoring (MEDIUM)
+- ❌ Register on CAAT (CRITICAL - Week 1)
+- ❌ Appoint DTSL and PSyO (CRITICAL - Week 1)
+- ❌ Complete Business Impact Assessment (CRITICAL - Week 2)
+- ❌ Complete CAAT self-assessment (7 SbD Principles) (CRITICAL - Month 1)
+- ❌ Complete threat model (HIGH - Month 1)
+- ❌ Conduct security testing (pen test, vulnerability scan) (HIGH - Month 2)
+- ❌ Security Governance Review (HIGH - Month 3)
+- ⚠️ Pilot deployment with continuous security monitoring (MEDIUM)
 
-**Expected Accreditation Timeline**:
-- Month 0-1: Appoint security governance, engage IAA, document security architecture
-- Month 1-2: Complete threat model, RMADS documentation, security testing
-- Month 2-3: Submit for accreditation review, remediate findings
-- Month 3-4: Obtain interim accreditation for pilot deployment
-- Month 6-9: Full accreditation after successful pilot (conditional on pilot success)
+**Continuous Assurance Timeline (Replaces Point-in-Time Accreditation)**:
+
+**Discovery/Alpha (Current - Month 0-1)**:
+- ✅ Requirements and risk register complete
+- ❌ Register on CAAT - Due: Week 1
+- ❌ Appoint DTSL, PSyO, SRO - Due: Week 1
+- ❌ Complete BIA - Due: Week 2
+- ❌ Complete CAAT self-assessment (initial) - Due: Month 1
+- ❌ Complete threat model - Due: Month 1
+
+**Beta (Pilot Deployment - Month 2-6)**:
+- ❌ Security testing (pen test, vuln scan) - Due: Month 2
+- ❌ Obtain supplier attestations (Microsoft, hardware vendors) - Due: Month 2
+- ❌ Security Governance Review (Second Line) - Due: Month 3
+- ❌ Establish continuous monitoring (Defender, SIEM) - Due: Month 3
+- ❌ Internal audit (Third Line) - Due: Month 4
+- ⚠️ Pilot deployment (500-1000 devices) with lessons learned
+- ❌ Update CAAT continuously as controls implemented
+
+**Live (Production Deployment - Month 7-18)**:
+- Phased rollout (20+ waves, 500-1000 devices/wave)
+- Continuous CAAT updates as deployment progresses
+- Quarterly Security Governance Reviews
+- Continuous vulnerability scanning and threat monitoring
+- Annual penetration testing
+- Supplier continuous attestation (ongoing through-life)
+
+**Through-Life (Post-Deployment - Month 19+)**:
+- Annual CAAT self-assessment updates
+- Annual Security Governance Reviews
+- Continuous risk management and incident response
+- Regular security audits (Third Line)
+- Decommissioning security (secure data deletion when replaced)
 
 ### 1.5 Deployment Environment
 
@@ -565,10 +673,29 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 - **Impact**: Cannot identify vulnerable components during Log4Shell-style supply chain incidents
 
 **Supplier Security Attestations (ISN 2023/10)**:
+
+**CRITICAL: Post-August 2023 Requirement**
+ISN 2023/10 (Industry Security Notice) mandates that **suppliers must attest that systems are secure**. This is a fundamental shift from MOD-led accreditation to supplier-owned continuous assurance.
+
 - ❌ No supplier attestations obtained from Microsoft or hardware vendors
-- ❌ No contractual requirement for suppliers to attest systems are secure
-- ⚠️ ISN 2023/10 requires suppliers to attest that systems meet SbD principles - not implemented
-- **Impact**: Cannot demonstrate supply chain security compliance to MOD Accreditation Service
+- ❌ No contractual requirement for suppliers to attest systems are secure per ISN 2023/10
+- ❌ ISN 2023/10 requirements not flowed down to procurement contracts
+- ❌ No supplier continuous assurance process established (ongoing through-life)
+- **Impact**: Non-compliance with ISN 2023/10 - supplier attestation is **mandatory** for SbD
+
+**ISN 2023/10 Requirements**:
+1. **Suppliers must attest** that delivered systems meet MOD Secure by Design principles
+2. Supplier attestation replaces legacy MOD-led accreditation for supplier-delivered systems
+3. Attestation must be **continuous** (not one-time) - suppliers re-attest as systems evolve
+4. Attestation must cover: security architecture, threat model, security testing, vulnerability management
+5. Suppliers must demonstrate ongoing security posture maintenance
+
+**Suppliers Requiring Attestation**:
+- **Microsoft** (InTune, Azure AD, Defender for Endpoint, OneDrive, Windows 11 OS)
+- **Hardware vendors** (Dell, HP, Lenovo - TPM, firmware, BIOS security)
+- **Third-party ISVs** (top 100 business applications deployed via InTune)
+
+**Current Status**: ❌ ZERO supplier attestations obtained - CRITICAL NON-COMPLIANCE
 
 **Open Source Software (OSS) Security**:
 - ❌ No OSS vetting process documented
@@ -1143,7 +1270,7 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 
 | Role | Assigned | Status | Responsibilities |
 |------|----------|--------|------------------|
-| Project Security Officer (PSyO) | ❌ NOT APPOINTED | NON-COMPLIANT | Security oversight, RMADS preparation, liaise with Accreditation Service |
+| Project Security Officer (PSyO) | ❌ NOT APPOINTED | NON-COMPLIANT | Security oversight, CAAT self-assessment, liaise with Security Governance (Second Line) |
 | Information Assurance Architect (IAA) | ❌ NOT ENGAGED | NON-COMPLIANT | Independent security architecture review and approval |
 | Enterprise Architect | ✅ Assigned (requirements.md line 75) | COMPLIANT | Architecture governance, principle enforcement |
 | CISO | ✅ Assigned (requirements.md line 73) | COMPLIANT | Security policy, compliance approval |
@@ -1170,7 +1297,7 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 **MOD Accreditation Service Engagement**:
 - ❌ No engagement with MOD Accreditation Service documented
 - ❌ No Security Aspects Letter (SAL) obtained
-- ❌ No RMADS (Risk Management and Accreditation Documentation Set) preparation started
+- ❌ No CAAT (Cyber Activity and Assurance Tracker) registration or self-assessment started
 - ❌ No accreditation timeline planned
 
 **Gaps**:
@@ -1231,7 +1358,7 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 
 **External Audit (Accreditation)**:
 - ❌ No MOD Accreditation Service audit scheduled
-- ❌ No RMADS documentation submitted for review
+- ❌ No CAAT self-assessment completed or submitted for Security Governance Review
 - ❌ No interim or conditional accreditation obtained
 - **Recommendation**: Engage MOD Accreditation Service immediately to start accreditation process (3-6 month lead time)
 
@@ -1258,7 +1385,7 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 | Procure CREST/CHECK-approved penetration testing vendor | CRITICAL | PSyO | Month 1 |
 | Conduct penetration testing of InTune deployment | CRITICAL | PSyO | Month 2 |
 | Document vulnerability scanning process with remediation SLAs | HIGH | IT Operations | Month 2 |
-| Schedule MOD Accreditation Service audit (submit RMADS) | CRITICAL | PSyO | Month 3 |
+| Schedule Security Governance Review (Second Line assurance) | CRITICAL | DTSL | Month 3 |
 | Plan internal ISMS audit (if ISO 27001 certified) | MEDIUM | CISO | Month 6 |
 
 ---
@@ -1335,7 +1462,7 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 | 6 | No supplier security attestations (ISN 2023/10) | Supply Chain | HIGH | 3 weeks | Procurement |
 | 7 | No security architecture approval from IAA | Governance | HIGH | 4 weeks | Enterprise Architect |
 | 8 | No incident response plan documented | Process | HIGH | 3 weeks | PSyO |
-| 9 | No RMADS documentation started | Governance | HIGH | 6 weeks | PSyO |
+| 9 | No CAAT self-assessment completed | Governance | HIGH | 4 weeks | DTSL |
 
 **Estimated Time to Accreditation Readiness**: **3-6 months**
 
@@ -1350,7 +1477,8 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 2. **Month 1-2: Complete Security Documentation**
    - Complete threat model (STRIDE/DREAD)
    - Document security architecture and submit for IAA review
-   - Start RMADS documentation (Business Impact Assessment, Risk Assessment, Security Operating Procedures)
+   - Complete CAAT self-assessment (7 SbD Principles question sets)
+   - Complete Business Impact Assessment (BIA)
    - Obtain supplier security attestations (Microsoft, hardware vendors)
    - Create incident response plan
 
@@ -1358,25 +1486,26 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
    - Conduct penetration testing (CREST/CHECK vendor)
    - Remediate pen test findings
    - Implement continuous vulnerability scanning
-   - Complete RMADS documentation
-   - Submit RMADS to IAA for review
+   - Update CAAT with implemented security controls
+   - Submit for Security Governance Review (Second Line assurance)
 
-4. **Month 3-4: Accreditation Review and Remediation**
-   - IAA reviews RMADS and security architecture
-   - Remediate IAA findings
-   - Obtain Security Aspects Letter (SAL)
-   - Obtain interim or conditional accreditation for pilot deployment
-
-5. **Month 4-6: Pilot Deployment Under Interim Accreditation**
+4. **Month 3-4: Security Governance Review and Remediation**
+   - Second Line conducts Security Governance Review
+   - Remediate findings from Security Governance Review
+   - Third Line internal audit (validate CAAT self-assessment)
+5. **Month 4-6: Pilot Deployment Under Continuous Assurance**
    - Deploy pilot wave (50-100 devices) with enhanced security monitoring
    - Demonstrate security controls operational
    - No security incidents during pilot
-   - Obtain full accreditation after successful pilot
+   - Update CAAT with pilot outcomes and lessons learned
+   - Continuous security monitoring and attestation
 
-6. **Month 6+: Full Deployment Under Accreditation**
-   - Phased deployment waves with security monitoring
-   - Quarterly re-assessment of security posture
-   - Annual re-accreditation (or as required by SAL)
+6. **Month 6+: Full Deployment Under Continuous Assurance**
+   - Phased deployment waves with continuous security monitoring
+   - Quarterly Security Governance Reviews
+   - Continuous CAAT updates as deployment progresses
+   - Annual penetration testing and security audits
+   - Ongoing supplier attestation (continuous through-life)
 
 ---
 
@@ -1422,7 +1551,7 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 | # | Recommendation | Owner | Due Date | Effort | Success Criteria |
 |---|----------------|-------|----------|--------|------------------|
 | C-1 | **Appoint Delivery Team Security Lead** (CISO delegate or Senior Security Architect) - JSP 440 Leaflet 5C mandatory requirement | CIO | Week 1 | 1 day | Security Lead formally appointed with documented role, responsibilities, and RACI |
-| C-2 | **Appoint Project Security Officer (PSyO)** for OFFICIAL-SENSITIVE data handling - JSP 440 requirement | CISO | Week 1 | 1 day | PSyO formally appointed, reporting to CISO, with RMADS preparation responsibility |
+| C-2 | **Appoint Project Security Officer (PSyO)** for OFFICIAL-SENSITIVE data handling - JSP 440 requirement | CISO | Week 1 | 1 day | PSyO formally appointed, reporting to CISO, with CAAT self-assessment responsibility |
 | C-3 | **Formally appoint IAO** (IT Operations Director as Information Assurance Owner) | CISO | Week 1 | 1 day | IAO formally appointed with documented accountability for system security and risk acceptance |
 | C-4 | **Engage MOD Accreditation Service** to assign IAA (Information Assurance Architect) | PSyO | Week 2 | 2 weeks | IAA assigned, initial meeting held, accreditation pathway agreed |
 | C-5 | **Complete formal threat model** using STRIDE/DREAD methodology (nation-state, insider, criminal, supply chain threats) | Security Lead | Month 1 | 2 weeks | Threat model documented, attack vectors identified, mitigations mapped to threats |
@@ -1430,14 +1559,14 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 | C-7 | **Obtain supplier security attestations** from Microsoft per ISN 2023/10 (InTune, Azure, Defender) | Procurement | Month 1 | 2 weeks | Microsoft security attestation obtained, compliance with SbD principles confirmed |
 | C-8 | **Verify MOD-assured cloud status** for Microsoft Azure UK South or implement compensating controls | PSyO | Month 1 | 3 weeks | Azure UK South MOD assurance confirmed OR compensating controls documented and approved by IAA |
 | C-9 | **Document MOD network integration** (firewall rules, PSN connectivity, network segmentation from operational networks) | Security Architect | Month 1 | 3 weeks | Network architecture diagram, firewall rules, MOD network integration approved by IAA |
-| C-10 | **Start RMADS documentation** (Business Impact Assessment, Risk Assessment, Security Operating Procedures) | PSyO | Month 1 | 4 weeks | RMADS outline complete, BIA draft complete, template sections populated |
+| C-10 | **Complete CAAT self-assessment** (7 SbD Principles question sets) and Business Impact Assessment (BIA) | DTSL | Month 1 | 3 weeks | CAAT self-assessment submitted, BIA complete, security maturity baseline established |
 
 **Critical Priority Success Metrics**:
 - ✅ All 10 critical actions completed by Month 1
 - ✅ Security governance established (Security Lead, PSyO, IAO, IAA assigned)
 - ✅ Threat model and security architecture documented
 - ✅ MOD Accreditation Service engaged and accreditation pathway agreed
-- ✅ RMADS documentation in progress
+- ✅ CAAT self-assessment in progress
 
 ---
 
@@ -1459,7 +1588,7 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 | H-10 | **Document patch testing and emergency patching process** for Windows Update via InTune update rings | IT Operations | Month 2 | 2 weeks | Patch testing workflow documented, emergency patch SLA defined (24hr for CRITICAL CVEs) |
 | H-11 | **Add CYBER risk category** to risk register with nation-state and insider threat risks | Security Lead | Month 1 | 1 week | Risk register updated with 5+ cyber risks (nation-state APT, insider threat, ransomware, supply chain, DDoS) |
 | H-12 | **Document MOD CERT integration** and security incident reporting process | PSyO | Month 1 | 1 week | MOD CERT contact details, incident escalation matrix, reporting SLAs documented |
-| H-13 | **Complete RMADS documentation** (all sections) and submit to IAA for review | PSyO | Month 3 | 6 weeks total | RMADS submitted to IAA, review meeting scheduled, interim accreditation pathway agreed |
+| H-13 | **Complete security governance review** and submit to Second Line for assurance | DTSL | Month 3 | 4 weeks total | Security documentation submitted for Second Line review, Security Governance Review scheduled |
 | H-14 | **Create Information Security Policy** and security standards (password, access control, encryption, incident response) | CISO | Month 2 | 3 weeks | Information Security Policy approved by CIO, security standards published to staff |
 | H-15 | **Define risk acceptance authority matrix** (who can accept LOW/MEDIUM/HIGH/CRITICAL risks) | PSyO | Month 1 | 1 week | Risk acceptance authority documented (e.g., CISO accepts HIGH, CIO accepts CRITICAL) |
 
@@ -1468,7 +1597,7 @@ The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the
 - ✅ Security testing completed (penetration test passed)
 - ✅ Incident response capability operational (IR plan, SOC, MOD CERT)
 - ✅ Supply chain security improved (SBOM, supplier attestations, hardware assessments)
-- ✅ RMADS submitted to IAA for accreditation review
+- ✅ Security documentation submitted for Security Governance Review (Second Line)
 
 ---
 
@@ -1576,7 +1705,7 @@ This project **CANNOT proceed to Beta phase pilot deployment** without resolving
 - Document security architecture for IAA review
 - Obtain Microsoft supplier security attestations
 - Verify Azure UK South MOD-assured cloud status
-- Start RMADS documentation
+- Complete CAAT self-assessment
 - Add CYBER risks to risk register
 - Create Information Security Policy
 
@@ -1586,19 +1715,20 @@ This project **CANNOT proceed to Beta phase pilot deployment** without resolving
 - Document incident response plan with playbooks
 - Implement DLP policies for OFFICIAL-SENSITIVE data
 - Document patch testing and emergency patching
-- Complete RMADS documentation
+- Update CAAT with implemented controls
 
-**Month 3 (Accreditation Submission)**:
+**Month 3 (Security Governance Review)**:
 - Remediate penetration test findings
 - Establish SOC integration (24/7 monitoring)
-- Submit RMADS to IAA for review
+- Submit for Security Governance Review (Second Line assurance)
 - Obtain hardware vendor security assessments
 - Implement continuous vulnerability scanning
-- Obtain interim/conditional accreditation for pilot
+- Complete Third Line internal audit
 
 **SUCCESS CRITERIA**:
-- ✅ Interim accreditation obtained by Month 3
-- ✅ Pilot deployment authorized with security monitoring
+- ✅ Security Governance Review completed by Month 3
+- ✅ CAAT self-assessment up-to-date with implemented controls
+- ✅ Pilot deployment authorized under continuous assurance framework
 - ✅ All CRITICAL and HIGH recommendations completed
 
 ---
@@ -1612,13 +1742,13 @@ This project **CANNOT proceed to Beta phase pilot deployment** without resolving
 - Interim accreditation de-risks full deployment (can pause if security issues emerge)
 - Demonstrates continuous assurance approach (aligned with SbD principle 7)
 
-**Accreditation Milestones**:
-- **Month 1**: IAA assigned, security architecture reviewed
-- **Month 2**: Penetration testing completed, RMADS drafted
-- **Month 3**: RMADS submitted, interim accreditation obtained
-- **Month 4-6**: Pilot deployment under interim accreditation with enhanced monitoring
-- **Month 6**: Full accreditation obtained after successful pilot (no security incidents, all controls operational)
-- **Ongoing**: Annual re-accreditation or as required by Security Aspects Letter
+**Continuous Assurance Milestones**:
+- **Month 1**: DTSL appointed, CAAT registered, BIA and threat model completed
+- **Month 2**: Penetration testing completed, CAAT self-assessment updated with controls
+- **Month 3**: Security Governance Review completed (Second Line), Third Line audit passed
+- **Month 4-6**: Pilot deployment under continuous assurance with enhanced monitoring
+- **Month 6**: Pilot validated (no security incidents, all controls operational), scale to production approved
+- **Ongoing**: Quarterly Security Governance Reviews, annual pen testing, continuous CAAT updates, supplier attestation
 
 ---
 
@@ -1635,7 +1765,7 @@ This project **CANNOT proceed to Beta phase pilot deployment** without resolving
 - ✅ Threat model documented
 - ✅ Security architecture approved by IAA
 - ✅ Incident response plan approved
-- ✅ RMADS submitted to IAA
+- ✅ CAAT self-assessment submitted and continuously updated
 - ✅ Information Security Policy published
 
 **Testing Metrics** (Target: 100% by Month 3):
@@ -1695,6 +1825,7 @@ This project has **strong technical security foundations** (Zero Trust architect
 | CSF | Cybersecurity Framework (NIST) |
 | CVE | Common Vulnerabilities and Exposures |
 | DLP | Data Loss Prevention |
+| DTSL | Delivery Team Security Lead (First Line of Defence role) |
 | DPIA | Data Protection Impact Assessment |
 | DPO | Data Protection Officer |
 | DREAD | Damage, Reproducibility, Exploitability, Affected Users, Discoverability (threat rating) |
@@ -1722,7 +1853,8 @@ This project has **strong technical security foundations** (Zero Trust architect
 | PSN | Public Services Network (UK government network) |
 | PSyO | Project Security Officer (security oversight role) |
 | RACI | Responsible, Accountable, Consulted, Informed (responsibility matrix) |
-| RMADS | Risk Management and Accreditation Documentation Set |
+| CAAT | Cyber Activity and Assurance Tracker (self-assessment tool) |
+| RMADS | Risk Management and Accreditation Documentation Set (deprecated - replaced by CAAT post-August 2023) |
 | RPO | Recovery Point Objective (maximum acceptable data loss) |
 | RTO | Recovery Time Objective (maximum acceptable downtime) |
 | SAL | Security Aspects Letter (accreditation approval document) |
