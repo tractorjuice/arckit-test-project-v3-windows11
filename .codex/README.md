@@ -51,25 +51,31 @@ Codex CLI uses the format `/prompts:command-name` to invoke custom commands.
 # Phase 2: Stakeholder Analysis (NEW - v0.2.1)
 /prompts:arckit.stakeholders Analyze stakeholders for cloud migration project
 
-# Phase 3: Define Requirements
+# Phase 3: Risk Assessment (NEW - v0.2.4)
+/prompts:arckit.risk Create risk register for payment gateway using Orange Book
+
+# Phase 4: Business Case (NEW - v0.2.3)
+/prompts:arckit.sobc Create Strategic Outline Business Case for payment gateway
+
+# Phase 5: Define Requirements
 /prompts:arckit.requirements Create requirements for payment gateway modernization
 
-# Phase 4: Vendor Selection
+# Phase 6: Vendor Selection
 /prompts:arckit.sow Generate RFP statement of work
 /prompts:arckit.evaluate Score vendors against requirements
 
-# Phase 5: Design Reviews
+# Phase 7: Design Reviews
 /prompts:arckit.hld-review Review high-level design for scalability
 /prompts:arckit.dld-review Review detailed design for security
 
-# Phase 6: Compliance & Security
+# Phase 8: Compliance & Security
 /prompts:arckit.secure UK Government Secure by Design review
 /prompts:arckit.mod-secure MOD Secure by Design review
 /prompts:arckit.tcop Technology Code of Practice assessment
 /prompts:arckit.atrs AI Transparency Risk Standards assessment
 /prompts:arckit.ai-playbook AI Playbook compliance check
 
-# Phase 7: Analysis & Visualization
+# Phase 9: Analysis & Visualization
 /prompts:arckit.analyze Analyze architecture for complexity
 /prompts:arckit.diagram Generate architecture diagrams
 /prompts:arckit.wardley Create Wardley map for digital services
@@ -101,7 +107,51 @@ Creates: `projects/001-project-name/stakeholder-drivers.md`
 - Conflict analysis and resolutions
 - RACI matrix
 
-### 3. Requirements (Informed by Stakeholders)
+### 3. Risk Assessment (NEW - v0.2.4)
+
+```bash
+/prompts:arckit.risk Create risk register for cloud migration project
+```
+
+Creates: `projects/001-project-name/risk-register.md`
+
+**Follows HM Treasury Orange Book 2023:**
+- Part I: 5 Risk Management Principles (Governance, Integration, Collaboration, Risk Processes, Continual Improvement)
+- Part II: Risk Control Framework (4-pillar structure)
+- 6 risk categories: Strategic, Operational, Financial, Compliance, Reputational, Technology
+- 4Ts response: Tolerate, Treat, Transfer, Terminate
+- Inherent vs Residual risk (5×5 matrix: Likelihood × Impact)
+
+**Complete stakeholder integration:**
+- Every risk has owner from RACI matrix
+- Risks link to stakeholder concerns/conflicts
+- Risk appetite compliance monitoring
+
+**Feeds into SOBC:**
+- Strategic Case: Strategic risks show urgency
+- Economic Case: Financial risks inform cost contingency
+- Management Case Part E: Full risk register
+
+### 4. Business Case (NEW - v0.2.3)
+
+```bash
+/prompts:arckit.sobc Create SOBC for cloud migration with £2M investment
+```
+
+Creates: `projects/001-project-name/sobc.md`
+
+**Follows HM Treasury Green Book 5-case model:**
+- Strategic Case (problem, drivers, stakeholder goals)
+- Economic Case (options analysis, benefits mapping, NPV, ROI)
+- Commercial Case (procurement strategy, Digital Marketplace)
+- Financial Case (budget, funding, affordability)
+- Management Case (governance, delivery, change, benefits realization - uses risk register)
+
+**Complete traceability to stakeholders:**
+- All benefits trace to stakeholder goals
+- All risks linked to stakeholder conflicts
+
+### 5. Requirements (Informed by Stakeholders)
 
 ```bash
 /prompts:arckit.requirements Create requirements for the cloud migration project
@@ -113,7 +163,7 @@ Creates: `projects/001-project-name/requirements.md`
 - Example: "BR-001 addresses CFO's goal G-1: Reduce infrastructure costs 40%"
 - Documents requirement conflicts and resolutions
 
-### 4. Vendor RFP
+### 6. Vendor RFP
 
 ```bash
 /prompts:arckit.sow Generate statement of work for cloud migration RFP
@@ -121,7 +171,7 @@ Creates: `projects/001-project-name/requirements.md`
 
 Creates: `projects/001-project-name/sow.md`
 
-### 5. Design Reviews
+### 7. Design Reviews
 
 ```bash
 /prompts:arckit.hld-review Review the high-level design for our microservices architecture
@@ -265,9 +315,14 @@ chmod +x .arckit/scripts/bash/*.sh
 
 ## Version
 
-ArcKit v0.2.1 (17 commands)
+ArcKit v0.2.2 (17 commands)
 
-**What's New in v0.2.1:**
+**What's New in v0.2.2:**
+- 🤖 Added OpenAI Codex CLI support with `.codex/` folder structure
+- 📚 Comprehensive `.codex/README.md` setup and usage guide
+- 🔄 All 17 ArcKit commands available in Codex format
+
+**What was New in v0.2.1:**
 - ✨ Added `/prompts:arckit.stakeholders` command for stakeholder driver analysis
 - 🔄 Updated requirements workflow to prioritize stakeholder analysis
 - 🤝 Added conflict resolution framework for competing stakeholder drivers
