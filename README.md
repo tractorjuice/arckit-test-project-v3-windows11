@@ -1,6 +1,6 @@
 # ArcKit - Enterprise Architecture Governance Toolkit
 
-![ArcKit v0.3.2 - Secure By Design + Data Modelling](docs/assets/arckit-v0.3.2-banner.png)
+![ArcKit v0.3.3 - Token Limit Fix](docs/assets/arckit-v0.3.2-banner.png)
 
 **Build better enterprise architecture through structured governance, vendor procurement, and design review workflows.**
 
@@ -11,6 +11,7 @@ ArcKit is a toolkit for enterprise architects that transforms architecture gover
 - 💼 Business case justification (HM Treasury Green Book SOBC)
 - 📋 Creating comprehensive requirements documents
 - 🗄️ Data modeling with ERD, GDPR compliance, and data governance
+- 🔬 Technology research with build vs buy analysis (web search powered)
 - 🗺️ Strategic planning with Wardley Mapping
 - 📊 Generating visual architecture diagrams (Mermaid)
 - 🤝 Managing vendor RFP and selection processes
@@ -37,7 +38,7 @@ uv tool install arckit-cli --from git+https://github.com/tractorjuice/arc-kit.gi
 uvx --from git+https://github.com/tractorjuice/arc-kit.git arckit init my-project
 ```
 
-**Latest Release**: [v0.2.2](https://github.com/tractorjuice/arc-kit/releases/tag/v0.2.2)
+**Latest Release**: [v0.3.3](https://github.com/tractorjuice/arc-kit/releases/tag/v0.3.3)
 
 ### Initialize a Project
 
@@ -140,7 +141,22 @@ Create data model based on Data Requirements (DR-xxx):
 - Data quality framework with measurable metrics
 - Requirements traceability (DR-xxx → Entity → Attribute)
 
-### Phase 6: Strategic Planning with Wardley Mapping
+### Phase 6: Technology Research
+**`/arckit.research`** → Research technology, services, and products
+
+Research available solutions to meet requirements with build vs buy analysis:
+- Dynamic category detection from requirements (authentication, payments, databases, etc.)
+- Commercial SaaS options with pricing, reviews, and ratings (WebSearch)
+- Open source alternatives with GitHub stats and community maturity
+- UK Government GOV.UK platforms (One Login, Pay, Notify, Forms)
+- Digital Marketplace suppliers (G-Cloud, DOS)
+- Total Cost of Ownership (TCO) comparison (3-year)
+- Build vs Buy vs Adopt recommendations
+- Vendor shortlisting for deeper evaluation
+- Integration with Wardley mapping (evolution positioning)
+- Feeds into SOBC Economic Case (cost data, options analysis)
+
+### Phase 7: Strategic Planning with Wardley Mapping
 **`/arckit.wardley`** → Create strategic Wardley Maps
 
 Visualize strategic positioning with:
@@ -150,7 +166,7 @@ Visualize strategic positioning with:
 - UK Government Digital Marketplace mapping
 - Evolution predictions and strategic gameplay
 
-### Phase 7: Vendor Procurement (if needed)
+### Phase 8: Vendor Procurement (if needed)
 **`/arckit.sow`** → Generate Statement of Work (RFP)
 
 Create RFP-ready documents with:
@@ -176,7 +192,7 @@ Side-by-side analysis of:
 - Risk assessments
 - Value propositions
 
-### Phase 8: Design Review
+### Phase 9: Design Review
 **`/arckit.hld-review`** → Review High-Level Design
 
 Validate designs against:
@@ -195,7 +211,7 @@ Implementation-ready validation:
 - Security implementation
 - Test strategy
 
-### Phase 9: ServiceNow Service Management Design
+### Phase 10: ServiceNow Service Management Design
 **`/arckit.servicenow`** → Generate ServiceNow service design
 
 Bridge architecture to operations:
@@ -206,7 +222,7 @@ Bridge architecture to operations:
 - Monitoring and alerting plan
 - Service transition plan
 
-### Phase 10: Traceability
+### Phase 11: Traceability
 **`/arckit.traceability`** → Generate traceability matrix
 
 Ensure complete coverage:
@@ -296,28 +312,31 @@ fraud detection
 # 7. Create data model with ERD and GDPR compliance
 /arckit.data-model Create data model for payment gateway with PCI-DSS compliance
 
-# 8. Create strategic Wardley Map for build vs buy decisions
+# 8. Research technology options with build vs buy analysis
+/arckit.research Research technology options for payment gateway - analyze authentication, payments, databases, monitoring
+
+# 9. Create strategic Wardley Map for build vs buy decisions
 /arckit.wardley Create current state Wardley Map for payment gateway showing build vs buy strategy
 
-# 9. Generate SOW for vendor RFP
+# 10. Generate SOW for vendor RFP
 /arckit.sow Generate RFP for vendor selection with 12-month timeline and $2M budget
 
-# 10. After receiving vendor proposals...
+# 11. After receiving vendor proposals...
 /arckit.evaluate Create evaluation framework
 
-# 11. Score vendors
+# 12. Score vendors
 /arckit.evaluate Compare all vendors for payment gateway project
 
-# 12. Review selected vendor's HLD
+# 13. Review selected vendor's HLD
 /arckit.hld-review Review Acme Corp's high-level design
 
-# 13. Review detailed design
+# 14. Review detailed design
 /arckit.dld-review Review Acme Corp's detailed design for payment service
 
-# 14. Design ServiceNow service management
+# 15. Design ServiceNow service management
 /arckit.servicenow Generate ServiceNow design for payment gateway service
 
-# 15. Ensure traceability
+# 16. Ensure traceability
 /arckit.traceability Generate matrix from requirements through design to tests
 ```
 
@@ -382,6 +401,8 @@ payment-modernization/
 | `/arckit.sobc` | Create Strategic Outline Business Case (Green Book 5-case) | `projects/XXX/sobc.md` |
 | `/arckit.requirements` | Define comprehensive requirements | `projects/XXX/requirements.md` |
 | `/arckit.data-model` | Create data model with ERD, GDPR compliance, data governance | `projects/XXX/data-model.md` |
+| `/arckit.research` | Research technology, services, and products with build vs buy analysis | `projects/XXX/research-findings.md` |
+| `/arckit.wardley` | Create strategic Wardley Maps for build vs buy and procurement strategy | `projects/XXX/wardley-maps/{map-name}.md` |
 | `/arckit.sow` | Generate vendor RFP | `projects/XXX/sow.md` |
 
 ### Vendor Management
@@ -396,12 +417,6 @@ payment-modernization/
 |---------|---------|--------|
 | `/arckit.hld-review` | Review high-level design | `projects/XXX/vendors/[vendor]/reviews/hld-review.md` |
 | `/arckit.dld-review` | Review detailed design | `projects/XXX/vendors/[vendor]/reviews/dld-review.md` |
-
-### Strategic Planning
-
-| Command | Purpose | Output |
-|---------|---------|--------|
-| `/arckit.wardley` | Create strategic Wardley Maps for build vs buy and procurement strategy | `projects/XXX/wardley-maps/{map-name}.md` |
 
 ### Architecture Diagrams
 
@@ -1152,11 +1167,65 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 ---
 
+## Troubleshooting
+
+### Token Limit Error
+
+If you see: `API Error: Claude's response exceeded the 32000 output token maximum`
+
+**The Problem**: ArcKit generates large documents that can exceed Claude's 32K token output limit.
+
+**⚠️ IMPORTANT**: Your Claude subscription plan determines the maximum tokens:
+- 🔴 Free/Pro plans: **32K max** (cannot be increased)
+- ✅ Team/Enterprise plans: Can increase to 64K via environment variable
+
+**Solutions**:
+
+1. **For Team/Enterprise plans** - Increase token limit:
+   ```bash
+   export CLAUDE_CODE_MAX_OUTPUT_TOKENS=64000
+   ```
+
+2. **For ALL plans** (including Free/Pro) - Use **Write tool strategy**:
+   ```
+   User: /arckit.requirements but write directly to file using Write tool, show me only a summary
+   ```
+
+   This tells Claude to use the Write tool to create the file (doesn't count toward output tokens) and only show you a summary.
+
+**Which commands are affected?**
+- 🔴 HIGH RISK: `/arckit.research`, `/arckit.sobc`, `/arckit.requirements`, `/arckit.data-model`, `/arckit.sow`
+- 🟡 MEDIUM RISK: `/arckit.risk`, `/arckit.evaluation`, `/arckit.principles`
+
+**See full guide**: [docs/TOKEN-LIMITS.md](docs/TOKEN-LIMITS.md)
+
+### Common Issues
+
+**Command not found**: Ensure Claude Code is installed and commands are loaded
+```bash
+# Check if .claude/commands/ directory exists
+ls .claude/commands/
+```
+
+**Template not found**: Ensure you've run `/arckit.principles` first
+```bash
+# Check if templates exist
+ls templates/
+```
+
+**Project creation fails**: Ensure you have an ArcKit repository initialized
+```bash
+# Initialize if needed
+arckit init .
+```
+
+---
+
 ## Support
 
 - **Issues**: [GitHub Issues](https://github.com/tractorjuice/arc-kit/issues)
 - **Releases**: [GitHub Releases](https://github.com/tractorjuice/arc-kit/releases)
-- **Latest Version**: [v0.2.2](https://github.com/tractorjuice/arc-kit/releases/tag/v0.2.2)
+- **Latest Version**: [v0.3.3](https://github.com/tractorjuice/arc-kit/releases/tag/v0.3.3)
 
 ---
 
