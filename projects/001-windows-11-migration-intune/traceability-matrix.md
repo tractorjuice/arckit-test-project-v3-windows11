@@ -148,6 +148,68 @@
 
 ---
 
+## 2.5 Benefits Traceability
+
+**Purpose**: Links £7.9M quantified benefits (from SOBC v1.1) to requirements and stakeholder goals, ensuring benefits realization is traceable and measurable.
+
+**Benefits Overview** (from Strategic Outline Business Case v1.1):
+- **Total Expected Benefits**: £7.9M over 3 years
+- **Total Investment**: £4.2M
+- **Net Benefit**: £3.7M
+- **NPV (3.5% discount)**: £3.2M
+- **ROI**: 88% over 3 years
+- **Payback Period**: 16 months
+
+### 2.5.1 Benefits Traceability Table
+
+| Benefit ID | Benefit Description | Value (3 years) | Realization Timeline | Linked Requirements | Linked Stakeholder Goals | Measurement Approach | Owner | Status |
+|------------|---------------------|-----------------|----------------------|---------------------|--------------------------|----------------------|-------|--------|
+| **B-001** | **Infrastructure Cost Reduction** - ConfigMgr decommissioning (license savings: £180K/year, infrastructure savings: £40K/year on-prem servers) | **£4.5M** | Year 1: £0.5M<br>Year 2: £1.8M<br>Year 3: £2.2M | BR-002 (Cloud-Native Management)<br>BR-003 (Cost Optimization)<br>FR-018 (ConfigMgr Decommissioning) | **CFO**: Reduce IT operating costs by 15%<br>**CIO**: Eliminate on-prem infrastructure maintenance burden | **Financial Metric**: Actual license cancellations (ConfigMgr, SQL Server, on-prem hardware depreciation)<br>**Baseline**: £220K/year current ConfigMgr TCO<br>**Milestone**: Y2 Q4 - ConfigMgr fully decommissioned | CFO + IT Operations | � Planned (SOW Month 18) |
+| **B-002** | **Productivity Gains** - Automated provisioning (50 hours/month saved), self-service password reset (30 hours/month saved), reduced support tickets (20% reduction) | **£1.0M** | Year 1: £0.2M<br>Year 2: £0.4M<br>Year 3: £0.4M | BR-004 (User Productivity)<br>FR-002 (Autopilot Provisioning)<br>FR-016 (Migration Dashboard)<br>NFR-P-001 (Autopilot <30 min) | **IT Operations Director**: Reduce manual provisioning from 4 hours to <30 minutes per device<br>**Head of User Experience**: Improve employee satisfaction (onboarding speed) | **Operational Metric**: InTune Autopilot provisioning time (target <30 min vs. current 4 hours manual)<br>**Support Metric**: Helpdesk ticket volume reduction (baseline: 150 tickets/month, target: 120 tickets/month)<br>**Milestone**: Y1 Q4 - 50% of new devices via Autopilot | IT Operations Director | � Planned (SOW Month 12) |
+| **B-003** | **Risk Reduction** - Cyber insurance renewal enabled (£500K/year avoided premium increase), compliance maintained (£1M/year avoided regulatory fines) | **£1.5M** | Year 1: £0.5M<br>Year 2: £0.5M<br>Year 3: £0.5M | BR-001 (Security Compliance)<br>BR-006 (Regulatory Compliance)<br>NFR-SEC-001 (MFA Enforcement)<br>NFR-SEC-002 (BitLocker Encryption)<br>NFR-C-001 (Data Privacy Compliance) | **CISO**: Achieve 100% Windows 11 adoption by Jan 2026 (Windows 10 EOL Oct 2025)<br>**Legal/Compliance Director**: Maintain GDPR compliance, avoid regulatory fines | **Risk Metric**: % devices on supported OS (target: 100% Windows 11 by Jan 2026)<br>**Compliance Metric**: Cyber insurance policy renewal (binary: renewed/not renewed)<br>**Audit Metric**: Zero critical audit findings related to unsupported OS<br>**Milestone**: M6 - 95% migration complete (Month 22) | CISO + Legal/Compliance | ⚠️ **CRITICAL** (Windows 10 EOL Oct 2025) |
+| **B-004** | **Strategic Value** - Cloud transformation enablement (£300K), talent retention (£200K/year avoided recruitment costs), AI enablement via Copilot+ PCs (£400K future productivity) | **£0.9M** | Year 1: £0.1M<br>Year 2: £0.3M<br>Year 3: £0.5M | BR-005 (Hardware Modernization)<br>FR-019 (Copilot+ PC Pilot)<br>FR-020 (ARM64 App Compatibility) | **CTO**: Enable AI-ready workforce (Copilot+ PC pilot for 200 knowledge workers)<br>**Head of IT Infrastructure**: Transition to 100% cloud-native endpoint management | **Strategic Metric**: % of workforce on Copilot+ PCs (target: 15% by Y3)<br>**Talent Metric**: IT staff retention rate (target: >90%)<br>**Cloud Metric**: % endpoints managed by cloud-native tools (target: 100%)<br>**Milestone**: Y2 Q2 - Copilot+ PC pilot complete (200 devices) | CTO + Head of IT Infrastructure | � Planned (SOW Month 18) |
+
+**Total Benefits**: £7.9M
+
+### 2.5.2 Benefits Realization Risk Assessment
+
+| Benefit | Dependency | Risk | Likelihood | Impact | Mitigation |
+|---------|------------|------|------------|--------|------------|
+| **B-001 (£4.5M)** | ConfigMgr decommissioning by Month 18 | Delayed decommissioning due to app compatibility issues | MEDIUM | HIGH | FR-018 requires phased decommissioning plan, app compatibility testing (FR-013), rollback capability (FR-017) |
+| **B-002 (£1.0M)** | Autopilot adoption >80% for new devices | Users opt for manual provisioning (old habits) | LOW | MEDIUM | BR-007 (Change Management) requires user training (FR-014), communication plan, executive sponsorship |
+| **B-003 (£1.5M)** | 95% migration by Jan 2026 (before Windows 10 EOL Oct 2025) | Pilot phase failures cause schedule delays | MEDIUM | CRITICAL | BR-008 (Phased Rollout) requires pilot success criteria, pause/resume gates, dedicated project manager |
+| **B-004 (£0.9M)** | Copilot+ PC pilot success (200 devices) | ARM64 app compatibility issues block adoption | MEDIUM | MEDIUM | FR-020 (ARM64 App Compatibility Testing) required before pilot, vendor engagement for x64 emulation, fallback to x64 devices |
+
+### 2.5.3 Benefits Measurement Dashboard
+
+**Proposed Power BI Dashboard Metrics** (aligned with FR-016: Migration Dashboard):
+
+1. **Financial Benefits Tracker**
+   - ConfigMgr license savings (monthly): Actual vs. Target
+   - Infrastructure cost reduction (quarterly): Actual vs. £4.5M target
+   - Helpdesk FTE savings (monthly): Ticket volume trend
+
+2. **Productivity Metrics**
+   - Autopilot provisioning time: Actual vs. 30-minute SLA
+   - Helpdesk ticket volume: Actual vs. 20% reduction target
+   - User satisfaction score: Onboarding experience rating (1-5 scale)
+
+3. **Risk Reduction Metrics**
+   - % devices on Windows 11: Actual vs. 100% by Jan 2026
+   - Compliance score: InTune compliance policy pass rate
+   - Security incidents: Defender for Endpoint alert trends
+
+4. **Strategic Value Metrics**
+   - Copilot+ PC adoption: Actual vs. 15% target (200 devices)
+   - IT staff retention rate: Actual vs. 90% target
+   - Cloud-native endpoint %: Actual vs. 100% target
+
+**Dashboard Owner**: IT Operations Director
+**Update Frequency**: Weekly during migration (Months 9-22), Monthly post-migration
+**Stakeholder Access**: Executive Leadership Team, Project Steering Committee
+
+---
+
 ## 3. Backward Traceability: Tests � Design � Requirements
 
 ### 3.1 Test Coverage Analysis

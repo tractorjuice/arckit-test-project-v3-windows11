@@ -3,7 +3,7 @@
 **Project**: Windows 11 Migration with Microsoft InTune
 **Project ID**: 001
 **Assessment Date**: 2025-10-21
-**Assessment Version**: 1.0
+**Assessment Version**: 2.0
 **Assessor**: Enterprise Security Architect
 **Review Status**: DRAFT
 **Next Review Date**: 2025-11-21
@@ -1698,7 +1698,287 @@ This project **CANNOT proceed to Beta phase pilot deployment** without resolving
 
 ---
 
-### 7.3 Short-Term Roadmap (Months 1-3)
+### 7.3 CAAT Registration Action Plan (6-Week Detailed Timeline)
+
+**Context**: The Cyber Activity and Assurance Tracker (CAAT) is MOD's mandatory self-assessment platform for continuous assurance. All programmes must register on CAAT from Discovery/Alpha phase and continuously update their security posture.
+
+**CRITICAL**: CAAT registration is currently BLOCKING - this is finding **MOD1 (HIGH priority)** from governance analysis.
+
+**Registration Pre-requisites**:
+1. Delivery Team Security Lead (DTSL) appointed (leads CAAT registration)
+2. Business Impact Assessment (BIA) completed
+3. Project metadata available (name, phase, classification, stakeholder contacts)
+
+**Expected Registration Timeline**: 6 weeks from DTSL appointment to first CAAT submission
+
+---
+
+#### Week 1: Governance Setup and CAAT Account Creation
+
+**Day 1-2: Appoint Delivery Team Security Lead (DTSL)**
+- **Owner**: CIO
+- **Action**: Appoint Senior Security Architect or CISO delegate as DTSL (First Line of Defence)
+- **Deliverable**: DTSL appointment letter/email, RACI matrix updated
+- **Criteria**: DTSL must have SC clearance (minimum), security architecture experience, authority to make security decisions
+
+**Day 3-5: CAAT Account Registration**
+- **Owner**: DTSL
+- **Action**:
+  1. Access CAAT platform via MOD Digital intranet (requires MOD network access)
+  2. Create programme record: "Windows 11 Migration with InTune (Project 001)"
+  3. Complete programme metadata:
+     - **Programme Name**: Windows 10 to Windows 11 Migration with Cloud-Native Endpoint Management
+     - **Organization**: Defence Digital (or applicable MOD organization)
+     - **Data Classification**: OFFICIAL-SENSITIVE
+     - **Project Phase**: Alpha (design complete, implementation pending)
+     - **Deployment Environment**: Microsoft Azure Cloud (UK South region)
+     - **Scale**: 6,000 devices, 24-month migration
+     - **SRO**: CIO [NAME]
+     - **IAO**: IT Operations Director [NAME]
+     - **DTSL**: [NAME] (newly appointed)
+     - **PSyO**: [NAME] (newly appointed)
+  4. Invite stakeholders to CAAT (IAO, PSyO, Security Architect, Project Manager)
+- **Deliverable**: CAAT programme ID generated, stakeholder access confirmed
+- **Pre-filled Content** (from existing project artifacts):
+  - Project scope and objectives: Copy from SOBC Executive Summary
+  - Stakeholder list: Copy from stakeholder-drivers.md RACI matrix
+  - Data classification: OFFICIAL-SENSITIVE (personnel records, device inventory, operational data)
+
+---
+
+#### Week 2: Business Impact Assessment (BIA)
+
+**Day 6-10: Complete Business Impact Assessment (BIA)**
+- **Owner**: DTSL with IT Operations Director input
+- **Action**: Complete BIA questionnaire in CAAT covering:
+  1. **Confidentiality Impact** (OFFICIAL-SENSITIVE data breach):
+     - Impact Level: **MODERATE** (personnel data, organizational structure, device locations disclosed)
+     - Justification: Contains PII (user profiles, email addresses) and operational data (device locations, security configurations)
+  2. **Integrity Impact** (data corruption/tampering):
+     - Impact Level: **MODERATE** (corrupted compliance policies could prevent security enforcement)
+     - Justification: InTune policy tampering could disable BitLocker, Defender, Conditional Access
+  3. **Availability Impact** (service outage):
+     - Impact Level: **MODERATE** (InTune outage prevents new device provisioning, policy updates)
+     - Justification: 24-hour RTO acceptable (existing devices continue working), but new hires cannot be provisioned
+  4. **Business Continuity**:
+     - RPO: 24 hours (InTune configuration backup frequency)
+     - RTO: 24 hours (restore InTune tenant from Azure backup)
+     - Continuity Plan: Fallback to manual provisioning (documented in DRP)
+- **Deliverable**: BIA completed in CAAT, CIA ratings documented
+- **Pre-filled Content**:
+  - Confidentiality justification: Reference DR-003 (User Profile PII), DR-006 (Audit Logs), data-model.md entities
+  - Integrity justification: Reference NFR-SEC-002 (BitLocker), FR-005 (Compliance Policies)
+  - Availability justification: Reference NFR-A-001 (InTune 99.9% SLA), Disaster Recovery Plan
+
+---
+
+#### Week 3-4: Threat Modeling and Risk Assessment (CAAT Principle 1)
+
+**Day 11-15: Document Threat Model in CAAT**
+- **Owner**: DTSL with Security Architect
+- **Action**: Complete threat modeling using STRIDE methodology in CAAT:
+  1. **Asset Inventory**:
+     - 6,000 Windows devices (laptops, desktops)
+     - InTune management tenant (Azure cloud)
+     - OFFICIAL-SENSITIVE data (user profiles, device inventory, audit logs)
+     - Microsoft Graph API credentials (OAuth 2.0 tokens)
+  2. **Threat Actors**:
+     - Nation-state APTs (targeting MOD supply chain)
+     - Cybercriminals (ransomware, data exfiltration)
+     - Malicious insiders (privileged IT staff)
+     - Accidental insiders (phishing victims, misconfiguration)
+  3. **STRIDE Threat Categories**:
+     - **Spoofing**: Stolen Azure AD credentials grant unauthorized InTune access → MFA mitigates
+     - **Tampering**: InTune policy modification disables security controls → RBAC + Audit Logs mitigate
+     - **Repudiation**: Unauthorized policy changes with no audit trail → Azure AD audit logs (7-year retention) mitigate
+     - **Information Disclosure**: PII data breach via InTune console → Conditional Access, DLP policies mitigate
+     - **Denial of Service**: InTune API throttling prevents policy deployment → Azure SLA 99.9%, rate limiting acceptable
+     - **Elevation of Privilege**: Compromised Global Admin account grants full tenant control → PIM (just-in-time access) mitigates
+  4. **Threat Likelihood & Impact** (DREAD scoring):
+     - Cloud data sovereignty (Medium/Medium) → MEDIUM risk
+     - Supply chain compromise (High/Possible) → HIGH risk
+     - Insider threat (High/Unlikely) → MEDIUM risk
+- **Deliverable**: Threat model documented in CAAT, threat library populated
+- **Pre-filled Content**:
+  - Asset inventory: Reference data-model.md (13 entities), requirements.md DR-001 to DR-008
+  - Existing threats: Reference risk-register.md CYBER-001 to CYBER-006
+  - Security controls: Reference mod-secure-by-design.md Section 2 (Zero Trust architecture)
+
+**Day 16-20: Map Existing Risks to CAAT**
+- **Owner**: DTSL
+- **Action**: Import 22 risks from risk-register.md into CAAT:
+  - CYBER-001 to CYBER-006 (security risks)
+  - MAP to NIST CSF categories (Identify, Protect, Detect, Respond, Recover)
+  - Link mitigations to CAAT security controls
+- **Deliverable**: Risk register synchronized between risk-register.md and CAAT
+- **Pre-filled Content**: Copy entire risk-register.md Section 3 (22 risks with 4Ts responses)
+
+---
+
+#### Week 5: Complete CAAT Self-Assessment (7 SbD Principles)
+
+**Day 21-25: Answer CAAT Question Sets for 7 SbD Principles**
+- **Owner**: DTSL with Enterprise Architect
+- **Action**: Complete CAAT self-assessment questionnaire (approximately 100 questions across 7 principles):
+
+**Principle 1: Establish Context Before Designing a System**
+- **Q**: Have you completed a Business Impact Assessment (BIA)?
+  - **A**: Yes (Week 2 deliverable)
+- **Q**: Have you identified all stakeholders and their security concerns?
+  - **A**: Yes (stakeholder-drivers.md with 12 stakeholders, RACI matrix)
+- **Q**: Have you classified the data handled by the system?
+  - **A**: Yes (OFFICIAL-SENSITIVE - data-model.md with 13 entities, GDPR compliance)
+- **Evidence**: BIA report, stakeholder-drivers.md, data-model.md
+
+**Principle 2: Make Compromise Difficult**
+- **Q**: Have you implemented Zero Trust architecture?
+  - **A**: Yes (Conditional Access, device attestation, least privilege RBAC)
+- **Q**: Are all endpoints encrypted?
+  - **A**: Yes (BitLocker AES-256 with TPM 2.0 - NFR-SEC-002)
+- **Q**: Is MFA enforced for all users?
+  - **A**: Yes (Azure AD Conditional Access - NFR-SEC-001)
+- **Evidence**: mod-secure-by-design.md Section 2.2, requirements.md NFR-SEC-001/002/003
+
+**Principle 3: Make Disruption Difficult**
+- **Q**: What is your RTO/RPO for critical services?
+  - **A**: RTO: 24 hours, RPO: 24 hours (InTune configuration backup)
+- **Q**: Do you have a disaster recovery plan?
+  - **A**: Yes (failover to manual provisioning, InTune tenant backup to Azure)
+- **Evidence**: requirements.md NFR-A-001/002 (Availability requirements)
+
+**Principle 4: Make Compromise Detection Easier**
+- **Q**: Do you have 24/7 security monitoring?
+  - **A**: Partial - Defender for Endpoint alerts to M365 Security Centre, SOC integration planned Month 3
+- **Q**: Are all administrative actions logged?
+  - **A**: Yes (Azure AD audit logs, 7-year retention - NFR-C-002)
+- **Evidence**: requirements.md NFR-C-002, FR-011 (Defender for Endpoint)
+
+**Principle 5: Reduce the Impact of Compromise**
+- **Q**: Is the system segmented to limit lateral movement?
+  - **A**: Yes (RBAC roles: Global Admin, InTune Admin, Helpdesk Operator with least privilege)
+- **Q**: Is sensitive data protected with DLP policies?
+  - **A**: Planned Month 2 (OFFICIAL-SENSITIVE data DLP policies for InTune console)
+- **Evidence**: mod-secure-by-design.md Section 2.3 (Least Privilege)
+
+**Principle 6: Design for Secure Operation**
+- **Q**: Have you documented operational security procedures?
+  - **A**: Partial - Patch management documented (FR-004), incident response plan pending Month 2
+- **Q**: Are security roles and responsibilities defined?
+  - **A**: Yes (RACI matrix with DTSL, PSyO, IAO, Security Architect - Week 1 deliverable)
+- **Evidence**: stakeholder-drivers.md RACI matrix, requirements.md FR-004 (Update Management)
+
+**Principle 7: Design for Continuous Assurance**
+- **Q**: Will you conduct regular penetration testing?
+  - **A**: Yes (annual CREST/CHECK pen testing planned, Month 2 first test)
+- **Q**: Will you maintain CAAT self-assessment up-to-date?
+  - **A**: Yes (quarterly CAAT updates, monthly during migration)
+- **Evidence**: mod-secure-by-design.md Section 7.4 (Continuous Assurance Milestones)
+
+- **Deliverable**: CAAT self-assessment 100% complete, compliance score generated
+- **Pre-filled Content**:
+  - Reference entire mod-secure-by-design.md document (comprehensive SbD assessment already completed)
+  - Reference requirements.md (45 requirements with NFR-SEC/NFR-C series)
+
+---
+
+#### Week 6: CAAT Submission and Security Governance Review Request
+
+**Day 26-28: Complete Supplier Attestation Section**
+- **Owner**: DTSL with Procurement
+- **Action**: Document supplier security attestations (ISN 2023/10 requirement):
+  1. **Microsoft Azure/InTune**:
+     - Supplier: Microsoft Corporation
+     - Attestation Status: Pending request
+     - Action: Request Microsoft security attestation letter (ISO 27001, SOC 2 Type II, Azure UK Government cloud compliance)
+     - Timeline: 2-4 weeks (Microsoft standard process)
+  2. **Hardware Vendors** (Dell, HP, Lenovo):
+     - Attestation Status: Pending request
+     - Action: Request hardware vendor security attestations (secure boot, TPM 2.0, BIOS security)
+  3. **Third-Party Applications** (Win32 apps deployed via InTune):
+     - Attestation Status: Pending - requires app compatibility testing (Month 7)
+     - Action: Compile list of top 20 apps from FR-008, request vendor attestations
+- **Deliverable**: Supplier attestation register in CAAT (status: in progress)
+- **Pre-filled Content**: Reference evaluation-criteria.md vendor security requirements
+
+**Day 29-30: Submit CAAT Assessment and Request Security Governance Review**
+- **Owner**: DTSL
+- **Action**:
+  1. Review CAAT self-assessment completeness (all 7 principles answered)
+  2. Generate CAAT compliance report (PDF export)
+  3. Submit CAAT assessment (formally transition from "Draft" to "Submitted")
+  4. Request Security Governance Review (Second Line of Defence) via CAAT workflow
+  5. Schedule Security Governance Review meeting (target: Month 3)
+- **Deliverable**:
+  - CAAT assessment submitted (status: "Awaiting Review")
+  - Security Governance Review scheduled with Second Line reviewers
+  - CAAT compliance report shared with CIO, CISO, IAO
+- **Success Criteria**:
+  - ✅ CAAT registration complete (100%)
+  - ✅ Self-assessment submitted with all 7 principles addressed
+  - ✅ Security Governance Review requested (Second Line assurance)
+  - ✅ Finding MOD1 (HIGH priority) from governance analysis RESOLVED
+
+---
+
+#### CAAT Maintenance (Ongoing)
+
+**Continuous Assurance Requirements** (post-registration):
+
+**Monthly Updates** (during migration, Months 1-24):
+- Update risk register in CAAT with new risks or mitigations
+- Update BIA if business impact changes (e.g., scale increases)
+- Update threat model if new threats emerge (e.g., new CVEs affecting InTune)
+- Upload evidence of implemented controls (screenshots, policy exports, audit logs)
+
+**Quarterly Updates** (post-migration, ongoing):
+- Re-run CAAT self-assessment (verify all 7 principles still compliant)
+- Upload latest penetration test results (annual CREST/CHECK testing)
+- Update supplier attestation status (renew Microsoft attestation annually)
+- Upload quarterly Security Governance Review meeting minutes
+
+**Annual Updates**:
+- Full CAAT reassessment (comprehensive review of all questions)
+- Upload ISO 27001 recertification audit report
+- Update security architecture diagrams if infrastructure changes
+- Renew IAA engagement (continuous assurance review)
+
+**Owner**: DTSL (First Line), with Security Governance Review Board oversight (Second Line)
+
+**Integration with Existing Governance**:
+- CAAT risks synchronized with risk-register.md (single source of truth: risk-register.md, exported to CAAT monthly)
+- CAAT compliance score reported to Project Steering Committee monthly (alongside NPV, ROI metrics)
+- CAAT evidence repository linked to project artifacts (requirements.md, mod-secure-by-design.md, sobc.md)
+
+---
+
+**CAAT Registration Impact on Project Timeline**:
+
+**BEFORE CAAT Registration** (Current State):
+- ❌ BLOCKING: Cannot proceed to Beta phase pilot (Month 9)
+- ❌ BLOCKING: No Security Governance Review scheduled
+- ❌ RISK: Windows 10 EOL (Oct 2025) may be missed due to accreditation delays
+
+**AFTER CAAT Registration** (Week 6):
+- ✅ UNBLOCKED: Beta phase pilot can proceed under continuous assurance framework
+- ✅ Security Governance Review scheduled (Month 3)
+- ✅ Accreditation pathway clear (interim accreditation Month 3, full accreditation Month 6)
+- ✅ Finding MOD1 RESOLVED, governance score improved
+
+**Resource Requirements**:
+- **DTSL Time**: 60 hours over 6 weeks (10 hours/week)
+- **Security Architect Time**: 20 hours (threat modeling support)
+- **IT Operations Director Time**: 10 hours (BIA input)
+- **Procurement Time**: 5 hours (supplier attestation requests)
+- **Total Effort**: ~95 hours (12 person-days)
+
+**Dependencies**:
+- **CRITICAL BLOCKER**: DTSL appointment (CIO action, Day 1)
+- **BLOCKER**: MOD network access to CAAT platform (if not already available)
+- **DEPENDENCY**: Existing project artifacts (SOBC, requirements, risk register, stakeholder analysis) - ALL COMPLETE ✅
+
+---
+
+### 7.4 Short-Term Roadmap (Months 1-3)
 
 **Month 1 (Establish Security Foundation)**:
 - Complete threat model (STRIDE/DREAD)
@@ -1888,6 +2168,7 @@ This project has **strong technical security foundations** (Zero Trust architect
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2025-10-21 | Enterprise Security Architect | Initial SbD assessment - DRAFT |
+| 2.0 | 2025-10-22 | Enterprise Security Architect | Added Section 7.3 CAAT Registration Action Plan (6-week detailed timeline) - addresses MOD1 (HIGH priority) finding from governance analysis |
 
 **Document Classification**: OFFICIAL-SENSITIVE (contains security architecture details)
 

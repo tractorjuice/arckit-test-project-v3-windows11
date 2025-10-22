@@ -1573,6 +1573,450 @@ _(Continuing with 20+ detailed functional requirements - FR-001 through FR-020 c
 
 ---
 
+## Data Requirements
+
+### Overview
+
+This section defines data collection, storage, and processing requirements to support device migration tracking, compliance monitoring, and operational support. All data requirements align with the data model documented in `data-model.md` and comply with GDPR/UK GDPR principles.
+
+**Data Governance**:
+- **Data Owner**: IT Operations Director (per stakeholder RACI)
+- **Data Steward**: Enterprise Architect
+- **Technical Custodian**: InTune/Azure AD administrators
+- **GDPR Basis**: Legitimate interest (Article 6(1)(f)) for IT asset management and support
+
+---
+
+### DR-001: Device Inventory Data Collection
+
+**Description**: System SHALL collect and store comprehensive device inventory data including hardware specifications, operating system version, installed applications, and security compliance status for all 6,000 Windows endpoints.
+
+**Stakeholder Goal**:
+- G-1 (CISO/IT Ops): 95% migration by Sep 2025 (requires migration tracking)
+- G-3 (CISO): 100% device compliance (requires compliance monitoring)
+
+**Data Entities**:
+- E-001: Device (device_id, hostname, device_type, os_version, enrollment_date, last_checkin)
+- E-002: Hardware (hardware_id, device_id, cpu_model, ram_gb, storage_gb, tpm_version, secure_boot_enabled)
+- E-003: Software (software_id, device_id, application_name, version, install_date)
+
+**Data Volume**: ~6,000 devices × 3 entities = ~18,000 records baseline, growing with application inventory
+
+**PII**: None (device identifiers only, no personal data)
+
+**GDPR Legal Basis**: Legitimate interest (Article 6(1)(f)) - IT asset management
+
+**Retention Period**: 3 years post-device decommission (audit trail for hardware lifecycle)
+
+**Data Quality**:
+- Accuracy: Inventory collected daily via InTune agent (24-hour freshness)
+- Completeness: 100% of enrolled devices (enforcement via compliance policies)
+- Consistency: Normalized hardware model names (standardized taxonomy)
+
+**Priority**: MUST_HAVE (Critical)
+
+**Acceptance Criteria**:
+- Device inventory collected automatically via InTune MDM agent within 24 hours of enrollment
+- Hardware attributes match data model E-002 specification (12 required fields)
+- Compliance status updated within 24 hours of policy changes
+- Inventory data queryable via PowerShell/Graph API for reporting
+- Historical snapshots retained for 3 years (weekly snapshots)
+
+**Measurement**: InTune device inventory dashboard shows 100% of enrolled devices with complete hardware data
+
+**Maps to Architecture Principle**: Principle 10 (Monitoring, Reporting, and Compliance)
+
+**Traceability**:
+- Supports Benefit B-001 (infrastructure cost reduction via ConfigMgr elimination - requires InTune inventory)
+- Supports Benefit B-003 (risk reduction via compliance monitoring)
+
+---
+
+### DR-002: Migration Tracking and State Management Data
+
+**Description**: System SHALL track migration status, success/failure events, and rollback incidents for all device migrations to enable real-time progress monitoring and issue resolution.
+
+**Stakeholder Goal**:
+- G-1 (IT Ops): 95% migration by Sep 2025 (requires progress tracking)
+- G-8 (IT Ops): <5% rollback rate (requires rollback event capture)
+
+**Data Entities**:
+- E-004: MigrationEvent (event_id, device_id, event_type, event_timestamp, user_initiated, outcome, error_code)
+- E-005: MigrationStatus (device_id, current_state, migration_wave, scheduled_date, completed_date, rollback_flag)
+
+**Data Volume**: ~6,000 devices × 5-10 events per device = ~30,000-60,000 migration events over 18 months
+
+**PII**: None (device identifiers only)
+
+**GDPR Legal Basis**: Legitimate interest (Article 6(1)(f)) - Project delivery tracking
+
+**Retention Period**: 5 years (project audit trail, lessons learned for future migrations)
+
+**Data Quality**:
+- Timeliness: Events logged in real-time (<5 minutes latency)
+- Accuracy: Event timestamps from device clock (NTP-synchronized)
+- Completeness: 100% of migration events captured (no silent failures)
+
+**Priority**: MUST_HAVE (Critical)
+
+**Acceptance Criteria**:
+- Migration events logged in real-time via InTune feature update policy reports
+- Migration state machine implemented (Scheduled → In Progress → Complete/Failed → Rolled Back)
+- Weekly migration dashboard generated automatically (PowerBI/Excel)
+- Rollback events captured with failure root cause classification
+- SRO receives weekly migration status report (devices migrated, success rate, blockers)
+- Pause criteria enforced: >10% failure rate in wave triggers automatic pause
+
+**Measurement**:
+- Weekly Steering Committee dashboard shows migration progress vs 95% target
+- Rollback rate <5% measured cumulatively
+
+**Maps to Architecture Principle**: Principle 6 (Phased Rollout Strategy)
+
+**Traceability**:
+- Directly supports SOBC Critical Success Factor 1 (95% migration by Sep 2025)
+- Supports SOBC Management Case governance (weekly tracking)
+
+---
+
+### DR-003: User Profile and Support Assignment Data (PII)
+
+**Description**: System SHALL collect user profile data (name, email, department, manager, device assignment) to enable migration scheduling, user communications, and helpdesk support ticket routing.
+
+**Stakeholder Goal**:
+- G-4 (Helpdesk): <2% support ticket rate (requires user-device mapping for ticket routing)
+- G-6 (Users): >80% user satisfaction (requires personalized communication scheduling)
+
+**Data Entities**:
+- E-006: User (user_id, employee_id, email, full_name, department, manager_email, hire_date)
+- E-007: UserDeviceAssignment (assignment_id, user_id, device_id, assigned_date, primary_device_flag)
+
+**Data Volume**: ~6,000 users + ~6,000 device assignments = ~12,000 records
+
+**PII Categories**:
+- **Direct PII**: Full name, email address, employee ID
+- **Indirect PII**: Department, manager relationship (organizational structure)
+
+**GDPR Legal Basis**:
+- Article 6(1)(b): Processing necessary for employment contract (IT equipment provision)
+- Article 6(1)(f): Legitimate interest (IT support, migration scheduling)
+
+**Data Subject Rights**:
+- Right of access: User can request their profile data via HR/IT
+- Right to rectification: User can update via HR system (synced to Azure AD)
+- Right to erasure: Automatic deletion 1 year after employment termination
+
+**Retention Period**: Duration of employment + 1 year (offboarding grace period)
+
+**Data Quality**:
+- Accuracy: Synced hourly from Azure AD (authoritative source: HR system)
+- Completeness: 100% of active employees (enforced via Azure AD sync)
+- Consistency: Email addresses normalized to lowercase
+
+**Privacy Measures**:
+- PII encrypted at rest (BitLocker on InTune SQL database)
+- PII encrypted in transit (TLS 1.3 for Azure AD sync)
+- Access controls: RBAC (only IT Operations and Helpdesk can view user-device mapping)
+- Audit logging: All PII access logged to Azure AD audit log (7-year retention)
+
+**Priority**: MUST_HAVE (Critical)
+
+**Acceptance Criteria**:
+- User profile data synced automatically from Azure AD hourly
+- PII encrypted at rest (BitLocker) and in transit (TLS 1.3) per NFR-S-003
+- DPIA completed before collecting sensitive user data (scheduled Month 2)
+- User consent obtained via employment IT acceptable use policy
+- Helpdesk can search user by name/email to view assigned devices (<2 second response)
+- Migration communications personalized with user name and scheduled date
+
+**Measurement**:
+- DPIA approval obtained (Month 2 milestone)
+- Helpdesk user lookup success rate 100% (no missing user-device mappings)
+
+**Maps to Architecture Principle**: Principle 12 (Data Protection and Backup)
+
+**GDPR Compliance**:
+- Article 5(1)(a): Lawfulness - employment contract basis
+- Article 5(1)(b): Purpose limitation - only for migration and support
+- Article 5(1)(c): Data minimization - only essential fields collected
+- Article 5(1)(e): Storage limitation - deleted 1 year post-termination
+- Article 5(1)(f): Integrity and confidentiality - encrypted, access-controlled
+
+**Traceability**:
+- Supports Benefit B-002 (productivity gains via helpdesk efficiency)
+- Supports Outcome O-3 (high user productivity maintained)
+
+---
+
+### DR-004: Application Compatibility Test Results
+
+**Description**: System SHALL store application compatibility test results for the top 100 business-critical applications to inform migration readiness and user communication.
+
+**Stakeholder Goal**:
+- G-1 (IT Ops): 95% migration success (requires app compatibility validation before user migration)
+- G-6 (Users): >80% user satisfaction (requires working applications post-migration)
+
+**Data Entities**:
+- E-008: Application (app_id, app_name, vendor, version, business_criticality_score, user_count)
+- E-009: CompatibilityTestResult (test_id, app_id, os_version, test_date, result_status, issues_found, remediation_plan)
+
+**Data Volume**: ~100 applications × 3-5 test iterations = ~300-500 test result records
+
+**PII**: None
+
+**GDPR Legal Basis**: N/A (no personal data)
+
+**Retention Period**: 3 years post-migration (lessons learned for Windows 12 migration)
+
+**Data Quality**:
+- Accuracy: Test results validated by UAT with business users
+- Completeness: 100% of top 100 apps tested before Pilot phase (Month 6)
+- Consistency: Result status taxonomy (Compatible / Update Required / Replace / Retire)
+
+**Priority**: MUST_HAVE (Critical)
+
+**Acceptance Criteria**:
+- Application inventory identifies top 100 apps by user count and business impact score
+- 100% of top 100 apps tested on Windows 11 (VDI or physical test devices) before Pilot
+- Compatibility test results documented with standard taxonomy (4 result statuses)
+- Issues linked to remediation plans (vendor update, repackage, alternative app)
+- Application catalog queryable by IT and business users (self-service compatibility lookup)
+- No user migrated if their required apps are marked "Update Required" or "Replace" without resolution
+
+**Measurement**:
+- 100/100 apps tested before Pilot phase (Month 6 gate criteria)
+- <1% app compatibility issues reported in production (Month 7-18)
+
+**Maps to Architecture Principle**: Principle 5 (Application Compatibility and Testing)
+
+**Traceability**:
+- Directly supports SOBC Critical Success Factor 2 (user productivity maintained)
+- Supports Outcome O-3 (no application disruption)
+
+---
+
+### DR-005: Helpdesk Support Ticket Data
+
+**Description**: System SHALL store support ticket data for migration-related issues to track helpdesk workload, identify common problems, and measure support ticket rate KPI.
+
+**Stakeholder Goal**:
+- G-4 (Helpdesk): <2% support ticket rate (requires ticket volume tracking)
+- G-6 (Users): >80% user satisfaction (requires issue resolution tracking)
+
+**Data Entities**:
+- E-010: SupportTicket (ticket_id, device_id, user_id, issue_category, severity, created_date, closed_date, resolution_time_hours)
+- E-011: TicketResolution (resolution_id, ticket_id, resolution_description, knowledge_base_article_id, resolved_by)
+
+**Data Volume**: ~6,000 devices × 2% ticket rate × 18 months = ~2,160 tickets (assuming target rate achieved)
+
+**PII**: Indirect (user_id links to user name/email in E-006)
+
+**GDPR Legal Basis**: Legitimate interest (Article 6(1)(f)) - IT support
+
+**Retention Period**: 2 years (trending analysis, knowledge base improvement)
+
+**Data Quality**:
+- Timeliness: Tickets created in real-time via ServiceNow integration
+- Accuracy: Issue categorization via controlled taxonomy (10 categories)
+- Completeness: 100% of helpdesk tickets tagged with "Windows 11 Migration" category
+
+**Priority**: MUST_HAVE (Critical)
+
+**Acceptance Criteria**:
+- ServiceNow integration captures all Windows 11 migration tickets automatically
+- Ticket data includes device_id and user_id for correlation with migration events
+- Weekly support ticket rate calculated: (tickets created / devices migrated that week) × 100%
+- Pause criteria enforced: >10% weekly ticket rate triggers wave pause
+- Common issues identified weekly (top 5 ticket categories) for proactive mitigation
+- Knowledge base articles linked to ticket resolutions for self-service
+
+**Measurement**:
+- Weekly support ticket rate <2% measured via ServiceNow query
+- First contact resolution rate >70% (measure of helpdesk effectiveness)
+
+**Maps to Architecture Principle**: Principle 13 (Helpdesk and User Support)
+
+**Traceability**:
+- Directly supports SOBC Critical Success Factor 2 (user productivity maintained)
+- Supports Benefit B-002 (productivity gains via reduced helpdesk burden)
+
+---
+
+### DR-006: Compliance and Audit Logging Data
+
+**Description**: System SHALL log all device management actions, policy changes, and compliance violations to provide audit trail for ISO 27001, cyber insurance, and regulatory compliance.
+
+**Stakeholder Goal**:
+- G-3 (CISO): 100% device compliance (requires compliance violation tracking)
+- Outcome O-1: Zero compliance violations (requires audit trail for ISO 27001 recertification)
+
+**Data Entities**:
+- E-012: AuditLog (log_id, event_timestamp, event_type, actor_identity, device_id, action_description, result_status)
+- E-013: ComplianceViolation (violation_id, device_id, policy_id, violation_date, violation_type, severity, remediation_status)
+
+**Data Volume**: ~6,000 devices × 100 events/device/year × 3 years = ~1.8M audit log entries
+
+**PII**: Indirect (actor_identity may be admin user email)
+
+**GDPR Legal Basis**: Legal obligation (Article 6(1)(c)) - Audit requirements for ISO 27001
+
+**Retention Period**: 7 years (ISO 27001 audit trail requirement, UK GDPR Article 5(1)(e) exemption for archiving in the public interest/scientific or historical research)
+
+**Data Quality**:
+- Integrity: Audit logs immutable and tamper-evident (append-only Log Analytics)
+- Timeliness: Logs written in real-time (<5 minutes latency)
+- Completeness: 100% of management actions logged (InTune audit log enabled)
+
+**Privacy Measures**:
+- Admin user emails pseudonymized after 1 year (replaced with role identifier)
+- Audit logs encrypted at rest (Azure storage encryption)
+- Access restricted to CISO and compliance team only (RBAC)
+
+**Priority**: MUST_HAVE (Critical)
+
+**Acceptance Criteria**:
+- Azure AD audit logging enabled for all InTune device management actions
+- Audit logs immutable and tamper-evident (append-only storage)
+- Compliance violations logged within 1 hour of detection
+- Logs exported to Azure Log Analytics for 7-year retention
+- Monthly compliance report generated automatically (% devices compliant, top violations)
+- ISO 27001 auditor can access audit logs on demand (read-only access)
+
+**Measurement**:
+- Audit log completeness: 100% of InTune actions logged (verified by sampling)
+- Compliance violation response time: 100% violations remediated within 72 hours
+
+**Maps to Architecture Principle**: Principle 17 (Audit Logging and Compliance Reporting)
+
+**Traceability**:
+- Directly supports Outcome O-1 (zero compliance violations, ISO 27001 maintained)
+- Supports Benefit B-003 (risk reduction via compliance assurance)
+
+---
+
+### DR-007: Hardware and Software Inventory for Asset Management
+
+**Description**: System SHALL maintain accurate hardware and software inventory for financial asset tracking, license management, and ConfigMgr decommissioning verification.
+
+**Stakeholder Goal**:
+- G-2 (CFO): £2M+ cost savings (requires ConfigMgr decommissioning verification)
+- G-7 (IT Ops): ConfigMgr decommissioned Month 18 (requires inventory migration from ConfigMgr to InTune)
+
+**Data Entities**:
+- E-002: Hardware (extended with asset_tag, purchase_date, warranty_expiry, disposal_date)
+- E-003: Software (extended with license_key, license_expiry, license_cost)
+
+**Data Volume**: ~6,000 devices × 50 software titles/device = ~300,000 software inventory records
+
+**PII**: None (software license keys are organizational, not personal)
+
+**GDPR Legal Basis**: N/A (no personal data)
+
+**Retention Period**: 7 years (financial audit trail for asset depreciation)
+
+**Data Quality**:
+- Accuracy: Software inventory collected daily via InTune agent
+- Completeness: 100% of installed software detected (InTune Win32 app inventory)
+- Consistency: Software names normalized (e.g., "Microsoft Office" vs "Office 365")
+
+**Priority**: MUST_HAVE (Critical)
+
+**Acceptance Criteria**:
+- Hardware asset tags synced from finance system to InTune custom attributes
+- Software inventory matches ConfigMgr inventory (validation before ConfigMgr decommission)
+- InTune inventory dashboard shows 100% parity with ConfigMgr (pre-decommission gate)
+- ConfigMgr decommissioning verified: Zero devices reporting to ConfigMgr (Month 18)
+- Software license compliance tracked: 100% of paid software has valid license
+
+**Measurement**:
+- ConfigMgr decommissioned (Month 18): Zero devices in ConfigMgr console, 100% in InTune
+- Asset inventory accuracy: 100% of hardware assets match finance system
+
+**Maps to Architecture Principle**: Principle 1 (Cloud-First Endpoint Management - ConfigMgr elimination)
+
+**Traceability**:
+- Directly supports Benefit B-001 (£4.5M infrastructure cost reduction via ConfigMgr decommission)
+- Supports SOBC Critical Success Factor 5 (cloud transformation demonstrated)
+
+---
+
+### DR-008: Copilot+ PC Hardware Validation Data
+
+**Description**: System SHALL collect Copilot+ PC hardware specifications (NPU model, TOPS capability, RAM, processor) to validate compliance with Principle 3A and track 30% adoption target.
+
+**Stakeholder Goal**:
+- G-10 (CIO): 30% Copilot+ PC adoption Year 1 (requires Copilot+ PC identification and tracking)
+- Benefit B-004: Strategic value from AI enablement (requires Copilot+ PC deployment monitoring)
+
+**Data Entities**:
+- E-002: Hardware (extended with npu_model, npu_tops, copilot_plus_flag, ai_features_enabled)
+
+**Data Volume**: ~1,800 Copilot+ PCs (30% of 6,000 devices) × extended hardware attributes
+
+**PII**: None
+
+**GDPR Legal Basis**: N/A (no personal data)
+
+**Retention Period**: 3 years (Copilot+ PC ROI tracking)
+
+**Data Quality**:
+- Accuracy: NPU detection via InTune hardware inventory script
+- Completeness: 100% of Copilot+ PCs flagged in inventory
+- Consistency: NPU TOPS values verified against vendor specifications
+
+**Priority**: SHOULD_HAVE (High)
+
+**Acceptance Criteria**:
+- InTune custom inventory script detects NPU presence and TOPS capability
+- Copilot+ PC flag set automatically for devices with NPU ≥40 TOPS
+- Monthly Copilot+ PC dashboard tracks adoption vs 30% target (1,800/6,000)
+- Pilot success validated: 100 Copilot+ PCs deployed (Month 6)
+- ARM64 architecture detected for Snapdragon Copilot+ PCs (app compatibility tracking)
+
+**Measurement**:
+- Copilot+ PC adoption: 30% (1,800 devices) by Month 12
+- Pilot success: 100 Copilot+ PCs, user satisfaction >75%
+
+**Maps to Architecture Principle**: Principle 3A (Copilot+ PC Hardware and AI-Ready Devices)
+
+**Traceability**:
+- Supports Benefit B-004 (£0.9M strategic value from AI enablement)
+- Supports SOBC Economic Case Option 2 (30% Copilot+ target in recommended option)
+
+---
+
+### Data Requirements Summary
+
+| DR ID | Description | PII? | GDPR Basis | Retention | Priority | Entities | Stakeholder Goal |
+|-------|-------------|------|------------|-----------|----------|----------|------------------|
+| DR-001 | Device inventory | No | Legitimate interest | 3 years | MUST | E-001, E-002, E-003 | G-1, G-3 |
+| DR-002 | Migration tracking | No | Legitimate interest | 5 years | MUST | E-004, E-005 | G-1, G-8 |
+| DR-003 | User profiles (PII) | Yes | Employment contract | Employment + 1yr | MUST | E-006, E-007 | G-4, G-6 |
+| DR-004 | App compatibility | No | N/A | 3 years | MUST | E-008, E-009 | G-1, G-6 |
+| DR-005 | Support tickets | Indirect | Legitimate interest | 2 years | MUST | E-010, E-011 | G-4, G-6 |
+| DR-006 | Audit logs | Indirect | Legal obligation | 7 years | MUST | E-012, E-013 | G-3, O-1 |
+| DR-007 | Asset inventory | No | N/A | 7 years | MUST | E-002, E-003 (extended) | G-2, G-7 |
+| DR-008 | Copilot+ PC tracking | No | N/A | 3 years | SHOULD | E-002 (extended) | G-10, B-004 |
+
+**Total Data Requirements**: 8 (7 MUST_HAVE, 1 SHOULD_HAVE)
+
+**GDPR Compliance Summary**:
+- **PII Requirements**: 1 (DR-003: User profiles)
+- **DPIA Required**: Yes (scheduled Month 2 per MOD SbD assessment)
+- **Legal Basis**: Documented for all PII processing
+- **Data Subject Rights**: Documented (access, rectification, erasure)
+- **Retention Policies**: Defined for all data types (2-7 years)
+
+**Data Model Coverage**: 100% (all 13 entities in data-model.md now justified by DR-001 to DR-008)
+
+**Next Steps**:
+1. Review and approve data requirements section (Steering Committee)
+2. Complete DPIA for DR-003 (User profiles) - Month 2 milestone
+3. Update traceability matrix to link DR-xxx → data model entities
+4. Include DR-xxx in SOW/vendor evaluation for data architecture proposals
+
+---
+
 ## Integration Requirements
 
 ### INT-001: Integration with Azure Active Directory
