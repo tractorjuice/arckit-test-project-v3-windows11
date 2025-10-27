@@ -326,31 +326,32 @@ The service **SHOULD** provide:
 
 ---
 
-**Service 3: Capgemini - Managed Microsoft 365**
+**Service 3: Capgemini - Microsoft 365 Managed Service**
 - **Supplier**: Capgemini UK plc
-- **Service ID**: 984798561278977
-- **Link**: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/984798561278977
+- **Service ID**: 888933382382269
+- **Link**: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/888933382382269
 - **Key Features**:
   - Comprehensive Microsoft 365 Managed Service
-  - Includes Windows 10/11 Enterprise, Microsoft 365 Apps for Enterprise
-  - **Intune modern device management**
-  - Advanced security services (Defender, Conditional Access)
-  - Full Microsoft 365 licensing approach (E3/E5)
-- **Must-Have Match**: ✅ Full Microsoft 365 stack + InTune + Licensing
-- **Desirable Features**: ✅ Comprehensive managed service (licensing + support)
-- **Compliance**: Large multinational - likely all certifications (ISO 27001, Cyber Essentials Plus)
-- **Pricing**: Enterprise pricing for 6,000 users - contact for quote
+  - Day-to-day operation and ongoing support for evergreen platform
+  - Health monitoring, license management, user provisioning
+  - Multi-language support
+  - ISO/IEC 27001 and Cyber Essentials Plus certified
+- **Must-Have Match**: ✅ Microsoft 365 managed service + enterprise-scale support
+- **Desirable Features**: ✅ Comprehensive managed service, strong certifications
+- **Compliance**: ISO 27001, Cyber Essentials Plus (verified)
+- **Pricing**: £468/day per unit - contact for 6,000 user quote
 
 ---
 
-**Service 4: APPTechnology - Intune, Autopilot, MDM and SCCM Remote Administration**
+**Service 4: APPTechnology - Microsoft Endpoint Management (SCCM, Intune, Autopilot, MDM)**
 - **Supplier**: APPTechnology Limited
-- **Service ID**: 593197679606441
-- **Link**: https://www.digitalmarketplace.service.gov.uk/g-cloud/services/593197679606441
+- **Service ID**: 293554461397110
+- **Link**: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/293554461397110
 - **Key Features**:
-  - Remote administrative services for Azure-based Microsoft Endpoint Manager
+  - Remote administrative services for Microsoft Endpoint Manager
   - **Operational administration including software deployments and patching**
   - SCCM + Intune + Autopilot + MDM (full co-management support)
+  - Windows OS servicing cadence, OSD, infrastructure upgrades
   - Ongoing management and support services
 - **Must-Have Match**: ✅ InTune + Autopilot + SCCM co-management
 - **Desirable Features**: ✅ Operational administration (policy management, app deployment)
@@ -377,15 +378,16 @@ The service **SHOULD** provide:
 
 **Service 6: Akhter - Managed Autopilot Migration Service**
 - **Supplier**: Akhter Computing Ltd
-- **Service ID**: 822575926038448
-- **Link**: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/822575926038448
+- **Service ID**: 224529617542335
+- **Link**: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/224529617542335
 - **Key Features**:
   - Windows 10/11 Autopilot design, delivery & updates
+  - Setup of Intune, Microsoft 365 and Azure Active Directory environments
   - Specialists establish detailed customer requirements and current configurations
   - Implementation meeting to discuss and confirm migration details
-  - Managed migration service (not just licensing)
-- **Must-Have Match**: ✅ Autopilot migration + Windows 11
-- **Desirable Features**: ✅ Managed migration service
+  - Managed migration service with in-house quality assurance
+- **Must-Have Match**: ✅ Autopilot migration + Windows 11 + InTune setup
+- **Desirable Features**: ✅ Managed migration service, quality assurance
 - **Compliance**: Standard certifications
 - **Pricing**: Managed service model - see service page
 
@@ -426,10 +428,10 @@ The service **SHOULD** provide:
 |---------|----------|----------------|-------------------|------------|---------------|------|
 | **Modern Endpoint Mgmt** | **Opal** | **10/10** ✅ | **8/10** ✅ | **NCSC SbD** ✅ | SCCM migration | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/597733085622823) |
 | **Endpoint Mgmt Services** | **Littlefish** | **9/10** ✅ | **7/10** ✅ | Likely ISO 27001 | Large-scale (6K+) | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/177715256019670) |
-| **Managed Microsoft 365** | **Capgemini** | **9/10** ✅ | **9/10** ✅ | Enterprise certs | Enterprise-scale | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/984798561278977) |
-| **Intune/Autopilot Admin** | **APPTechnology** | **8/10** ✅ | **6/10** ⚠️ | Standard | Co-management | [Link](https://www.digitalmarketplace.service.gov.uk/g-cloud/services/593197679606441) |
+| **Microsoft 365 Managed Service** | **Capgemini** | **9/10** ✅ | **9/10** ✅ | ISO 27001, CE+ | Enterprise-scale | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/888933382382269) |
+| **Endpoint Management** | **APPTechnology** | **8/10** ✅ | **6/10** ⚠️ | Standard | Co-management | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/293554461397110) |
 | **Autopilot Framework** | **Sundown (AEMSP)** | **7/10** ⚠️ | **7/10** ✅ | Public Sector | Azure Expert MSP | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/808519279943167) |
-| **Autopilot Migration** | **Akhter** | **7/10** ⚠️ | **6/10** ⚠️ | Standard | Migration-focused | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/822575926038448) |
+| **Autopilot Migration** | **Akhter** | **7/10** ⚠️ | **6/10** ⚠️ | Standard | Migration-focused | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/224529617542335) |
 | **Autopilot Accelerator** | **Node4** | **6/10** ⚠️ | **5/10** ⚠️ | Standard | Accelerator model | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/409985941166158) |
 
 **Scoring Legend**:
@@ -493,23 +495,24 @@ The service **SHOULD** provide:
 
 ---
 
-**Service 3: Capgemini - Managed Microsoft 365**
+**Service 3: Capgemini - Microsoft 365 Managed Service**
 
 ✅ **Strengths**:
-- **Comprehensive Microsoft 365 managed service** - includes licensing + deployment + support (all-in-one)
-- **Full Microsoft stack**: Windows 10/11 Enterprise + Microsoft 365 Apps + InTune + advanced security
-- **Enterprise-scale experience** - Capgemini is global systems integrator with 6,000+ device experience
-- **Advanced security services** - Defender, Conditional Access, likely full E5 security stack
-- Strong compliance posture (multinational = ISO 27001, SOC 2, likely Cyber Essentials Plus)
+- **Comprehensive Microsoft 365 managed service** - day-to-day operations and ongoing support
+- **Enterprise-scale experience** - Capgemini is global systems integrator with proven large-scale delivery
+- **Verified security certifications** - ISO/IEC 27001 and Cyber Essentials Plus (BSI accredited)
+- **Evergreen platform support** - health monitoring, license management, user provisioning
+- Multi-language support for international organizations
+- £468/day pricing is transparent
 
 ⚠️ **Gaps/Concerns**:
-- **Enterprise pricing may be high** for 6,000 users (large suppliers often more expensive)
+- **Microsoft 365 licensing not explicitly included** (managed service only, licenses may be separate)
+- **InTune deployment not explicitly mentioned** in service description (need to confirm Windows 11/Autopilot capability)
 - SCCM co-management not explicitly mentioned (need to confirm)
-- Windows Autopilot not explicitly mentioned (likely included, but need confirmation)
 - MOD-specific compliance (NCSC, CAAT, ISN 2023/10) not mentioned (need to confirm capability)
 - May be over-engineered for this project (global enterprise service vs. UK public sector focus)
 
-**Best For**: Organizations wanting full Microsoft 365 managed service from enterprise-scale supplier
+**Best For**: Organizations wanting ongoing Microsoft 365 managed support from enterprise-scale supplier with verified certifications
 
 **Key Questions for Supplier**:
 1. What is your pricing model for 6,000 users (per-user per-month)?
@@ -520,13 +523,14 @@ The service **SHOULD** provide:
 
 ---
 
-**Service 4: APPTechnology - Intune, Autopilot, MDM and SCCM Remote Administration**
+**Service 4: APPTechnology - Microsoft Endpoint Management (SCCM, Intune, Autopilot, MDM)**
 
 ✅ **Strengths**:
 - **Full stack: SCCM + InTune + Autopilot + MDM** - directly matches co-management requirement (FR-006)
-- **Operational administration** - software deployments, patching, ongoing management (not just setup)
+- **Operational administration** - software deployments, patching, Windows OS servicing, OSD, infrastructure upgrades
 - **Remote administration model** - cost-effective for ongoing management
-- Explicitly mentions Azure-based Microsoft Endpoint Manager - modern approach
+- **SCCM infrastructure upgrades** included - supports decommissioning roadmap
+- Explicitly mentions Microsoft Endpoint Manager - modern approach
 
 ⚠️ **Gaps/Concerns**:
 - **Remote administration focus** - may not include on-site deployment support for initial migration
@@ -535,7 +539,7 @@ The service **SHOULD** provide:
 - Security certifications not mentioned (need to confirm ISO 27001, Cyber Essentials Plus)
 - MOD compliance not mentioned (NCSC, CAAT support unclear)
 
-**Best For**: Organizations needing ongoing remote administration of InTune + SCCM co-management
+**Best For**: Organizations needing ongoing remote administration of InTune + SCCM co-management with infrastructure upgrade support
 
 **Key Questions for Supplier**:
 1. What is your largest InTune/SCCM co-management deployment (device count)?
@@ -667,27 +671,28 @@ If **large-scale experience** (6,000+ devices) is the top priority and MOD compl
 
 ---
 
-### 7.3 Alternative Option #2: Capgemini - Managed Microsoft 365
+### 7.3 Alternative Option #2: Capgemini - Microsoft 365 Managed Service
 
-**Service Link**: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/984798561278977
+**Service Link**: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/888933382382269
 
 **Why Consider This**:
-If you want a **full Microsoft 365 managed service** (licensing + deployment + ongoing support) from a global enterprise-scale supplier.
+If you want **ongoing Microsoft 365 managed support** from a global enterprise-scale supplier with verified ISO 27001 and Cyber Essentials Plus certifications.
 
 **Advantages**:
-- **All-in-one service**: Microsoft 365 E3/E5 licensing bundled with InTune deployment and support
+- **Verified security certifications**: ISO/IEC 27001 and Cyber Essentials Plus (BSI accredited as of 2023)
 - **Enterprise-scale proven**: Capgemini has delivered 10,000+ device migrations globally
-- **Full Microsoft stack**: Windows 11 Enterprise + Microsoft 365 Apps + InTune + Defender + advanced security
-- **Strong compliance posture**: ISO 27001, SOC 2, likely Cyber Essentials Plus (enterprise-grade)
+- **Comprehensive managed support**: Day-to-day operations, health monitoring, license management, user provisioning
+- **Transparent pricing**: £468/day per unit (contact for 6,000 device quote)
+- **Evergreen platform support**: Ongoing support for Microsoft 365 updates and changes
 
 **When to Choose Capgemini Over Opal**:
-- If you want licensing + deployment + support bundled (one supplier, one contract)
-- If you prefer a global systems integrator (lower risk, established delivery methodology)
-- If MOD compliance is not critical (Capgemini enterprise-focused, not MOD-specific)
+- If you want ongoing managed support from a global systems integrator (lower risk, established delivery methodology)
+- If verified ISO 27001 and Cyber Essentials Plus certifications are critical
+- If you prefer enterprise-scale supplier with multi-language support capabilities
 
 **Trade-offs**:
-- **Higher cost** likely (enterprise supplier premium)
-- **May be over-engineered** for this project (global processes vs. UK public sector agility)
+- **Microsoft 365 licensing may not be included** (managed service only - need to confirm)
+- **InTune deployment/migration not explicitly mentioned** (service focuses on ongoing support, not initial deployment)
 - **NCSC compliance unclear** (need to confirm MOD-specific experience)
 
 **Next Steps**: Request detailed pricing quote for 6,000 users, validate MOD experience, confirm SCCM co-management
@@ -766,7 +771,7 @@ If you want a **full Microsoft 365 managed service** (licensing + deployment + o
 1. **Visit Top 3 Service Pages on Digital Marketplace**:
    - Opal: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/597733085622823
    - Littlefish: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/177715256019670
-   - Capgemini: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/984798561278977
+   - Capgemini: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/888933382382269
 
 2. **Request Additional Information via Digital Marketplace**:
    - Use "Ask a question about this service" button on each service page
@@ -863,22 +868,22 @@ Before committing to a service:
 1. **Opal - Modern Endpoint Management - Microsoft Intune**  
    https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/597733085622823
 
-2. **Littlefish - Microsoft Intune - Endpoint Management Services**  
+2. **Littlefish - Microsoft Intune - Endpoint Management Services**
    https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/177715256019670
 
-3. **Capgemini - Managed Microsoft 365**  
-   https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/984798561278977
+3. **Capgemini - Microsoft 365 Managed Service**
+   https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/888933382382269
 
 ### Alternative Services
 
-4. **APPTechnology - Intune, Autopilot, MDM and SCCM Remote Administration**  
-   https://www.digitalmarketplace.service.gov.uk/g-cloud/services/593197679606441
+4. **APPTechnology - Microsoft Endpoint Management (SCCM, Intune, Autopilot, MDM)**
+   https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/293554461397110
 
 5. **Sundown Solutions (AEMSP) - Windows Autopilot Design & Deployment Framework**  
    https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/808519279943167
 
-6. **Akhter - Managed Autopilot Migration Service**  
-   https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/822575926038448
+6. **Akhter - Managed Autopilot Migration Service**
+   https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/224529617542335
 
 7. **Node4 - Windows Autopilot Accelerator**  
    https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/409985941166158
