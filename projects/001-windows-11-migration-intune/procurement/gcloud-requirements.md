@@ -343,20 +343,20 @@ The service **SHOULD** provide:
 
 ---
 
-**Service 4: APPTechnology - Microsoft Endpoint Management (SCCM, Intune, Autopilot, MDM)**
-- **Supplier**: APPTechnology Limited
-- **Service ID**: 293554461397110
-- **Link**: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/293554461397110
+**Service 4: Advania - Microsoft Endpoint Management + Security Implementation Services**
+- **Supplier**: Advania UK Limited
+- **Service ID**: 969428647441532
+- **Link**: https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/969428647441532
 - **Key Features**:
-  - Remote administrative services for Microsoft Endpoint Manager
-  - **Operational administration including software deployments and patching**
-  - SCCM + Intune + Autopilot + MDM (full co-management support)
-  - Windows OS servicing cadence, OSD, infrastructure upgrades
-  - Ongoing management and support services
-- **Must-Have Match**: ✅ InTune + Autopilot + SCCM co-management
-- **Desirable Features**: ✅ Operational administration (policy management, app deployment)
-- **Compliance**: Standard UK supplier certifications
-- **Pricing**: Managed service pricing model - see service page
+  - **Intune PoC/Pilot and full MDM/MAM Implementation**
+  - Multi-platform support: iOS, Android, macOS, Windows
+  - Microsoft Defender suite integration
+  - **ISO/IEC 27001 and Cyber Essentials Plus certified** (verified)
+  - 24/7 support with defined SLAs
+- **Must-Have Match**: ✅ InTune implementation + Pilot + Multi-platform
+- **Desirable Features**: ✅ Verified security certifications, 24/7 support
+- **Compliance**: ISO 27001, Cyber Essentials Plus (verified)
+- **Pricing**: £550/day per unit (education pricing available)
 
 ---
 
@@ -419,6 +419,8 @@ The service **SHOULD** provide:
 - **InfraTech Systems** - Microsoft 365 Implementation & Managed Service (Service ID: 371386958247035)
 - **Capito** - Windows Autopilot and Intune Services (Service ID: 191876900282763)
 - **Centerprise** - Managed Autopilot Transition Service (Service ID: 207401422749812)
+- **New Scaler** - Microsoft Endpoint Management - Intune Suite (Service ID: 373748795810822) - £350/day per user
+- **Advania** - Microsoft Endpoint Management Planning Services (Service ID: 271740048130452)
 
 ---
 
@@ -429,7 +431,7 @@ The service **SHOULD** provide:
 | **Modern Endpoint Mgmt** | **Opal** | **10/10** ✅ | **8/10** ✅ | **NCSC SbD** ✅ | SCCM migration | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/597733085622823) |
 | **Endpoint Mgmt Services** | **Littlefish** | **9/10** ✅ | **7/10** ✅ | Likely ISO 27001 | Large-scale (6K+) | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/177715256019670) |
 | **Microsoft 365 Managed Service** | **Capgemini** | **9/10** ✅ | **9/10** ✅ | ISO 27001, CE+ | Enterprise-scale | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/888933382382269) |
-| **Endpoint Management** | **APPTechnology** | **8/10** ✅ | **6/10** ⚠️ | Standard | Co-management | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/293554461397110) |
+| **Endpoint Management + Security** | **Advania** | **8/10** ✅ | **7/10** ✅ | ISO 27001, CE+ | Implementation | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/969428647441532) |
 | **Autopilot Framework** | **Sundown (AEMSP)** | **7/10** ⚠️ | **7/10** ✅ | Public Sector | Azure Expert MSP | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/808519279943167) |
 | **Autopilot Migration** | **Akhter** | **7/10** ⚠️ | **6/10** ⚠️ | Standard | Migration-focused | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/224529617542335) |
 | **Autopilot Accelerator** | **Node4** | **6/10** ⚠️ | **5/10** ⚠️ | Standard | Accelerator model | [Link](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/409985941166158) |
@@ -523,29 +525,30 @@ The service **SHOULD** provide:
 
 ---
 
-**Service 4: APPTechnology - Microsoft Endpoint Management (SCCM, Intune, Autopilot, MDM)**
+**Service 4: Advania - Microsoft Endpoint Management + Security Implementation Services**
 
 ✅ **Strengths**:
-- **Full stack: SCCM + InTune + Autopilot + MDM** - directly matches co-management requirement (FR-006)
-- **Operational administration** - software deployments, patching, Windows OS servicing, OSD, infrastructure upgrades
-- **Remote administration model** - cost-effective for ongoing management
-- **SCCM infrastructure upgrades** included - supports decommissioning roadmap
-- Explicitly mentions Microsoft Endpoint Manager - modern approach
+- **InTune PoC/Pilot and full MDM/MAM implementation** - covers both pilot and production deployment
+- **Verified security certifications** - ISO/IEC 27001 and Cyber Essentials Plus (certified)
+- **Multi-platform support** - iOS, Android, macOS, Windows (comprehensive)
+- **Microsoft Defender suite integration** - addresses NFR-SEC-003 endpoint threat protection
+- **24/7 support** with defined SLAs based on severity (P1/P2/P3/P4)
+- **Transparent pricing**: £550/day per unit with education pricing available
 
 ⚠️ **Gaps/Concerns**:
-- **Remote administration focus** - may not include on-site deployment support for initial migration
-- Large-scale experience unclear (no mention of device count scale)
-- Microsoft 365 licensing unclear (likely just administration, not licensing)
-- Security certifications not mentioned (need to confirm ISO 27001, Cyber Essentials Plus)
-- MOD compliance not mentioned (NCSC, CAAT support unclear)
+- **Implementation-focused** (PoC/Pilot/Implementation) - ongoing managed services not explicitly mentioned
+- **SCCM co-management not explicitly mentioned** (need to confirm FR-006 capability)
+- **Large-scale experience unclear** (no mention of 5,000+ device deployments)
+- **Windows Autopilot not explicitly mentioned** (InTune includes Autopilot, but need confirmation)
+- **MOD compliance not mentioned** (NCSC, CAAT support unclear)
 
-**Best For**: Organizations needing ongoing remote administration of InTune + SCCM co-management with infrastructure upgrade support
+**Best For**: Organizations needing InTune implementation and pilot services with verified security certifications and 24/7 support
 
 **Key Questions for Supplier**:
-1. What is your largest InTune/SCCM co-management deployment (device count)?
-2. Do you provide on-site support for initial migration, or only remote administration?
-3. Do you provide Microsoft 365 licensing, or just administration services?
-4. What are your security certifications (ISO 27001, Cyber Essentials Plus)?
+1. Do you support SCCM to InTune co-management migration?
+2. What is your largest InTune deployment (device count)?
+3. Do you provide ongoing managed services, or just implementation?
+4. Is Windows Autopilot included in your InTune implementation?
 5. Do you have MOD or public sector clients?
 
 ---
@@ -876,8 +879,8 @@ Before committing to a service:
 
 ### Alternative Services
 
-4. **APPTechnology - Microsoft Endpoint Management (SCCM, Intune, Autopilot, MDM)**
-   https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/293554461397110
+4. **Advania - Microsoft Endpoint Management + Security Implementation Services**
+   https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/969428647441532
 
 5. **Sundown Solutions (AEMSP) - Windows Autopilot Design & Deployment Framework**  
    https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/808519279943167
