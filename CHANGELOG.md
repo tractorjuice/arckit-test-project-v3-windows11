@@ -5,6 +5,131 @@ All notable changes to ArcKit will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.6] - 2025-10-27
+
+### Added
+
+- **Gemini CLI Support**: Full support for Google Gemini CLI across all commands
+  - Added `converter.py` to convert Claude markdown commands to Gemini TOML format
+  - All 24 commands now available for Gemini CLI (`.gemini/commands/arckit/*.toml`)
+  - Automatic conversion maintains command functionality and arguments
+  - Complete parity: Claude, Codex, and Gemini now have identical command sets
+  - Credit: @umag (PR #5)
+
+- **Digital Marketplace Command Split**: Split monolithic command into three focused commands
+  - **`/arckit.dos`** - Digital Outcomes and Specialists (custom development)
+    - ~400 lines (focused, clean - down from 754 lines)
+    - Covers 95% of arc-kit use cases
+    - Essential vs desirable skills extraction
+    - Evaluation framework (40% Technical, 30% Team, 20% Quality, 10% Value)
+    - Technology-agnostic success criteria
+    - No branching logic (DOS only)
+  - **`/arckit.gcloud-search`** - G-Cloud with Live Marketplace Search
+    - ~500 lines with WebSearch integration
+    - **Live Digital Marketplace search** using WebSearch
+    - Searches: `site:digitalmarketplace.service.gov.uk g-cloud [keywords]`
+    - Finds actual services with suppliers, prices, features, links
+    - Service comparison table (top 3-5 services)
+    - Recommendations based on requirements match
+    - Covers 5% of use cases (cloud services only)
+  - **`/arckit.gcloud-clarify`** - G-Cloud Service Validation (NEW!)
+    - **Bridge between search and evaluation** - validates services before supplier engagement
+    - Systematic gap analysis (MUST/SHOULD requirements vs service descriptions)
+    - Detects three gap types: ✅ Confirmed, ⚠️ Ambiguous, ❌ Not mentioned
+    - Generates prioritized questions (🔴 Critical / 🟠 High / 🔵 Medium / 🟢 Low)
+    - Risk assessment matrix for each service
+    - Email templates for supplier engagement
+    - Evidence requirements specification
+    - Completes the G-Cloud workflow: Search → Clarify → Evaluate
+
+### Changed
+
+- **Command Count**: Now 25 commands per AI assistant (22 original + 3 new G-Cloud commands)
+- **README**: Updated to reflect new DOS, G-Cloud search, and G-Cloud clarify commands
+- **Complete G-Cloud Workflow**: Requirements → Search → Clarify → Engage → Evaluate → Award
+
+### Deprecated
+
+- **`/arckit.digital-marketplace`**: Now deprecated (replaced by dos, gcloud-search, gcloud-clarify)
+  - Still functional with clear deprecation notice
+  - Migration guide provided directing users to appropriate commands
+  - Will be removed in future version
+
+### Benefits
+
+- **Clearer Purpose**: No framework confusion (DOS vs G-Cloud)
+- **More Powerful**: G-Cloud search finds actual services, not just requirements
+- **Complete Validation**: Gap analysis identifies missing/ambiguous requirements before supplier engagement
+- **Risk Mitigation**: Identifies blockers BEFORE contacting suppliers
+- **Better UX**: Users know which command to use at each workflow stage
+- **Easier Maintenance**: Smaller, focused templates (400-500 lines vs 754)
+- **Time Savings**:
+  - G-Cloud search: 30+ minutes of manual marketplace searching automated
+  - G-Cloud clarify: 30-60 minutes of manual gap analysis automated
+  - Total: 1-2 hours saved per procurement
+- **Structured Process**: End-to-end G-Cloud workflow from discovery to contract award
+
+## [0.3.5] - 2025-10-26
+
+### Added
+
+- **Codex CLI Integration**: Full support for OpenAI Codex CLI in `arckit init`
+  - Added `codex` to AGENT_CONFIG with proper installation URL
+  - Automatic `.envrc` generation for Codex projects with `CODEX_HOME` environment variable
+  - Auto-creates `.gitignore` entries to exclude auth tokens while preserving prompts
+  - Copies slash commands to `.codex/prompts/` directory
+  - Added Codex to interactive AI assistant selection menu
+  - Enhanced next steps output with Codex-specific setup instructions (direnv recommended)
+- Added `.envrc` and updated `.gitignore` for main arc-kit repository
+
+### Changed
+
+- Updated `arckit init` help text to include `codex` as supported AI assistant option
+- Commands are now copied for both Claude and Codex (previously Claude-only)
+
+## [0.3.4] - 2025-10-23
+
+### Fixed
+
+- **Critical Installation Bug**: Fixed package distribution to properly include markdown files
+  - Added `[tool.hatch.build.targets.wheel.shared-data]` configuration to pyproject.toml
+  - Templates, scripts, and .claude commands now correctly packaged in wheel
+  - Enhanced `get_data_paths()` function to locate installed package data:
+    - Supports uv tool installs (`~/.local/share/uv/tools/arckit-cli/share/arckit/`)
+    - Supports pip installs (site-packages)
+    - Supports platformdirs locations
+    - Fallback to source directory for development mode
+  - Added debug output showing resolved data paths during `arckit init`
+  - Added warning messages if templates/scripts/commands not found
+  - Fixed: `arckit init` now works correctly when installed via pip or uv
+  - Credit: @umag (PR #3)
+
+### Added
+
+- **UI Implementation Plan**: Comprehensive plan for building a web-based user interface
+  - Next.js 14 + FastAPI architecture for hybrid CLI/UI approach
+  - Interactive dashboard with project visualization and status tracking
+  - Requirements management interface with filtering, sorting, and graph views
+  - Traceability matrix visualization (interactive graph + table views)
+  - Diagram viewers for Mermaid diagrams and Wardley Maps
+  - Vendor comparison dashboard with side-by-side evaluation
+  - AI assistant chat integration for executing slash commands from UI
+  - Real-time sync between CLI and UI using file watchers and WebSockets
+  - 5-phase implementation roadmap (12-16 weeks)
+  - Multiple deployment options: local web server, desktop app (Electron), cloud
+  - Maintains markdown files as source of truth (no database lock-in)
+  - Full technical specifications, API design, and risk assessment
+
+### Documentation
+
+- Added `UI-IMPLEMENTATION-PLAN.md` with complete architecture and implementation strategy
+- Detailed backend API specifications with FastAPI endpoints
+- Frontend component structure and technology stack recommendations
+- Data flow diagrams showing CLI-to-UI synchronization
+- Risk assessment and mitigation strategies
+- Budget and resource requirements
+- Success metrics and KPIs
+
 ## [0.3.2] - 2025-10-21
 
 ### Changed

@@ -1,6 +1,6 @@
 # ArcKit - Enterprise Architecture Governance Toolkit
 
-![ArcKit v0.3.4 - Installation Fix + UI Plan](docs/assets/arckit-v0.3.2-banner.png)
+![ArcKit v0.3.6 - Command Split + Gemini Support](docs/assets/arckit-v0.3.2-banner.png)
 
 **Build better enterprise architecture through structured governance, vendor procurement, and design review workflows.**
 
@@ -38,7 +38,7 @@ uv tool install arckit-cli --from git+https://github.com/tractorjuice/arc-kit.gi
 uvx --from git+https://github.com/tractorjuice/arc-kit.git arckit init my-project
 ```
 
-**Latest Release**: [v0.3.4](https://github.com/tractorjuice/arc-kit/releases/tag/v0.3.4)
+**Latest Release**: [v0.3.6](https://github.com/tractorjuice/arc-kit/releases/tag/v0.3.6)
 
 ### Initialize a Project
 
@@ -195,6 +195,17 @@ For UK public sector organizations needing off-the-shelf cloud services:
 - Service comparison table with recommendations
 - Shortlist top 3-5 matching services
 - Links to Digital Marketplace guidance (gov.uk)
+
+**`/arckit.gcloud-clarify`** → G-Cloud service validation and gap analysis 🇬🇧
+
+Validate G-Cloud services and generate supplier clarification questions:
+- **Systematic gap analysis** (MUST/SHOULD requirements vs service descriptions)
+- Detect gaps: ✅ Confirmed, ⚠️ Ambiguous, ❌ Not mentioned
+- Generate prioritized questions (🔴 Critical / 🟠 High / 🔵 Medium / 🟢 Low)
+- Risk assessment matrix for each service
+- Email templates for supplier engagement
+- Evidence requirements specification
+- Next steps checklist
 
 **`/arckit.evaluate`** → Create vendor evaluation framework
 
@@ -426,6 +437,7 @@ payment-modernization/
 | `/arckit.sow` | Generate vendor RFP | `projects/XXX/sow.md` |
 | `/arckit.dos` | Generate Digital Outcomes and Specialists (DOS) procurement docs for UK Digital Marketplace | `projects/XXX/procurement/dos-requirements.md` |
 | `/arckit.gcloud-search` | Search G-Cloud services on UK Digital Marketplace with live WebSearch | `projects/XXX/procurement/gcloud-requirements.md` |
+| `/arckit.gcloud-clarify` | Validate G-Cloud services and generate supplier clarification questions | `projects/XXX/procurement/gcloud-clarification-questions.md` |
 
 ### Vendor Management
 
@@ -1247,7 +1259,7 @@ arckit init .
 
 - **Issues**: [GitHub Issues](https://github.com/tractorjuice/arc-kit/issues)
 - **Releases**: [GitHub Releases](https://github.com/tractorjuice/arc-kit/releases)
-- **Latest Version**: [v0.3.4](https://github.com/tractorjuice/arc-kit/releases/tag/v0.3.4)
+- **Latest Version**: [v0.3.6](https://github.com/tractorjuice/arc-kit/releases/tag/v0.3.6)
 
 ---
 
