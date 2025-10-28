@@ -2,8 +2,9 @@
 
 **Project Name**: Windows 10 to Windows 11 Migration using Microsoft InTune
 **Department/Organization**: IT Operations
-**Document Version**: 1.1
-**Date**: 2025-10-22
+**Document Version**: 2.0
+**Date**: 2025-10-28
+**Last Updated**: 2025-10-28 - Confirmed alignment with Requirements v5.0 (organizational security governance)
 **Author**: Enterprise Architecture Team
 **Document Status**: DRAFT
 **Approving Authority**: Steering Committee / Executive Board
@@ -16,6 +17,7 @@
 |---------|------|--------|---------|
 | 1.0 | 2025-10-21 | Enterprise Architect | Initial SOBC based on stakeholder analysis |
 | 1.1 | 2025-10-22 | Enterprise Architect | Updated with critical success factors, improved benefits profiles, enhanced risk mitigation strategies |
+| 2.0 | 2025-10-28 | Enterprise Architect | **Confirmed alignment with Requirements v5.0** - Reviewed for MOD CAAT/DTSL references (none found). Document correctly uses organizational security governance approach (CAB approval, Security Impact Assessment, Security Architecture Review). No material changes required. |
 
 **Distribution List**: CIO, CFO, CISO, IT Operations Director, Steering Committee
 

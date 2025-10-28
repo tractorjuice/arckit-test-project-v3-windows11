@@ -2,11 +2,12 @@
 
 **Document Type**: Stakeholder Analysis
 **Project ID**: 001
-**Version**: 1.0
-**Date**: 2025-10-20
+**Version**: 2.0
+**Date**: 2025-10-28
 **Status**: DRAFT
 **Owner**: IT Operations & Enterprise Architecture
 **Analyst**: Enterprise Architecture Team
+**Last Updated**: 2025-10-28 (Updated for Requirements v5.0 - organizational security governance confirmed)
 
 ---
 
@@ -632,7 +633,14 @@ LOW POWER                                    HIGH INTEREST
 ---
 
 **Document Control**:
-- **Version**: 1.0
+- **Version**: 2.0
 - **Classification**: INTERNAL
 - **Next Review**: Quarterly during project lifecycle
 - **Document Owner**: Enterprise Architecture Team
+
+**Version History**:
+
+| Version | Date | Changes | Impact |
+|---------|------|---------|--------|
+| 1.0 | 2025-10-20 | Initial stakeholder drivers analysis | Baseline |
+| 2.0 | 2025-10-28 | Updated for Requirements v5.0 alignment - **Confirmed organizational security governance approach** (CAB approval, Security Impact Assessment, Security Architecture Review). No stakeholder driver changes required as document did not contain MOD CAAT-specific references. All stakeholder goals remain unchanged and aligned with corrected requirements. | No material changes - stakeholder drivers already aligned with organizational security governance |

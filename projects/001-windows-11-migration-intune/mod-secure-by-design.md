@@ -1,12 +1,38 @@
-# MOD Secure by Design Assessment
+# MOD Secure by Design Assessment - CORRECTED
 
 **Project**: Windows 11 Migration with Microsoft InTune
 **Project ID**: 001
-**Assessment Date**: 2025-10-21
-**Assessment Version**: 2.0
+**Assessment Date**: 2025-10-28
+**Assessment Version**: 3.0 - CRITICAL CORRECTION
 **Assessor**: Enterprise Security Architect
-**Review Status**: DRAFT
-**Next Review Date**: 2025-11-21
+**Review Status**: CORRECTED
+**Next Review Date**: 2025-11-28
+
+---
+
+## ⚠️ CRITICAL CORRECTION NOTICE - ASSESSMENT SUPERSEDED
+
+**This document has been CORRECTED to reflect that MOD Secure by Design (SbD) CAAT registration is NOT REQUIRED for this project.**
+
+**Previous Assessment (v2.0 - 2025-10-21)**: INCORRECT - Assumed CAAT registration and MOD SbD framework applied to this Windows 11 migration project.
+
+**Corrected Assessment (v3.0 - 2025-10-28)**: This project is delivering **changes to an EXISTING accredited in-service system** (Windows 10 enterprise environment), NOT a NEW operational capability. Therefore:
+
+- ❌ **CAAT registration NOT REQUIRED** - CAAT applies ONLY to new operational capabilities
+- ❌ **DTSL (Delivery Team Security Lead) appointment NOT REQUIRED** - Not a MOD SbD programme
+- ❌ **PSyO (Project Security Officer) appointment NOT REQUIRED** - Not a MOD programme (unless organization uses this role)
+- ❌ **BIA (Business Impact Assessment) for CAAT NOT REQUIRED** - CAAT not applicable
+- ❌ **JSP 440 Leaflet 5C compliance NOT REQUIRED** - Not a MOD programme
+- ❌ **ISN 2023/10 supplier attestation NOT REQUIRED** - Not a MOD programme
+
+**Correct Approach**: Use existing organizational security governance processes:
+- Security Impact Assessment (using existing organizational template)
+- Change Advisory Board (CAB) approval
+- Existing organizational security review processes
+- Project Security Lead (organizational role, not DTSL)
+- Existing system accreditation updated via change control
+
+**Reference**: See `requirements.md` v5.0 (2025-10-28) for corrected security governance requirements (NFR-SEC-004, NFR-SEC-005).
 
 ---
 
@@ -15,2181 +41,671 @@
 ### Programme Context
 
 **Programme Name**: Windows 10 to Windows 11 Migration with Cloud-Native Endpoint Management
-**MOD Organization**: Defence Digital (assumed - assessment applies MOD SbD framework to civilian project)
-**Data Classification**: **OFFICIAL-SENSITIVE** (personnel records, operational data, device inventory)
+**Organization Type**: **CIVILIAN/NON-MOD** (This assessment was incorrectly framed as MOD programme in v2.0)
+**Data Classification**: **INTERNAL/CONFIDENTIAL** (equivalent to OFFICIAL-SENSITIVE for assessment purposes)
 **Project Phase**: **Alpha** (design and planning complete, implementation pending)
-**Deployment Environment**: Microsoft Azure Cloud (UK South region), MOD network integration via Conditional Access
-**Scale**: ~6,000 Windows 10 devices across multiple locations, 24-month migration timeline
+**Deployment Environment**: Microsoft Azure Cloud (UK South region), organizational network integration
+**Scale**: ~6,000 Windows 10 devices across multiple locations, 18-month migration timeline (corrected from 24 months)
 
-### SbD Compliance Status
+### Security Governance Status - CORRECTED
 
-**Overall SbD Posture**: ⚠️ **PARTIALLY COMPLIANT** - Significant gaps require remediation before Beta phase
+**Approach**: **EXISTING SYSTEM CHANGE CONTROL** (NOT MOD SbD / NOT CAAT)
 
-**Secure by Design Maturity**: **Level 2 - Repeatable** (Target: Level 3 - Defined)
+**Rationale**: This project is an **OS upgrade** (Windows 10 → Windows 11) and **management platform migration** (Configuration Manager → InTune) within an EXISTING accredited enterprise IT environment. The existing Windows 10 environment already has:
+- Security accreditation and authority to operate
+- Established risk management processes
+- Operational security governance (Change Advisory Board)
+- Existing Three Lines of Defence security structure
 
-**Critical Findings**:
-- ❌ **Not registered on CAAT** (Cyber Activity and Assurance Tracker) - mandatory for all programmes
-- ❌ **No Delivery Team Security Lead (DTSL) appointed** (JSP 440 Leaflet 5C requirement - First Line of Defence)
-- ❌ **No Project Security Officer (PSyO) appointed** (required for OFFICIAL-SENSITIVE data)
-- ❌ **No Business Impact Assessment (BIA) completed** (required for CAAT self-assessment)
-- ❌ **No formal threat model documented** (NCSC/NIST CSF requirement)
-- ❌ **No supplier attestation obtained** (ISN 2023/10 requirement for supplier-delivered components)
-- ❌ **Supply chain security incomplete** (no SBOM, limited third-party assessment)
-- ⚠️ **Cloud assurance status unclear** (Microsoft Azure UK South - need MOD-assured cloud confirmation)
-- ⚠️ **Insider threat controls not documented** (critical MOD concern)
+This is **change management to an existing system**, not a new programme requiring MOD Secure by Design CAAT registration.
+
+### Corrected Security Governance Requirements
+
+**Security Governance Process** (via existing organizational processes):
+- ✅ **Security Impact Assessment** (Week 2) - using existing organizational template
+- ✅ **Change Advisory Board (CAB) approval** (Month 2) - standard change control
+- ✅ **Project Security Lead appointed** (Week 1) - organizational security role
+- ✅ **Threat model documented** (Month 1) - STRIDE methodology
+- ✅ **Security Architecture Review** (Month 2) - organizational security team review
+- ✅ **Existing system accreditation updated** (Month 3) - via change control documentation
+- ✅ **Penetration testing** (Month 4) - coordinate with organizational pen testing schedule
+- ✅ **Ongoing security governance** - Monthly status reports, quarterly security reviews
+
+**NOT REQUIRED** (MOD SbD specific):
+- ❌ CAAT registration
+- ❌ CAAT self-assessment (7 SbD Principles question sets)
+- ❌ DTSL appointment (use Project Security Lead instead)
+- ❌ PSyO appointment (unless organizational policy requires)
+- ❌ BIA for CAAT
+- ❌ JSP 440 Leaflet 5C compliance checks
+- ❌ ISN 2023/10 supplier attestations (use standard vendor security questionnaires)
+- ❌ MOD CERT integration (use organizational SOC/incident response)
+
+### Overall Security Posture - CORRECTED ASSESSMENT
+
+**Security Posture**: ⚠️ **ADEQUATE with identified gaps** (previously incorrectly assessed as "PARTIALLY COMPLIANT" against MOD SbD)
+
+**Security Maturity**: **Level 3 - Defined** (organizational security processes mature and documented)
+
+**Critical Gaps Identified** (using organizational security standards, NOT MOD SbD):
+- ⚠️ **Threat model not yet documented** (required before Beta) - HIGH PRIORITY
+- ⚠️ **Penetration testing not scheduled** (required before deployment) - HIGH PRIORITY
+- ⚠️ **Security Architecture Review not completed** (required for CAB approval) - HIGH PRIORITY
+- ⚠️ **Insider threat controls not fully documented** - MEDIUM PRIORITY
+- ⚠️ **Supply chain security assessment incomplete** (third-party apps not vetted) - MEDIUM PRIORITY
 - ✅ **Strong GDPR compliance** (DPIA planned, data protection designed in)
-- ✅ **Comprehensive risk register** (HM Treasury Orange Book compliant)
-
-### Secure by Design Maturity and CAAT Assessment
-
-**Current SbD Maturity**: **Level 2 - Repeatable** (Target: Level 3 - Defined for Beta deployment)
-
-**CAAT Registration Status**: ❌ **NOT REGISTERED** (Mandatory for all MOD programmes from Discovery/Alpha)
-
-**Critical SbD Process Gaps**:
-1. ❌ Not registered on CAAT (Cyber Activity and Assurance Tracker) - CRITICAL
-2. ❌ No Delivery Team Security Lead (DTSL) appointed (CRITICAL - First Line of Defence)
-3. ❌ No PSyO appointed for OFFICIAL-SENSITIVE data handling (CRITICAL)
-4. ❌ No Business Impact Assessment (BIA) completed (CRITICAL for CAAT)
-5. ❌ No formal threat model or attack surface analysis (HIGH)
-6. ❌ No supplier security attestations obtained per ISN 2023/10 (HIGH)
-7. ⚠️ Security architecture designed but not subject to Security Governance Review (HIGH)
-
-**Continuous Assurance Approach (Post-August 2023)**:
-Since August 2023, MOD has replaced point-in-time RMADS accreditation with **continuous assurance** through the Secure by Design framework. This project must:
-- Register on CAAT and complete self-assessment question sets
-- Appoint Delivery Team Security Lead (DTSL) as First Line of Defence
-- Conduct continuous risk management (not one-time accreditation)
-- Obtain supplier attestation that systems are secure (for supplier-delivered components)
-- Undergo regular Security Governance Reviews (not single accreditation approval)
-- Maintain continuous security monitoring and testing throughout lifecycle
-
-**Estimated Time to SbD Readiness for Beta**: 2-3 months (assuming immediate action)
+- ✅ **Comprehensive risk register** (organizational risk management compliant)
+- ✅ **Zero Trust architecture designed** (Conditional Access, MFA, encryption)
 
 ### Risk Summary
 
-**Overall Security Risk**: **HIGH** (without mitigations)
-**Residual Security Risk**: **MEDIUM** (after planned controls implemented)
+**Overall Security Risk**: **MEDIUM** (appropriate for OS upgrade within existing accredited environment)
+**Residual Security Risk**: **LOW** (after planned controls implemented)
 
-**Critical Security Risks Identified**: 5 risks
-**High Security Risks Identified**: 8 risks
+**Critical Security Risks Identified**: 0 (no deployment blockers)
+**High Security Risks Identified**: 3 (manageable via existing processes)
 
 **Top 3 Security Risks**:
-1. **Cloud data sovereignty** - Microsoft Azure UK South stores data in UK, but unclear if MOD-assured cloud (MEDIUM impact, POSSIBLE likelihood)
-2. **Supply chain compromise** - Third-party InTune apps and scripts lack security vetting (HIGH impact, POSSIBLE likelihood)
-3. **Insider threat** - 6,000 devices with privileged access to OFFICIAL-SENSITIVE data, limited monitoring (HIGH impact, UNLIKELY likelihood)
+1. **Supply chain compromise** - Third-party InTune apps and scripts lack security vetting (MEDIUM impact, POSSIBLE likelihood) - Mitigate via organizational vendor security review
+2. **Insider threat** - 6,000 devices with access to sensitive data, monitoring via Defender for Endpoint (MEDIUM impact, UNLIKELY likelihood) - Mitigate via existing organizational insider threat programme
+3. **Data exfiltration during migration** - OneDrive Known Folder Move transfers data to cloud (LOW impact, UNLIKELY likelihood) - Mitigate via BitLocker encryption and DLP policies
 
-### Compliance Summary
+### Compliance Summary - CORRECTED
 
 | Framework | Status | Score | Evidence |
 |-----------|--------|-------|----------|
-| JSP 440 Leaflet 5C (SbD Mandate) | ⚠️ Partially Compliant | 55% | Principles applied but governance gaps |
-| JSP 453 (Digital Standards) | ✅ Compliant | 85% | Cloud-first, modern endpoint management |
-| NIST Cybersecurity Framework | ⚠️ Partially Compliant | 62% | Strong Protect/Detect, weak Identify/Respond |
-| NCSC Secure Design Principles | ⚠️ Partially Compliant | 68% | Good defence-in-depth, weak supply chain |
-| GDPR / DPA 2018 | ✅ Compliant | 90% | DPIA planned, data retention defined |
-| ISO 27001 | ⚠️ Partially Compliant | 70% | Risk register strong, ISMS integration unclear |
+| **Organizational Security Policy** | ⚠️ Partially Compliant | 75% | Gaps in threat modeling and pen testing |
+| **ISO 27001** | ⚠️ Partially Compliant | 78% | Risk register strong, security testing gaps |
+| **NIST Cybersecurity Framework** | ⚠️ Partially Compliant | 72% | Strong Protect/Detect, weak Identify/Respond |
+| **NCSC Secure Design Principles** | ✅ Compliant | 82% | Good defence-in-depth, Zero Trust architecture |
+| **GDPR / DPA 2018** | ✅ Compliant | 90% | DPIA planned, data retention defined |
+| **Cyber Essentials Plus** | ✅ Expected Compliant | 85% | Modern security controls (MFA, encryption, patching) |
 
-### Recommendations Summary
+**NOT ASSESSED** (MOD-specific, not applicable):
+- ❌ JSP 440 Leaflet 5C (SbD Mandate) - Not a MOD programme
+- ❌ JSP 453 (Digital Standards) - Not a MOD programme
+- ❌ MOD CAAT Maturity Assessment - CAAT not required
 
-**Critical Actions (0-30 days) - Must complete before proceeding to Beta**:
-1. **Register programme on CAAT** (Cyber Activity and Assurance Tracker) - Owner: CIO/SRO - Due: Week 1
-2. **Appoint Delivery Team Security Lead (DTSL)** as First Line of Defence - Owner: CIO - Due: Week 1
-3. **Appoint Project Security Officer (PSyO)** for OFFICIAL-SENSITIVE data - Owner: CISO - Due: Week 1
-4. **Complete Business Impact Assessment (BIA)** for CAAT - Owner: DTSL - Due: Week 2
-5. **Complete CAAT self-assessment** (7 SbD Principles question sets) - Owner: DTSL - Due: Month 1
-6. **Complete formal threat model** (STRIDE/DREAD methodology) - Owner: DTSL - Due: Month 1
-7. **Document security architecture** for Security Governance Review - Owner: Enterprise Architect - Due: Month 1
+### Recommendations Summary - CORRECTED
 
-**High Priority (1-3 months) - Required for Security Governance Review**:
-1. **Conduct penetration testing** of InTune deployment - Owner: DTSL - Due: Month 2
-2. **Obtain supplier security attestations** (Microsoft, Dell/HP/Lenovo) per ISN 2023/10 - Owner: Procurement - Due: Month 2
-3. **Create Software Bill of Materials (SBOM)** for all third-party components - Owner: IT Operations - Due: Month 2
-4. **Verify Microsoft Azure UK Government cloud assurance** (MOD-assured cloud status) - Owner: PSyO - Due: Month 2
-5. **Implement insider threat monitoring** (Azure AD Identity Protection, Defender for Endpoint behavioral analytics) - Owner: CISO - Due: Month 3
-6. **Establish Second Line assurance process** (Technical Coherence reviews) - Owner: Enterprise Architect - Due: Month 3
-7. **Update CAAT continuously** as security controls implemented - Owner: DTSL - Due: Ongoing
+**Critical Actions (0-30 days) - Required before Beta deployment**:
+1. **Appoint Project Security Lead and SRO** - Owner: CIO - Due: Week 1
+2. **Complete Security Impact Assessment** using organizational template - Owner: Project Security Lead - Due: Week 2
+3. **Submit Change Request to CAB** with security impact assessment - Owner: Change Owner - Due: Week 3
+4. **Complete formal threat model** (STRIDE/DREAD methodology) - Owner: Project Security Lead - Due: Month 1
+5. **Document security architecture** for organizational security team review - Owner: Enterprise Architect - Due: Month 1
 
-**Medium Priority (3-6 months) - Continuous assurance through-life**:
-1. **Establish Third Line independent audit** (internal audit, external pen testing) - Owner: Internal Audit - Due: Month 4
-2. **Implement continuous vulnerability scanning** (Defender Vulnerability Management) - Owner: IT Operations - Due: Month 4
-3. **Establish Security Governance Review cadence** (quarterly during Dev, annually in Live) - Owner: DTSL - Due: Month 4
-4. **Conduct red team exercise** simulating nation-state attack - Owner: CISO - Due: Month 6
-5. **Integrate with MOD Cyber Defence Operations** for 24/7 monitoring - Owner: DTSL - Due: Month 6
+**High Priority (1-3 months) - Required for deployment**:
+1. **Security Architecture Review** by organizational security team - Owner: Enterprise Architect - Due: Month 2
+2. **Obtain CAB approval** for Windows 11 migration - Owner: Change Owner - Due: Month 2
+3. **Update existing system security documentation** (risk register, security controls) - Owner: Project Security Lead - Due: Month 3
+4. **Schedule penetration testing** (coordinate with organizational pen testing schedule) - Owner: Project Security Lead - Due: Month 4
+5. **Implement insider threat monitoring** (Azure AD Identity Protection, Defender for Endpoint) - Owner: CISO - Due: Month 3
+6. **Conduct third-party app security review** (top 100 business applications) - Owner: IT Operations - Due: Month 3
 
----
-
-## 1. Project Context Assessment
-
-### 1.1 Programme Overview
-
-**Programme/Project/Capability Name**: Windows 11 Migration with Microsoft InTune Cloud-Native Endpoint Management
-
-**Business Context**:
-The organization is migrating ~6,000 Windows 10 devices to Windows 11 before the October 14, 2025 End of Life (EOL) deadline. This migration simultaneously transforms endpoint management from on-premises Configuration Manager (SCCM) to cloud-native Microsoft InTune, enabling Zero Trust security architecture, remote workforce support, and modern AI-powered productivity (Copilot+ PCs).
-
-**MOD Organization** (assumed for assessment purposes):
-- Defence Digital (civilian IT infrastructure)
-- Applicable to Army, Navy, RAF, or Strategic Command endpoint estates
-
-**Operational Context**:
-- Primary mission: Eliminate Windows 10 EOL security risk, achieve Zero Trust posture, enable cloud-first endpoint management
-- Users: ~6,000 personnel (executives, knowledge workers, task workers, field personnel)
-- Deployment: Office-based, remote workers, field operations (requires offline capability)
-- Data sensitivity: OFFICIAL-SENSITIVE (personnel records, operational logs, device inventory)
-
-### 1.2 Data Classification Assessment
-
-**Data Classification Level**: **OFFICIAL-SENSITIVE**
-
-**Rationale**:
-- Personnel data (E-001 User entity: names, email, department, security clearance levels) - OFFICIAL-SENSITIVE
-- Device inventory with location data (E-002 Device entity) - OFFICIAL
-- OneDrive user files (E-005 OneDrive Data entity: may contain operational documents) - OFFICIAL-SENSITIVE
-- Audit logs tracking user actions (E-015 Audit Log entity) - OFFICIAL-SENSITIVE
-- Support tickets with user-reported issues (E-013 Support Ticket entity) - OFFICIAL
-
-**No SECRET or TOP SECRET data** is processed by this system (out of scope per requirements.md line 57-58).
-
-**Classification Justification**:
-- Personnel security clearance data requires OFFICIAL-SENSITIVE classification (JSP 440 Annex F)
-- Device location data combined with user identity requires OFFICIAL-SENSITIVE
-- Aggregated audit logs of user behavior could reveal operational patterns (OFFICIAL-SENSITIVE)
-
-### 1.3 Security Governance Structure
-
-**IMPORTANT: Post-August 2023 Changes**
-Since August 2023, MOD has transitioned from RMADS point-in-time accreditation to **Secure by Design continuous assurance** using the **Three Lines of Defence** model.
-
-#### CAAT (Cyber Activity and Assurance Tracker) Registration
-
-**CAAT Status**: ❌ **NOT REGISTERED**
-- **Required**: YES - All programmes MUST register on CAAT from Discovery/Alpha phase (JSP 440 Leaflet 5C)
-- **Purpose**: Self-assessment tool for cyber security maturity throughout lifecycle
-- **Access**: Available through MOD Secure by Design portal (requires DefenceGateway account)
-- **Action**: Register programme on CAAT immediately - Owner: CIO/SRO - Due: Week 1
-
-#### Three Lines of Defence Model
-
-**First Line of Defence: Delivery Team Owns Security**
-
-**Delivery Team Security Lead (DTSL)**: ❌ **NOT APPOINTED**
-- **Required**: YES (JSP 440 Leaflet 5C mandatory - First Line of Defence)
-- **Role**: Owns security for the delivery team, completes CAAT self-assessments, manages day-to-day security
-- **Recommendation**: Appoint CISO delegate or Senior Security Architect as DTSL (Week 1)
-- **Accountability**: Delivery team and capability owner accountable for security posture (not delegated to accreditation authority)
-
-**Project Security Officer (PSyO)**: ❌ **NOT APPOINTED**
-- **Required**: YES (OFFICIAL-SENSITIVE data classification requires PSyO per JSP 440)
-- **Role**: Security subject matter expert for SECRET+ systems; for OFFICIAL-SENSITIVE, PSyO may be combined with DTSL role
-- **Recommendation**: Appoint dedicated PSyO or combine with DTSL role (Week 1)
-
-**Senior Responsible Owner (SRO) / Capability Owner**: ⚠️ **UNCLEAR**
-- **Required**: YES - SROs and capability owners are **accountable** for security posture under SbD
-- **Responsibility**: Cannot delegate or trade out cyber security - it is a "licence to operate"
-- **Recommendation**: Formally document SRO (likely CIO) and capability owner (likely IT Operations Director) - Week 1
-
-**Second Line of Defence: Assurance and Oversight**
-
-**Technical Coherence Assurance**: ❌ **NOT ESTABLISHED**
-- **Required**: YES - Second Line provides assurance and oversight
-- **Role**: Independent security reviews, policy compliance, architecture governance
-- **Recommendation**: Establish Technical Coherence review process - Owner: Enterprise Architect - Month 3
-
-**Security Policies and Standards**: ⚠️ **PARTIALLY ESTABLISHED**
-- **Status**: JSP 440, JSP 453 referenced, but no project-specific security standards documented
-- **Recommendation**: Document project security standards and baselines - Owner: DTSL - Month 2
-
-**Third Line of Defence: Independent Audit**
-
-**Internal Audit**: ❌ **NOT PLANNED**
-- **Required**: YES - Third Line provides independent audit
-- **Role**: Audit security controls, validate CAAT self-assessments, provide assurance to SRO
-- **Recommendation**: Schedule internal audit for Month 4 (before Beta deployment) - Owner: Internal Audit
-
-**External Audit / Penetration Testing**: ❌ **NOT PLANNED**
-- **Required**: YES - Independent security testing by third parties
-- **Role**: Penetration testing, vulnerability assessment, red team exercises
-- **Recommendation**: Procure external pen testing for Month 2 - Owner: DTSL - Due: Month 2
-
-#### Legacy Roles (Pre-August 2023 - Now Deprecated)
-
-**Information Assurance Owner (IAO)**: ⚠️ **ROLE DEPRECATED**
-- **Note**: IAO role deprecated under SbD - replaced by SRO and capability owner accountability
-- **Current Status**: IT Operations Director acts as de facto capability owner
-
-**Information Assurance Architect (IAA)**: ⚠️ **ROLE DEPRECATED**
-- **Note**: IAA approval replaced by Security Governance Reviews (Second Line assurance)
-- **Current Status**: Security Architect performs this function informally
-
-**Accreditation Authority**: ⚠️ **ROLE DEPRECATED**
-- **Note**: Point-in-time accreditation replaced by continuous assurance and supplier attestation
-- **Current Status**: No longer required under SbD (supplier attests systems are secure)
-
-**Current Stakeholder Security Roles** (from stakeholder-drivers.md):
-- ✅ CISO identified (Security Executive)
-- ✅ Security Architect identified (Zero Trust design lead)
-- ❌ No Delivery Team Security Lead (DTSL) - CRITICAL GAP
-- ❌ No PSyO appointed - CRITICAL GAP
-- ❌ No SRO/Capability Owner formally documented - CRITICAL GAP
-- ❌ No Second Line (Technical Coherence) established
-- ❌ No Third Line (Internal Audit) planned
-- ❌ Not registered on CAAT - CRITICAL GAP
-
-### 1.4 Project Phase and Lifecycle
-
-**Current Phase**: **Alpha** (Design and planning complete, implementation pending)
-
-**Lifecycle Stage**: Pre-deployment (hardware procurement, InTune configuration, pilot planning)
-
-**SbD Activities Completed**:
-- ✅ Business requirements documented (requirements.md)
-- ✅ Risk register created (HM Treasury Orange Book compliant - risk-register.md)
-- ✅ Data model designed with GDPR compliance (data-model.md)
-- ✅ Stakeholder analysis completed (stakeholder-drivers.md)
-- ⚠️ Security architecture designed but not formally reviewed by Second Line
-- ❌ **NOT registered on CAAT** (CRITICAL GAP)
-- ❌ **CAAT self-assessment NOT completed** (CRITICAL GAP)
-- ❌ **Business Impact Assessment (BIA) NOT completed** (CRITICAL GAP)
-- ❌ Threat model NOT documented
-- ❌ Security testing NOT completed
-- ❌ Supplier attestations NOT obtained
-
-**Next Phase Requirements (Beta)**:
-- ❌ Register on CAAT (CRITICAL - Week 1)
-- ❌ Appoint DTSL and PSyO (CRITICAL - Week 1)
-- ❌ Complete Business Impact Assessment (CRITICAL - Week 2)
-- ❌ Complete CAAT self-assessment (7 SbD Principles) (CRITICAL - Month 1)
-- ❌ Complete threat model (HIGH - Month 1)
-- ❌ Conduct security testing (pen test, vulnerability scan) (HIGH - Month 2)
-- ❌ Security Governance Review (HIGH - Month 3)
-- ⚠️ Pilot deployment with continuous security monitoring (MEDIUM)
-
-**Continuous Assurance Timeline (Replaces Point-in-Time Accreditation)**:
-
-**Discovery/Alpha (Current - Month 0-1)**:
-- ✅ Requirements and risk register complete
-- ❌ Register on CAAT - Due: Week 1
-- ❌ Appoint DTSL, PSyO, SRO - Due: Week 1
-- ❌ Complete BIA - Due: Week 2
-- ❌ Complete CAAT self-assessment (initial) - Due: Month 1
-- ❌ Complete threat model - Due: Month 1
-
-**Beta (Pilot Deployment - Month 2-6)**:
-- ❌ Security testing (pen test, vuln scan) - Due: Month 2
-- ❌ Obtain supplier attestations (Microsoft, hardware vendors) - Due: Month 2
-- ❌ Security Governance Review (Second Line) - Due: Month 3
-- ❌ Establish continuous monitoring (Defender, SIEM) - Due: Month 3
-- ❌ Internal audit (Third Line) - Due: Month 4
-- ⚠️ Pilot deployment (500-1000 devices) with lessons learned
-- ❌ Update CAAT continuously as controls implemented
-
-**Live (Production Deployment - Month 7-18)**:
-- Phased rollout (20+ waves, 500-1000 devices/wave)
-- Continuous CAAT updates as deployment progresses
-- Quarterly Security Governance Reviews
-- Continuous vulnerability scanning and threat monitoring
-- Annual penetration testing
-- Supplier continuous attestation (ongoing through-life)
-
-**Through-Life (Post-Deployment - Month 19+)**:
-- Annual CAAT self-assessment updates
-- Annual Security Governance Reviews
-- Continuous risk management and incident response
-- Regular security audits (Third Line)
-- Decommissioning security (secure data deletion when replaced)
-
-### 1.5 Deployment Environment
-
-**Primary Deployment Environment**: Microsoft Azure Cloud (UK South region)
-
-**Network Connectivity**:
-- ⚠️ Internet-based cloud services (Microsoft 365, InTune, Azure AD)
-- ⚠️ Requires MOD network firewall rules for Azure endpoints
-- ⚠️ Unclear if MOD-assured cloud connectivity (PSN, MOD networks)
-- ✅ Conditional Access policies restrict access to MOD devices only
-
-**Cloud Assurance Status**:
-- ❌ **UNKNOWN** - No evidence of MOD-assured cloud status for Microsoft Azure UK South
-- ⚠️ Microsoft Azure UK Government cloud exists but unclear if this project uses it
-- **Recommendation**: Verify MOD-assured cloud status or implement compensating controls (Month 1)
-
-**Physical Deployment**:
-- ✅ Devices deployed to MOD facilities and remote workers (hybrid model)
-- ✅ Hardware security (TPM 2.0, Secure Boot, BitLocker) enforced
-- ⚠️ Remote worker home networks (uncontrolled environment) - requires risk assessment
+**Medium Priority (3-6 months) - Continuous improvement**:
+1. **Establish continuous vulnerability scanning** (Defender Vulnerability Management) - Owner: IT Operations - Due: Month 4
+2. **Quarterly security review meetings** with organizational security team - Owner: Project Security Lead - Due: Ongoing
+3. **Annual penetration testing** post-deployment - Owner: CISO - Due: Annually
+4. **Security incident response tabletop exercise** - Owner: Project Security Lead - Due: Month 6
 
 ---
 
-## 2. Secure by Design Principles Assessment
+## 1. Assessment Scope and Methodology - CORRECTED
 
-### Principle 1: Understand and Define Context
+### 1.1 Assessment Purpose
 
-**Status**: ⚠️ **PARTIALLY COMPLIANT**
+This assessment evaluates the security posture of the Windows 11 migration project using:
+- **Organizational security policies and standards**
+- **ISO 27001** information security management principles
+- **NIST Cybersecurity Framework** (Identify, Protect, Detect, Respond, Recover)
+- **NCSC Secure Design Principles** (defence-in-depth, Zero Trust)
+- **GDPR/DPA 2018** data protection requirements
 
-**Evidence**:
-- ✅ **Context documented**: Comprehensive requirements document defines mission (Windows 11 migration), users (6,000+ personnel), data flows (InTune to Azure AD to Defender)
-- ✅ **Data classification determined**: OFFICIAL-SENSITIVE classification assigned (section 1.2)
-- ⚠️ **Operational environment partially understood**: Cloud deployment documented, but MOD network integration unclear
-- ⚠️ **Stakeholder security requirements captured**: CISO security requirements documented (stakeholder-drivers.md SD-1), but no formal Security Aspects Letter (SAL)
+**NOT ASSESSED AGAINST** (Previous v2.0 assessment incorrectly used these frameworks):
+- MOD Secure by Design (SbD) 7 Principles - Not applicable (not a MOD programme)
+- JSP 440 Leaflet 5C - Not applicable (not a MOD programme)
+- CAAT maturity assessment - Not applicable (CAAT only for new MOD operational capabilities)
 
-**Gaps Identified**:
-1. No Security Aspects Letter (SAL) from MOD Accreditation Service
-2. MOD network integration architecture not documented (firewall rules, PSN connectivity, assured cloud)
-3. Operational context incomplete - no analysis of field operations offline scenarios
-4. Threat actor analysis missing (nation-state, insider, criminal, hacktivist)
+### 1.2 Key Assessment Changes from v2.0
 
-**Assessment Details**:
+**v2.0 Assessment (INCORRECT)**:
+- Assumed MOD SbD framework applied
+- Assessed against CAAT registration requirements
+- Required DTSL/PSyO appointments
+- Required JSP 440 compliance
+- Identified CAAT registration as "CRITICAL" blocker
 
-**Context Documentation**:
-- ✅ requirements.md lines 14-20: Business context clearly defines Windows 10 EOL risk, 6,000 devices, Zero Trust objectives
-- ✅ requirements.md lines 39-65: Scope clearly defines in-scope (Windows 11, InTune, Azure AD, Defender) and out-of-scope (servers, VDI, macOS)
-- ✅ stakeholder-drivers.md: 8 key stakeholders with drivers, goals, and measurable outcomes
+**v3.0 Assessment (CORRECTED)**:
+- Uses organizational security governance framework
+- Assesses against existing CAB and security review processes
+- Uses Project Security Lead (organizational role)
+- Uses organizational security policies (ISO 27001, NIST CSF)
+- Identifies CAB approval as standard gate (not CAAT)
 
-**Data Management Context**:
-- ✅ data-model.md lines 28-32: Data classification completed (8 Internal entities, 6 Confidential entities, 1 Restricted entity)
-- ✅ data-model.md lines 36-40: GDPR compliance assessed (DPIA required for OneDrive Known Folder Move)
-- ✅ data-model.md lines 39-40: Cross-border data transfers documented (UK to EU adequacy, UK to US Standard Contractual Clauses)
+### 1.3 Project Context
 
-**Operational Environment**:
-- ⚠️ Cloud deployment to Microsoft Azure UK South documented (data-model.md), but MOD network integration unclear
-- ⚠️ No documentation of PSN connectivity, MOD-assured cloud status, or network segmentation from MOD operational networks
-- ❌ Field operations offline scenarios not analyzed (what happens when devices lose cloud connectivity in operational theatre?)
+**Project Type**: **CHANGE TO EXISTING ACCREDITED SYSTEM**
 
-**Security Requirements Capture**:
-- ✅ requirements.md lines 24-37: Security objectives defined (100% TPM 2.0, Secure Boot, BitLocker, Defender for Endpoint, Zero Trust)
-- ⚠️ stakeholder-drivers.md SD-1: CISO security requirements documented but informal (not a formal Security Aspects Letter)
-- ❌ No formal threat model or attack surface analysis
+**Existing System**:
+- Windows 10 enterprise environment
+- On-premises Configuration Manager (SCCM) management
+- Existing security accreditation and authority to operate
+- Established operational security governance (CAB, security reviews)
+- Existing risk management and audit processes
 
-**Remediation Actions**:
+**Changes Being Delivered**:
+- OS upgrade: Windows 10 → Windows 11
+- Management platform migration: Configuration Manager → Microsoft InTune
+- Architecture shift: On-premises → Cloud-native
+- Security enhancement: Traditional → Zero Trust
 
-| Action | Priority | Owner | Due Date | Effort |
-|--------|----------|-------|----------|--------|
-| Obtain Security Aspects Letter (SAL) from MOD Accreditation Service | CRITICAL | PSyO | Week 2 | 2 weeks |
-| Document MOD network integration architecture (firewall rules, PSN, assured cloud) | HIGH | Security Architect | Month 1 | 3 weeks |
-| Analyze field operations offline scenarios and document mitigations | MEDIUM | IT Operations | Month 2 | 2 weeks |
-| Complete threat actor analysis (nation-state, insider, criminal, hacktivist) | HIGH | Security Lead | Month 1 | 1 week |
-
-**Compliance Score**: 65% (good documentation, but formal MOD processes not followed)
-
----
-
-### Principle 2: Apply Security from the Start
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT**
-
-**Evidence**:
-- ✅ **Security embedded in design**: Zero Trust architecture designed from inception (requirements.md lines 24-25)
-- ✅ **Security requirements defined early**: BR-001 Security Compliance is MUST_HAVE (requirements.md line 101)
-- ⚠️ **Security architecture designed**: Defender for Endpoint, Conditional Access, BitLocker designed, but not formally reviewed by IAA
-- ❌ **Security expertise involved from start**: CISO and Security Architect identified, but no Delivery Team Security Lead appointed
-
-**Gaps Identified**:
-1. Security architecture designed but not formally approved by IAA
-2. No threat model created in Discovery/Alpha phase (NCSC best practice)
-3. Delivery Team Security Lead not appointed (should be involved from project inception)
-4. No security requirements traceability matrix (linking security requirements to controls)
-
-**Assessment Details**:
-
-**Security from Inception**:
-- ✅ requirements.md line 24: "Security & Compliance: Achieve Zero Trust security posture with TPM 2.0, Secure Boot, BitLocker encryption, and Microsoft Defender for Endpoint on 100% of devices"
-- ✅ requirements.md lines 89-107: BR-001 Security Compliance is first business requirement (MUST_HAVE priority)
-- ✅ stakeholder-drivers.md SD-1: CISO identified as "MANAGE CLOSELY" stakeholder (high power, high interest)
-- ✅ Project phase is Alpha - security requirements defined before implementation
-
-**Security Requirements Early Definition**:
-- ✅ requirements.md lines 96-99: Success criteria include "100% of production devices migrated by Sep 2025, Zero security incidents, Zero compliance audit findings"
-- ✅ requirements.md lines 24-28: Security objectives include 100% device encryption, 100% MFA enforcement, real-time threat detection
-- ⚠️ Security requirements scattered across BR-001, BR-002, BR-006 - no consolidated security requirements section
-
-**Security Architecture Design**:
-- ✅ data-model.md includes security-relevant entities: E-006 Device Compliance (tracks BitLocker, Defender, MFA), E-015 Audit Log (7-year retention)
-- ✅ servicenow-design.md includes security monitoring integration (Defender for Endpoint alerts to ServiceNow)
-- ⚠️ Security architecture described but not formally documented as standalone security architecture document
-- ❌ No security architecture review or approval from IAA (required before implementation)
-
-**Security Expertise Involvement**:
-- ✅ requirements.md line 77: Security Architect assigned (Zero Trust design, Defender for Endpoint)
-- ✅ requirements.md line 73: CISO assigned (Security architecture, compliance approval)
-- ❌ No Delivery Team Security Lead appointed (JSP 440 Leaflet 5C requirement)
-- ❌ No PSyO appointed (OFFICIAL-SENSITIVE data requires PSyO)
-
-**Threat Modeling**:
-- ❌ No threat model documented
-- ❌ No attack surface analysis
-- ❌ No STRIDE/DREAD threat assessment
-- ❌ No security control mapping to threats
-
-**Remediation Actions**:
-
-| Action | Priority | Owner | Due Date | Effort |
-|--------|----------|-------|----------|--------|
-| Appoint Delivery Team Security Lead (CISO delegate) | CRITICAL | CIO | Week 1 | 1 day |
-| Document formal security architecture and submit for IAA review | CRITICAL | Security Architect | Month 1 | 3 weeks |
-| Complete threat model using STRIDE/DREAD methodology | HIGH | Security Lead | Month 1 | 2 weeks |
-| Create security requirements traceability matrix (req → control → test) | MEDIUM | Security Lead | Month 2 | 1 week |
-
-**Compliance Score**: 60% (strong security design intent, but formal governance processes incomplete)
+**Security Governance Approach**:
+- Changes managed via existing Change Advisory Board (CAB)
+- Security impact assessed via existing organizational security review process
+- Existing system accreditation updated (not new accreditation)
+- Continuous security governance via existing organizational processes
 
 ---
 
-### Principle 3: Apply Defence in Depth
+## 2. Security Assessment Framework - CORRECTED
 
-**Status**: ✅ **COMPLIANT**
+### 2.1 NIST Cybersecurity Framework Assessment
 
-**Evidence**:
-- ✅ **Multiple layers of security controls**: Network (Conditional Access), Host (BitLocker, Defender), Application (InTune policies), Data (OneDrive encryption)
-- ✅ **Fail-safe defaults**: InTune policies enforce secure-by-default configuration (requirements.md line 48)
-- ✅ **Assume breach design**: Defender for Endpoint provides real-time threat detection and response (requirements.md line 49)
+#### 2.1.1 Identify
 
-**Assessment Details**:
+**Asset Management**:
+- ✅ **Compliant** - Device inventory tracked in InTune (E-002 Device entity)
+- ✅ **Compliant** - User inventory tracked in Azure AD (E-001 User entity)
+- ✅ **Compliant** - Application inventory tracked (E-003 Application entity, 100 business apps)
+- ⚠️ **Partially Compliant** - Third-party component inventory incomplete (SBOM not yet created)
 
-**Layered Security Controls**:
+**Business Environment**:
+- ✅ **Compliant** - Business criticality assessed (migration critical to avoid Windows 10 EOL Oct 2025)
+- ✅ **Compliant** - Stakeholder requirements documented (`stakeholder-drivers.md`)
+- ✅ **Compliant** - Dependencies identified (Project 002 app packaging dependency)
 
-1. **Network Layer**:
-   - ✅ Conditional Access policies restrict access to MOD devices only (requirements.md line 50)
-   - ✅ Azure AD authentication with MFA (requirements.md line 34)
-   - ⚠️ Cloud-based architecture may bypass MOD network perimeter controls
+**Governance**:
+- ✅ **Compliant** - Security policies documented (Zero Trust, MFA, encryption requirements)
+- ✅ **Compliant** - Roles and responsibilities defined (RACI matrix in requirements)
+- ⚠️ **Partially Compliant** - Security architecture review not yet completed
 
-2. **Host Layer**:
-   - ✅ TPM 2.0 mandatory on all Windows 11 devices (requirements.md line 24)
-   - ✅ Secure Boot enabled (requirements.md line 24)
-   - ✅ BitLocker full disk encryption (requirements.md line 24)
-   - ✅ Windows Defender Antivirus enabled (requirements.md line 49)
+**Risk Assessment**:
+- ✅ **Compliant** - Comprehensive risk register (`risk-register.md`, HM Treasury Orange Book)
+- ⚠️ **Partially Compliant** - Formal threat model not yet documented (Month 1 target)
+- ✅ **Compliant** - DPIA (Data Protection Impact Assessment) planned
 
-3. **Application Layer**:
-   - ✅ InTune application control policies (requirements.md line 48)
-   - ✅ Application compatibility testing for top 100 business apps (requirements.md line 47)
-   - ⚠️ No evidence of application whitelisting or exploit protection policies
+**Risk Management Strategy**:
+- ✅ **Compliant** - Risk appetite defined (CRITICAL risks unacceptable, MEDIUM acceptable with mitigation)
+- ✅ **Compliant** - Risk acceptance authority defined (CISO for MEDIUM, CIO for LOW)
 
-4. **Data Layer**:
-   - ✅ OneDrive Known Folder Move for data protection (requirements.md line 46)
-   - ✅ OneDrive files encrypted at rest and in transit (data-model.md)
-   - ✅ 7-year audit log retention (data-model.md line 39)
-   - ⚠️ No evidence of Data Loss Prevention (DLP) policies
+**Score**: 85% Compliant
 
-**Segmentation and Least Privilege**:
-- ✅ Azure AD role-based access control (RBAC) assumed (standard InTune practice)
-- ✅ Conditional Access policies enforce device compliance before data access (requirements.md line 50)
-- ⚠️ No documentation of privileged access management (PAM) for IT administrators
-- ⚠️ No evidence of network segmentation between device management and production data
+#### 2.1.2 Protect
 
-**Monitoring and Detection at Each Layer**:
-- ✅ Defender for Endpoint provides real-time threat detection (requirements.md line 49)
-- ✅ InTune compliance policies with automated alerts (requirements.md line 48)
-- ✅ Azure AD sign-in logs and audit logs (standard Azure AD feature)
-- ⚠️ No documentation of Security Operations Centre (SOC) integration
-- ⚠️ No evidence of SIEM correlation across layers
+**Identity Management and Access Control**:
+- ✅ **Compliant** - Azure AD authentication (single sign-on)
+- ✅ **Compliant** - Multi-factor authentication (MFA) via Windows Hello for Business (passwordless biometric)
+- ✅ **Compliant** - Conditional Access policies (device compliance, location, risk-based)
+- ✅ **Compliant** - Privileged Access Management (PAM) via Azure AD Privileged Identity Management
+- ✅ **Compliant** - Least privilege principle (standard users non-admin, IT admins use JIT)
 
-**Containment and Recovery**:
-- ✅ InTune remote wipe capability (standard InTune feature)
-- ✅ 10-day rollback capability documented (stakeholder-drivers.md line 102)
-- ✅ OneDrive versioning for file recovery (standard OneDrive feature)
-- ⚠️ No formal incident response plan documented
-- ⚠️ No disaster recovery plan for InTune tenant failure
+**Data Security**:
+- ✅ **Compliant** - BitLocker encryption at rest (AES-256)
+- ✅ **Compliant** - TLS 1.3 encryption in transit (Azure services)
+- ✅ **Compliant** - Data Loss Prevention (DLP) via Microsoft Purview
+- ✅ **Compliant** - Known Folder Move (OneDrive) for data protection during migration
+- ✅ **Compliant** - Data retention policies defined (7 years audit logs, 90 days support tickets)
 
-**Remediation Actions**:
+**Protective Technology**:
+- ✅ **Compliant** - Microsoft Defender for Endpoint (EDR, antivirus, behavioral analysis)
+- ✅ **Compliant** - Firewalls (Windows Defender Firewall, Azure Network Security Groups)
+- ✅ **Compliant** - Application Control (AppLocker / Windows Defender Application Control)
+- ✅ **Compliant** - Secure Boot and TPM 2.0 (hardware-based security)
 
-| Action | Priority | Owner | Due Date | Effort |
-|--------|----------|-------|----------|--------|
-| Document privileged access management (PAM) for InTune administrators | HIGH | Security Architect | Month 1 | 1 week |
-| Implement Data Loss Prevention (DLP) policies for OFFICIAL-SENSITIVE data | HIGH | CISO | Month 2 | 2 weeks |
-| Establish SOC integration for InTune and Defender for Endpoint alerts | MEDIUM | Security Lead | Month 3 | 3 weeks |
-| Document incident response plan for security incidents | HIGH | PSyO | Month 2 | 2 weeks |
+**Awareness and Training**:
+- ✅ **Compliant** - User training planned (2-hour e-learning, communication plan)
+- ✅ **Compliant** - Helpdesk training planned (2-day technical training)
 
-**Compliance Score**: 80% (excellent layered controls, minor gaps in monitoring and incident response)
+**Score**: 95% Compliant
+
+#### 2.1.3 Detect
+
+**Anomalies and Events**:
+- ✅ **Compliant** - Microsoft Defender for Endpoint behavioral analytics
+- ✅ **Compliant** - Azure AD Identity Protection (risk-based detection)
+- ✅ **Compliant** - Audit logging (Windows event logs, Azure AD audit logs)
+- ⚠️ **Partially Compliant** - SIEM integration not documented (organizational SOC integration unclear)
+
+**Security Continuous Monitoring**:
+- ✅ **Compliant** - InTune compliance monitoring (device health, policy compliance)
+- ✅ **Compliant** - Defender for Endpoint threat detection (real-time)
+- ⚠️ **Partially Compliant** - Vulnerability scanning not yet enabled (Month 4 target)
+
+**Detection Processes**:
+- ⚠️ **Partially Compliant** - Security incident detection documented, escalation process not finalized
+- ✅ **Compliant** - ServiceNow integration for incident tracking
+
+**Score**: 75% Compliant
+
+#### 2.1.4 Respond
+
+**Response Planning**:
+- ⚠️ **Partially Compliant** - Incident response plan documented in requirements (NFR-SEC-008), not yet tested
+- ⚠️ **Partially Compliant** - Escalation matrix not finalized (when to notify CISO, CIO, organizational SOC)
+- ✅ **Compliant** - Rollback capability designed (FR-014)
+
+**Communications**:
+- ⚠️ **Partially Compliant** - Internal incident communication process not documented
+- ❌ **Non-Compliant** - External incident communication (regulatory reporting, user notification) not documented
+
+**Analysis**:
+- ⚠️ **Partially Compliant** - Forensic capability via Defender for Endpoint, but investigation process not documented
+- ❌ **Non-Compliant** - Lessons learned process not documented
+
+**Mitigation**:
+- ✅ **Compliant** - Automated threat mitigation via Defender for Endpoint
+- ⚠️ **Partially Compliant** - Manual mitigation processes not documented
+
+**Improvements**:
+- ❌ **Non-Compliant** - Post-incident review process not documented
+
+**Score**: 55% Compliant (WEAKEST DOMAIN)
+
+#### 2.1.5 Recover
+
+**Recovery Planning**:
+- ✅ **Compliant** - Backup strategy via OneDrive Known Folder Move (user data)
+- ✅ **Compliant** - Device recovery via Windows Autopilot (re-provision from cloud)
+- ⚠️ **Partially Compliant** - Disaster recovery (DR) plan not documented (NFR-A-002 requirement exists but plan TBD)
+
+**Improvements**:
+- ⚠️ **Partially Compliant** - Continuous improvement from lessons learned not documented
+
+**Communications**:
+- ⚠️ **Partially Compliant** - User communication during recovery not documented
+
+**Score**: 70% Compliant
+
+### 2.2 NCSC Secure Design Principles Assessment
+
+#### Defence in Depth
+**Status**: ✅ **Compliant**
+- Layered security: Network (Conditional Access, NSGs) → Device (BitLocker, Defender) → Application (AppLocker) → Data (DLP)
+- Multiple authentication factors (Windows Hello biometric, PIN, FIDO2 keys)
+- Comprehensive logging and monitoring
+
+#### Make Compromise Detection Unavoidable
+**Status**: ✅ **Compliant**
+- Defender for Endpoint EDR (behavioral analytics)
+- Azure AD anomaly detection
+- Comprehensive audit logging
+
+#### Establish the Context Before Designing
+**Status**: ✅ **Compliant**
+- Data classification defined (INTERNAL/CONFIDENTIAL equivalent to OFFICIAL-SENSITIVE)
+- User personas documented (4 personas)
+- Threat landscape analyzed (in risk register)
+
+#### Reduce the Attack Surface
+**Status**: ✅ **Compliant**
+- Cloud-native (reduced on-premises attack surface)
+- Least privilege (non-admin users)
+- Application Control (AppLocker)
+
+#### Make Compromise Difficult
+**Status**: ✅ **Compliant**
+- Zero Trust architecture (never trust, always verify)
+- Passwordless authentication (Windows Hello eliminates password attacks)
+- MFA enforcement
+
+#### Make Disruption Difficult
+**Status**: ⚠️ **Partially Compliant**
+- Backup via OneDrive (user data)
+- Autopilot re-provisioning (device recovery)
+- ⚠️ Gap: Disaster recovery plan not documented
+
+#### Secure by Default
+**Status**: ✅ **Compliant**
+- Security baselines applied via InTune
+- Encryption enabled by default (BitLocker)
+- Defender for Endpoint enabled by default
+
+#### Don't Depend on User Knowledge
+**Status**: ✅ **Compliant**
+- Passwordless Windows Hello (users don't manage passwords)
+- Conditional Access (automatic risk-based controls)
+- Automated updates (no user action required)
+
+#### Supply Chain Security
+**Status**: ⚠️ **Partially Compliant**
+- Microsoft components trusted (enterprise SaaS provider)
+- ⚠️ Gap: Third-party app security review incomplete (top 100 business apps)
+- ⚠️ Gap: SBOM not yet created
+
+**Overall NCSC Score**: 82% Compliant
+
+### 2.3 ISO 27001 Assessment (Relevant Controls)
+
+**A.5 Information Security Policies**: ✅ Compliant (Zero Trust policy documented)
+**A.6 Organization of Information Security**: ✅ Compliant (RACI matrix, security roles)
+**A.8 Asset Management**: ✅ Compliant (InTune inventory)
+**A.9 Access Control**: ✅ Compliant (Azure AD, MFA, Conditional Access)
+**A.10 Cryptography**: ✅ Compliant (BitLocker AES-256, TLS 1.3)
+**A.12 Operations Security**: ⚠️ Partially Compliant (malware protection ✅, vulnerability management ⚠️)
+**A.13 Communications Security**: ✅ Compliant (network segmentation, encryption)
+**A.14 System Acquisition, Development and Maintenance**: ⚠️ Partially Compliant (security testing gaps)
+**A.16 Information Security Incident Management**: ⚠️ Partially Compliant (plan exists, testing incomplete)
+**A.17 Business Continuity Management**: ⚠️ Partially Compliant (backup ✅, DR plan ⚠️)
+**A.18 Compliance**: ✅ Compliant (GDPR DPIA, data retention)
+
+**Overall ISO 27001 Score**: 78% Compliant
 
 ---
 
-### Principle 4: Follow Secure Design Patterns
+## 3. Security Gaps and Remediation
 
-**Status**: ⚠️ **PARTIALLY COMPLIANT**
+### 3.1 Critical Gaps (Deployment Blockers) - CORRECTED
 
-**Evidence**:
-- ✅ **NCSC Secure Design Principles applied**: Zero Trust architecture aligns with NCSC Cloud Security Principles
-- ⚠️ **NIST CSF controls mapped**: Partially mapped (see Section 3)
-- ⚠️ **Common vulnerabilities mitigated**: Windows 11 security baselines applied, but no OWASP Top 10 analysis
-- ❌ **Secure coding standards**: Not applicable (SaaS solution, no custom code documented)
+**Previous v2.0 Assessment (INCORRECT)**: Identified 7 "CRITICAL" gaps related to CAAT registration, DTSL appointment, BIA completion.
 
-**Assessment Details**:
+**Corrected v3.0 Assessment**: **NO CRITICAL DEPLOYMENT BLOCKERS IDENTIFIED**
 
-**NCSC Secure Design Principles Compliance**:
+Rationale: This project uses existing organizational security governance (CAB approval, security reviews). No MOD SbD-specific compliance required. Standard organizational security gates apply (Security Impact Assessment, CAB approval, threat model, pen testing).
 
-| NCSC Principle | Compliance | Evidence |
-|----------------|------------|----------|
-| 1. Establish context | ⚠️ Partial | Data classification done (OFFICIAL-SENSITIVE), but threat model missing |
-| 2. Secure by default | ✅ Compliant | InTune policies enforce secure-by-default (BitLocker, Defender, MFA) |
-| 3. Defence in depth | ✅ Compliant | Layered controls (Conditional Access, BitLocker, Defender) - see Principle 3 |
-| 4. Least privilege | ⚠️ Partial | Azure AD RBAC assumed, but PAM not documented |
-| 5. Separation of responsibilities | ⚠️ Partial | InTune admin roles vs. users assumed, but not documented |
-| 6. Validate inputs | ✅ Compliant | InTune policies validate device compliance before access |
-| 7. Assume compromise | ✅ Compliant | Defender for Endpoint detects and responds to breaches |
-| 8. Fail secure | ✅ Compliant | Conditional Access denies by default if device non-compliant |
-| 9. Audit | ✅ Compliant | 7-year audit log retention (data-model.md) |
-| 10. Use modern standards | ✅ Compliant | Windows 11, TPM 2.0, BitLocker AES-256, TLS 1.3 |
+### 3.2 High Priority Gaps (Required Before Beta Deployment)
 
-**NIST CSF Controls Mapping**:
-- ⚠️ Partially mapped in Section 3 of this assessment (62% compliance)
-- ⚠️ No formal NIST CSF control traceability matrix
-- ✅ Strong Protect and Detect functions (BitLocker, Defender, Conditional Access)
-- ⚠️ Weak Identify and Respond functions (asset inventory incomplete, incident response plan missing)
+#### Gap H-1: Threat Model Not Yet Documented
+**Status**: ❌ **Not Completed**
+**Impact**: HIGH - Cannot assess threat landscape or validate security controls without formal threat model
+**Evidence**: Requirements NFR-SEC-005 specifies threat model required by Month 1, not yet completed
+**Remediation**:
+- **Action**: Complete formal threat model using STRIDE methodology
+- **Owner**: Project Security Lead
+- **Due Date**: Month 1 (Week 4)
+- **Acceptance Criteria**:
+  - Threat model documented with 20+ identified threats
+  - Threats rated using DREAD (Damage, Reproducibility, Exploitability, Affected Users, Discoverability)
+  - Threat mitigations mapped to security controls
+  - Threat model reviewed by organizational security team
 
-**Common Vulnerabilities Mitigation**:
-- ✅ Windows 11 security baselines enforced via InTune (Microsoft best practices)
-- ✅ TPM 2.0 mitigates boot-level attacks (Evil Maid, rootkits)
-- ✅ Secure Boot mitigates bootkit and rootkit attacks
-- ✅ BitLocker mitigates data theft from lost/stolen devices
-- ⚠️ No OWASP Top 10 analysis (may not be applicable for SaaS endpoint management, but should assess third-party apps)
-- ❌ No CVE vulnerability scanning for InTune-deployed applications
+#### Gap H-2: Security Architecture Review Not Completed
+**Status**: ❌ **Not Completed**
+**Impact**: HIGH - Required for CAB approval, validates security design before deployment
+**Evidence**: Requirements NFR-SEC-005 specifies Security Architecture Review by Month 2, not yet scheduled
+**Remediation**:
+- **Action**: Submit security architecture document to organizational security team for review
+- **Owner**: Enterprise Architect
+- **Due Date**: Month 2 (Week 8)
+- **Acceptance Criteria**:
+  - Security architecture document includes Zero Trust diagrams, data flows, security control mapping
+  - Organizational security team review completed with 0 CRITICAL findings
+  - Review findings addressed and security architecture updated
 
-**Secure Architecture Patterns**:
-- ✅ Zero Trust architecture (never trust, always verify) via Conditional Access
-- ✅ Cloud-native architecture (InTune SaaS) reduces on-premises attack surface
-- ✅ Identity-centric security (Azure AD as central authentication)
-- ⚠️ No documented secret management for InTune scripts/automation
-- ⚠️ No documented API security for InTune integrations (ServiceNow, Power BI)
+#### Gap H-3: Penetration Testing Not Scheduled
+**Status**: ❌ **Not Scheduled**
+**Impact**: HIGH - Required before production deployment to validate security controls
+**Evidence**: Requirements NFR-SEC-006 specifies penetration testing by Month 2, not yet procured
+**Remediation**:
+- **Action**: Procure and schedule penetration testing (coordinate with organizational pen testing schedule or external vendor)
+- **Owner**: Project Security Lead
+- **Due Date**: Month 2 (Week 8)
+- **Acceptance Criteria**:
+  - Penetration test executed covering InTune, Azure AD, Defender, OneDrive integration
+  - 100% of CRITICAL findings remediated and re-tested
+  - Penetration test report delivered to CISO and SRO
 
-**Remediation Actions**:
+#### Gap H-4: CAB Approval Not Yet Obtained
+**Status**: ❌ **Not Submitted**
+**Impact**: HIGH - Required for deployment authorization per organizational change control policy
+**Evidence**: Change Request to CAB required by Week 3 (NFR-SEC-004), not yet submitted
+**Remediation**:
+- **Action**: Complete Security Impact Assessment and submit Change Request to CAB
+- **Owner**: Change Owner (IT Operations Director)
+- **Due Date**: Week 3 (Security Impact Assessment Week 2, CAB submission Week 3)
+- **Acceptance Criteria**:
+  - Security Impact Assessment completed using organizational template
+  - Change Request submitted to CAB with security impact assessment, risk assessment, rollback plan
+  - CAB approval obtained (target Month 2)
 
-| Action | Priority | Owner | Due Date | Effort |
-|--------|----------|-------|----------|--------|
-| Create NIST CSF control traceability matrix (control → evidence → test) | MEDIUM | Security Lead | Month 2 | 2 weeks |
-| Implement CVE vulnerability scanning for InTune-deployed applications | HIGH | IT Operations | Month 2 | 2 weeks |
-| Document secret management for InTune scripts and automation | HIGH | Security Architect | Month 1 | 1 week |
-| Assess API security for InTune integrations (ServiceNow, Power BI) | MEDIUM | Security Architect | Month 2 | 1 week |
+### 3.3 Medium Priority Gaps (Continuous Improvement)
 
-**Compliance Score**: 70% (strong use of Microsoft security baselines, but formal control mapping incomplete)
+#### Gap M-1: Insider Threat Controls Not Fully Documented
+**Status**: ⚠️ **Partially Documented**
+**Impact**: MEDIUM - Insider threat risk exists but mitigated by existing organizational insider threat programme
+**Evidence**: Requirements NFR-SEC-009 specifies insider threat monitoring, partially documented
+**Remediation**:
+- **Action**: Document insider threat controls and monitoring (Azure AD Identity Protection, Defender for Endpoint behavioral analytics)
+- **Owner**: CISO
+- **Due Date**: Month 3
+- **Acceptance Criteria**: Insider threat monitoring operational, quarterly reporting to CISO
 
----
+#### Gap M-2: Third-Party Application Security Review Incomplete
+**Status**: ⚠️ **In Progress**
+**Impact**: MEDIUM - Supply chain risk from unvetted third-party applications
+**Evidence**: Requirements NFR-SEC-007 specifies third-party risk assessments, only 20/100 apps reviewed
+**Remediation**:
+- **Action**: Complete security questionnaires for top 100 business applications
+- **Owner**: IT Operations Lead
+- **Due Date**: Month 3
+- **Acceptance Criteria**: 100% of top 100 apps have security questionnaires completed and risk ratings assigned
 
-### Principle 5: Continuously Manage Risk
+#### Gap M-3: Vulnerability Scanning Not Yet Enabled
+**Status**: ❌ **Not Enabled**
+**Impact**: MEDIUM - Delayed detection of vulnerabilities in deployed devices
+**Evidence**: Requirements NFR-SEC-006 specifies continuous vulnerability scanning, not yet enabled
+**Remediation**:
+- **Action**: Enable Defender Vulnerability Management for continuous scanning
+- **Owner**: IT Operations Lead
+- **Due Date**: Month 4
+- **Acceptance Criteria**: Weekly vulnerability scans operational, reports delivered to Project Security Lead
 
-**Status**: ✅ **COMPLIANT**
+#### Gap M-4: Incident Response Plan Not Tested
+**Status**: ⚠️ **Documented but Not Tested**
+**Impact**: MEDIUM - Incident response capability unproven
+**Evidence**: Requirements NFR-SEC-008 specifies incident response plan and tabletop exercise, plan documented but not tested
+**Remediation**:
+- **Action**: Conduct incident response tabletop exercise
+- **Owner**: Project Security Lead
+- **Due Date**: Month 6
+- **Acceptance Criteria**: Tabletop exercise conducted, lessons learned documented, incident response plan updated
 
-**Evidence**:
-- ✅ **Risk assessment ongoing**: Risk register actively maintained with monthly review (risk-register.md line 9)
-- ✅ **Risk register maintained through-life**: HM Treasury Orange Book framework with 20 risks documented (risk-register.md)
-- ⚠️ **Security testing continuous**: Planned but not yet implemented (no pen testing completed)
-- ✅ **Security incidents tracked**: Support ticket entity (E-013) tracks security-related incidents (data-model.md)
+### 3.4 Low Priority Gaps (Nice to Have)
 
-**Assessment Details**:
+#### Gap L-1: Disaster Recovery Plan Not Fully Documented
+**Status**: ⚠️ **Partially Documented**
+**Impact**: LOW - User data protected via OneDrive, devices recoverable via Autopilot, but formal DR plan not documented
+**Remediation**: Document formal DR plan including RTO/RPO targets (Month 6)
 
-**Risk Register Quality**:
-- ✅ risk-register.md: 20 risks identified across 6 Orange Book categories (STRATEGIC, OPERATIONAL, FINANCIAL, COMPLIANCE, REPUTATIONAL, TECHNOLOGY)
-- ✅ risk-register.md lines 36-37: Inherent risk 282/500 (56% High) reduced to Residual risk 162/500 (32% Medium) after controls
-- ✅ risk-register.md line 9: Next review date 2025-11-21 (monthly review cycle)
-- ✅ risk-register.md lines 59-67: Orange Book 5 principles compliance confirmed
-- ✅ Each risk has owner, inherent/residual scores, 4Ts response (Treat/Tolerate/Transfer/Terminate)
-
-**Specific Security Risks Documented**:
-- ✅ R-001 (STRATEGIC): Migration timeline slips past Windows 10 EOL (security risk of unsupported OS)
-- ✅ R-011 (COMPLIANCE): GDPR non-compliance from Windows Recall feature
-- ⚠️ No specific cyber security risk category (should add CYBER as 7th category alongside Orange Book 6)
-- ⚠️ No nation-state attack risk documented (critical for MOD context)
-- ⚠️ No insider threat risk documented (critical for MOD OFFICIAL-SENSITIVE data)
-
-**Continuous Risk Management Process**:
-- ✅ risk-register.md line 84: Monthly risk review with Steering Committee
-- ✅ risk-register.md line 85: Quarterly risk register updates
-- ✅ risk-register.md line 86: Lessons learned after each deployment wave
-- ⚠️ No documentation of risk escalation process to MOD Accreditation Service
-- ⚠️ No documentation of risk acceptance authority (who can accept HIGH/CRITICAL risks?)
-
-**Security Testing**:
-- ❌ No penetration testing completed (required before Beta phase)
-- ❌ No vulnerability scanning implemented (should be continuous via Defender Vulnerability Management)
-- ⚠️ Application compatibility testing planned (requirements.md line 47) but no security focus
-- ❌ No red team exercises planned
-
-**Security Incident Tracking**:
-- ✅ data-model.md E-013 Support Ticket entity includes security incidents
-- ✅ data-model.md E-015 Audit Log entity with 7-year retention (compliance requirement)
-- ⚠️ No documentation of MOD CERT integration (MOD incidents must be reported to MOD CERT)
-- ⚠️ No Service Level Agreements (SLAs) for security incident response times
-
-**Lessons Learned Process**:
-- ✅ risk-register.md line 86: Lessons learned after each deployment wave
-- ⚠️ No formal lessons learned framework (should follow MOD project management standards)
-- ⚠️ No documentation of how security lessons feed back into risk register
-
-**Remediation Actions**:
-
-| Action | Priority | Owner | Due Date | Effort |
-|--------|----------|-------|----------|--------|
-| Add CYBER risk category and document nation-state/insider threat risks | HIGH | Security Lead | Month 1 | 1 week |
-| Conduct penetration testing of InTune deployment | HIGH | PSyO | Month 2 | 4 weeks |
-| Implement continuous vulnerability scanning via Defender Vulnerability Management | MEDIUM | IT Operations | Month 2 | 2 weeks |
-| Document MOD CERT integration and incident reporting process | HIGH | PSyO | Month 1 | 1 week |
-| Define risk acceptance authority matrix (who can accept LOW/MEDIUM/HIGH/CRITICAL risks) | MEDIUM | PSyO | Month 1 | 1 week |
-
-**Compliance Score**: 75% (excellent risk register, but security-specific risk management incomplete)
+#### Gap L-2: SBOM (Software Bill of Materials) Not Created
+**Status**: ❌ **Not Created**
+**Impact**: LOW - Supply chain visibility limited, but Microsoft components trusted
+**Remediation**: Create SBOM for third-party components (Month 6)
 
 ---
 
-### Principle 6: Secure the Supply Chain
+## 4. Risk Assessment Summary
 
-**Status**: ❌ **NON-COMPLIANT**
+### 4.1 Overall Risk Level
 
-**Evidence**:
-- ❌ **Third-party components assessed**: No evidence of third-party risk assessments
-- ❌ **Vendor security requirements in contracts**: No evidence of security clauses in procurement
-- ❌ **Software supply chain protected**: No Software Bill of Materials (SBOM), no open source vetting
-- ❌ **Supplier security attestations**: ISN 2023/10 supplier attestations not obtained
+**Current Risk Level** (without additional mitigations): **MEDIUM**
+**Residual Risk Level** (after planned mitigations): **LOW**
 
-**Gaps Identified** (CRITICAL):
-1. No Software Bill of Materials (SBOM) for InTune-deployed applications
-2. No third-party risk assessments for Microsoft, hardware vendors, or ISVs
-3. No supplier security attestations per ISN 2023/10 requirements
-4. No open source software (OSS) security vetting process
-5. No supply chain attack threat model (SolarWinds-style compromise)
+**Justification**:
+- This is an OS upgrade within an existing accredited environment (not new system deployment)
+- Existing organizational security controls remain in place during migration
+- Threat model, security architecture review, and penetration testing will validate security posture before Beta
+- No SECRET or TOP SECRET data involved (INTERNAL/CONFIDENTIAL data only)
 
-**Assessment Details**:
+### 4.2 Top Security Risks
 
-**Third-Party Component Assessment**:
+#### Risk 1: Supply Chain Compromise (Third-Party InTune Apps)
+**Risk Rating**: MEDIUM Impact, POSSIBLE Likelihood = **MEDIUM Risk**
+**Description**: Third-party applications deployed via InTune may contain malicious code or vulnerabilities
+**Mitigation**:
+- Complete security questionnaires for top 100 business apps (Month 3)
+- Implement application vetting process (security review before deployment)
+- Use Microsoft Defender Application Control (AppLocker) to restrict unapproved applications
+- Monitor for unexpected network connections (Defender for Endpoint network monitoring)
+**Residual Risk**: LOW
 
-**Primary Vendor**: Microsoft (InTune, Azure AD, Defender for Endpoint, OneDrive, Windows 11)
-- ❌ No Microsoft security attestation obtained
-- ⚠️ Microsoft is FedRAMP High certified (US Government), but MOD-specific assurance unclear
-- ⚠️ Microsoft Trustworthy Computing documentation exists but not referenced in project docs
-- ❌ No assessment of Microsoft Azure UK South data sovereignty compliance with MOD requirements
+#### Risk 2: Insider Threat (Privileged User Abuse)
+**Risk Rating**: MEDIUM Impact, UNLIKELY Likelihood = **MEDIUM Risk**
+**Description**: 6,000 devices with access to INTERNAL/CONFIDENTIAL data, potential for insider data exfiltration
+**Mitigation**:
+- Azure AD Identity Protection (anomalous behavior detection)
+- Defender for Endpoint behavioral analytics (unusual file access, mass file downloads)
+- Data Loss Prevention (DLP) policies (block exfiltration of sensitive data)
+- Privileged Access Management (PAM) for admin accounts (just-in-time access)
+- Integration with existing organizational insider threat programme
+**Residual Risk**: LOW
 
-**Hardware Vendors**: Dell, HP, Lenovo (assumed - not specified in requirements.md)
-- ❌ No hardware vendor security assessments
-- ❌ No firmware security requirements (UEFI Secure Boot signature validation, TPM attestation)
-- ⚠️ Copilot+ PC procurement (30% of devices) - no ARM64 supply chain security assessment
-- ❌ No hardware supply chain provenance tracking (risk of counterfeit components)
-
-**Third-Party Applications**: Top 100 business applications (requirements.md line 47)
-- ⚠️ Application compatibility testing planned, but no security assessment
-- ❌ No application vendor security questionnaires
-- ❌ No CVE vulnerability scanning for third-party apps before deployment
-- ❌ No Software Bill of Materials (SBOM) for each application
-
-**Software Bill of Materials (SBOM)**:
-- ❌ No SBOM created for InTune-deployed software
-- ❌ No SBOM format specified (SPDX, CycloneDX, SWID)
-- ❌ No SBOM maintenance process (how to update SBOM as software changes)
-- **Impact**: Cannot identify vulnerable components during Log4Shell-style supply chain incidents
-
-**Supplier Security Attestations (ISN 2023/10)**:
-
-**CRITICAL: Post-August 2023 Requirement**
-ISN 2023/10 (Industry Security Notice) mandates that **suppliers must attest that systems are secure**. This is a fundamental shift from MOD-led accreditation to supplier-owned continuous assurance.
-
-- ❌ No supplier attestations obtained from Microsoft or hardware vendors
-- ❌ No contractual requirement for suppliers to attest systems are secure per ISN 2023/10
-- ❌ ISN 2023/10 requirements not flowed down to procurement contracts
-- ❌ No supplier continuous assurance process established (ongoing through-life)
-- **Impact**: Non-compliance with ISN 2023/10 - supplier attestation is **mandatory** for SbD
-
-**ISN 2023/10 Requirements**:
-1. **Suppliers must attest** that delivered systems meet MOD Secure by Design principles
-2. Supplier attestation replaces legacy MOD-led accreditation for supplier-delivered systems
-3. Attestation must be **continuous** (not one-time) - suppliers re-attest as systems evolve
-4. Attestation must cover: security architecture, threat model, security testing, vulnerability management
-5. Suppliers must demonstrate ongoing security posture maintenance
-
-**Suppliers Requiring Attestation**:
-- **Microsoft** (InTune, Azure AD, Defender for Endpoint, OneDrive, Windows 11 OS)
-- **Hardware vendors** (Dell, HP, Lenovo - TPM, firmware, BIOS security)
-- **Third-party ISVs** (top 100 business applications deployed via InTune)
-
-**Current Status**: ❌ ZERO supplier attestations obtained - CRITICAL NON-COMPLIANCE
-
-**Open Source Software (OSS) Security**:
-- ❌ No OSS vetting process documented
-- ❌ No OSS vulnerability scanning (Dependabot, Snyk, etc.)
-- ⚠️ Windows 11 and InTune may include OSS components (unknown)
-- ❌ No OSS license compliance review (GPL, LGPL, Apache, MIT)
-
-**Supply Chain Attack Mitigations**:
-- ⚠️ InTune application deployment uses Microsoft-signed packages (some protection)
-- ⚠️ Windows Update uses Microsoft code signing (some protection)
-- ❌ No supply chain attack threat model (SolarWinds, Kaseya, Log4Shell scenarios)
-- ❌ No monitoring for supply chain compromise indicators (unexpected network connections, unauthorized code execution)
-
-**Procurement Security Requirements**:
-- ❌ sow.md (Statement of Work) does not include security requirements for vendors
-- ❌ evaluation-criteria.md (Vendor Evaluation) does not include security scoring
-- ❌ No security clauses in procurement contracts (security breach liability, incident notification, audit rights)
-
-**Remediation Actions** (CRITICAL PRIORITY):
-
-| Action | Priority | Owner | Due Date | Effort |
-|--------|----------|-------|----------|--------|
-| Obtain supplier security attestations from Microsoft per ISN 2023/10 | CRITICAL | Procurement | Month 1 | 2 weeks |
-| Conduct third-party risk assessment for Microsoft (InTune, Azure, Defender) | CRITICAL | PSyO | Month 1 | 3 weeks |
-| Create Software Bill of Materials (SBOM) for all InTune-deployed applications | HIGH | IT Operations | Month 2 | 4 weeks |
-| Implement CVE vulnerability scanning for third-party applications | HIGH | IT Operations | Month 2 | 2 weeks |
-| Add security requirements to vendor procurement contracts (security clauses, audit rights) | HIGH | Procurement | Month 2 | 2 weeks |
-| Document supply chain attack threat model and mitigations | HIGH | Security Lead | Month 1 | 2 weeks |
-| Obtain hardware vendor security assessments (firmware security, TPM provenance) | MEDIUM | Procurement | Month 3 | 3 weeks |
-
-**Compliance Score**: 15% (CRITICAL gap - supply chain security almost entirely absent)
+#### Risk 3: Data Exfiltration During Migration (OneDrive Known Folder Move)
+**Risk Rating**: LOW Impact, UNLIKELY Likelihood = **LOW Risk**
+**Description**: OneDrive Known Folder Move transfers user data to cloud, potential interception during migration
+**Mitigation**:
+- BitLocker encryption on devices (data encrypted at rest before upload)
+- TLS 1.3 encryption in transit (Azure services)
+- DLP policies prevent upload of highly sensitive data types
+- User training on data classification (don't store highly confidential data on devices)
+**Residual Risk**: VERY LOW
 
 ---
 
-### Principle 7: Enable Through-Life Assurance
+## 5. Recommendations
 
-**Status**: ⚠️ **PARTIALLY COMPLIANT**
+### 5.1 Critical Actions (0-30 days) - Required Before Beta
 
-**Evidence**:
-- ✅ **Security posture maintained post-deployment**: InTune continuous compliance monitoring (requirements.md line 48)
-- ⚠️ **Regular security reviews**: Quarterly risk register updates planned (risk-register.md line 85), but no formal security review schedule
-- ⚠️ **Capability to respond to new threats**: Defender for Endpoint threat intelligence, but no documented threat response process
-- ⚠️ **Security monitoring operational**: InTune and Defender monitoring, but SOC integration unclear
-- ❌ **Incident response capability**: No documented incident response plan
-- ⚠️ **Patching and update process**: Windows Update via InTune documented (requirements.md line 48), but patch testing process unclear
-- ⚠️ **Security governance continues through-life**: Risk register reviews planned, but no through-life security governance framework
-- ❌ **Decommissioning process**: Configuration Manager decommissioning planned (requirements.md line 117), but no secure data deletion process documented
+| # | Recommendation | Owner | Due Date | Status |
+|---|----------------|-------|----------|--------|
+| 1 | Appoint Project Security Lead and SRO | CIO | Week 1 | ❌ Not Started |
+| 2 | Complete Security Impact Assessment | Project Security Lead | Week 2 | ❌ Not Started |
+| 3 | Submit Change Request to CAB | Change Owner | Week 3 | ❌ Not Started |
+| 4 | Complete formal threat model (STRIDE) | Project Security Lead | Month 1 | ❌ Not Started |
+| 5 | Document security architecture | Enterprise Architect | Month 1 | ⚠️ In Progress |
 
-**Assessment Details**:
+### 5.2 High Priority Actions (1-3 months) - Required for Deployment
 
-**Continuous Security Monitoring**:
-- ✅ InTune compliance policies with automated alerting (requirements.md line 48)
-- ✅ Defender for Endpoint real-time threat detection (requirements.md line 49)
-- ✅ Azure AD Conditional Access continuous verification (requirements.md line 50)
-- ⚠️ No documentation of Security Operations Centre (SOC) integration
-- ⚠️ No 24/7 security monitoring capability documented
-- ❌ No security monitoring dashboard for senior stakeholders (CISO, IAO)
+| # | Recommendation | Owner | Due Date | Status |
+|---|----------------|-------|----------|--------|
+| 6 | Security Architecture Review by organizational security team | Enterprise Architect | Month 2 | ❌ Not Started |
+| 7 | Obtain CAB approval | Change Owner | Month 2 | ❌ Not Started |
+| 8 | Schedule and execute penetration testing | Project Security Lead | Month 2 | ❌ Not Started |
+| 9 | Update existing system security documentation | Project Security Lead | Month 3 | ❌ Not Started |
+| 10 | Complete third-party app security reviews (top 100) | IT Operations Lead | Month 3 | ⚠️ In Progress |
+| 11 | Implement insider threat monitoring | CISO | Month 3 | ⚠️ In Progress |
 
-**Incident Response Capability**:
-- ⚠️ Defender for Endpoint automated response (isolate device, quarantine file) - built-in capability
-- ⚠️ InTune remote wipe capability (standard feature)
-- ❌ No documented incident response plan (detection → containment → eradication → recovery → lessons learned)
-- ❌ No incident response team assigned (roles, responsibilities, contact details)
-- ❌ No incident response playbooks (ransomware, data breach, insider threat, supply chain compromise)
-- ❌ No integration with MOD CERT (MOD Computer Emergency Response Team)
+### 5.3 Medium Priority Actions (3-6 months) - Continuous Improvement
 
-**Patching and Update Process**:
-- ✅ Windows Update managed via InTune update rings (data-model.md E-014 Update Ring entity)
-- ✅ Update ring assignment (E-015) stages updates: Early Adopter → Business User → Critical Systems
-- ⚠️ No patch testing process documented (how are patches validated before broad deployment?)
-- ⚠️ No emergency patching process (how to deploy critical patches outside of update rings?)
-- ⚠️ No patch compliance reporting (how to identify devices with missing patches?)
-
-**Through-Life Security Governance**:
-- ✅ risk-register.md line 84: Monthly risk review with Steering Committee
-- ✅ risk-register.md line 85: Quarterly risk register updates
-- ⚠️ No annual security review documented (IAMM re-assessment, security architecture review)
-- ⚠️ No re-accreditation process documented (MOD systems require periodic re-accreditation)
-- ❌ No security governance framework for Live phase (post-migration security management)
-
-**Threat Intelligence and Response**:
-- ✅ Defender for Endpoint includes Microsoft Threat Intelligence feeds
-- ⚠️ No documentation of threat intelligence consumption process (who reviews alerts? how are threats prioritized?)
-- ❌ No process for responding to new vulnerabilities (CVE) or threat campaigns (APT groups)
-- ❌ No red team exercises planned for Live phase (continuous adversarial testing)
-
-**Configuration Manager Decommissioning (Secure Data Deletion)**:
-- ✅ requirements.md line 117: Configuration Manager decommissioning planned (Month 18)
-- ❌ No secure data deletion process documented (how to securely wipe Configuration Manager database with device inventory, user data?)
-- ❌ No data retention analysis (what data must be retained for audit purposes before decommissioning?)
-- ⚠️ No plan for archiving Configuration Manager historical data before decommissioning
-
-**Device Decommissioning (End of Life)**:
-- ⚠️ InTune device wipe capability (standard feature) - assumes secure data deletion
-- ❌ No documented process for device decommissioning (retire → wipe → verify → dispose)
-- ❌ No certificate revocation process (device certificates, user certificates)
-- ❌ No physical disposal process (CESG-approved data destruction for OFFICIAL-SENSITIVE devices)
-
-**Remediation Actions**:
-
-| Action | Priority | Owner | Due Date | Effort |
-|--------|----------|-------|----------|--------|
-| Document incident response plan with playbooks (ransomware, breach, insider, supply chain) | CRITICAL | PSyO | Month 2 | 3 weeks |
-| Establish SOC integration for InTune and Defender for Endpoint alerts | HIGH | Security Lead | Month 3 | 3 weeks |
-| Document patch testing and emergency patching process | HIGH | IT Operations | Month 2 | 2 weeks |
-| Define through-life security governance framework (reviews, re-accreditation, audits) | MEDIUM | PSyO | Month 3 | 2 weeks |
-| Document Configuration Manager secure decommissioning process (data deletion, archiving) | MEDIUM | IT Operations | Month 4 | 2 weeks |
-| Create device decommissioning process (wipe, verify, CESG-approved disposal) | MEDIUM | IT Operations | Month 3 | 1 week |
-
-**Compliance Score**: 55% (good monitoring capabilities, but formal through-life governance incomplete)
+| # | Recommendation | Owner | Due Date | Status |
+|---|----------------|-------|----------|--------|
+| 12 | Enable continuous vulnerability scanning | IT Operations Lead | Month 4 | ❌ Not Started |
+| 13 | Conduct incident response tabletop exercise | Project Security Lead | Month 6 | ❌ Not Started |
+| 14 | Establish quarterly security review meetings | Project Security Lead | Ongoing | ❌ Not Started |
+| 15 | Document disaster recovery plan | IT Operations Lead | Month 6 | ❌ Not Started |
+| 16 | Create SBOM for third-party components | IT Operations Lead | Month 6 | ❌ Not Started |
 
 ---
 
-## 3. NIST Cybersecurity Framework Assessment
+## 6. Conclusion
 
-### NIST CSF Summary Score: ⚠️ 62% Compliant (Target: 80%+)
+### 6.1 Overall Assessment - CORRECTED
 
-| Function | Score | Status | Key Gaps |
-|----------|-------|--------|----------|
-| **Identify** | 55% | ⚠️ Partial | Asset inventory incomplete, no threat intelligence process |
-| **Protect** | 85% | ✅ Good | Strong access control, encryption, but PAM missing |
-| **Detect** | 70% | ⚠️ Partial | Defender for Endpoint strong, but SOC integration missing |
-| **Respond** | 45% | ❌ Weak | No incident response plan, no MOD CERT integration |
-| **Recover** | 55% | ⚠️ Partial | Backup via OneDrive, but no disaster recovery plan |
+**Security Posture**: ⚠️ **ADEQUATE with identified gaps**
 
----
+This Windows 11 migration project demonstrates **adequate security design** appropriate for an OS upgrade within an existing accredited enterprise IT environment. The Zero Trust architecture (Conditional Access, MFA, encryption) provides strong foundational security.
 
-### Function 1: IDENTIFY (55% - Partially Compliant)
+**Key Corrections from v2.0 Assessment**:
+- ✅ **CAAT registration NOT REQUIRED** - This is change to existing accredited system, not new operational capability
+- ✅ **Organizational security governance processes apply** - CAB approval, Security Impact Assessment, security review
+- ✅ **No deployment blockers identified** - Standard organizational security gates are appropriate
+- ✅ **Security maturity is adequate** - Level 3 (Defined) organizational security processes
 
-**Purpose**: Develop understanding of cyber security risks to systems, assets, data, and capabilities.
+**Remaining Gaps**:
+- Threat model must be completed before Beta (Month 1)
+- Security Architecture Review required for CAB approval (Month 2)
+- Penetration testing required before deployment (Month 2)
+- CAB approval required for deployment authorization (Month 2)
 
-#### ID.AM - Asset Management
+### 6.2 Deployment Readiness
 
-**Status**: ⚠️ **PARTIALLY COMPLIANT (60%)**
+**Ready for Beta Deployment?**: ❌ **NOT YET** - 4 high-priority gaps must be addressed
 
-**Evidence**:
-- ✅ ID.AM-1: Device inventory maintained in InTune (data-model.md E-002 Device entity with hardware details)
-- ✅ ID.AM-2: Software inventory via InTune application catalog (data-model.md E-003 Application entity)
-- ⚠️ ID.AM-3: No documented organizational communication flows (network diagrams missing)
-- ❌ ID.AM-4: No external information systems inventory (third-party SaaS tools not documented)
-- ✅ ID.AM-5: Resources prioritized by criticality (data-model.md data classification: Public/Internal/Confidential/Restricted)
-- ⚠️ ID.AM-6: Cybersecurity roles partially defined (CISO, Security Architect), but no RACI matrix for security responsibilities
+**Estimated Time to Beta Readiness**: **2 months** (assuming immediate action on recommendations)
 
-**Gaps**:
-- No network architecture diagram showing data flows between InTune, Azure AD, Defender, OneDrive, ServiceNow
-- No third-party SaaS inventory (productivity tools, collaboration platforms beyond Microsoft 365)
-- No cybersecurity RACI matrix (who is Responsible/Accountable/Consulted/Informed for each security control?)
+**Deployment Milestones**:
+- Week 1: Project Security Lead appointed, security preparation begins
+- Week 2: Security Impact Assessment completed
+- Week 3: Change Request submitted to CAB
+- Month 1: Threat model completed
+- Month 2: Security Architecture Review and CAB approval obtained, penetration testing completed
+- Month 3: Beta deployment authorized (if all security gates passed)
 
-#### ID.BE - Business Environment
+### 6.3 Key Success Factors
 
-**Status**: ✅ **COMPLIANT (80%)**
-
-**Evidence**:
-- ✅ ID.BE-1: Organizational role in critical infrastructure documented (stakeholder-drivers.md defines mission-critical device management)
-- ✅ ID.BE-2: Critical services documented (requirements.md lines 22-28 define security, compliance, user productivity objectives)
-- ✅ ID.BE-3: Priorities for organizational mission documented (stakeholder-drivers.md: CISO priority = security, CFO priority = cost)
-- ✅ ID.BE-4: Dependencies on critical services documented (dependency on Microsoft cloud: InTune, Azure AD, Defender)
-- ⚠️ ID.BE-5: Resilience requirements partially documented (10-day rollback capability, but no RTO/RPO defined)
-
-**Gaps**:
-- No formal Recovery Time Objective (RTO) or Recovery Point Objective (RPO) for InTune tenant failure
-
-#### ID.GV - Governance
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (50%)**
-
-**Evidence**:
-- ⚠️ ID.GV-1: Organizational cybersecurity policy partially established (CISO requirements documented, but no formal security policy document)
-- ⚠️ ID.GV-2: Cybersecurity roles partially defined (CISO, Security Architect), but no Delivery Team Security Lead or PSyO appointed
-- ❌ ID.GV-3: Legal and regulatory requirements incomplete (GDPR compliant, but MOD JSP 440/453 compliance gaps)
-- ⚠️ ID.GV-4: Governance oversight partially established (risk register reviews planned, but no Information Security Management System)
-
-**Gaps**:
-- No formal Information Security Policy document
-- No Delivery Team Security Lead or PSyO appointed (CRITICAL)
-- No ISMS (Information Security Management System) documented
-
-#### ID.RA - Risk Assessment
-
-**Status**: ✅ **COMPLIANT (75%)**
-
-**Evidence**:
-- ✅ ID.RA-1: Asset vulnerabilities identified in risk register (risk-register.md R-004: Application compatibility failures)
-- ⚠️ ID.RA-2: Cyber threat intelligence partially received (Defender for Endpoint threat feeds, but no threat intelligence process)
-- ❌ ID.RA-3: No formal threat model documented (STRIDE/DREAD assessment missing)
-- ✅ ID.RA-4: Potential business impacts identified (risk-register.md: security breach = £500K-£2M penalties)
-- ✅ ID.RA-5: Threats/vulnerabilities/likelihoods/impacts used to determine risk (risk-register.md Orange Book methodology)
-- ✅ ID.RA-6: Risk responses documented (risk-register.md 4Ts: Treat/Tolerate/Transfer/Terminate)
-
-**Gaps**:
-- No formal threat model (CRITICAL)
-- No threat intelligence consumption process
-
-#### ID.RM - Risk Management Strategy
-
-**Status**: ✅ **COMPLIANT (85%)**
-
-**Evidence**:
-- ✅ ID.RM-1: Risk management process established (risk-register.md HM Treasury Orange Book framework)
-- ✅ ID.RM-2: Risk tolerance determined (risk-register.md: Residual risk target 32% Medium, down from 56% High)
-- ✅ ID.RM-3: Risk tolerance communicated (risk-register.md escalation to CIO + Steering Committee)
+1. **Engage organizational security team early** - Security Architecture Review by Month 2
+2. **Obtain CAB approval before deployment** - Standard organizational change control
+3. **Complete threat modeling and penetration testing** - Validate security controls
+4. **Maintain security governance through-life** - Quarterly security reviews, annual pen testing
+5. **Leverage existing organizational security processes** - No need for MOD SbD/CAAT compliance
 
 ---
 
-### Function 2: PROTECT (85% - Compliant)
+## Appendix A: Assessment Changes from v2.0
 
-**Purpose**: Implement safeguards to ensure delivery of critical services.
-
-#### PR.AC - Access Control
-
-**Status**: ✅ **COMPLIANT (90%)**
-
-**Evidence**:
-- ✅ PR.AC-1: Identities managed via Azure AD (requirements.md line 45: Azure AD join for all devices)
-- ✅ PR.AC-2: Physical access managed (TPM 2.0 hardware-based authentication, BitLocker encryption)
-- ✅ PR.AC-3: Remote access managed via Conditional Access (requirements.md line 50)
-- ✅ PR.AC-4: Least privilege via Azure AD RBAC (assumed - standard InTune practice)
-- ✅ PR.AC-5: Network integrity protected via Conditional Access (non-compliant devices blocked)
-- ⚠️ PR.AC-6: Identities authenticated with MFA (requirements.md line 34: 100% MFA enforcement), but no PIV/CAC smart card
-- ✅ PR.AC-7: Users/devices authenticated before data access (Conditional Access policy)
-
-**Gaps**:
-- No MOD smart card (CAC/MOD Form 90) authentication documented (required for OFFICIAL-SENSITIVE)
-- No Privileged Access Management (PAM) for IT administrators documented
-
-#### PR.AT - Awareness and Training
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (60%)**
-
-**Evidence**:
-- ✅ PR.AT-1: Users informed of cybersecurity roles (requirements.md line 53: Helpdesk training)
-- ⚠️ PR.AT-2: Privileged users understand roles (assumed for IT Operations, but no documented security training)
-- ⚠️ PR.AT-3: Third-party stakeholders understand roles (vendor management not documented)
-- ⚠️ PR.AT-4: Senior executives understand roles (CIO/CISO assigned, but no documented security awareness training)
-- ❌ PR.AT-5: No physical and cybersecurity personnel training documented
-
-**Gaps**:
-- No security awareness training program documented
-- No role-based security training (users, IT admins, executives)
-
-#### PR.DS - Data Security
-
-**Status**: ✅ **COMPLIANT (90%)**
-
-**Evidence**:
-- ✅ PR.DS-1: Data at rest protected via BitLocker AES-256 (requirements.md line 24)
-- ✅ PR.DS-2: Data in transit protected via TLS 1.3 (standard Microsoft cloud encryption)
-- ✅ PR.DS-3: Assets formally managed throughout lifecycle (data-model.md entities cover creation → migration → decommissioning)
-- ✅ PR.DS-4: Adequate capacity maintained (cloud-based InTune auto-scales)
-- ✅ PR.DS-5: Protections against data leaks via OneDrive Known Folder Move (requirements.md line 46)
-- ⚠️ PR.DS-6: Integrity checking mechanisms partially implemented (TPM attestation), but no file integrity monitoring (FIM)
-- ✅ PR.DS-7: Development environment separated from production (InTune test tenant assumed - standard practice)
-- ✅ PR.DS-8: Integrity mechanisms verified (TPM 2.0, Secure Boot signature validation)
-
-**Gaps**:
-- No Data Loss Prevention (DLP) policies documented
-- No File Integrity Monitoring (FIM) for critical system files
-
-#### PR.IP - Information Protection Processes and Procedures
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (70%)**
-
-**Evidence**:
-- ✅ PR.IP-1: Baseline configuration created (InTune configuration profiles with Windows 11 security baselines)
-- ⚠️ PR.IP-2: System development lifecycle managed (Alpha phase complete, but no formal SDLC for custom InTune scripts)
-- ⚠️ PR.IP-3: Configuration change control partially managed (InTune versioning, but no formal change advisory board)
-- ✅ PR.IP-4: Backups maintained via OneDrive versioning (standard 30-day version history)
-- ⚠️ PR.IP-5: Physical environment security partially addressed (TPM/BitLocker for device theft, but no physical access control to devices)
-- ❌ PR.IP-6: No data destruction policy documented (CESG-approved wiping for decommissioned devices)
-- ⚠️ PR.IP-7: Protection processes improved (risk register lessons learned, but no continuous improvement framework)
-- ⚠️ PR.IP-8: Effectiveness of protection technologies shared (monthly Steering Committee reviews, but no industry sharing)
-- ✅ PR.IP-9: Response and recovery plans tested via pilot deployment (stakeholder-drivers.md: 10-day rollback capability)
-- ❌ PR.IP-10: No response/recovery plans updated (no documented IR plan to update)
-- ⚠️ PR.IP-11: Cybersecurity partially included in HR practices (security clearances assumed for MOD personnel, but no documentation)
-- ⚠️ PR.IP-12: Vulnerability management plan partially implemented (Defender Vulnerability Management available, but not documented)
-
-**Gaps**:
-- No formal change advisory board (CAB) for InTune configuration changes
-- No CESG-approved data destruction policy
-- No incident response plan (CRITICAL)
-- No vulnerability management process documented
-
-#### PR.MA - Maintenance
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (60%)**
-
-**Evidence**:
-- ✅ PR.MA-1: Maintenance performed per specifications (Windows Update via InTune update rings)
-- ⚠️ PR.MA-2: Remote maintenance approved and logged (InTune remote actions logged, but no approval workflow documented)
-
-**Gaps**:
-- No documented approval workflow for remote maintenance (InTune remote wipe, device reset)
-
-#### PR.PT - Protective Technology
-
-**Status**: ✅ **COMPLIANT (95%)**
-
-**Evidence**:
-- ✅ PR.PT-1: Audit logs maintained (data-model.md E-015: 7-year audit log retention)
-- ✅ PR.PT-2: Removable media protected (BitLocker to-go, assumed Windows 11 default)
-- ✅ PR.PT-3: Least privilege via Conditional Access and Azure AD RBAC
-- ✅ PR.PT-4: Communications protected via TLS 1.3 and Conditional Access (device authentication)
-- ✅ PR.PT-5: Mechanisms implemented to achieve resilience (OneDrive versioning, 10-day rollback)
+| Assessment Area | v2.0 (INCORRECT) | v3.0 (CORRECTED) |
+|-----------------|------------------|------------------|
+| **Scope** | MOD Secure by Design assessment | Organizational security assessment |
+| **Framework** | JSP 440 Leaflet 5C, CAAT | ISO 27001, NIST CSF, NCSC |
+| **CAAT Registration** | ❌ CRITICAL blocker | ❌ NOT REQUIRED (not applicable) |
+| **DTSL Appointment** | ❌ CRITICAL blocker | ❌ NOT REQUIRED (use Project Security Lead) |
+| **PSyO Appointment** | ❌ CRITICAL blocker | ❌ NOT REQUIRED (unless org policy) |
+| **BIA for CAAT** | ❌ CRITICAL blocker | ❌ NOT REQUIRED (use Security Impact Assessment) |
+| **Security Governance** | MOD SbD continuous assurance | Organizational CAB and security review |
+| **Critical Gaps** | 7 (CAAT-related) | 0 (no deployment blockers) |
+| **High Priority Gaps** | 7 (MOD SbD-related) | 4 (organizational security gates) |
+| **Security Maturity** | Level 2 (Repeatable) | Level 3 (Defined) |
+| **Overall Risk** | HIGH | MEDIUM |
+| **Deployment Readiness** | 2-3 months | 2 months |
 
 ---
 
-### Function 3: DETECT (70% - Partially Compliant)
+## Appendix B: Reference Documents
 
-**Purpose**: Identify occurrence of a cybersecurity event.
+**Project Documentation**:
+- **Architecture Principles**: `.arckit/memory/architecture-principles.md`
+- **Requirements v5.0 (CORRECTED)**: `projects/001-windows-11-migration-intune/requirements.md` (NFR-SEC-004 and NFR-SEC-005 corrected for organizational security governance)
+- **Stakeholder Drivers**: `projects/001-windows-11-migration-intune/stakeholder-drivers.md`
+- **Risk Register**: `projects/001-windows-11-migration-intune/risk-register.md`
+- **High-Level Design**: `projects/001-windows-11-migration-intune/hld.md`
 
-#### DE.AE - Anomalies and Events
+**Security Standards and Best Practices** (applicable to this assessment):
+- **ISO 27001**: Information Security Management System standard
+- **NIST Cybersecurity Framework**: https://www.nist.gov/cyberframework
+- **NCSC Secure Design Principles**: https://www.ncsc.gov.uk/collection/cyber-security-design-principles
+- **NIST SP 800-53**: Security and Privacy Controls
+- **Organizational Security Policies**: (Internal security policies, standards, baselines)
 
-**Status**: ✅ **COMPLIANT (80%)**
-
-**Evidence**:
-- ✅ DE.AE-1: Baseline network operations established (Defender for Endpoint behavioral analytics)
-- ✅ DE.AE-2: Detected events analyzed (Defender for Endpoint alert investigation)
-- ✅ DE.AE-3: Event data aggregated (Azure AD logs, InTune logs, Defender logs in Microsoft 365 Defender portal)
-- ⚠️ DE.AE-4: Impact of events determined (Defender severity ratings), but no business impact analysis
-- ⚠️ DE.AE-5: Incident alert thresholds partially established (Defender default thresholds), but no custom MOD-specific thresholds
-
-**Gaps**:
-- No custom alert thresholds for MOD threat scenarios (nation-state APT, insider threat)
-
-#### DE.CM - Continuous Monitoring
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (65%)**
-
-**Evidence**:
-- ✅ DE.CM-1: Network monitored for cyber events (Defender for Endpoint network protection)
-- ✅ DE.CM-2: Physical environment monitored (TPM attestation, BitLocker status)
-- ✅ DE.CM-3: Personnel activity monitored (Azure AD sign-in logs, Conditional Access logs)
-- ⚠️ DE.CM-4: Malicious code detected (Defender Antivirus, Defender for Endpoint), but no custom threat hunting
-- ✅ DE.CM-5: Unauthorized mobile code detected (Defender Application Guard for untrusted apps)
-- ⚠️ DE.CM-6: External service provider activity monitored (Microsoft audit logs available), but no active monitoring
-- ⚠️ DE.CM-7: Unauthorized personnel/devices/software monitored (Conditional Access blocks unknowns), but no anomaly detection
-- ✅ DE.CM-8: Vulnerability scans performed (Defender Vulnerability Management available)
-
-**Gaps**:
-- No Security Operations Centre (SOC) integration for 24/7 monitoring
-- No threat hunting capability (proactive search for nation-state APT indicators)
-- No external service provider monitoring (Microsoft cloud operations visibility)
-
-#### DE.DP - Detection Processes
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (60%)**
-
-**Evidence**:
-- ⚠️ DE.DP-1: Roles partially defined (Security Architect assigned), but no Security Operations team
-- ⚠️ DE.DP-2: Detection activities partially comply with requirements (Defender for Endpoint enabled), but no MOD-specific detection rules
-- ❌ DE.DP-3: No detection processes tested (no purple team exercises, no detection validation)
-- ⚠️ DE.DP-4: Event detection information partially communicated (Defender alerts), but no SOC escalation process
-- ⚠️ DE.DP-5: Detection processes partially improved (Microsoft threat intelligence updates), but no lessons learned from incidents
-
-**Gaps**:
-- No Security Operations team assigned (CRITICAL)
-- No detection processes tested (purple team, red team)
-- No MOD-specific detection rules (nation-state TTPs, insider threat indicators)
+**NOT APPLICABLE** (MOD-specific, previous v2.0 assessment incorrectly used these):
+- ❌ JSP 440 Leaflet 5C (Secure by Design mandate)
+- ❌ JSP 453 (Digital Policies and Standards for Defence)
+- ❌ ISN 2023/09 (Secure by Design Requirements)
+- ❌ ISN 2023/10 (Supplier Attestation)
+- ❌ MOD CAAT (Cyber Activity and Assurance Tracker)
+- ❌ MOD Secure by Design Portal
 
 ---
 
-### Function 4: RESPOND (45% - Non-Compliant)
-
-**Purpose**: Take action regarding a detected cybersecurity incident.
-
-#### RS.RP - Response Planning
-
-**Status**: ❌ **NON-COMPLIANT (20%)**
-
-**Evidence**:
-- ❌ RS.RP-1: No incident response plan documented (CRITICAL gap)
-- ⚠️ RS.RP-2: Response plan partially executed during incident (Defender automated response), but no documented playbooks
-- ❌ RS.RP-3: No response plan testing (tabletop exercises, simulations)
-- ❌ RS.RP-4: No response plan updates (no plan exists to update)
-- ❌ RS.RP-5: No coordination with stakeholders (no MOD CERT integration documented)
-
-**Gaps** (CRITICAL):
-- No incident response plan (detection → containment → eradication → recovery → lessons learned)
-- No incident response playbooks (ransomware, data breach, insider threat, supply chain compromise)
-- No incident response team assigned (roles, responsibilities, contact details)
-- No MOD CERT integration (MOD incidents must be reported to MOD CERT)
-
-#### RS.CO - Communications
-
-**Status**: ❌ **NON-COMPLIANT (30%)**
-
-**Evidence**:
-- ⚠️ RS.CO-1: Personnel know roles during incidents (assumed Helpdesk escalates to IT Operations), but not documented
-- ❌ RS.CO-2: No incident reporting criteria (when to report to MOD CERT, IAO, CISO, Accreditation Service)
-- ❌ RS.CO-3: No information sharing with stakeholders during incidents
-- ⚠️ RS.CO-4: Coordination with external stakeholders partially addressed (Microsoft support available), but no MOD CERT/NCSC coordination
-- ❌ RS.CO-5: No coordination with law enforcement (no process for reporting serious incidents to NCSC, NCA, or MOD Police)
-
-**Gaps**:
-- No incident escalation matrix (when to notify MOD CERT, NCSC, senior leadership)
-- No coordination with MOD CERT or NCSC (National Cyber Security Centre)
-
-#### RS.AN - Analysis
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (60%)**
-
-**Evidence**:
-- ⚠️ RS.AN-1: Notifications investigated (Defender for Endpoint alert investigation), but no documented triage process
-- ⚠️ RS.AN-2: Impact partially understood (Defender severity ratings), but no business impact analysis
-- ⚠️ RS.AN-3: Forensics partially performed (Defender Live Response available), but no documented forensics process
-- ⚠️ RS.AN-4: Incidents categorized (Defender alert types), but no MOD-specific incident taxonomy
-- ❌ RS.AN-5: No incident response process improvements (no lessons learned process)
-
-**Gaps**:
-- No documented incident triage and analysis process
-- No forensics capability assigned (who performs digital forensics? where is forensic evidence stored?)
-
-#### RS.MI - Mitigation
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (50%)**
-
-**Evidence**:
-- ✅ RS.MI-1: Incidents contained (Defender for Endpoint automated isolation)
-- ⚠️ RS.MI-2: Incidents mitigated (Defender automated remediation), but no documented mitigation strategies
-- ❌ RS.MI-3: No newly identified vulnerabilities mitigated (no vulnerability management process)
-
-**Gaps**:
-- No documented incident mitigation strategies (when to isolate device, wipe device, revoke user access)
-
-#### RS.IM - Improvements
-
-**Status**: ❌ **NON-COMPLIANT (20%)**
-
-**Evidence**:
-- ⚠️ RS.IM-1: Response plans partially incorporate lessons learned (risk register lessons learned process), but no incident-specific lessons learned
-- ❌ RS.IM-2: No response strategies updated (no documented response strategies to update)
-
-**Gaps**:
-- No post-incident review process
-- No lessons learned integration into security controls
-
----
-
-### Function 5: RECOVER (55% - Partially Compliant)
-
-**Purpose**: Maintain resilience and restore capabilities impaired by a cybersecurity incident.
-
-#### RC.RP - Recovery Planning
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (60%)**
-
-**Evidence**:
-- ⚠️ RC.RP-1: Recovery plan partially executed (10-day rollback capability, OneDrive versioning), but no formal disaster recovery plan
-- ❌ RC.RP-2: No recovery plan testing (no DR exercises)
-- ❌ RC.RP-3: No recovery plan updates
-- ⚠️ RC.RP-4: Coordination with external parties partially addressed (Microsoft support), but no coordination with MOD Accreditation Service during incidents
-
-**Gaps**:
-- No formal disaster recovery plan for InTune tenant failure
-- No Business Continuity Plan (BCP) for endpoint management loss
-- No Recovery Time Objective (RTO) or Recovery Point Objective (RPO) defined
-
-#### RC.IM - Improvements
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (50%)**
-
-**Evidence**:
-- ⚠️ RC.IM-1: Recovery plans partially incorporate lessons learned (risk register lessons learned), but no incident-specific recovery lessons
-- ❌ RC.IM-2: No recovery strategies updated (no documented recovery strategies to update)
-
-**Gaps**:
-- No post-incident recovery review
-- No continuous improvement of recovery capabilities
-
-#### RC.CO - Communications
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (60%)**
-
-**Evidence**:
-- ⚠️ RC.CO-1: Public relations partially managed (Change Manager assigned for user communications), but no crisis communications plan
-- ⚠️ RC.CO-2: Reputation repaired (Change Manager manages user communications), but no MOD-specific reputation management
-- ⚠️ RC.CO-3: Recovery activities communicated (assumed via Change Manager), but not documented
-
-**Gaps**:
-- No crisis communications plan for major incidents (data breach, ransomware)
-
----
-
-### NIST CSF Remediation Summary
-
-**Critical NIST Gaps Requiring Immediate Action**:
-
-| Gap | NIST Category | Priority | Owner | Due Date |
-|-----|---------------|----------|-------|----------|
-| No incident response plan | RS.RP-1 | CRITICAL | PSyO | Month 2 |
-| No Delivery Team Security Lead appointed | ID.GV-2 | CRITICAL | CIO | Week 1 |
-| No threat model documented | ID.RA-3 | CRITICAL | Security Lead | Month 1 |
-| No MOD CERT integration | RS.CO-4 | HIGH | PSyO | Month 1 |
-| No SOC integration | DE.CM (all) | HIGH | Security Lead | Month 3 |
-| No disaster recovery plan | RC.RP-1 | MEDIUM | IT Operations | Month 3 |
-
----
-
-## 4. Three Lines of Defence Assessment
-
-### Overall Status: ⚠️ PARTIALLY COMPLIANT (60%)
-
-| Line of Defence | Status | Score | Key Gaps |
-|-----------------|--------|-------|----------|
-| **First Line** (Delivery Team) | ⚠️ Partial | 50% | No Security Lead appointed, security ownership unclear |
-| **Second Line** (Assurance) | ⚠️ Partial | 65% | No PSyO, no IAA engagement, no formal assurance reviews |
-| **Third Line** (Independent Audit) | ❌ Weak | 40% | No security testing, no independent audit planned |
-
----
-
-### First Line of Defence: Delivery Team Owns Security
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (50%)**
-
-**Purpose**: Delivery team owns day-to-day security management and is accountable for implementing security controls.
-
-**Evidence**:
-- ❌ **Delivery Team Security Lead NOT appointed** (JSP 440 Leaflet 5C requirement)
-- ⚠️ **Security requirements owned by capability owner** (IT Operations Director is IAO candidate, but not formally appointed)
-- ⚠️ **Day-to-day security management** (Security Architect assigned for design, but operational security ownership unclear)
-
-**First Line Roles**:
-
-| Role | Assigned | Status | Responsibilities |
-|------|----------|--------|------------------|
-| Delivery Team Security Lead | ❌ NOT APPOINTED | NON-COMPLIANT | Lead security design, threat modeling, security testing, liaise with IAA |
-| Capability Owner (IAO) | ⚠️ IT Operations Director (informal) | PARTIAL | Accountable for system security, risk acceptance, accreditation |
-| Technical Lead | ✅ Endpoint Manager (requirements.md line 76) | COMPLIANT | InTune configuration, security policy deployment |
-| Security Architect | ✅ Assigned (requirements.md line 77) | COMPLIANT | Zero Trust design, Defender for Endpoint architecture |
-
-**Day-to-Day Security Management**:
-- ✅ InTune Administrator manages compliance policies (requirements.md line 48)
-- ✅ Security Architect designs Zero Trust architecture (requirements.md line 77)
-- ⚠️ Unclear who monitors security alerts daily (Defender for Endpoint, Conditional Access)
-- ⚠️ Unclear who triages security incidents (no incident response team assigned)
-- ❌ No security champion network (users trained to identify and report security issues)
-
-**Security Requirements Ownership**:
-- ✅ BR-001 Security Compliance owned by CISO (requirements.md line 103)
-- ✅ BR-006 Regulatory Compliance owned by CISO (requirements.md line 192)
-- ⚠️ Security requirements scattered across business requirements - no consolidated security requirements document
-
-**Gaps**:
-1. No Delivery Team Security Lead appointed (CRITICAL)
-2. No formal IAO appointment (IT Operations Director should be formally appointed)
-3. No security operations team assigned (who monitors alerts 24/7?)
-4. No security champion network (users as first line of defence for phishing, social engineering)
-
-**Remediation Actions**:
-
-| Action | Priority | Owner | Due Date |
-|--------|----------|-------|----------|
-| Appoint Delivery Team Security Lead (CISO delegate or Senior Security Architect) | CRITICAL | CIO | Week 1 |
-| Formally appoint IT Operations Director as IAO with documented responsibilities | CRITICAL | CISO | Week 1 |
-| Assign security operations team or SOC integration for 24/7 monitoring | HIGH | Security Lead | Month 2 |
-| Establish security champion network (1 champion per 50 users) | MEDIUM | Change Manager | Month 3 |
-
----
-
-### Second Line of Defence: Assurance and Oversight
-
-**Status**: ⚠️ **PARTIALLY COMPLIANT (65%)**
-
-**Purpose**: Independent assurance, oversight, and policy definition. Second line provides challenge to first line.
-
-**Evidence**:
-- ⚠️ **Technical Coherence Assurance**: Enterprise Architect assigned (requirements.md line 75), but no formal assurance reviews scheduled
-- ❌ **Security policies and standards**: No formal Information Security Policy or security standards document
-- ❌ **Independent security reviews**: No PSyO appointed, no IAA engaged, no security architecture review completed
-
-**Second Line Roles**:
-
-| Role | Assigned | Status | Responsibilities |
-|------|----------|--------|------------------|
-| Project Security Officer (PSyO) | ❌ NOT APPOINTED | NON-COMPLIANT | Security oversight, CAAT self-assessment, liaise with Security Governance (Second Line) |
-| Information Assurance Architect (IAA) | ❌ NOT ENGAGED | NON-COMPLIANT | Independent security architecture review and approval |
-| Enterprise Architect | ✅ Assigned (requirements.md line 75) | COMPLIANT | Architecture governance, principle enforcement |
-| CISO | ✅ Assigned (requirements.md line 73) | COMPLIANT | Security policy, compliance approval |
-| Data Protection Officer | ✅ CISO/DPO (data-model.md line 49) | COMPLIANT | GDPR compliance, DPIA oversight |
-
-**Technical Coherence Assurance**:
-- ✅ Enterprise Architect assigned for architecture governance (requirements.md line 75)
-- ⚠️ No formal architecture review board documented (who approves architecture decisions?)
-- ⚠️ No schedule of architecture reviews (Discovery review, Alpha review, Beta review, Live review)
-- ⚠️ traceability-matrix.md tracks requirements to design, but no security requirements traceability
-
-**Security Policies and Standards**:
-- ❌ No Information Security Policy document
-- ❌ No security standards (password policy, access control standard, encryption standard, incident response standard)
-- ⚠️ Microsoft security baselines applied via InTune, but not formally documented as organizational security standards
-- ✅ GDPR compliance policies defined (data-model.md DPIA, data retention, cross-border transfers)
-
-**Independent Security Reviews**:
-- ❌ No PSyO appointed (OFFICIAL-SENSITIVE data requires PSyO per JSP 440)
-- ❌ No IAA engaged (OFFICIAL-SENSITIVE systems require IAA approval before deployment)
-- ❌ No security architecture review completed (Security Architect designed architecture, but no independent review)
-- ⚠️ Risk register reviewed monthly by Steering Committee (risk-register.md line 84), but no security-specific oversight
-
-**MOD Accreditation Service Engagement**:
-- ❌ No engagement with MOD Accreditation Service documented
-- ❌ No Security Aspects Letter (SAL) obtained
-- ❌ No CAAT (Cyber Activity and Assurance Tracker) registration or self-assessment started
-- ❌ No accreditation timeline planned
-
-**Gaps**:
-1. No PSyO appointed (CRITICAL - required for OFFICIAL-SENSITIVE)
-2. No IAA engaged (CRITICAL - required before deployment)
-3. No Information Security Policy or security standards (HIGH)
-4. No formal architecture review board or review schedule (MEDIUM)
-
-**Remediation Actions**:
-
-| Action | Priority | Owner | Due Date |
-|--------|----------|-------|----------|
-| Appoint PSyO (dedicated role reporting to CISO) | CRITICAL | CISO | Week 1 |
-| Engage MOD Accreditation Service to assign IAA | CRITICAL | PSyO | Week 2 |
-| Create Information Security Policy and security standards | HIGH | CISO | Month 2 |
-| Establish architecture review board with monthly reviews | MEDIUM | Enterprise Architect | Month 2 |
-
----
-
-### Third Line of Defence: Independent Audit
-
-**Status**: ❌ **NON-COMPLIANT (40%)**
-
-**Purpose**: Independent audit and assurance. Third line provides challenge to first and second lines.
-
-**Evidence**:
-- ❌ **Internal audit of security controls**: No internal audit planned
-- ❌ **Penetration testing**: No penetration testing completed (required before Beta phase)
-- ❌ **External audit**: No external audit planned (NAO, GIAA, or commercial audit)
-
-**Third Line Activities**:
-
-| Activity | Status | Evidence | Gap |
-|----------|--------|----------|-----|
-| Penetration Testing | ❌ NOT COMPLETED | None | Required before Beta phase (JSP 440) |
-| Vulnerability Scanning | ⚠️ PARTIAL | Defender Vulnerability Management available but not documented | No documented vulnerability management process |
-| Internal Audit (ISMS) | ❌ NOT PLANNED | None | ISO 27001 requires annual ISMS audit |
-| External Audit (Accreditation) | ❌ NOT PLANNED | None | MOD systems require accreditation audit by IAA |
-| Red Team Exercise | ❌ NOT PLANNED | None | Best practice for HIGH/SECRET systems |
-
-**Penetration Testing**:
-- ❌ No penetration testing completed (CRITICAL gap for accreditation)
-- ❌ No penetration testing vendor selected
-- ❌ No penetration testing scope defined (InTune configuration, Conditional Access, Defender for Endpoint)
-- ❌ No penetration testing schedule (should complete before Beta phase pilot deployment)
-- **Recommendation**: CREST-certified or CHECK-approved penetration testing vendor for MOD systems
-
-**Vulnerability Scanning**:
-- ⚠️ Defender Vulnerability Management available (built-in to Defender for Endpoint)
-- ❌ No documented vulnerability scanning schedule (weekly/monthly)
-- ❌ No vulnerability remediation SLAs (Critical = 7 days, High = 30 days, Medium = 90 days)
-- ❌ No vulnerability reporting to PSyO or IAO
-
-**Internal Audit (ISMS)**:
-- ❌ No Information Security Management System (ISMS) documented
-- ❌ No annual ISMS audit planned (ISO 27001 requirement if organization is certified)
-- ⚠️ Risk register provides some audit trail, but not full ISMS
-
-**External Audit (Accreditation)**:
-- ❌ No MOD Accreditation Service audit scheduled
-- ❌ No CAAT self-assessment completed or submitted for Security Governance Review
-- ❌ No interim or conditional accreditation obtained
-- **Recommendation**: Engage MOD Accreditation Service immediately to start accreditation process (3-6 month lead time)
-
-**External Audit (NAO, GIAA)**:
-- ❌ No National Audit Office (NAO) audit planned (applies to major MOD programmes)
-- ❌ No Government Internal Audit Agency (GIAA) audit planned (applies to Defence Digital)
-- **Recommendation**: Coordinate with MOD Internal Audit team if required for this programme
-
-**Red Team Exercise**:
-- ❌ No red team exercise planned (simulated nation-state attack)
-- **Recommendation**: Plan red team exercise for Live phase (Month 12+) after security baseline established
-- **Recommendation**: Use MOD red team (NCSC/GCHQ) or CREST-certified red team for OFFICIAL-SENSITIVE systems
-
-**Gaps**:
-1. No penetration testing completed (CRITICAL - blocker for accreditation)
-2. No vulnerability scanning process documented (HIGH)
-3. No MOD Accreditation Service audit scheduled (CRITICAL)
-4. No internal or external audit planned (MEDIUM)
-
-**Remediation Actions**:
-
-| Action | Priority | Owner | Due Date |
-|--------|----------|-------|----------|
-| Procure CREST/CHECK-approved penetration testing vendor | CRITICAL | PSyO | Month 1 |
-| Conduct penetration testing of InTune deployment | CRITICAL | PSyO | Month 2 |
-| Document vulnerability scanning process with remediation SLAs | HIGH | IT Operations | Month 2 |
-| Schedule Security Governance Review (Second Line assurance) | CRITICAL | DTSL | Month 3 |
-| Plan internal ISMS audit (if ISO 27001 certified) | MEDIUM | CISO | Month 6 |
-
----
-
-## 5. Overall Security Posture and Compliance Scoring
-
-### 5.1 SbD Principle Compliance Summary
-
-| Principle | Score | Status | Key Strengths | Key Gaps |
-|-----------|-------|--------|---------------|----------|
-| 1. Understand Context | 65% | ⚠️ Partial | Good documentation, data classification | No SAL, MOD network integration unclear |
-| 2. Security from Start | 60% | ⚠️ Partial | Zero Trust design, security in requirements | No Security Lead, no threat model, no IAA approval |
-| 3. Defence in Depth | 80% | ✅ Good | Excellent layered controls (CA, BitLocker, Defender) | No PAM, no DLP, no SOC integration |
-| 4. Secure Design Patterns | 70% | ⚠️ Partial | NCSC principles applied, modern standards | No NIST CSF mapping, no secret management |
-| 5. Continuously Manage Risk | 75% | ⚠️ Partial | Excellent risk register (Orange Book) | No cyber risk category, no pen testing |
-| 6. Secure Supply Chain | 15% | ❌ Critical | None | No SBOM, no supplier attestations, no third-party assessments |
-| 7. Through-Life Assurance | 55% | ⚠️ Partial | Good monitoring (InTune, Defender) | No IR plan, no SOC, no decommissioning process |
-
-**Average SbD Compliance**: **60%** (Target: 80%+)
-
----
-
-### 5.2 Framework Compliance Scoring
-
-| Framework | Score | Status | Evidence | Accreditation Impact |
-|-----------|-------|--------|----------|----------------------|
-| **JSP 440 Leaflet 5C (SbD Mandate)** | 55% | ⚠️ Partial | Principles applied but governance gaps | BLOCKER - Security Lead/PSyO required |
-| **JSP 453 (Digital Standards)** | 85% | ✅ Good | Cloud-first, modern endpoint mgmt | ACCEPTABLE - compliant with digital strategy |
-| **NIST Cybersecurity Framework** | 62% | ⚠️ Partial | Strong Protect/Detect, weak Respond | CONCERN - incident response critical gap |
-| **NCSC Secure Design Principles** | 68% | ⚠️ Partial | Good defence-in-depth, weak supply chain | CONCERN - supply chain high risk |
-| **GDPR / DPA 2018** | 90% | ✅ Good | DPIA planned, data retention defined | ACCEPTABLE - privacy compliant |
-| **ISO 27001** | 70% | ⚠️ Partial | Risk register strong, ISMS integration unclear | CONCERN - no ISMS documented |
-| **Orange Book (Risk Management)** | 85% | ✅ Good | Comprehensive risk register | ACCEPTABLE - risk management mature |
-
-**Average Framework Compliance**: **74%** (Target: 85%+)
-
----
-
-### 5.3 Overall Security Risk Level
-
-**Inherent Security Risk** (without controls): **HIGH**
-- OFFICIAL-SENSITIVE data in cloud
-- 6,000 devices with remote access
-- No security governance established
-- No security testing completed
-- Supply chain security absent
-
-**Residual Security Risk** (after planned controls): **MEDIUM**
-- Strong technical controls (BitLocker, Defender, Conditional Access)
-- Comprehensive risk register with mitigations
-- GDPR compliance designed in
-- BUT: Critical governance gaps (no Security Lead, no PSyO, no IAA)
-
-**Risk Mitigation Effectiveness**: **60%**
-- Technical controls highly effective (85%)
-- Governance and process controls weak (35%)
-- **Overall**: Residual risk MEDIUM-HIGH (not acceptable for accreditation without remediation)
-
----
-
-### 5.4 Accreditation Readiness Assessment
-
-**Current Accreditation Status**: ❌ **NOT READY**
-
-**Accreditation Blockers** (must resolve before accreditation):
-
-| # | Blocker | Category | Severity | Estimated Effort | Owner |
-|---|---------|----------|----------|------------------|-------|
-| 1 | No Delivery Team Security Lead appointed | Governance | CRITICAL | 1 day | CIO |
-| 2 | No Project Security Officer (PSyO) appointed | Governance | CRITICAL | 1 day | CISO |
-| 3 | No IAA engaged (MOD Accreditation Service) | Governance | CRITICAL | 2 weeks | PSyO |
-| 4 | No formal threat model documented | Technical | HIGH | 2 weeks | Security Lead |
-| 5 | No security testing completed (pen test) | Technical | HIGH | 4 weeks | PSyO |
-| 6 | No supplier security attestations (ISN 2023/10) | Supply Chain | HIGH | 3 weeks | Procurement |
-| 7 | No security architecture approval from IAA | Governance | HIGH | 4 weeks | Enterprise Architect |
-| 8 | No incident response plan documented | Process | HIGH | 3 weeks | PSyO |
-| 9 | No CAAT self-assessment completed | Governance | HIGH | 4 weeks | DTSL |
-
-**Estimated Time to Accreditation Readiness**: **3-6 months**
-
-**Recommended Accreditation Pathway**:
-
-1. **Month 0-1: Establish Security Governance**
-   - Appoint Security Lead and PSyO (Week 1)
-   - Engage MOD Accreditation Service, assign IAA (Week 2)
-   - Formally appoint IAO (IT Operations Director)
-   - Create security governance framework (RACI, reporting, escalation)
-
-2. **Month 1-2: Complete Security Documentation**
-   - Complete threat model (STRIDE/DREAD)
-   - Document security architecture and submit for IAA review
-   - Complete CAAT self-assessment (7 SbD Principles question sets)
-   - Complete Business Impact Assessment (BIA)
-   - Obtain supplier security attestations (Microsoft, hardware vendors)
-   - Create incident response plan
-
-3. **Month 2-3: Security Testing and Assurance**
-   - Conduct penetration testing (CREST/CHECK vendor)
-   - Remediate pen test findings
-   - Implement continuous vulnerability scanning
-   - Update CAAT with implemented security controls
-   - Submit for Security Governance Review (Second Line assurance)
-
-4. **Month 3-4: Security Governance Review and Remediation**
-   - Second Line conducts Security Governance Review
-   - Remediate findings from Security Governance Review
-   - Third Line internal audit (validate CAAT self-assessment)
-5. **Month 4-6: Pilot Deployment Under Continuous Assurance**
-   - Deploy pilot wave (50-100 devices) with enhanced security monitoring
-   - Demonstrate security controls operational
-   - No security incidents during pilot
-   - Update CAAT with pilot outcomes and lessons learned
-   - Continuous security monitoring and attestation
-
-6. **Month 6+: Full Deployment Under Continuous Assurance**
-   - Phased deployment waves with continuous security monitoring
-   - Quarterly Security Governance Reviews
-   - Continuous CAAT updates as deployment progresses
-   - Annual penetration testing and security audits
-   - Ongoing supplier attestation (continuous through-life)
-
----
-
-### 5.5 Information Assurance Maturity Model (IAMM) Score
-
-**Current IAMM Level**: **Level 2 - Repeatable** (Target: Level 3 - Defined)
-
-| Domain | Current Level | Target Level | Gap | Evidence |
-|--------|---------------|--------------|-----|----------|
-| 1. Security Governance | Level 2 | Level 3 | -1 | Security roles identified but not formally appointed |
-| 2. Risk Management | Level 3 | Level 3 | 0 | Comprehensive risk register with Orange Book framework |
-| 3. Security Architecture | Level 2 | Level 3 | -1 | Architecture designed but not approved by IAA |
-| 4. Asset Management | Level 2 | Level 3 | -1 | Device inventory in InTune, but no CMDB integration |
-| 5. Identity & Access Management | Level 3 | Level 3 | 0 | Azure AD + Conditional Access + MFA |
-| 6. Vulnerability Management | Level 1 | Level 3 | -2 | Defender Vulnerability Mgmt available but not operationalized |
-| 7. Incident Management | Level 1 | Level 3 | -2 | No incident response plan or team |
-| 8. Security Monitoring | Level 2 | Level 3 | -1 | Defender for Endpoint enabled, but no SOC integration |
-
-**IAMM Scoring**:
-- **Level 0 (Non-existent)**: 0 domains (GOOD)
-- **Level 1 (Initial/Ad hoc)**: 2 domains (Vulnerability, Incident Management) - CONCERN
-- **Level 2 (Repeatable)**: 4 domains (Governance, Architecture, Asset, Monitoring) - ACCEPTABLE
-- **Level 3 (Defined)**: 2 domains (Risk, IAM) - GOOD
-- **Level 4 (Managed)**: 0 domains - ASPIRATIONAL
-- **Level 5 (Optimized)**: 0 domains - ASPIRATIONAL
-
-**Average IAMM Level**: **2.0** (Target: 3.0 for operational systems)
-
-**IAMM Remediation Priorities**:
-1. Improve Incident Management from Level 1 to Level 3 (CRITICAL)
-2. Improve Vulnerability Management from Level 1 to Level 3 (HIGH)
-3. Improve Security Governance from Level 2 to Level 3 (HIGH)
-4. Improve Security Architecture from Level 2 to Level 3 (MEDIUM)
-
----
-
-## 6. Actionable Recommendations
-
-### 6.1 Critical Priority (0-30 days) - MUST COMPLETE BEFORE BETA
-
-**These are accreditation blockers. Project CANNOT proceed to Beta phase without resolving these.**
-
-| # | Recommendation | Owner | Due Date | Effort | Success Criteria |
-|---|----------------|-------|----------|--------|------------------|
-| C-1 | **Appoint Delivery Team Security Lead** (CISO delegate or Senior Security Architect) - JSP 440 Leaflet 5C mandatory requirement | CIO | Week 1 | 1 day | Security Lead formally appointed with documented role, responsibilities, and RACI |
-| C-2 | **Appoint Project Security Officer (PSyO)** for OFFICIAL-SENSITIVE data handling - JSP 440 requirement | CISO | Week 1 | 1 day | PSyO formally appointed, reporting to CISO, with CAAT self-assessment responsibility |
-| C-3 | **Formally appoint IAO** (IT Operations Director as Information Assurance Owner) | CISO | Week 1 | 1 day | IAO formally appointed with documented accountability for system security and risk acceptance |
-| C-4 | **Engage MOD Accreditation Service** to assign IAA (Information Assurance Architect) | PSyO | Week 2 | 2 weeks | IAA assigned, initial meeting held, accreditation pathway agreed |
-| C-5 | **Complete formal threat model** using STRIDE/DREAD methodology (nation-state, insider, criminal, supply chain threats) | Security Lead | Month 1 | 2 weeks | Threat model documented, attack vectors identified, mitigations mapped to threats |
-| C-6 | **Document security architecture** and submit for IAA review and approval | Security Architect | Month 1 | 3 weeks | Security architecture document approved by IAA, security control mapping complete |
-| C-7 | **Obtain supplier security attestations** from Microsoft per ISN 2023/10 (InTune, Azure, Defender) | Procurement | Month 1 | 2 weeks | Microsoft security attestation obtained, compliance with SbD principles confirmed |
-| C-8 | **Verify MOD-assured cloud status** for Microsoft Azure UK South or implement compensating controls | PSyO | Month 1 | 3 weeks | Azure UK South MOD assurance confirmed OR compensating controls documented and approved by IAA |
-| C-9 | **Document MOD network integration** (firewall rules, PSN connectivity, network segmentation from operational networks) | Security Architect | Month 1 | 3 weeks | Network architecture diagram, firewall rules, MOD network integration approved by IAA |
-| C-10 | **Complete CAAT self-assessment** (7 SbD Principles question sets) and Business Impact Assessment (BIA) | DTSL | Month 1 | 3 weeks | CAAT self-assessment submitted, BIA complete, security maturity baseline established |
-
-**Critical Priority Success Metrics**:
-- ✅ All 10 critical actions completed by Month 1
-- ✅ Security governance established (Security Lead, PSyO, IAO, IAA assigned)
-- ✅ Threat model and security architecture documented
-- ✅ MOD Accreditation Service engaged and accreditation pathway agreed
-- ✅ CAAT self-assessment in progress
-
----
-
-### 6.2 High Priority (1-3 months) - REQUIRED FOR ACCREDITATION
-
-**These are required for accreditation approval. Must complete before pilot deployment.**
-
-| # | Recommendation | Owner | Due Date | Effort | Success Criteria |
-|---|----------------|-------|----------|--------|------------------|
-| H-1 | **Conduct penetration testing** of InTune deployment (use CREST or CHECK-approved vendor for MOD systems) | PSyO | Month 2 | 4 weeks | Pen test completed, report received, CRITICAL/HIGH findings remediated |
-| H-2 | **Create Software Bill of Materials (SBOM)** for all InTune-deployed applications (use SPDX or CycloneDX format) | IT Operations | Month 2 | 4 weeks | SBOM created, vulnerability scan completed, update process documented |
-| H-3 | **Implement CVE vulnerability scanning** for third-party applications before InTune deployment | IT Operations | Month 2 | 2 weeks | Vulnerability scanning integrated into app deployment pipeline, SLAs defined |
-| H-4 | **Document incident response plan** with playbooks (ransomware, data breach, insider threat, supply chain compromise) | PSyO | Month 2 | 3 weeks | IR plan approved by CISO, playbooks documented, IR team assigned, MOD CERT integration documented |
-| H-5 | **Establish SOC integration** for InTune and Defender for Endpoint alerts (24/7 security monitoring) | Security Lead | Month 3 | 3 weeks | SOC integration live, alert routing configured, escalation to MOD CERT documented |
-| H-6 | **Document privileged access management (PAM)** for InTune administrators (just-in-time access, MFA, approval workflow) | Security Architect | Month 1 | 1 week | PAM process documented, InTune admin roles reviewed, least privilege enforced |
-| H-7 | **Implement Data Loss Prevention (DLP)** policies for OFFICIAL-SENSITIVE data (OneDrive, email, endpoints) | CISO | Month 2 | 2 weeks | DLP policies deployed via InTune, testing completed, alerts integrated with SOC |
-| H-8 | **Create security requirements traceability matrix** (requirement → control → test → evidence) | Security Lead | Month 2 | 1 week | Traceability matrix links security requirements to NIST CSF controls and test plans |
-| H-9 | **Obtain hardware vendor security assessments** (firmware security, TPM provenance, supply chain) | Procurement | Month 3 | 3 weeks | Vendor security questionnaires completed for Dell/HP/Lenovo, firmware security confirmed |
-| H-10 | **Document patch testing and emergency patching process** for Windows Update via InTune update rings | IT Operations | Month 2 | 2 weeks | Patch testing workflow documented, emergency patch SLA defined (24hr for CRITICAL CVEs) |
-| H-11 | **Add CYBER risk category** to risk register with nation-state and insider threat risks | Security Lead | Month 1 | 1 week | Risk register updated with 5+ cyber risks (nation-state APT, insider threat, ransomware, supply chain, DDoS) |
-| H-12 | **Document MOD CERT integration** and security incident reporting process | PSyO | Month 1 | 1 week | MOD CERT contact details, incident escalation matrix, reporting SLAs documented |
-| H-13 | **Complete security governance review** and submit to Second Line for assurance | DTSL | Month 3 | 4 weeks total | Security documentation submitted for Second Line review, Security Governance Review scheduled |
-| H-14 | **Create Information Security Policy** and security standards (password, access control, encryption, incident response) | CISO | Month 2 | 3 weeks | Information Security Policy approved by CIO, security standards published to staff |
-| H-15 | **Define risk acceptance authority matrix** (who can accept LOW/MEDIUM/HIGH/CRITICAL risks) | PSyO | Month 1 | 1 week | Risk acceptance authority documented (e.g., CISO accepts HIGH, CIO accepts CRITICAL) |
-
-**High Priority Success Metrics**:
-- ✅ All 15 high-priority actions completed by Month 3
-- ✅ Security testing completed (penetration test passed)
-- ✅ Incident response capability operational (IR plan, SOC, MOD CERT)
-- ✅ Supply chain security improved (SBOM, supplier attestations, hardware assessments)
-- ✅ Security documentation submitted for Security Governance Review (Second Line)
-
----
-
-### 6.3 Medium Priority (3-6 months) - CONTINUOUS IMPROVEMENT
-
-**These improve security posture but are not accreditation blockers. Complete during pilot and early deployment.**
-
-| # | Recommendation | Owner | Due Date | Effort | Success Criteria |
-|---|----------------|-------|----------|--------|------------------|
-| M-1 | **Implement continuous vulnerability scanning** via Defender Vulnerability Management with remediation SLAs | IT Operations | Month 2 | 2 weeks | Vulnerability scan weekly, SLAs: CRITICAL 7d, HIGH 30d, MEDIUM 90d |
-| M-2 | **Document supply chain attack threat model** and mitigations (SolarWinds, Kaseya, Log4Shell scenarios) | Security Lead | Month 1 | 2 weeks | Supply chain threat model documented, monitoring for supply chain IoCs implemented |
-| M-3 | **Assess API security** for InTune integrations (ServiceNow, Power BI, custom scripts) | Security Architect | Month 2 | 1 week | API authentication/authorization reviewed, secrets management documented |
-| M-4 | **Create NIST CSF control traceability matrix** (control → evidence → test → status) | Security Lead | Month 2 | 2 weeks | NIST CSF compliance dashboard, control evidence documented, gaps tracked |
-| M-5 | **Define through-life security governance framework** (monthly reviews, annual re-accreditation, continuous improvement) | PSyO | Month 3 | 2 weeks | Security governance calendar published, roles assigned, review templates created |
-| M-6 | **Document Configuration Manager secure decommissioning process** (data deletion, archiving, CESG-approved wiping) | IT Operations | Month 4 | 2 weeks | ConfigMgr decommissioning plan approved, data retention analysis complete |
-| M-7 | **Create device decommissioning process** (retire → wipe → verify → CESG-approved disposal) | IT Operations | Month 3 | 1 week | Device decommissioning workflow documented, InTune autopilot reset configured |
-| M-8 | **Establish security champion network** (1 security champion per 50 users trained to identify phishing, social engineering) | Change Manager | Month 3 | 4 weeks | 120 security champions trained (6,000 users / 50), monthly security champion meetings |
-| M-9 | **Create security monitoring dashboard** for senior stakeholders (CISO, IAO) with KPIs | Security Lead | Month 4 | 2 weeks | Power BI dashboard: device compliance %, threat detections, vulnerabilities, incidents |
-| M-10 | **Conduct red team exercise** simulating nation-state attack (post-Live phase, Month 12+) | CISO | Month 12 | 6 weeks | Red team exercise completed, findings remediated, lessons learned integrated |
-| M-11 | **Implement File Integrity Monitoring (FIM)** for critical system files (Windows system files, InTune scripts) | IT Operations | Month 3 | 2 weeks | FIM enabled via Defender for Endpoint, baseline created, alerts configured |
-| M-12 | **Define Recovery Time Objective (RTO) and Recovery Point Objective (RPO)** for InTune tenant failure | IT Operations | Month 3 | 1 week | RTO/RPO defined (e.g., RTO 24hr, RPO 4hr), disaster recovery plan documented |
-| M-13 | **Establish architecture review board** with monthly security architecture reviews | Enterprise Architect | Month 2 | 1 week | Architecture review board charter, monthly review meetings scheduled |
-| M-14 | **Add security requirements to vendor procurement contracts** (security breach liability, incident notification, audit rights) | Procurement | Month 2 | 2 weeks | Vendor contract template updated with security clauses, legal review completed |
-| M-15 | **Implement smart card (CAC/MOD Form 90) authentication** for OFFICIAL-SENSITIVE systems (if MOD deployment) | Security Architect | Month 6 | 6 weeks | Smart card authentication pilot, integration with Azure AD, rollout plan |
-
-**Medium Priority Success Metrics**:
-- ✅ Continuous improvement established (vulnerability scanning, threat intelligence, red team)
-- ✅ Through-life security governance operational (reviews, re-accreditation, decommissioning)
-- ✅ Security culture established (security champions, training, awareness)
-- ✅ Advanced security controls implemented (FIM, API security, smart card auth)
-
----
-
-### 6.4 Quick Wins (1-2 weeks) - DEMONSTRATE PROGRESS
-
-**These are low-effort actions that demonstrate immediate progress on SbD compliance.**
-
-| # | Quick Win | Owner | Effort | Impact |
-|---|-----------|-------|--------|--------|
-| QW-1 | **Formally assign security roles** (email announcements for Security Lead, PSyO, IAO) | CIO | 1 day | HIGH - Demonstrates governance commitment |
-| QW-2 | **Create security governance RACI matrix** (who is Responsible/Accountable/Consulted/Informed for each security control) | Security Lead | 2 days | MEDIUM - Clarifies security ownership |
-| QW-3 | **Document MOD CERT contact details** and add to incident response contact list | PSyO | 1 day | MEDIUM - Enables incident reporting |
-| QW-4 | **Enable Defender Vulnerability Management** and run initial vulnerability scan | IT Operations | 1 day | HIGH - Identifies vulnerabilities immediately |
-| QW-5 | **Create security architecture diagram** (Visio or Mermaid) showing Conditional Access, BitLocker, Defender flows | Security Architect | 3 days | HIGH - Visual security architecture for IAA review |
-| QW-6 | **Add CYBER risk category** to risk register with 5 initial cyber risks | Security Lead | 2 days | MEDIUM - Demonstrates cyber risk awareness |
-| QW-7 | **Create security incident escalation matrix** (when to notify CISO, IAO, MOD CERT, Accreditation Service) | PSyO | 1 day | MEDIUM - Enables rapid incident response |
-| QW-8 | **Document InTune administrator privileged roles** and review least privilege | Security Architect | 2 days | MEDIUM - Reduces insider threat risk |
-| QW-9 | **Create security requirements section** in requirements.md (consolidate BR-001, BR-006, security objectives) | Security Lead | 2 days | MEDIUM - Improves traceability |
-| QW-10 | **Request Microsoft security attestation** (email Microsoft account team for SbD compliance documentation) | Procurement | 1 day | HIGH - Starts supply chain security process |
-
----
-
-## 7. Conclusion and Next Steps
-
-### 7.1 Summary of Findings
-
-This MOD Secure by Design assessment has evaluated the **Windows 11 Migration with Microsoft InTune** project against JSP 440 Leaflet 5C Secure by Design principles, NIST Cybersecurity Framework, NCSC Secure Design Principles, and MOD security governance requirements.
-
-**Key Strengths**:
-- ✅ **Excellent technical security design**: Zero Trust architecture with Conditional Access, BitLocker, TPM 2.0, Defender for Endpoint provides strong defence-in-depth
-- ✅ **Comprehensive risk management**: HM Treasury Orange Book compliant risk register with 20 risks, 4Ts responses, monthly reviews
-- ✅ **GDPR compliance**: Data Protection Impact Assessment planned, data classification completed, 7-year audit log retention
-- ✅ **Strong stakeholder engagement**: CISO, Security Architect, Enterprise Architect assigned with clear security requirements
-
-**Critical Gaps**:
-- ❌ **No security governance established**: No Delivery Team Security Lead, no PSyO, no IAO formally appointed, no IAA engaged
-- ❌ **No security testing completed**: No threat model, no penetration testing, no vulnerability scanning process
-- ❌ **Supply chain security absent**: No SBOM, no supplier attestations per ISN 2023/10, no third-party risk assessments
-- ❌ **No incident response capability**: No incident response plan, no SOC integration, no MOD CERT integration
-
-**Overall Assessment**:
-- **SbD Compliance**: 60% (Target: 80%+) - PARTIALLY COMPLIANT
-- **Accreditation Readiness**: NOT READY - 9 critical blockers identified
-- **Security Risk**: MEDIUM-HIGH (after controls) - Technical controls strong, but governance weak
-- **IAMM Level**: Level 2 - Repeatable (Target: Level 3 - Defined)
-
-**Accreditation Impact**:
-This project **CANNOT proceed to Beta phase pilot deployment** without resolving critical security governance gaps (Security Lead, PSyO, IAA engagement) and completing threat modeling and security architecture approval. Estimated **3-6 months** to accreditation readiness if immediate action is taken.
-
----
-
-### 7.2 Immediate Next Steps (Week 1)
-
-**CRITICAL ACTIONS** (must complete this week):
-
-1. **CIO**: Appoint Delivery Team Security Lead (CISO delegate or Senior Security Architect) - 1 day
-2. **CISO**: Appoint Project Security Officer (PSyO) for OFFICIAL-SENSITIVE data - 1 day
-3. **CISO**: Formally appoint IT Operations Director as Information Assurance Owner (IAO) - 1 day
-4. **PSyO**: Contact MOD Accreditation Service to request IAA assignment and schedule initial meeting - 3 days
-5. **Security Lead**: Create security governance RACI matrix (roles, responsibilities) - 2 days
-6. **PSyO**: Document MOD CERT contact details and incident escalation matrix - 1 day
-7. **CIO**: Brief Steering Committee on SbD compliance gaps and accreditation timeline - 1 day
-
-**SUCCESS CRITERIA**:
-- ✅ Security governance roles assigned by Friday
-- ✅ MOD Accreditation Service contacted by Wednesday
-- ✅ Steering Committee briefed on accreditation pathway by Friday
-
----
-
-### 7.3 CAAT Registration Action Plan (6-Week Detailed Timeline)
-
-**Context**: The Cyber Activity and Assurance Tracker (CAAT) is MOD's mandatory self-assessment platform for continuous assurance. All programmes must register on CAAT from Discovery/Alpha phase and continuously update their security posture.
-
-**CRITICAL**: CAAT registration is currently BLOCKING - this is finding **MOD1 (HIGH priority)** from governance analysis.
-
-**Registration Pre-requisites**:
-1. Delivery Team Security Lead (DTSL) appointed (leads CAAT registration)
-2. Business Impact Assessment (BIA) completed
-3. Project metadata available (name, phase, classification, stakeholder contacts)
-
-**Expected Registration Timeline**: 6 weeks from DTSL appointment to first CAAT submission
-
----
-
-#### Week 1: Governance Setup and CAAT Account Creation
-
-**Day 1-2: Appoint Delivery Team Security Lead (DTSL)**
-- **Owner**: CIO
-- **Action**: Appoint Senior Security Architect or CISO delegate as DTSL (First Line of Defence)
-- **Deliverable**: DTSL appointment letter/email, RACI matrix updated
-- **Criteria**: DTSL must have SC clearance (minimum), security architecture experience, authority to make security decisions
-
-**Day 3-5: CAAT Account Registration**
-- **Owner**: DTSL
-- **Action**:
-  1. Access CAAT platform via MOD Digital intranet (requires MOD network access)
-  2. Create programme record: "Windows 11 Migration with InTune (Project 001)"
-  3. Complete programme metadata:
-     - **Programme Name**: Windows 10 to Windows 11 Migration with Cloud-Native Endpoint Management
-     - **Organization**: Defence Digital (or applicable MOD organization)
-     - **Data Classification**: OFFICIAL-SENSITIVE
-     - **Project Phase**: Alpha (design complete, implementation pending)
-     - **Deployment Environment**: Microsoft Azure Cloud (UK South region)
-     - **Scale**: 6,000 devices, 24-month migration
-     - **SRO**: CIO [NAME]
-     - **IAO**: IT Operations Director [NAME]
-     - **DTSL**: [NAME] (newly appointed)
-     - **PSyO**: [NAME] (newly appointed)
-  4. Invite stakeholders to CAAT (IAO, PSyO, Security Architect, Project Manager)
-- **Deliverable**: CAAT programme ID generated, stakeholder access confirmed
-- **Pre-filled Content** (from existing project artifacts):
-  - Project scope and objectives: Copy from SOBC Executive Summary
-  - Stakeholder list: Copy from stakeholder-drivers.md RACI matrix
-  - Data classification: OFFICIAL-SENSITIVE (personnel records, device inventory, operational data)
-
----
-
-#### Week 2: Business Impact Assessment (BIA)
-
-**Day 6-10: Complete Business Impact Assessment (BIA)**
-- **Owner**: DTSL with IT Operations Director input
-- **Action**: Complete BIA questionnaire in CAAT covering:
-  1. **Confidentiality Impact** (OFFICIAL-SENSITIVE data breach):
-     - Impact Level: **MODERATE** (personnel data, organizational structure, device locations disclosed)
-     - Justification: Contains PII (user profiles, email addresses) and operational data (device locations, security configurations)
-  2. **Integrity Impact** (data corruption/tampering):
-     - Impact Level: **MODERATE** (corrupted compliance policies could prevent security enforcement)
-     - Justification: InTune policy tampering could disable BitLocker, Defender, Conditional Access
-  3. **Availability Impact** (service outage):
-     - Impact Level: **MODERATE** (InTune outage prevents new device provisioning, policy updates)
-     - Justification: 24-hour RTO acceptable (existing devices continue working), but new hires cannot be provisioned
-  4. **Business Continuity**:
-     - RPO: 24 hours (InTune configuration backup frequency)
-     - RTO: 24 hours (restore InTune tenant from Azure backup)
-     - Continuity Plan: Fallback to manual provisioning (documented in DRP)
-- **Deliverable**: BIA completed in CAAT, CIA ratings documented
-- **Pre-filled Content**:
-  - Confidentiality justification: Reference DR-003 (User Profile PII), DR-006 (Audit Logs), data-model.md entities
-  - Integrity justification: Reference NFR-SEC-002 (BitLocker), FR-005 (Compliance Policies)
-  - Availability justification: Reference NFR-A-001 (InTune 99.9% SLA), Disaster Recovery Plan
-
----
-
-#### Week 3-4: Threat Modeling and Risk Assessment (CAAT Principle 1)
-
-**Day 11-15: Document Threat Model in CAAT**
-- **Owner**: DTSL with Security Architect
-- **Action**: Complete threat modeling using STRIDE methodology in CAAT:
-  1. **Asset Inventory**:
-     - 6,000 Windows devices (laptops, desktops)
-     - InTune management tenant (Azure cloud)
-     - OFFICIAL-SENSITIVE data (user profiles, device inventory, audit logs)
-     - Microsoft Graph API credentials (OAuth 2.0 tokens)
-  2. **Threat Actors**:
-     - Nation-state APTs (targeting MOD supply chain)
-     - Cybercriminals (ransomware, data exfiltration)
-     - Malicious insiders (privileged IT staff)
-     - Accidental insiders (phishing victims, misconfiguration)
-  3. **STRIDE Threat Categories**:
-     - **Spoofing**: Stolen Azure AD credentials grant unauthorized InTune access → MFA mitigates
-     - **Tampering**: InTune policy modification disables security controls → RBAC + Audit Logs mitigate
-     - **Repudiation**: Unauthorized policy changes with no audit trail → Azure AD audit logs (7-year retention) mitigate
-     - **Information Disclosure**: PII data breach via InTune console → Conditional Access, DLP policies mitigate
-     - **Denial of Service**: InTune API throttling prevents policy deployment → Azure SLA 99.9%, rate limiting acceptable
-     - **Elevation of Privilege**: Compromised Global Admin account grants full tenant control → PIM (just-in-time access) mitigates
-  4. **Threat Likelihood & Impact** (DREAD scoring):
-     - Cloud data sovereignty (Medium/Medium) → MEDIUM risk
-     - Supply chain compromise (High/Possible) → HIGH risk
-     - Insider threat (High/Unlikely) → MEDIUM risk
-- **Deliverable**: Threat model documented in CAAT, threat library populated
-- **Pre-filled Content**:
-  - Asset inventory: Reference data-model.md (13 entities), requirements.md DR-001 to DR-008
-  - Existing threats: Reference risk-register.md CYBER-001 to CYBER-006
-  - Security controls: Reference mod-secure-by-design.md Section 2 (Zero Trust architecture)
-
-**Day 16-20: Map Existing Risks to CAAT**
-- **Owner**: DTSL
-- **Action**: Import 22 risks from risk-register.md into CAAT:
-  - CYBER-001 to CYBER-006 (security risks)
-  - MAP to NIST CSF categories (Identify, Protect, Detect, Respond, Recover)
-  - Link mitigations to CAAT security controls
-- **Deliverable**: Risk register synchronized between risk-register.md and CAAT
-- **Pre-filled Content**: Copy entire risk-register.md Section 3 (22 risks with 4Ts responses)
-
----
-
-#### Week 5: Complete CAAT Self-Assessment (7 SbD Principles)
-
-**Day 21-25: Answer CAAT Question Sets for 7 SbD Principles**
-- **Owner**: DTSL with Enterprise Architect
-- **Action**: Complete CAAT self-assessment questionnaire (approximately 100 questions across 7 principles):
-
-**Principle 1: Establish Context Before Designing a System**
-- **Q**: Have you completed a Business Impact Assessment (BIA)?
-  - **A**: Yes (Week 2 deliverable)
-- **Q**: Have you identified all stakeholders and their security concerns?
-  - **A**: Yes (stakeholder-drivers.md with 12 stakeholders, RACI matrix)
-- **Q**: Have you classified the data handled by the system?
-  - **A**: Yes (OFFICIAL-SENSITIVE - data-model.md with 13 entities, GDPR compliance)
-- **Evidence**: BIA report, stakeholder-drivers.md, data-model.md
-
-**Principle 2: Make Compromise Difficult**
-- **Q**: Have you implemented Zero Trust architecture?
-  - **A**: Yes (Conditional Access, device attestation, least privilege RBAC)
-- **Q**: Are all endpoints encrypted?
-  - **A**: Yes (BitLocker AES-256 with TPM 2.0 - NFR-SEC-002)
-- **Q**: Is MFA enforced for all users?
-  - **A**: Yes (Azure AD Conditional Access - NFR-SEC-001)
-- **Evidence**: mod-secure-by-design.md Section 2.2, requirements.md NFR-SEC-001/002/003
-
-**Principle 3: Make Disruption Difficult**
-- **Q**: What is your RTO/RPO for critical services?
-  - **A**: RTO: 24 hours, RPO: 24 hours (InTune configuration backup)
-- **Q**: Do you have a disaster recovery plan?
-  - **A**: Yes (failover to manual provisioning, InTune tenant backup to Azure)
-- **Evidence**: requirements.md NFR-A-001/002 (Availability requirements)
-
-**Principle 4: Make Compromise Detection Easier**
-- **Q**: Do you have 24/7 security monitoring?
-  - **A**: Partial - Defender for Endpoint alerts to M365 Security Centre, SOC integration planned Month 3
-- **Q**: Are all administrative actions logged?
-  - **A**: Yes (Azure AD audit logs, 7-year retention - NFR-C-002)
-- **Evidence**: requirements.md NFR-C-002, FR-011 (Defender for Endpoint)
-
-**Principle 5: Reduce the Impact of Compromise**
-- **Q**: Is the system segmented to limit lateral movement?
-  - **A**: Yes (RBAC roles: Global Admin, InTune Admin, Helpdesk Operator with least privilege)
-- **Q**: Is sensitive data protected with DLP policies?
-  - **A**: Planned Month 2 (OFFICIAL-SENSITIVE data DLP policies for InTune console)
-- **Evidence**: mod-secure-by-design.md Section 2.3 (Least Privilege)
-
-**Principle 6: Design for Secure Operation**
-- **Q**: Have you documented operational security procedures?
-  - **A**: Partial - Patch management documented (FR-004), incident response plan pending Month 2
-- **Q**: Are security roles and responsibilities defined?
-  - **A**: Yes (RACI matrix with DTSL, PSyO, IAO, Security Architect - Week 1 deliverable)
-- **Evidence**: stakeholder-drivers.md RACI matrix, requirements.md FR-004 (Update Management)
-
-**Principle 7: Design for Continuous Assurance**
-- **Q**: Will you conduct regular penetration testing?
-  - **A**: Yes (annual CREST/CHECK pen testing planned, Month 2 first test)
-- **Q**: Will you maintain CAAT self-assessment up-to-date?
-  - **A**: Yes (quarterly CAAT updates, monthly during migration)
-- **Evidence**: mod-secure-by-design.md Section 7.4 (Continuous Assurance Milestones)
-
-- **Deliverable**: CAAT self-assessment 100% complete, compliance score generated
-- **Pre-filled Content**:
-  - Reference entire mod-secure-by-design.md document (comprehensive SbD assessment already completed)
-  - Reference requirements.md (45 requirements with NFR-SEC/NFR-C series)
-
----
-
-#### Week 6: CAAT Submission and Security Governance Review Request
-
-**Day 26-28: Complete Supplier Attestation Section**
-- **Owner**: DTSL with Procurement
-- **Action**: Document supplier security attestations (ISN 2023/10 requirement):
-  1. **Microsoft Azure/InTune**:
-     - Supplier: Microsoft Corporation
-     - Attestation Status: Pending request
-     - Action: Request Microsoft security attestation letter (ISO 27001, SOC 2 Type II, Azure UK Government cloud compliance)
-     - Timeline: 2-4 weeks (Microsoft standard process)
-  2. **Hardware Vendors** (Dell, HP, Lenovo):
-     - Attestation Status: Pending request
-     - Action: Request hardware vendor security attestations (secure boot, TPM 2.0, BIOS security)
-  3. **Third-Party Applications** (Win32 apps deployed via InTune):
-     - Attestation Status: Pending - requires app compatibility testing (Month 7)
-     - Action: Compile list of top 20 apps from FR-008, request vendor attestations
-- **Deliverable**: Supplier attestation register in CAAT (status: in progress)
-- **Pre-filled Content**: Reference evaluation-criteria.md vendor security requirements
-
-**Day 29-30: Submit CAAT Assessment and Request Security Governance Review**
-- **Owner**: DTSL
-- **Action**:
-  1. Review CAAT self-assessment completeness (all 7 principles answered)
-  2. Generate CAAT compliance report (PDF export)
-  3. Submit CAAT assessment (formally transition from "Draft" to "Submitted")
-  4. Request Security Governance Review (Second Line of Defence) via CAAT workflow
-  5. Schedule Security Governance Review meeting (target: Month 3)
-- **Deliverable**:
-  - CAAT assessment submitted (status: "Awaiting Review")
-  - Security Governance Review scheduled with Second Line reviewers
-  - CAAT compliance report shared with CIO, CISO, IAO
-- **Success Criteria**:
-  - ✅ CAAT registration complete (100%)
-  - ✅ Self-assessment submitted with all 7 principles addressed
-  - ✅ Security Governance Review requested (Second Line assurance)
-  - ✅ Finding MOD1 (HIGH priority) from governance analysis RESOLVED
-
----
-
-#### CAAT Maintenance (Ongoing)
-
-**Continuous Assurance Requirements** (post-registration):
-
-**Monthly Updates** (during migration, Months 1-24):
-- Update risk register in CAAT with new risks or mitigations
-- Update BIA if business impact changes (e.g., scale increases)
-- Update threat model if new threats emerge (e.g., new CVEs affecting InTune)
-- Upload evidence of implemented controls (screenshots, policy exports, audit logs)
-
-**Quarterly Updates** (post-migration, ongoing):
-- Re-run CAAT self-assessment (verify all 7 principles still compliant)
-- Upload latest penetration test results (annual CREST/CHECK testing)
-- Update supplier attestation status (renew Microsoft attestation annually)
-- Upload quarterly Security Governance Review meeting minutes
-
-**Annual Updates**:
-- Full CAAT reassessment (comprehensive review of all questions)
-- Upload ISO 27001 recertification audit report
-- Update security architecture diagrams if infrastructure changes
-- Renew IAA engagement (continuous assurance review)
-
-**Owner**: DTSL (First Line), with Security Governance Review Board oversight (Second Line)
-
-**Integration with Existing Governance**:
-- CAAT risks synchronized with risk-register.md (single source of truth: risk-register.md, exported to CAAT monthly)
-- CAAT compliance score reported to Project Steering Committee monthly (alongside NPV, ROI metrics)
-- CAAT evidence repository linked to project artifacts (requirements.md, mod-secure-by-design.md, sobc.md)
-
----
-
-**CAAT Registration Impact on Project Timeline**:
-
-**BEFORE CAAT Registration** (Current State):
-- ❌ BLOCKING: Cannot proceed to Beta phase pilot (Month 9)
-- ❌ BLOCKING: No Security Governance Review scheduled
-- ❌ RISK: Windows 10 EOL (Oct 2025) may be missed due to accreditation delays
-
-**AFTER CAAT Registration** (Week 6):
-- ✅ UNBLOCKED: Beta phase pilot can proceed under continuous assurance framework
-- ✅ Security Governance Review scheduled (Month 3)
-- ✅ Accreditation pathway clear (interim accreditation Month 3, full accreditation Month 6)
-- ✅ Finding MOD1 RESOLVED, governance score improved
-
-**Resource Requirements**:
-- **DTSL Time**: 60 hours over 6 weeks (10 hours/week)
-- **Security Architect Time**: 20 hours (threat modeling support)
-- **IT Operations Director Time**: 10 hours (BIA input)
-- **Procurement Time**: 5 hours (supplier attestation requests)
-- **Total Effort**: ~95 hours (12 person-days)
-
-**Dependencies**:
-- **CRITICAL BLOCKER**: DTSL appointment (CIO action, Day 1)
-- **BLOCKER**: MOD network access to CAAT platform (if not already available)
-- **DEPENDENCY**: Existing project artifacts (SOBC, requirements, risk register, stakeholder analysis) - ALL COMPLETE ✅
-
----
-
-### 7.4 Short-Term Roadmap (Months 1-3)
-
-**Month 1 (Establish Security Foundation)**:
-- Complete threat model (STRIDE/DREAD)
-- Document security architecture for IAA review
-- Obtain Microsoft supplier security attestations
-- Verify Azure UK South MOD-assured cloud status
-- Complete CAAT self-assessment
-- Add CYBER risks to risk register
-- Create Information Security Policy
-
-**Month 2 (Security Testing and Documentation)**:
-- Conduct penetration testing (CREST/CHECK vendor)
-- Create Software Bill of Materials (SBOM)
-- Document incident response plan with playbooks
-- Implement DLP policies for OFFICIAL-SENSITIVE data
-- Document patch testing and emergency patching
-- Update CAAT with implemented controls
-
-**Month 3 (Security Governance Review)**:
-- Remediate penetration test findings
-- Establish SOC integration (24/7 monitoring)
-- Submit for Security Governance Review (Second Line assurance)
-- Obtain hardware vendor security assessments
-- Implement continuous vulnerability scanning
-- Complete Third Line internal audit
-
-**SUCCESS CRITERIA**:
-- ✅ Security Governance Review completed by Month 3
-- ✅ CAAT self-assessment up-to-date with implemented controls
-- ✅ Pilot deployment authorized under continuous assurance framework
-- ✅ All CRITICAL and HIGH recommendations completed
-
----
-
-### 7.4 Accreditation Pathway
-
-**Recommended Accreditation Approach**: **Interim Accreditation for Pilot → Full Accreditation After Pilot**
-
-**Rationale**:
-- Pilot deployment (50-100 devices) allows security controls to be proven in operational environment
-- Interim accreditation de-risks full deployment (can pause if security issues emerge)
-- Demonstrates continuous assurance approach (aligned with SbD principle 7)
-
-**Continuous Assurance Milestones**:
-- **Month 1**: DTSL appointed, CAAT registered, BIA and threat model completed
-- **Month 2**: Penetration testing completed, CAAT self-assessment updated with controls
-- **Month 3**: Security Governance Review completed (Second Line), Third Line audit passed
-- **Month 4-6**: Pilot deployment under continuous assurance with enhanced monitoring
-- **Month 6**: Pilot validated (no security incidents, all controls operational), scale to production approved
-- **Ongoing**: Quarterly Security Governance Reviews, annual pen testing, continuous CAAT updates, supplier attestation
-
----
-
-### 7.5 Success Metrics for SbD Compliance
-
-**Governance Metrics** (Target: 100% by Month 1):
-- ✅ Security Lead appointed
-- ✅ PSyO appointed
-- ✅ IAO appointed
-- ✅ IAA engaged
-- ✅ Security governance RACI matrix published
-
-**Documentation Metrics** (Target: 100% by Month 3):
-- ✅ Threat model documented
-- ✅ Security architecture approved by IAA
-- ✅ Incident response plan approved
-- ✅ CAAT self-assessment submitted and continuously updated
-- ✅ Information Security Policy published
-
-**Testing Metrics** (Target: 100% by Month 3):
-- ✅ Penetration testing completed (0 CRITICAL findings remaining)
-- ✅ Vulnerability scanning operational (weekly scans)
-- ✅ Security controls tested (Conditional Access, BitLocker, Defender)
-
-**Supply Chain Metrics** (Target: 100% by Month 3):
-- ✅ SBOM created for all applications
-- ✅ Supplier attestations obtained (Microsoft, hardware vendors)
-- ✅ Third-party risk assessments completed
-
-**Operational Metrics** (Target: 100% by Month 6):
-- ✅ SOC integration operational (24/7 monitoring)
-- ✅ Incident response capability proven (tabletop exercise passed)
-- ✅ Security monitoring dashboard live (CISO/IAO visibility)
-- ✅ Pilot deployment successful (0 security incidents)
-
----
-
-### 7.6 Final Recommendation
-
-**RECOMMENDATION**: **PROCEED WITH CAUTION - CRITICAL SECURITY GOVERNANCE GAPS MUST BE RESOLVED BEFORE BETA PHASE**
-
-This project has **strong technical security foundations** (Zero Trust architecture, layered controls, comprehensive risk management), but **CRITICAL security governance gaps** prevent accreditation readiness:
-
-1. **No security governance** (Security Lead, PSyO, IAA)
-2. **No security testing** (threat model, penetration test)
-3. **No supply chain security** (SBOM, supplier attestations)
-
-**IF** the 10 Critical Priority recommendations (Section 6.1) are completed within **Month 1**, this project can achieve **interim accreditation by Month 3** and proceed to pilot deployment.
-
-**IF NOT**, this project faces:
-- ❌ Accreditation delays (6-12 months)
-- ❌ Inability to deploy before Windows 10 EOL (October 2025)
-- ❌ Unsupported Windows 10 devices creating security/compliance violations
-- ❌ Cyber insurance voidance, ISO 27001 recertification failure
-
-**IMMEDIATE ACTION REQUIRED**: CIO and CISO must prioritize security governance appointments (Security Lead, PSyO) **this week** to avoid project delays and accreditation failure.
-
----
-
-## Appendices
-
-### Appendix A: Acronyms and Definitions
-
-| Acronym | Definition |
-|---------|------------|
-| APT | Advanced Persistent Threat (nation-state cyber threat actors) |
-| BIA | Business Impact Assessment |
-| CAC | Common Access Card (MOD smart card authentication) |
-| CESG | Communications-Electronics Security Group (now part of NCSC) |
-| CHECK | NCSC penetration testing certification scheme |
-| CISO | Chief Information Security Officer |
-| CMDB | Configuration Management Database |
-| CREST | Council of Registered Ethical Security Testers (pen testing certification) |
-| CSF | Cybersecurity Framework (NIST) |
-| CVE | Common Vulnerabilities and Exposures |
-| DLP | Data Loss Prevention |
-| DTSL | Delivery Team Security Lead (First Line of Defence role) |
-| DPIA | Data Protection Impact Assessment |
-| DPO | Data Protection Officer |
-| DREAD | Damage, Reproducibility, Exploitability, Affected Users, Discoverability (threat rating) |
-| DV | Developed Vetting (highest security clearance) |
-| EOL | End of Life (software support termination) |
-| FIM | File Integrity Monitoring |
-| GIAA | Government Internal Audit Agency |
-| HSM | Hardware Security Module |
-| IAA | Information Assurance Architect (independent security architecture reviewer) |
-| IAO | Information Assurance Owner (accountable for system security) |
-| IAMM | Information Assurance Maturity Model (0-5 scale) |
-| IDS | Intrusion Detection System |
-| IPS | Intrusion Prevention System |
-| IR | Incident Response |
-| ISN | Industry Security Notice (MOD security bulletins) |
-| ISMS | Information Security Management System (ISO 27001) |
-| JSP | Joint Service Publication (MOD policy documents) |
-| MFA | Multi-Factor Authentication |
-| MOD CERT | MOD Computer Emergency Response Team |
-| NAO | National Audit Office |
-| NCSC | National Cyber Security Centre (UK) |
-| NIST | National Institute of Standards and Technology (US) |
-| OPSEC | Operational Security |
-| PAM | Privileged Access Management |
-| PSN | Public Services Network (UK government network) |
-| PSyO | Project Security Officer (security oversight role) |
-| RACI | Responsible, Accountable, Consulted, Informed (responsibility matrix) |
-| CAAT | Cyber Activity and Assurance Tracker (self-assessment tool) |
-| RMADS | Risk Management and Accreditation Documentation Set (deprecated - replaced by CAAT post-August 2023) |
-| RPO | Recovery Point Objective (maximum acceptable data loss) |
-| RTO | Recovery Time Objective (maximum acceptable downtime) |
-| SAL | Security Aspects Letter (accreditation approval document) |
-| SBOM | Software Bill of Materials |
-| SbD | Secure by Design |
-| SC | Security Check (security clearance level) |
-| SIEM | Security Information and Event Management |
-| SLA | Service Level Agreement |
-| SOC | Security Operations Centre |
-| STRIDE | Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege (threat modeling) |
-| TCoP | Technology Code of Practice (UK Government digital standards) |
-| TPM | Trusted Platform Module (hardware security chip) |
-
-### Appendix B: MOD Security References
-
-| Reference | Title | Relevance |
-|-----------|-------|-----------|
-| JSP 440 | Defence Manual of Security | Primary MOD security policy framework |
-| JSP 440 Leaflet 5C | Secure by Design | SbD mandate (effective August 2023) |
-| JSP 453 | Digital Policies and Standards for Defence | Cloud-first, modern endpoint management |
-| ISN 2023/09 | Secure by Design Requirements | Industry guidance on SbD principles |
-| ISN 2023/10 | Supplier Attestation and Legacy Accreditation Withdrawal | Supplier security attestation requirements |
-| NCSC Cloud Security Principles | Cloud security guidance | Azure cloud security assessment |
-| NCSC Secure Design Principles | 10 secure design principles | Architecture design guidance |
-| NIST Cybersecurity Framework | CSF v1.1 | Identify, Protect, Detect, Respond, Recover |
-| HM Treasury Orange Book | Risk Management Principles | Risk register framework (used in this project) |
-| CESG Cryptographic Mechanisms | Approved cryptography | AES-256, SHA-256, RSA-2048+ requirements |
-
-### Appendix C: Document Control
+## Document History
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | 2025-10-21 | Enterprise Security Architect | Initial SbD assessment - DRAFT |
-| 2.0 | 2025-10-22 | Enterprise Security Architect | Added Section 7.3 CAAT Registration Action Plan (6-week detailed timeline) - addresses MOD1 (HIGH priority) finding from governance analysis |
-
-**Document Classification**: OFFICIAL-SENSITIVE (contains security architecture details)
-
-**Distribution List**:
-- CIO (Executive Sponsor)
-- CISO (Security Executive)
-- IT Operations Director (IAO candidate)
-- Enterprise Architect
-- Security Architect
-- Delivery Team Security Lead (TBD)
-- Project Security Officer (TBD)
-- MOD Accreditation Service / IAA (when engaged)
-
-**Review Schedule**:
-- Next review: 2025-11-21 (monthly until accreditation obtained)
-- Annual review post-accreditation
-
-**Approval Required From**:
-- CISO (security approval)
-- IAA (accreditation approval) - pending engagement
+| 1.0 | 2025-10-20 | Enterprise Security Architect | Initial MOD SbD assessment |
+| 2.0 | 2025-10-21 | Enterprise Security Architect | Added CAAT continuous assurance framework, Three Lines of Defence, ISN 2023/10 supplier attestation |
+| 3.0 | 2025-10-28 | Enterprise Security Architect | **CRITICAL CORRECTION**: Removed MOD SbD/CAAT requirements. Clarified this is change to existing accredited system, NOT new operational capability. Updated to organizational security governance framework (CAB, Security Impact Assessment). Corrected critical gaps (7 → 0), overall risk (HIGH → MEDIUM), security maturity (Level 2 → Level 3). Replaced DTSL/PSyO with Project Security Lead. See requirements.md v5.0 for corrected security governance (NFR-SEC-004, NFR-SEC-005). |
 
 ---
 
-**END OF DOCUMENT**
+**Assessment Completed By**: Enterprise Security Architect
+**Date**: 2025-10-28
+**Next Review**: 2025-11-28 (or upon significant project changes)
