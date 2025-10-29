@@ -2,8 +2,9 @@
 
 **Document Type**: High-Level Design - Architecture Specification
 **Project ID**: 001-windows-11-migration-intune
-**Version**: 1.0
-**Date**: 2025-10-22
+**Version**: 2.0
+**Date**: 2025-10-28
+**Last Updated**: 2025-10-28 - CRITICAL CORRECTION: Removed MOD CAAT requirements, aligned with Requirements v5.0 (organizational security governance)
 **Status**: DRAFT (For Architecture Review Board Approval)
 **Owner**: Enterprise Architecture Team
 **Contributors**: Security Architect, IT Operations, CISO
@@ -14,7 +15,8 @@
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | 2025-10-22 | Enterprise Architecture Team | Initial HLD - comprehensive architecture covering all 18 principles, 45 requirements, MOD SbD CAAT framework |
+| 1.0 | 2025-10-22 | Enterprise Architecture Team | Initial HLD - comprehensive architecture covering all 18 principles, 45 requirements |
+| 2.0 | 2025-10-28 | Enterprise Architecture Team | **CRITICAL CORRECTION**: Removed all MOD CAAT references (27 instances). Windows 11 migration is change to EXISTING accredited in-service system, NOT new operational capability requiring CAAT. Updated security governance to organizational CAB approval, Security Impact Assessment, Security Architecture Review. Aligned with Requirements v5.0. |
 
 **Distribution List**:
 - Enterprise Architecture Review Board
@@ -39,7 +41,7 @@ This High-Level Design (HLD) document specifies the technical architecture for m
 
 **Critical Constraints**:
 - **Windows 10 EOL**: October 14, 2025 - **95% migration target by September 1, 2025**
-- **MOD Secure by Design**: CAAT (Cyber Activity and Assurance Tracker) continuous assurance required
+- **Organizational Security Governance**: CAB approval, Security Impact Assessment, Security Architecture Review required (NOT MOD CAAT - this is change to existing accredited system)
 - **Zero Trust Security**: Mandatory TPM 2.0, Secure Boot, BitLocker, MFA, Conditional Access
 - **Cloud-First**: 100% cloud-native management via InTune, ConfigMgr decommissioned within 18 months
 
@@ -66,7 +68,7 @@ This solution leverages **Microsoft Azure cloud-native endpoint management** (In
 - ✅ **100% security compliance**: TPM 2.0, Secure Boot, BitLocker, MFA enforced on all Windows 11 devices
 - ✅ **<2 hours user downtime** per device migration, 100% user data preserved
 - ✅ **80% user satisfaction** (post-migration survey)
-- ✅ **MOD SbD compliant**: CAAT registered, Security Governance Review passed, penetration tested
+- ✅ **Organizational security governance compliant**: CAB approval obtained, Security Impact Assessment completed, Security Architecture Review passed, penetration tested
 - ✅ **ConfigMgr decommissioned** within 18 months (Month 18 target)
 
 ---
@@ -618,46 +620,87 @@ C4Container
 
 ---
 
-### 4.5 MOD Secure by Design (SbD) Compliance
+### 4.5 Organizational Security Governance
 
-**CAAT (Cyber Activity and Assurance Tracker) Continuous Assurance Framework**:
+**⚠️ CRITICAL CORRECTION (v2.0 - 2025-10-28)**: This Windows 11 migration is delivering **changes to an EXISTING accredited in-service system** (Windows 10 enterprise environment), NOT a new operational capability. Therefore, **MOD Secure by Design CAAT registration is NOT REQUIRED**. This project follows organizational security governance processes instead.
 
-#### 4.5.1 Security Governance (Three Lines of Defence)
-- **First Line**: Delivery Team Security Lead (DTSL) - owns CAAT self-assessment, appointed Week 1
-- **Second Line**: Security Governance Review Board - conducts quarterly Security Governance Reviews (replaces IAA approval)
-- **Third Line**: Internal Audit - validates CAAT self-assessment accuracy (annual)
+**Organizational Security Governance Framework**:
 
-#### 4.5.2 CAAT Registration Timeline
-- **Week 1**: DTSL appointed, CAAT account created, programme registered
-- **Week 2**: Business Impact Assessment (BIA) completed in CAAT
-- **Month 1**: Threat model documented (STRIDE), CAAT self-assessment (7 SbD Principles) completed
-- **Month 2**: Penetration testing, SBOM creation, incident response plan
-- **Month 3**: Security Governance Review (Second Line approval), Third Line internal audit
-- **Ongoing**: Quarterly CAAT updates, continuous supplier attestation (Microsoft quarterly, hardware vendors annually)
+#### 4.5.1 Security Governance Process
 
-#### 4.5.3 Supplier Attestation (ISN 2023/10)
-- **Microsoft Azure/InTune**: Continuous supplier attestation (quarterly re-attestation via Microsoft Trust Center, ISO 27001, SOC 2 Type II)
-- **Hardware Vendors** (Dell, HP, Lenovo): Annual attestation (Secure Boot, TPM 2.0, BIOS security)
-- **ISV Applications**: Per-version attestation (Windows 11 compatibility, security testing)
+**Project Security Lead** (Organizational Role):
+- **Appointed**: Week 1 (organizational security coordination role, NOT MOD DTSL)
+- **Responsibilities**:
+  - Coordinate Security Impact Assessment completion
+  - Liaise with organizational security team for Security Architecture Review
+  - Prepare CAB submission package
+  - Manage penetration testing procurement and remediation
+  - Maintain SBOM and security documentation
+
+**Security Governance Timeline**:
+- **Week 2**: Security Impact Assessment completed using organizational template (ISO 27001, NIST CSF, NCSC Secure Design Principles)
+- **Week 3**: CAB submission package prepared (architecture diagrams, security controls, impact assessment)
+- **Month 1**: Threat model documented (STRIDE methodology), security baseline design completed
+- **Month 2**: Security Architecture Review with organizational security team, penetration testing completed
+- **Month 2-3**: CAB approval obtained before pilot deployment
+- **Ongoing**: Quarterly security reviews, annual penetration testing, continuous security monitoring
+
+#### 4.5.2 Change Advisory Board (CAB) Approval
+
+**CAB Submission Package**:
+- Architecture diagrams (System Context, Container, Security Architecture)
+- Security Impact Assessment (organizational template)
+- Threat model (STRIDE)
+- Security baseline design (Zero Trust controls)
+- Penetration testing results
+- SBOM (software components)
+- Rollback plan and incident response procedures
+
+**CAB Approval Gates**:
+- ✅ Security Impact Assessment approved by organizational security team
+- ✅ Security Architecture Review passed (zero CRITICAL findings)
+- ✅ Penetration testing completed (all CRITICAL findings remediated)
+- ✅ CAB approval obtained before pilot deployment (Month 2-3)
+
+#### 4.5.3 Security Architecture Review
+
+**Review Team**: Organizational security team (Security Architect, CISO representative)
+
+**Review Focus**:
+- Zero Trust architecture implementation (Conditional Access, MFA, device attestation)
+- Encryption controls (BitLocker, TLS, data at rest/in transit)
+- Identity and access management (Azure AD, RBAC, least privilege)
+- Endpoint protection (Defender for Endpoint, EDR, attack surface reduction)
+- Data protection (OneDrive KFM, DLP policies, backup/recovery)
+- Compliance alignment (ISO 27001, NIST CSF, NCSC Secure Design Principles)
+
+**Deliverable**: Security Architecture Review report with approval/conditions
 
 #### 4.5.4 Penetration Testing
-- **Vendor**: CREST/CHECK-certified penetration testing firm
-- **Scope**: InTune tenant configuration, Conditional Access policies, Defender for Endpoint, endpoint security controls
+
+- **Vendor**: CREST-certified penetration testing firm (organizational approved vendor list)
+- **Scope**: InTune tenant configuration, Conditional Access policies, Defender for Endpoint, endpoint security controls, Azure AD integration
 - **Timeline**: Month 2 (before pilot deployment), annual re-testing
 - **Remediation**: All CRITICAL findings remediated before pilot, HIGH findings before production
+- **Reporting**: Test results submitted to CAB and organizational security team
 
 #### 4.5.5 Software Bill of Materials (SBOM)
-- **Components**:
-  - Windows 11 Pro/Enterprise (version 22H2/23H2)
-  - Microsoft 365 Apps (Office 365, Teams, Edge)
-  - Win32 applications (top 20 business-critical apps)
-  - InTune Management Extension
-  - Defender for Endpoint agent
-  - OneDrive sync client
-- **Format**: SPDX or CycloneDX JSON
-- **Maintenance**: Updated quarterly, validated against CVE database
 
-**Requirements Addressed**: NFR-SEC-004, NFR-SEC-005, NFR-SEC-006, NFR-SEC-007, Principle 2
+**Components**:
+- Windows 11 Pro/Enterprise (version 22H2/23H2)
+- Microsoft 365 Apps (Office 365, Teams, Edge)
+- Win32 applications (top 20 business-critical apps)
+- InTune Management Extension
+- Defender for Endpoint agent
+- OneDrive sync client
+
+**Format**: SPDX or CycloneDX JSON
+
+**Maintenance**: Updated quarterly, validated against CVE database (NVD)
+
+**Purpose**: Supply chain security, vulnerability management, license compliance
+
+**Requirements Addressed**: NFR-SEC-004 (CAB Approval), NFR-SEC-005 (Security Architecture Review), NFR-SEC-006 (Penetration Testing), NFR-SEC-007 (SBOM), Principle 2 (Security by Design)
 
 ---
 
@@ -1335,23 +1378,25 @@ Windows Update for Business (WUfB) - Ring 4 (Critical)
 
 **Overall Requirements Coverage**: **100% (45/45 requirements addressed in HLD)**
 
-### 12.3 MOD Secure by Design (SbD) Compliance
+### 12.3 Organizational Security Governance Compliance
 
-**CAAT Continuous Assurance Framework Alignment**:
+**⚠️ CRITICAL CORRECTION (v2.0)**: This section has been updated to reflect organizational security governance (CAB approval, Security Impact Assessment, Security Architecture Review) instead of MOD CAAT. This Windows 11 migration is a change to an EXISTING accredited system, NOT a new operational capability.
 
-| SbD Principle | HLD Alignment | Evidence |
-|---------------|---------------|----------|
-| **1: Establish Context Before Designing a System** | ✅ Addressed | - Business Impact Assessment (BIA) in Section 4.5.2<br>- Stakeholder analysis (Section 1.1)<br>- Data classification (OFFICIAL-SENSITIVE - Section 6.3) |
-| **2: Make Compromise Difficult** | ✅ Addressed | - Zero Trust architecture (Section 4.1)<br>- TPM 2.0, BitLocker, MFA, Conditional Access<br>- Least privilege RBAC (Section 4.2) |
-| **3: Make Disruption Difficult** | ✅ Addressed | - High availability (99.9% SLA - Section 3.1)<br>- Disaster recovery (RPO <24h, RTO <24h - Section 3.1)<br>- Backup strategy (Section 6.3) |
-| **4: Make Compromise Detection Easier** | ✅ Addressed | - 24/7 security monitoring (Defender for Endpoint - Section 4.1.4)<br>- Azure AD audit logs (7-year retention - Section 2.2.7)<br>- SOC integration (Section 9.3) |
-| **5: Reduce the Impact of Compromise** | ✅ Addressed | - Network segmentation (VPC, security groups - Section 3.3)<br>- Least privilege RBAC (Section 4.2)<br>- DLP policies (Section 6.3) |
-| **6: Design for Secure Operation** | ✅ Addressed | - Patch management (WUfB rings - Section 8.1)<br>- Incident response plan (Section 9.3)<br>- Security runbooks (Section 10.1) |
-| **7: Design for Continuous Assurance** | ✅ Addressed | - Annual penetration testing (Section 4.5.4)<br>- Quarterly CAAT updates (Section 4.5.2)<br>- Continuous supplier attestation (Section 4.5.3) |
+**Security Governance Framework Alignment**:
 
-**MOD SbD Compliance Status**: **100% (7/7 principles aligned in HLD)**
+| Security Control Category | HLD Alignment | Evidence |
+|---------------------------|---------------|----------|
+| **1: Security Context and Impact Assessment** | ✅ Addressed | - Security Impact Assessment (organizational template) in Section 4.5.1<br>- Stakeholder analysis (Section 1.1)<br>- Data classification (OFFICIAL-SENSITIVE - Section 6.3)<br>- Threat model (STRIDE - Section 4.5.1) |
+| **2: Zero Trust Architecture (Make Compromise Difficult)** | ✅ Addressed | - Zero Trust architecture (Section 4.1)<br>- TPM 2.0, Secure Boot, BitLocker, MFA, Conditional Access<br>- Least privilege RBAC (Section 4.2)<br>- Device attestation (Section 4.1.1) |
+| **3: Resilience and Availability (Make Disruption Difficult)** | ✅ Addressed | - High availability (99.9% SLA - Section 3.1)<br>- Disaster recovery (RPO <24h, RTO <24h - Section 3.1)<br>- Backup strategy (OneDrive KFM - Section 6.3)<br>- Incident response plan (Section 9.3) |
+| **4: Security Monitoring (Make Detection Easier)** | ✅ Addressed | - 24/7 security monitoring (Defender for Endpoint EDR - Section 4.1.4)<br>- Azure AD audit logs (7-year retention - Section 2.2.7)<br>- SOC integration (Section 9.3)<br>- Security dashboards (Section 10.2) |
+| **5: Defense in Depth (Reduce Impact of Compromise)** | ✅ Addressed | - Network segmentation (Azure VNet, NSGs - Section 3.3)<br>- Least privilege RBAC (Section 4.2)<br>- DLP policies (Section 6.3)<br>- Attack surface reduction (Section 4.1.4) |
+| **6: Secure Operations and Patch Management** | ✅ Addressed | - Patch management (Windows Update for Business rings - Section 8.1)<br>- Incident response plan (Section 9.3)<br>- Security runbooks (Section 10.1)<br>- Change management (CAB process - Section 4.5.2) |
+| **7: Continuous Assurance and Testing** | ✅ Addressed | - Annual penetration testing (CREST-certified - Section 4.5.4)<br>- Quarterly security reviews with organizational security team (Section 4.5.1)<br>- SBOM maintenance (Section 4.5.5)<br>- Continuous vulnerability management |
 
-**CAAT Registration Readiness**: HLD provides all required inputs for CAAT self-assessment (threat model, BIA, security architecture, evidence of controls).
+**Organizational Security Governance Status**: **100% (7/7 control categories addressed in HLD)**
+
+**CAB Approval Readiness**: HLD provides all required inputs for CAB submission (threat model, Security Impact Assessment, security architecture, penetration testing results, SBOM).
 
 ---
 
@@ -1368,7 +1413,7 @@ Windows Update for Business (WUfB) - Ring 4 (Critical)
 | **HLD-RISK-005** | Network bandwidth saturation during Autopilot provisioning (500 concurrent devices) | MEDIUM | MEDIUM | **MEDIUM** | - Bandwidth requirement: 100 Mbps per 500 devices (Section 3.3)<br>- Stagger provisioning (avoid 500 simultaneous)<br>- Content pre-caching (Delivery Optimization) |
 | **HLD-RISK-006** | OneDrive KFM sync failure causes data loss during migration | LOW | CRITICAL | **MEDIUM** | - Pre-flight check: Verify KFM sync status before migration<br>- User notification if sync incomplete<br>- Manual backup for users with >1TB data |
 | **HLD-RISK-007** | Windows 11 hardware compatibility check fails for 20% of devices (higher than expected) | LOW | HIGH | **MEDIUM** | - Hardware assessment (FR-001) before migration<br>- Budget approved for device replacements<br>- BIOS update campaign for upgradeable devices |
-| **HLD-RISK-008** | MOD SbD Security Governance Review identifies critical gaps, blocks pilot | MEDIUM | HIGH | **MEDIUM** | - Comprehensive HLD addresses all 7 SbD principles<br>- CAAT self-assessment complete (Month 1)<br>- Early engagement with Second Line reviewers |
+| **HLD-RISK-008** | CAB or Security Architecture Review identifies critical gaps, blocks pilot | MEDIUM | HIGH | **MEDIUM** | - Comprehensive HLD addresses all organizational security controls<br>- Security Impact Assessment complete (Week 2)<br>- Early engagement with organizational security team (Month 1)<br>- Penetration testing completed before CAB submission |
 
 **Overall HLD Risk Posture**: **MEDIUM** (acceptable with mitigations in place)
 
@@ -1386,21 +1431,21 @@ Windows Update for Business (WUfB) - Ring 4 (Critical)
 6. **Budget approved** for hardware refreshes (£1.2M Year 1, £800K Year 2, £400K Year 3)
 7. **Executive sponsorship** (CIO, CISO) committed to project success
 8. **Helpdesk staffing** sufficient (15-20 FTEs) to support migration (ticket volume increase during migration)
-9. **MOD network access** for CAAT platform registration (if MOD deployment)
+9. **Organizational security team availability** for Security Impact Assessment review, Security Architecture Review, and CAB support
 10. **OEM vendors (Dell, HP, Lenovo)** support Autopilot pre-registration (OEM Direct integration)
 
 ### 14.2 Constraints
 
 1. **Windows 10 EOL**: October 14, 2025 - **HARD DEADLINE** (95% migration target by Sep 1, 2025)
 2. **Data Residency**: OFFICIAL-SENSITIVE data must remain in UK (UK South region only)
-3. **MOD SbD Compliance**: CAAT continuous assurance mandatory (cannot proceed to Beta without Security Governance Review)
+3. **Organizational Security Governance**: CAB approval mandatory before pilot deployment (cannot proceed to Beta without CAB approval and Security Architecture Review completion)
 4. **ConfigMgr Decommissioning**: 18-month maximum (Principle 1 violation exception expires Month 18)
 5. **Budget Cap**: £4.2M Year 1 investment (cannot exceed without executive re-approval)
 6. **Zero Trust Mandatory**: No exceptions for TPM 2.0, BitLocker, MFA enforcement (CISO security policy)
 7. **Cloud-Only Management**: No new on-premises infrastructure (Principle 1 compliance)
 8. **User Downtime**: <2 hours per device migration (business continuity requirement)
 9. **Rollback Window**: 10-day Windows rollback limitation (Windows.old auto-deletion)
-10. **Penetration Testing**: Annual CREST/CHECK testing mandatory (MOD SbD requirement - budget allocated)
+10. **Penetration Testing**: Annual CREST-certified testing mandatory (organizational security requirement - budget allocated)
 
 ---
 
@@ -1474,14 +1519,15 @@ Windows Update for Business (WUfB) - Ring 4 (Critical)
 **Before pilot deployment (Month 9), complete**:
 1. ✅ HLD approved by ARB
 2. ✅ DLD completed and reviewed
-3. ✅ CAAT registered (Week 1) and self-assessment submitted (Month 1)
-4. ✅ Security Governance Review passed (Month 3)
-5. ✅ Penetration testing completed, CRITICAL findings remediated (Month 2)
-6. ✅ InTune policies deployed to test lab (validated)
-7. ✅ Autopilot profiles configured and tested (10 test devices)
-8. ✅ Application compatibility testing complete (top 20 apps certified)
-9. ✅ Helpdesk trained (Windows 11, InTune, Autopilot troubleshooting)
-10. ✅ Rollback procedures tested (successful rollback in test lab)
+3. ✅ Security Impact Assessment completed and approved (Week 2)
+4. ✅ Security Architecture Review passed (Month 2)
+5. ✅ CAB approval obtained (Month 2-3)
+6. ✅ Penetration testing completed, CRITICAL findings remediated (Month 2)
+7. ✅ InTune policies deployed to test lab (validated)
+8. ✅ Autopilot profiles configured and tested (10 test devices)
+9. ✅ Application compatibility testing complete (top 20 apps certified)
+10. ✅ Helpdesk trained (Windows 11, InTune, Autopilot troubleshooting)
+11. ✅ Rollback procedures tested (successful rollback in test lab)
 
 ---
 
@@ -1495,10 +1541,10 @@ Windows Update for Business (WUfB) - Ring 4 (Critical)
 | **ASR** | Attack Surface Reduction (Defender for Endpoint rules) |
 | **Autopilot** | Windows Autopilot (zero-touch device provisioning) |
 | **Azure AD** | Azure Active Directory (cloud identity platform) |
-| **BIA** | Business Impact Assessment (CAAT requirement) |
+| **BIA** | Business Impact Assessment (DEPRECATED - was MOD CAAT requirement, NOT applicable to this project) |
 | **BitLocker** | Full disk encryption for Windows (AES-256) |
-| **CAAT** | Cyber Activity and Assurance Tracker (MOD continuous assurance platform) |
-| **CAB** | Change Advisory Board (weekly migration governance) |
+| **CAAT** | Cyber Activity and Assurance Tracker (DEPRECATED - MOD continuous assurance platform, NOT required for this project as it's change to existing system) |
+| **CAB** | Change Advisory Board (organizational change governance for migration approval) |
 | **Conditional Access** | Azure AD policy-based access control |
 | **ConfigMgr / SCCM** | Configuration Manager (on-prem legacy management, decommissioned Month 18) |
 | **Copilot+ PC** | Windows 11 device with NPU (Neural Processing Unit) for AI acceleration |
@@ -1506,12 +1552,12 @@ Windows Update for Business (WUfB) - Ring 4 (Critical)
 | **DLD** | Detailed Design (follows HLD approval) |
 | **DPIA** | Data Protection Impact Assessment (GDPR requirement) |
 | **DR** | Data Requirement (DR-001 to DR-008) |
-| **DTSL** | Delivery Team Security Lead (First Line of Defence, MOD SbD role) |
+| **DTSL** | Delivery Team Security Lead (DEPRECATED - was MOD SbD First Line of Defence role, replaced by Project Security Lead for this project) |
 | **EDR** | Endpoint Detection and Response (Defender for Endpoint capability) |
 | **ESP** | Enrollment Status Page (Autopilot provisioning UI) |
 | **HLD** | High-Level Design (this document) |
 | **InTune** | Microsoft InTune (cloud-native device management) |
-| **ISN** | Industry Security Notice (MOD guidance, e.g., ISN 2023/10 supplier attestation) |
+| **ISN** | Industry Security Notice (DEPRECATED - MOD guidance like ISN 2023/10, NOT applicable to this project) |
 | **KFM** | Known Folder Move (OneDrive automatic sync of Desktop/Documents/Pictures) |
 | **LAPS** | Local Administrator Password Solution (emergency admin access) |
 | **MFA** | Multi-Factor Authentication (Azure AD security) |
@@ -1522,7 +1568,7 @@ Windows Update for Business (WUfB) - Ring 4 (Critical)
 | **RBAC** | Role-Based Access Control (Azure AD permissions) |
 | **RPO** | Recovery Point Objective (maximum acceptable data loss - <24 hours) |
 | **RTO** | Recovery Time Objective (maximum acceptable downtime - <24 hours) |
-| **SBOM** | Software Bill of Materials (MOD SbD requirement) |
+| **SBOM** | Software Bill of Materials (supply chain security requirement - SPDX/CycloneDX format) |
 | **SOC** | Security Operations Centre (24/7 threat monitoring) |
 | **SOW** | Statement of Work (vendor procurement document) |
 | **STRIDE** | Threat modeling methodology (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege) |
@@ -1533,12 +1579,12 @@ Windows Update for Business (WUfB) - Ring 4 (Critical)
 ### Appendix B: Reference Documents
 
 - **Architecture Principles**: `.arckit/memory/architecture-principles.md` (v1.1)
-- **Requirements Document**: `requirements.md` (v4.1)
+- **Requirements Document**: `requirements.md` (v5.0 - organizational security governance)
 - **Data Model**: `data-model.md` (v1.0 - 13 entities, ERD)
-- **Traceability Matrix**: `traceability-matrix.md` (v2.0 - requirements→design→test traceability)
-- **Statement of Work**: `sow.md` (v3.0 - vendor procurement)
-- **MOD Secure by Design Assessment**: `mod-secure-by-design.md` (v2.0 - CAAT framework)
-- **Risk Register**: `risk-register.md` (v2.0 - 22 risks with 4Ts responses)
+- **Traceability Matrix**: `traceability-matrix.md` (v3.0 - requirements→design→test traceability)
+- **Statement of Work**: `sow.md` (v4.0 - vendor procurement)
+- **MOD Secure by Design Assessment**: `mod-secure-by-design.md` (v3.0 - organizational security governance framework)
+- **Risk Register**: `risk-register.md` (v3.0 - 18 risks with organizational security governance)
 - **Stakeholder Analysis**: `stakeholder-drivers.md` (12 stakeholders, RACI matrix)
 - **Strategic Outline Business Case**: `sobc.md` (v1.1 - £7.9M benefits, £4.2M investment)
 
