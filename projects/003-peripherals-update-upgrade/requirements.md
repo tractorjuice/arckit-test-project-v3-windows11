@@ -838,30 +838,21 @@ Windows 11 laptops will feature built-in 1080p+ webcams with infrared sensors fo
 
 ## Budget
 
-### Year 1 Budget (£500K) - Aligned with Project 001 Pilot/Wave Rollout
+### Revised Year 1 Budget (£500K) - RECOMMENDED APPROACH
 
 | Category | Quantity | Unit Cost | Total Cost | Notes |
 |----------|----------|-----------|------------|-------|
-| **Headsets** (3,000 units) | 3,000 | £50 | £150K | Priority 1: Hybrid working collaboration (BR-002) |
-| **FIDO2 Security Keys** (500 units) | 500 | £50 | £25K | Priority 1: Privileged user MFA (BR-005) |
-| **FIDO2 Fingerprint Readers** (900 units) | 900 | £30 | £27K | Priority 1: Biometric alternative (C-002 resolution) |
-| **Keyboards & Mice - Ergonomic** (1,500 kits) | 1,500 | £100 | £150K | Priority 2: Power users (BR-004, C-001 resolution) |
-| **Keyboards & Mice - Standard** (4,500 kits) | 4,500 | £50 | £225K | Priority 2: Knowledge workers (BR-004, C-001 resolution) |
-| **Monitors - Dual 24"** (476 setups × 2) | 952 | £180 | £171K | Year 1 allocation (70% of 680 setups, BR-006) |
-| **Monitors - Ultrawide 34"** (204 setups) | 204 | £350 | £71K | Year 1 allocation (30% of 680 setups, BR-006) |
+| **Headsets** (3,000 units) | 3,000 | £43 | £129K | 15% volume discount (£50 → £43) |
+| **FIDO2 Security Keys** (500 units) | 500 | £43 | £22K | 15% volume discount (£50 → £43) |
+| **FIDO2 Fingerprint Readers** (900 units) | 900 | £26 | £23K | 15% volume discount (£30 → £26) |
+| **Keyboards & Mice - Ergonomic** (750 kits) | 750 | £85 | £64K | 50% Year 1, 15% discount (£100 → £85) |
+| **Keyboards & Mice - Standard** (2,250 kits) | 2,250 | £43 | £97K | 50% Year 1, 15% discount (£50 → £43) |
 | **E-Learning Development** | 1 | £20K | £20K | User training (peripheral setup, Windows Hello) |
 | **Project Management** | 0.3 FTE × 12 months | £30K | £30K | Project coordination |
-| **Shipping & Logistics** | - | - | £35K | Year 1 peripheral shipment |
-| **Spare Inventory (5%)** | - | - | £42K | 5% buffer for Year 1 peripherals |
-| **Contingency (5%)** | - | - | £44K | 5% contingency |
-| **Year 1 Total** | - | - | **£990K** | ⚠️ £490K over budget - requires revision |
-
-**BUDGET RECONCILIATION REQUIRED**: Year 1 budget £990K exceeds £500K constraint by £490K. Options:
-1. **Defer Year 1 monitors to Year 2**: Remove £242K monitors from Year 1 → £748K Year 1 (still £248K over)
-2. **Phase keyboards/mice across 2 years**: Year 1 deploy 50% (3,000 kits) → saves £188K → £802K Year 1 (still £302K over)
-3. **Eliminate external webcams** (DONE): Saves £180K (already reflected in this version)
-4. **Negotiate volume discounts**: 20% discount on all peripherals → saves £110K → £880K Year 1 (still £380K over)
-5. **RECOMMENDED APPROACH**: Defer ALL monitors to Year 2, phase keyboards/mice 50% Year 1, negotiate 15% volume discount
+| **Shipping & Logistics** | - | - | £25K | Year 1 peripheral shipment |
+| **Spare Inventory (5%)** | - | - | £18K | 5% buffer for Year 1 peripherals |
+| **Contingency (10%)** | - | - | £42K | 10% contingency (increased for supply chain risk) |
+| **Year 1 Total** | - | - | **£470K** | Within £500K budget ✅ |
 
 ---
 
