@@ -38,7 +38,7 @@ uv tool install arckit-cli --from git+https://github.com/tractorjuice/arc-kit.gi
 uvx --from git+https://github.com/tractorjuice/arc-kit.git arckit init my-project
 ```
 
-**Latest Release**: [v0.3.6](https://github.com/tractorjuice/arc-kit/releases/tag/v0.3.6)
+**Latest Release**: [v0.4.1](https://github.com/tractorjuice/arc-kit/releases/tag/v0.4.1)
 
 ### Initialize a Project
 
@@ -70,6 +70,17 @@ claude  # or your chosen AI assistant
 ## The ArcKit Workflow
 
 ArcKit guides you through the enterprise architecture lifecycle:
+
+### Phase 0: Project Planning
+**`/arckit.plan`** → Create project plan with timeline, phases, and gates
+
+Visualize your entire project delivery:
+- GDS Agile Delivery phases (Discovery → Alpha → Beta → Live)
+- Mermaid Gantt chart with timeline, dependencies, and milestones
+- Workflow diagram showing gates and decision points
+- Tailored timeline based on project complexity
+- Integration of all ArcKit commands into schedule
+- Gate approval criteria for governance
 
 ### Phase 1: Establish Governance
 **`/arckit.principles`** → Create enterprise architecture principles
@@ -547,7 +558,7 @@ payment-modernization/
 
 | Command | Purpose | Output |
 |---------|---------|--------|
-| `/arckit.analyze` | Comprehensive governance quality analysis across all artifacts | Analysis report (read-only) |
+| `/arckit.analyze` | Comprehensive governance quality analysis across all artifacts | `projects/XXX/analysis-report.md` |
 
 ### UK Government Compliance
 
@@ -1332,7 +1343,7 @@ arckit init .
 
 - **Issues**: [GitHub Issues](https://github.com/tractorjuice/arc-kit/issues)
 - **Releases**: [GitHub Releases](https://github.com/tractorjuice/arc-kit/releases)
-- **Latest Version**: [v0.3.6](https://github.com/tractorjuice/arc-kit/releases/tag/v0.3.6)
+- **Latest Version**: [v0.4.1](https://github.com/tractorjuice/arc-kit/releases/tag/v0.4.1)
 
 ---
 
