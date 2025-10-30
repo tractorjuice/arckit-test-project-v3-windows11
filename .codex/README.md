@@ -361,6 +361,24 @@ If `/prompts:arckit.principles` doesn't work:
    cp .codex/prompts/*.md ~/.codex/prompts/
    ```
 
+### Argument Parsing Error: "expected key=value"
+
+If you get an error like "expected key=value but found 'Add'" or "expected key=value but found 'Create'":
+
+**Problem**: Some prompts accidentally included `$PROJECT_NAME` in example text, which Codex CLI interprets as a required named parameter.
+
+**Solution**: This has been fixed in the prompts (v0.4.1+). If using older versions, provide an empty value:
+
+```bash
+# ✅ WORKAROUND for older versions:
+/prompts:arckit.stakeholders PROJECT_NAME="" Add GDS as a stakeholder
+
+# ✅ FIXED in v0.4.1+: Just use normally
+/prompts:arckit.stakeholders Add GDS as a stakeholder
+```
+
+**Why**: Codex CLI detects any `$VARIABLE_NAME` in prompts as a required named parameter. We've fixed this by escaping example variables as `$$VARIABLE_NAME` so they're treated as literal text.
+
 ### Bash Scripts Require Approval
 
 If Codex keeps asking for approval to run `.arckit/scripts/bash/*.sh`:
@@ -380,20 +398,37 @@ chmod +x .arckit/scripts/bash/*.sh
 
 ## Version
 
-ArcKit v0.3.0 (20 commands)
+ArcKit v0.4.1 (25 commands)
 
-**What's New in v0.3.0:**
+**What's New in v0.4.1:**
+- 🗓️ **Project Planning**: `/prompts:arckit.plan` - Comprehensive project planning with GDS Agile Delivery phases
+- 📚 **Documentation Expansion**: 660-line planning guide, expanded design review (+167 lines) and procurement (+191 lines) guides
+- 🚀 **Multi-AI Deployment**: Plan command deployed to all three AI systems (Claude, Codex, Gemini)
+- 📋 **Updated Workflow**: Plan-first approach with Phase 0 before all other phases
+- 🔧 **Version Consistency**: All version references synchronized to v0.4.1
+- 🧹 **Asset Cleanup**: Removed versioned PNG banner files
+
+**What was New in v0.3.6:**
+- 🗓️ Added `/prompts:arckit.plan` - Project planning with GDS Agile Delivery phases, Mermaid Gantt charts, and workflow gates
+- 🤖 Added Gemini CLI support (third AI system!) with automatic converter
+- 🏛️ Added `/prompts:arckit.dos` - Digital Outcomes and Specialists procurement
+- 🏛️ Added `/prompts:arckit.gcloud` - G-Cloud Framework procurement
+- 📚 Triple-AI documentation (Claude Code + Codex CLI + Gemini CLI)
+- 🔧 Fixed .codex/.gitignore tracking issue
+
+**What was New in v0.3.5:**
+- 🤖 Full OpenAI Codex CLI support with `.codex/` folder structure
+- 📚 Comprehensive `.codex/README.md` setup and usage guide
+- 🔄 All ArcKit commands available in Codex format
+- ⚙️ Automatic CODEX_HOME environment setup
+
+**What was New in v0.3.0:**
 - 🎯 Added `/prompts:arckit.sobc` - HM Treasury Green Book Strategic Outline Business Case
 - 🛡️ Added `/prompts:arckit.risk` - HM Treasury Orange Book Risk Management
 - 📊 Added `/prompts:arckit.data-model` - Data modeling with ERD, GDPR compliance, data governance
 - 🔄 Updated workflow: Stakeholders → Risk → SOBC → Requirements → Data Model → Vendor selection
 - ✅ Complete UK Government compliance (Green Book + Orange Book)
 - 🔗 End-to-end traceability: Stakeholder → Driver → Goal → Risk → Benefit → Requirement → Entity
-
-**What was New in v0.2.2:**
-- 🤖 Added OpenAI Codex CLI support with `.codex/` folder structure
-- 📚 Comprehensive `.codex/README.md` setup and usage guide
-- 🔄 All ArcKit commands available in Codex format
 
 ## Support
 
