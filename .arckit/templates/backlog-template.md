@@ -5,7 +5,7 @@
 **Phase**: Beta (Implementation)
 **Team Velocity**: [20] points/sprint (assumed)
 **Sprint Length**: [2 weeks]
-**Total Sprints Planned**: [8]
+**Total Sprints Planned**: [N]
 
 ---
 
