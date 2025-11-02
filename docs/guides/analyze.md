@@ -268,7 +268,7 @@ Analyzes alignment between stakeholder goals and project direction:
 **Critical Gap**:
 - ❌ CFO's FINANCIAL driver (Reduce costs 40%) not addressed
   - Current architecture: Cloud costs higher than on-prem
-  - Missing: Cost optimization strategy
+  - Missing: Cost optimisation strategy
   - Impact: Business case at risk
 
 **Power-Interest Quadrants**:
@@ -873,4 +873,4 @@ For issues or questions:
 ---
 
 **Last updated**: 2025-10-28
-**ArcKit Version**: 0.4.0
+**ArcKit Version**: 0.6.0

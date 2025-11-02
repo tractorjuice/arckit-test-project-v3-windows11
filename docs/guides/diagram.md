@@ -519,7 +519,7 @@ If Operations Director has concern "System availability":
 
 ### Links to Design Reviews
 
-**Diagrams are the centerpiece of design reviews:**
+**Diagrams are the centrepiece of design reviews:**
 - HLD Review → Context + Container diagrams reviewed
 - DLD Review → Component + Deployment diagrams reviewed
 - Review checklist → Diagram quality criteria
@@ -854,4 +854,4 @@ For issues or questions:
 ---
 
 **Last updated**: 2025-10-28
-**ArcKit Version**: 0.4.0
+**ArcKit Version**: 0.6.0
