@@ -38,7 +38,7 @@ uv tool install arckit-cli --from git+https://github.com/tractorjuice/arc-kit.gi
 uvx --from git+https://github.com/tractorjuice/arc-kit.git arckit init my-project
 ```
 
-**Latest Release**: [v0.4.1](https://github.com/tractorjuice/arc-kit/releases/tag/v0.4.1)
+**Latest Release**: [v0.8.2](https://github.com/tractorjuice/arc-kit/releases/tag/v0.8.2)
 
 ### Initialize a Project
 
@@ -85,7 +85,7 @@ Visualize your entire project delivery:
 ### Phase 1: Establish Governance
 **`/arckit.principles`** → Create enterprise architecture principles
 
-Define your organization's architecture standards:
+Define your organisation's architecture standards:
 - Cloud strategy (AWS/Azure/GCP)
 - Security frameworks (Zero Trust, compliance)
 - Technology standards
@@ -212,7 +212,7 @@ For UK public sector organizations needing off-the-shelf cloud services:
 Validate G-Cloud services and generate supplier clarification questions:
 - **Systematic gap analysis** (MUST/SHOULD requirements vs service descriptions)
 - Detect gaps: ✅ Confirmed, ⚠️ Ambiguous, ❌ Not mentioned
-- Generate prioritized questions (🔴 Critical / 🟠 High / 🔵 Medium / 🟢 Low)
+- Generate prioritised questions (🔴 Critical / 🟠 High / 🔵 Medium / 🟢 Low)
 - Risk assessment matrix for each service
 - Email templates for supplier engagement
 - Evidence requirements specification
@@ -253,7 +253,20 @@ Implementation-ready validation:
 - Security implementation
 - Test strategy
 
-### Phase 10: ServiceNow Service Management Design
+### Phase 10: Sprint Planning
+**`/arckit.backlog`** → Generate prioritised product backlog
+
+Transform requirements into sprint-ready user stories:
+- Convert requirements (BR/FR/NFR/INT/DR) to GDS-format user stories
+- Multi-factor prioritization (MoSCoW + risk + value + dependencies)
+- Organise into sprint plan with capacity balancing
+- Generate traceability matrix (requirements → stories → sprints)
+- Export to Jira/Azure DevOps (CSV) or custom tools (JSON)
+- **Time savings**: 75%+ (4-6 weeks → 3-5 days)
+
+**When to run**: After HLD approval, before Sprint 1 (Alpha → Beta transition)
+
+### Phase 11: ServiceNow Service Management Design
 **`/arckit.servicenow`** → Generate ServiceNow service design
 
 Bridge architecture to operations:
@@ -264,7 +277,7 @@ Bridge architecture to operations:
 - Monitoring and alerting plan
 - Service transition plan
 
-### Phase 11: Traceability
+### Phase 12: Traceability
 **`/arckit.traceability`** → Generate traceability matrix
 
 Ensure complete coverage:
@@ -273,7 +286,7 @@ Ensure complete coverage:
 - Gap analysis and orphan detection
 - Change impact tracking
 
-### Phase 12: Quality Assurance
+### Phase 13: Quality Assurance
 **`/arckit.analyze`** → Comprehensive governance quality analysis
 
 Periodically assess governance quality across all artifacts:
@@ -287,8 +300,20 @@ Periodically assess governance quality across all artifacts:
 
 **When to use**: Run periodically (before milestones, design reviews, or procurement decisions) to identify gaps and ensure governance standards are maintained.
 
-### Phase 13: Compliance Assessment (UK Government)
+### Phase 14: Compliance Assessment (UK Government)
 For UK Government and public sector projects:
+
+**`/arckit.service-assessment`** → GDS Service Standard assessment preparation
+
+Prepare for mandatory GDS Service Standard assessments:
+- Analyze evidence against all 14 Service Standard points
+- Identify gaps for alpha, beta, or live assessments
+- Generate RAG (Red/Amber/Green) ratings and overall readiness score
+- Provide actionable recommendations with priorities and timelines
+- Include assessment day preparation guidance
+- Map ArcKit artifacts to Service Standard evidence requirements
+
+Run at end of Discovery (for alpha prep), mid-Beta (for beta prep), or before Live to ensure readiness.
 
 **`/arckit.tcop`** → Technology Code of Practice assessment
 
@@ -347,6 +372,17 @@ MOD-specific security compliance:
 - STRAP classification handling
 - Security Operating Procedures (SyOPs)
 - Supplier attestation requirements
+
+**`/arckit.jsp-936`** → MOD JSP 936 AI Assurance Documentation
+
+For defence projects using AI/ML systems:
+- JSP 936 (Dependable Artificial Intelligence in Defence)
+- 5 Ethical Principles (Human-Centricity, Responsibility, Understanding, Bias & Harm Mitigation, Reliability)
+- 5 Risk Classification Levels (Critical to Minor)
+- 8 AI Lifecycle Phases (Planning to Quality Assurance)
+- Approval pathways (2PUS/Ministerial → Defence-Level → TLB-Level)
+- RAISOs and Ethics Manager governance
+- Human-AI teaming strategy and continuous monitoring
 
 ---
 
@@ -523,6 +559,12 @@ payment-modernization/
 | `/arckit.gcloud-search` | Search G-Cloud services on UK Digital Marketplace with live WebSearch | `projects/XXX/procurement/gcloud-requirements.md` |
 | `/arckit.gcloud-clarify` | Validate G-Cloud services and generate supplier clarification questions | `projects/XXX/procurement/gcloud-clarification-questions.md` |
 
+### Sprint Planning
+
+| Command | Purpose | Output |
+|---------|---------|--------|
+| `/arckit.backlog` | Generate prioritised product backlog - convert requirements to GDS user stories, organise into sprints | `projects/XXX/backlog.md` (+ optional CSV/JSON) |
+
 ### Vendor Management
 
 | Command | Purpose | Output |
@@ -564,6 +606,7 @@ payment-modernization/
 
 | Command | Purpose | Output |
 |---------|---------|--------|
+| `/arckit.service-assessment` | Prepare for GDS Service Standard assessment - analyze evidence against 14 points, identify gaps, generate readiness report | `projects/XXX/service-assessment-{phase}-prep.md` |
 | `/arckit.tcop` | Comprehensive Technology Code of Practice assessment (all 13 points, Digital Spend Controls) | `projects/XXX/tcop-review.md` |
 | `/arckit.ai-playbook` | Assess AI Playbook compliance for responsible AI | `projects/XXX/ai-playbook-assessment.md` |
 | `/arckit.atrs` | Generate Algorithmic Transparency Recording Standard (ATRS) record | `projects/XXX/atrs-record.md` |
@@ -574,6 +617,7 @@ payment-modernization/
 |---------|---------|--------|
 | `/arckit.secure` | UK Government Secure by Design assessment (NCSC CAF, Cyber Essentials, UK GDPR) | `projects/XXX/ukgov-secure-by-design.md` |
 | `/arckit.mod-secure` | MOD Secure by Design assessment (JSP 440, IAMM, security clearances) | `projects/XXX/mod-secure-by-design.md` |
+| `/arckit.jsp-936` | MOD JSP 936 AI assurance documentation for defence AI/ML systems | `projects/XXX/jsp-936-assessment.md` |
 
 ---
 
@@ -705,7 +749,7 @@ The `/arckit.diagram` command generates diagrams automatically from your archite
 /arckit.diagram container Generate C4 container diagram showing AWS services
 /arckit.diagram component Generate component diagram for payment orchestrator
 /arckit.diagram deployment Generate deployment diagram for production environment
-/arckit.diagram sequence Generate sequence diagram for payment authorization flow
+/arckit.diagram sequence Generate sequence diagram for payment authorisation flow
 /arckit.diagram dataflow Generate data flow diagram showing PII handling for UK GDPR
 ```
 
@@ -1186,8 +1230,11 @@ For UK Ministry of Defence projects:
 # Example: Civilian UK Government project
 /arckit.secure Generate Secure by Design assessment for HMRC tax filing Beta phase - OFFICIAL-SENSITIVE data
 
-# Example: MOD project
+# Example: MOD project - security assessment
 /arckit.mod-secure Generate MOD Secure by Design assessment for Army logistics system - SECRET classification
+
+# Example: MOD project - AI assurance
+/arckit.jsp-936 Generate JSP 936 AI assurance documentation for threat detection ML system
 ```
 
 ### Built-in UK Government Support
@@ -1197,6 +1244,7 @@ For UK Ministry of Defence projects:
 - **Algorithmic Transparency Recording Standard (ATRS)** template and generator
 - **UK Government Secure by Design** (NCSC CAF, Cyber Essentials, UK GDPR)
 - **MOD Secure by Design** (JSP 440, IAMM, security clearances)
+- **MOD JSP 936 AI Assurance** (Dependable AI in Defence, ethical principles, risk classification, lifecycle documentation)
 - **Service Standard alignment** (Point 13)
 - **WCAG 2.2 Level AA** accessibility requirements
 - **UK GDPR and DPIA** compliance tracking
@@ -1251,10 +1299,18 @@ arckit init my-project
 
 ## Documentation
 
+### Core Guides
+
 - **[Architecture Principles Guide](docs/principles.md)** - How to establish governance
 - **[Requirements Guide](docs/requirements.md)** - Writing comprehensive requirements
 - **[Vendor Procurement Guide](docs/procurement.md)** - Managing RFP and selection
 - **[Design Review Guide](docs/design-review.md)** - Conducting HLD/DLD reviews
+
+### Workflow & Dependencies
+
+- **[Workflow Diagrams](WORKFLOW-DIAGRAMS.md)** - Visual Mermaid diagrams for all 5 project paths (Standard, UK Gov, UK Gov AI, MOD, MOD AI) with Gantt charts and decision trees
+- **[Dependency Structure Matrix](DEPENDENCY-MATRIX.md)** - Complete 28×28 command dependency matrix showing mandatory, recommended, and optional relationships
+- **[Dependency Gap Analysis](DEPENDENCY-GAPS-SUMMARY.md)** - Comprehensive analysis of 50+ missing dependencies with remediation recommendations
 - **[Traceability Guide](docs/traceability.md)** - Maintaining requirement coverage
 
 ---
@@ -1343,7 +1399,7 @@ arckit init .
 
 - **Issues**: [GitHub Issues](https://github.com/tractorjuice/arc-kit/issues)
 - **Releases**: [GitHub Releases](https://github.com/tractorjuice/arc-kit/releases)
-- **Latest Version**: [v0.4.1](https://github.com/tractorjuice/arc-kit/releases/tag/v0.4.1)
+- **Latest Version**: [v0.8.2](https://github.com/tractorjuice/arc-kit/releases/tag/v0.8.2)
 
 ---
 

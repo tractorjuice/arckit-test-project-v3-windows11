@@ -5,6 +5,323 @@ All notable changes to ArcKit will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- **LICENSE**: Updated copyright holder from "GitHub" to "Mark Craddock"
+- **Project README template**: Now documents all 28 commands (previously only 8)
+  - Added 10 organized categories: Project Planning, Core Workflow, Vendor Procurement, Design Review, Architecture Diagrams, Sprint Planning, Service Management, Traceability & Quality, UK Government Compliance, Security Assessment
+  - Improves command discoverability for new ArcKit projects
+
+### Removed
+
+- **Obsolete documentation files** (7 files, ~123KB):
+  - `PUSH-TO-GITHUB.md` - Initial push instructions (no longer needed)
+  - `OPENAI-INTEGRATION-PLAN.md` - Planning doc (implemented in .codex/)
+  - `UI-IMPLEMENTATION-PLAN.md` - Future planning (not current priority)
+  - `arckit-backlog-command-design.md` - Design doc (command implemented)
+  - `gds-service-assessment-command-design.md` - Design doc (command implemented)
+  - `ARTICLE.md` - Marketing article draft
+  - `GITHUB-DISCUSSION-POST.md` - Discussion post draft
+
+## [0.8.2] - 2025-11-01
+
+### Fixed
+
+- **Dependency Matrix Accuracy**: Corrected 4 critical (M-level) dependency errors
+  - `dos` now correctly requires principles (M) - ensures evaluation framework aligned with architecture governance
+  - `evaluate` now correctly requires principles (M) - ensures vendor scoring criteria match organizational standards
+  - `hld-review` now correctly requires principles (M) - validates design decisions against documented principles
+  - `dld-review` now correctly requires principles (M) - ensures implementation adheres to architectural standards
+
+- **High-Priority Dependencies**: Added 9 recommended (R-level) dependencies to improve quality
+  - `plan` now recommends stakeholders (R), requirements (R), principles (R), sobc (R), risk (R) - creates realistic timelines based on project scope
+  - `principles` now recommends gcloud-search (R) for G-Cloud procurement - ensures search criteria align with principles
+  - `stakeholders` now recommends research (R), dos (R) - better procurement strategy and vendor requirements
+  - `data-model` now recommends research (R) - data modeling informed by vendor research and technology choices
+  - `service-assessment` now recommends plan (R) - validates timelines and delivery approach
+
+- **Artifact Summary Counts**: Corrected consumer counts in dependency matrix
+  - `principles.md` consumer count: 10 → 14 commands (added dos, gcloud-search, service-assessment)
+  - `stakeholders.md` consumer count: 7 → 9 commands (added research, dos, service-assessment)
+
+### Added
+
+- **Comprehensive Dependency Documentation** (3 new documents):
+  - `DEPENDENCY-MATRIX.md` (191 lines) - 28×28 Dependency Structure Matrix showing all command dependencies
+    - Matrix legend (M=Mandatory, R=Recommended, O=Optional)
+    - 10-tier dependency hierarchy (Tier 0: Foundation → Tier 10: Compliance)
+    - 5 critical paths (Standard, UK Gov, UK Gov AI, MOD Defence, MOD Defence AI)
+    - Artifact fan-in/fan-out analysis (requirements.md consumed by 22 commands)
+    - Design notes explaining dependency rationale
+  - `DEPENDENCY-GAPS-SUMMARY.md` (212 lines) - Gap analysis identifying 50+ missing dependencies
+    - 4 critical (M-level) gaps (dos/evaluate/hld-review/dld-review missing principles checks)
+    - 23 high-priority (R-level) gaps (quality degradation if missing)
+    - 26 optional (O-level) enhancements
+    - 3-phase implementation plan with expected outcomes
+  - `WORKFLOW-DIAGRAMS.md` (431 lines) - Visual workflow diagrams for all 5 project paths
+    - Mermaid flowcharts showing decision gates and command flows
+    - Standard Project workflow (12 steps)
+    - UK Government Project workflow (16 steps)
+    - UK Government AI Project workflow (15 steps)
+    - MOD Defence Project workflow (16 steps)
+    - MOD Defence AI Project workflow (17 steps)
+
+### Changed
+
+- **Command Template Enforcement**: Updated 4 command templates to enforce critical dependencies
+  - `.claude/commands/arckit.dos.md` - Added principles (M) check with guidance
+  - `.claude/commands/arckit.evaluate.md` - Added principles (M) check with guidance
+  - `.claude/commands/arckit.hld-review.md` - Added principles (M) check with guidance
+  - `.claude/commands/arckit.dld-review.md` - Added principles (M) check with guidance
+
+### Why This Matters
+
+The dependency matrix work ensures ArcKit commands are executed in the correct order, preventing:
+- **Quality Issues**: Running evaluate without principles means vendor scoring isn't aligned with organizational standards
+- **Rework**: Running hld-review/dld-review without principles means design decisions may violate governance
+- **Incomplete Analysis**: Running plan without requirements means timelines don't reflect actual scope
+- **Procurement Failures**: Running dos without stakeholders means vendor requirements don't address real needs
+
+The comprehensive dependency documentation provides:
+- **Clear Guidance**: 5 workflow diagrams showing exactly which commands to run for different project types
+- **Traceability**: Complete dependency chain from foundation commands to final compliance assessments
+- **Quality Assurance**: Artifact fan-in analysis shows requirements.md consumed by 22 commands (highest)
+
+This release completes the dependency analysis initiative (Issue #9) with:
+- Phase 1: 4 critical (M-level) fixes ✅
+- Phase 2: 9 high-priority (R-level) enhancements ✅
+- Phase 3: 26 optional (O-level) enhancements (future work)
+
+## [0.8.1] - 2025-11-01
+
+### Fixed
+
+- **Installation compatibility**: Added fallback path for system-wide pip installs
+  - Resolves issues when ArcKit installed globally vs in virtual environment
+  - Improved template and script discovery across different installation methods
+
+## [0.8.0] - 2025-11-01
+
+### Added
+
+- **Enterprise document control system**: Complete version control and document management
+  - Document metadata (version, status, approvers, classification)
+  - Comprehensive change log tracking
+  - Version control best practices
+  - Distribution and access control
+  - Applied to all generated documents
+
+- **Enhanced backlog template**: Updated with document control metadata
+
+### Fixed
+
+- **Package distribution**: Added .arckit directory to package distribution
+  - Templates and scripts now properly included in pip/uv installs
+  - Fixed missing templates issue in fresh installations
+
+- **Script paths**: Corrected script paths in all command files
+  - Scripts now reference correct `/scripts/` directory
+  - Improved script execution reliability
+
+### Changed
+
+- **Repository organization**: Consolidated scripts to root /scripts directory
+  - Removed duplicate root templates directory
+  - Cleaner repository structure
+  - Improved maintainability
+
+## [0.7.0] - 2025-10-31
+
+### Added
+
+- **`/arckit.jsp-936` command**: MOD JSP 936 AI assurance documentation generator
+  - Comprehensive JSP 936 (Dependable Artificial Intelligence in Defence) compliance documentation
+  - 5 Ethical Principles assessment: Human-Centricity, Responsibility, Understanding, Bias & Harm Mitigation, Reliability
+  - AI ethical risk classification using likelihood × impact matrix (1-5 scale)
+  - 5 Risk Classification Levels (Critical/Severe/Major/Moderate/Minor) with approval pathways
+  - 8 AI Lifecycle Phases: Planning, Requirements, Architecture, Algorithm Design, Model Development, V&V, Integration & Use, Quality Assurance
+  - Governance structure documentation (RAISOs, Ethics Managers, Independent Assurance)
+  - Approval pathways (2PUS/Ministerial → Defence-Level JROC/IAC → TLB-Level)
+  - Human-AI teaming strategy (human-in-loop, human-on-loop, human-out-of-loop models)
+  - AI-specific security threats and controls (adversarial examples, data poisoning, model extraction, model inversion, backdoors, drift)
+  - Supplier assurance for third-party AI components
+  - Continuous monitoring and re-assessment plan (drift detection, retraining triggers, annual review)
+  - Comprehensive compliance matrix (27 JSP 936 requirements)
+  - Output: `.arckit/jsp-936/jsp-936-assessment.md`
+
+- **docs/guides/jsp-936.md**: Comprehensive 1,000+ line user guide
+  - JSP 936 framework overview (5 principles, 5 risk levels, 8 lifecycle phases, governance)
+  - When to run JSP 936 assessment (Discovery/Alpha/Beta/Live phases)
+  - AI component types identified (7 categories: ML models, AI algorithms, autonomous systems, decision support, NLP, computer vision, generative AI)
+  - Ethical risk assessment methodology (likelihood × impact matrix)
+  - Five ethical principles deep dive (requirements, assessment approach)
+  - Human-AI teaming models explained (HIL/HOL/HOOL with examples)
+  - AI-specific security threats (6 categories with mitigations)
+  - Continuous monitoring and re-assessment requirements
+  - Approval pathways for each risk classification
+  - Integration with other ArcKit commands
+  - Common JSP 936 patterns (image classification, decision support, autonomous vehicles, LLMs)
+  - JSP 936 compliance checklist
+  - FAQs (mandatory assessment, timelines, roles, COTS AI, JSP 440 relationship, risk escalation, monitoring, human control)
+  - Example scenarios (satellite imagery analysis, predictive maintenance, autonomous drone)
+  - Additional resources (MOD references, UK Government AI guidance, international standards)
+
+- **`.arckit/templates/jsp-936-template.md`**: Complete JSP 936 assessment template
+  - Executive summary structure
+  - AI system inventory with detailed component cataloging
+  - Ethical risk assessment matrices for each AI component
+  - Five ethical principles compliance sections
+  - Eight AI lifecycle phase documentation structures
+  - Governance and approval tracking
+  - Human-AI teaming strategy documentation
+  - Secure by Design evidence structure
+  - Supplier assurance section
+  - Continuous monitoring plan
+  - JSP 936 compliance matrix (27 requirements)
+  - 10 appendices (risk methodology, checklists, model cards, bias reports, V&V reports, security tests, training materials, dashboards)
+
+### Changed
+
+- **Command count**: 27 → 28 commands
+- **README.md**:
+  - Added `/arckit.jsp-936` to Security Assessment commands table
+  - Added JSP 936 information to MOD Projects section
+  - Added JSP 936 example usage
+  - Added MOD JSP 936 AI Assurance to Built-in UK Government Support list
+- **docs/index.html**: To be updated with JSP 936 command (28 commands)
+- **Version**: Updated from v0.6.0 to v0.7.0
+
+### Why This Matters
+
+JSP 936 (Dependable Artificial Intelligence in Defence), published November 2024, establishes the UK Ministry of Defence's mandatory framework for safe and responsible adoption of AI/ML systems. Defence projects using AI must complete JSP 936 assessments to receive approval at the appropriate level (2PUS/Ministerial for Critical, Defence-Level for Severe/Major, TLB-Level for Moderate/Minor).
+
+Without JSP 936 compliance, defence AI projects face:
+- Approval blockages (no deployment without JSP 936 assessment)
+- Ethical risks unidentified until late stages
+- Unclear accountability for AI decisions
+- Inadequate bias testing and harm mitigation
+- Missing security controls for AI-specific threats
+- No continuous monitoring or drift detection
+
+The `/arckit.jsp-936` command automates the creation of comprehensive JSP 936 compliance documentation, guiding project teams through:
+- Systematic identification of all AI/ML components
+- Ethical risk classification using MOD's likelihood × impact methodology
+- Assessment against all 5 ethical principles (Human-Centricity, Responsibility, Understanding, Bias & Harm Mitigation, Reliability)
+- Documentation for all 8 AI lifecycle phases
+- Human-AI teaming strategy design
+- AI-specific security threat assessment
+- Continuous monitoring and re-assessment planning
+
+This command ensures MOD AI projects have the documentation required for approval while embedding best practices for responsible AI throughout the lifecycle.
+
+## [0.6.0] - 2025-10-30
+
+### Added
+
+- **`/arckit.backlog` command**: Product backlog generation from ArcKit artifacts
+  - Automatically converts requirements to GDS-format user stories ("As a... I want... So that...")
+  - Multi-factor prioritization (MoSCoW + risk + value + dependencies)
+  - Groups stories into epics (from Business Requirements)
+  - Generates technical tasks from NFRs and infrastructure needs
+  - Creates sprint plan with capacity balancing (60% features, 20% technical, 15% testing, 5% buffer)
+  - Respects dependencies (auth before features, database before operations)
+  - Maintains traceability matrix (requirements → stories → sprints)
+  - Exports to multiple formats: markdown, CSV (Jira/Azure DevOps), JSON (API integration)
+  - Time savings: 75%+ reduction (4-6 weeks manual → 3-5 days)
+  - Output: `projects/{project-dir}/backlog.md` (+ optional CSV/JSON)
+
+- **docs/guides/backlog.md**: Comprehensive 700+ line guide
+  - GDS user story format and best practices
+  - Multi-factor prioritization explained (algorithms and examples)
+  - Sprint planning and capacity allocation strategies
+  - Velocity calibration and story point estimation
+  - Backlog management best practices (refinement schedule, DoD)
+  - Real-world example (NHS Appointment Booking with 8 sprints)
+  - Dependency management and risk-based prioritization
+  - Tool integration (Jira, Azure DevOps, GitHub Projects)
+  - Common issues and solutions
+  - FAQs and tips for success
+
+- **arckit-backlog-command-design.md**: 15,000+ word design specification
+  - Research findings from GDS Service Manual on user stories and backlog management
+  - Conversion algorithms (FR→Story, NFR→Task, BR→Epic)
+  - Multi-factor prioritization algorithm (weighted scoring)
+  - Sprint planning algorithm with dependency checking
+  - Story point estimation guidelines (Fibonacci 1-13)
+  - Template structures and output formats
+  - Integration with other ArcKit commands
+  - Success criteria and future enhancements
+
+- **`.arckit/templates/backlog-template.md`**: Complete backlog template
+  - Executive summary structure
+  - Epic breakdown format
+  - User story template (GDS format)
+  - Sprint plan structure
+  - Appendices (traceability, dependencies, DoD)
+
+### Changed
+
+- **Command count**: 26 → 27 commands
+- **README.md**: Added `/arckit.backlog` as Phase 10 (Sprint Planning), renumbered subsequent phases
+- **docs/index.html**: To be updated with backlog command in phase sections
+- **Version**: Updated from v0.5.0 to v0.6.0 across all files
+
+### Why This Matters
+
+Product backlog creation is one of the most time-consuming tasks when transitioning from design (Alpha) to implementation (Beta). Teams spend 4-6 weeks manually converting requirements into user stories, estimating effort, prioritising work, and organising into sprints. This command automates that process in minutes, saving 75%+ of the time while maintaining GDS compliance and best practices.
+
+The backlog command bridges the gap between ArcKit's design phase commands (`/arckit.requirements`, `/arckit.hld`) and implementation, providing a sprint-ready backlog that development teams can immediately use for sprint planning.
+
+## [0.5.0] - 2025-10-30
+
+### Added
+
+- **`/arckit.service-assessment` command**: GDS Service Standard assessment preparation
+  - Analyzes evidence against all 14 Service Standard points
+  - Generates RAG (Red/Amber/Green) ratings per point and overall readiness score
+  - Provides phase-appropriate gap analysis (alpha/beta/live)
+  - Creates actionable recommendations with priorities (Critical/High/Medium) and timelines
+  - Includes comprehensive assessment day preparation guidance
+  - Maps all ArcKit artifacts to Service Standard evidence requirements
+  - Output: `projects/{project-dir}/service-assessment-{phase}-prep.md`
+
+- **docs/guides/service-assessment.md**: Comprehensive 600+ line guide
+  - GDS Service Standard overview (14 points explained)
+  - Assessment process and timings (alpha/beta/live)
+  - Phase-appropriate evidence requirements
+  - Complete workflow (Week 0 to assessment day)
+  - Real-world examples (NHS Appointment Booking alpha prep)
+  - Common pitfalls and how ArcKit helps
+  - Integration with other ArcKit commands
+  - Tips for success and assessment day guidance
+
+- **gds-service-assessment-command-design.md**: 800+ line design specification
+  - Research findings from actual GDS assessment reports
+  - Design rationale and decision log
+  - Evidence discovery algorithm
+  - Phase-specific evidence matrices (alpha/beta/live)
+  - Recommendation generation approach
+  - Success criteria and future enhancements
+
+### Changed
+
+- **Command count**: 25 → 26 commands
+- **README.md**: Added service-assessment to Phase 13 (UK Government Compliance)
+- **docs/index.html**: Added new "UK Government Compliance" section with service-assessment command
+- **Version**: Updated from v0.4.1 to v0.5.0 across all files
+
+### Deployment
+
+Deployed to 6 test repositories:
+- arckit-test-project-v1-m365
+- arckit-test-project-v2-hmrc-chatbot
+- arckit-test-project-v3-windows11
+- arckit-test-project-v6-patent-system
+- arckit-test-project-v7-nhs-appointment
+- arckit-test-project-v8-cabinet-office-genai (new)
+
 ## [0.4.1] - 2025-10-29
 
 ### Added
@@ -151,7 +468,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - **Bridge between search and evaluation** - validates services before supplier engagement
     - Systematic gap analysis (MUST/SHOULD requirements vs service descriptions)
     - Detects three gap types: ✅ Confirmed, ⚠️ Ambiguous, ❌ Not mentioned
-    - Generates prioritized questions (🔴 Critical / 🟠 High / 🔵 Medium / 🟢 Low)
+    - Generates prioritised questions (🔴 Critical / 🟠 High / 🔵 Medium / 🟢 Low)
     - Risk assessment matrix for each service
     - Email templates for supplier engagement
     - Evidence requirements specification
