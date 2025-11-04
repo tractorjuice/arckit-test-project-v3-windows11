@@ -13,6 +13,7 @@ Complete guide to all ArcKit slash commands for Claude Code.
 | `/arckit.sobc` | Create Strategic Outline Business Case (SOBC) | After risk assessment, BEFORE requirements |
 | `/arckit.requirements` | Define comprehensive requirements | After SOBC approval, before data modeling |
 | `/arckit.data-model` | Create comprehensive data model with ERD | After requirements, before vendor selection |
+| `/arckit.dpia` | Generate Data Protection Impact Assessment | After data model when processing personal data |
 | `/arckit.research` | Research technology and services for build vs buy | After requirements, inform procurement decisions |
 | `/arckit.wardley` | Create strategic Wardley Maps | Strategic planning, build vs buy decisions |
 | `/arckit.diagram` | Generate architecture diagrams (Mermaid) | Visualize system structure throughout project |
@@ -21,16 +22,21 @@ Complete guide to all ArcKit slash commands for Claude Code.
 | `/arckit.dos` | Generate Digital Outcomes & Specialists docs | UK Gov procurement of custom development |
 | `/arckit.sow` | Generate Statement of Work / RFP | After requirements, for vendor procurement |
 | `/arckit.evaluate` | Evaluate vendor proposals | After receiving vendor responses |
+| `/arckit.backlog` | Generate prioritized product backlog | After requirements, before development sprints |
 | `/arckit.hld-review` | Review High-Level Design | After vendor selection, before implementation |
 | `/arckit.dld-review` | Review Detailed Design | After HLD approval, before coding |
 | `/arckit.servicenow` | Generate ServiceNow service design | After architecture, bridge to operations |
 | `/arckit.traceability` | Generate traceability matrix | Throughout project, especially before release |
 | `/arckit.analyze` | Comprehensive quality analysis | Periodically throughout project |
+| `/arckit.principles-compliance` | Assess compliance with architecture principles | At project gates (Discovery/Alpha/Beta/Live) and quarterly |
+| `/arckit.service-assessment` | GDS Service Standard assessment preparation | Before alpha/beta/live assessments (UK Gov) |
 | `/arckit.tcop` | UK Gov Technology Code of Practice assessment | UK Government projects (all phases) |
 | `/arckit.ai-playbook` | UK Gov AI Playbook compliance | UK Government AI projects |
 | `/arckit.atrs` | UK Gov Algorithmic Transparency Record | UK Government AI systems |
 | `/arckit.secure` | UK Gov Secure by Design (civilian) | UK Government security assessment |
 | `/arckit.mod-secure` | MOD Secure by Design (defence) | UK Ministry of Defence security assessment |
+| `/arckit.jsp-936` | MOD JSP 936 AI assurance | UK Ministry of Defence AI/ML systems |
+| `/arckit.story` | Produce executive-ready programme story | After key milestones, before governance reviews |
 
 ---
 
@@ -349,7 +355,7 @@ Stakeholder: CFO (from stakeholder-drivers.md)
 **A. Executive Summary**:
 - Risk profile overview (Critical/High/Medium/Low distribution)
 - Top 5 risks requiring immediate attention
-- Risks exceeding organizational appetite
+- Risks exceeding organisational appetite
 - Overall risk assessment (Acceptable/Concerning/Unacceptable)
 - Key findings and recommendations
 
@@ -488,7 +494,7 @@ For UK Government/public sector projects:
 
 **A. Strategic Case**:
 - Problem statement (from stakeholder pain points)
-- Strategic fit and alignment with organizational strategy
+- Strategic fit and alignment with organisational strategy
 - Stakeholder drivers mapped to strategic imperatives
 - Scope definition (in/out of scope)
 - Dependencies and urgency (why now?)
@@ -646,7 +652,39 @@ CFO Driver D-1: Reduce costs (FINANCIAL, HIGH)
 
 ---
 
-### 8. `/arckit.research` - Technology and Service Research
+### 8. `/arckit.dpia` - Data Protection Impact Assessment
+
+**Purpose**: Generate a GDPR-compliant Data Protection Impact Assessment that links privacy risks, mitigations, and accountability back to ArcKit artifacts.
+
+**Usage**:
+```
+/arckit.dpia Create DPIA for payment gateway modernization
+/arckit.dpia Generate DPIA for NHS appointment portal
+```
+
+**Prerequisites**:
+- `projects/NNN-project-name/requirements.md` (with DR-xxx Data Requirements)
+- `projects/NNN-project-name/data-model.md` (entities annotated with PII flags)
+- Processing involves personal data or meets ICO high-risk indicators
+
+**What it does**:
+- Runs ICO 9-criteria screening to confirm DPIA necessity
+- Compiles processing overview, lawful basis, and purpose from requirements and stakeholder drivers
+- Pulls entities, attributes, and PII classifications from `data-model.md`
+- Identifies risks to data subjects, evaluates likelihood × severity, and records residual scores
+- Maps each risk to mitigating controls (including `/arckit.secure` outputs) and links back to `risk-register.md`
+- Documents data subject rights handling, DPIA sign-off, review cadence, and international transfer safeguards
+- Flags open actions that must be addressed before go-live (e.g., DPO review, ICO consultation)
+
+**Outputs**:
+- `projects/NNN-project-name/dpia.md`
+- Updates `risk-register.md` with DPIA-xxx identifiers when risks already exist
+
+**Next step**: Review with the Data Protection Officer, update `/arckit.risk` for any new risks, and ensure mitigations feed into `/arckit.backlog` or `/arckit.traceability`.
+
+---
+
+### 9. `/arckit.research` - Technology and Service Research
 
 **Purpose**: Research available technologies, services, and products to meet requirements and inform build vs buy decisions.
 
@@ -684,7 +722,7 @@ CFO Driver D-1: Reduce costs (FINANCIAL, HIGH)
 
 ---
 
-### 8. `/arckit.gcloud-search` - G-Cloud Service Search
+### 10. `/arckit.gcloud-search` - G-Cloud Service Search
 
 **Purpose**: Find and compare G-Cloud services on the UK Digital Marketplace for off-the-shelf procurement.
 
@@ -722,7 +760,7 @@ CFO Driver D-1: Reduce costs (FINANCIAL, HIGH)
 
 ---
 
-### 9. `/arckit.gcloud-clarify` - G-Cloud Clarification Questions
+### 11. `/arckit.gcloud-clarify` - G-Cloud Clarification Questions
 
 **Purpose**: Generate clarification questions to validate G-Cloud service claims and fill gaps in supplier information.
 
@@ -755,7 +793,7 @@ CFO Driver D-1: Reduce costs (FINANCIAL, HIGH)
 
 ---
 
-### 10. `/arckit.dos` - Digital Outcomes and Specialists
+### 12. `/arckit.dos` - Digital Outcomes and Specialists
 
 **Purpose**: Generate Digital Outcomes and Specialists (DOS) procurement documentation for custom development on UK Digital Marketplace.
 
@@ -799,7 +837,7 @@ CFO Driver D-1: Reduce costs (FINANCIAL, HIGH)
 
 ---
 
-### 11. `/arckit.sow` - Statement of Work / RFP
+### 13. `/arckit.sow` - Statement of Work / RFP
 
 **Purpose**: Generate Statement of Work (SOW) document for vendor procurement / RFP.
 
@@ -834,7 +872,7 @@ CFO Driver D-1: Reduce costs (FINANCIAL, HIGH)
 
 ---
 
-### 12. `/arckit.evaluate` - Vendor Evaluation
+### 14. `/arckit.evaluate` - Vendor Evaluation
 
 **Purpose**: Create vendor evaluation framework and score vendor proposals.
 
@@ -876,7 +914,7 @@ CFO Driver D-1: Reduce costs (FINANCIAL, HIGH)
 
 ---
 
-### 13. `/arckit.hld-review` - High-Level Design Review
+### 15. `/arckit.hld-review` - High-Level Design Review
 
 **Purpose**: Review High-Level Design (HLD) against architecture principles and requirements.
 
@@ -900,7 +938,7 @@ CFO Driver D-1: Reduce costs (FINANCIAL, HIGH)
 - **Scalability**: Horizontal scaling? Load balancing?
 - **Security**: Authentication? Encryption? Compliance?
 - **Resilience**: Fault tolerance? Disaster recovery?
-- **Performance**: Caching? Database optimization?
+- **Performance**: Caching? Database optimisation?
 - **Operational Excellence**: Monitoring? CI/CD? Runbooks?
 
 **Approval status**:
@@ -914,7 +952,7 @@ CFO Driver D-1: Reduce costs (FINANCIAL, HIGH)
 
 ---
 
-### 14. `/arckit.dld-review` - Detailed Design Review
+### 16. `/arckit.dld-review` - Detailed Design Review
 
 **Purpose**: Review Detailed Design (DLD) for implementation readiness.
 
@@ -956,7 +994,7 @@ CFO Driver D-1: Reduce costs (FINANCIAL, HIGH)
 
 ---
 
-### 15. `/arckit.traceability` - Traceability Matrix
+### 17. `/arckit.traceability` - Traceability Matrix
 
 **Purpose**: Generate requirements traceability matrix from requirements → design → implementation → tests.
 
@@ -1007,6 +1045,132 @@ BR-003 → [NO MAPPING] → [NO MAPPING] → [NO IMPLEMENTATION] → [NO TESTS] 
 - During implementation (track progress)
 - Before release (go/no-go decision)
 - For compliance audits (FDA, ISO, automotive)
+
+---
+
+### 18. `/arckit.service-assessment` - GDS Service Standard Assessment Preparation
+
+**Purpose**: Prepare for mandatory UK Government GDS Service Standard assessments by analyzing evidence against all 14 points, identifying gaps, and generating readiness reports.
+
+**Usage**:
+```
+/arckit.service-assessment PHASE=alpha
+/arckit.service-assessment PHASE=beta DATE=2025-12-15
+/arckit.service-assessment PHASE=live
+```
+
+**What it does**:
+- Analyzes ALL ArcKit artifacts as evidence for 14 Service Standard points
+- Provides phase-appropriate gap analysis (alpha/beta/live have different evidence requirements)
+- Generates RAG (Red/Amber/Green) ratings per point + overall readiness score
+- Creates actionable recommendations with priorities (Critical/High/Medium) and timelines
+- Includes comprehensive assessment day preparation guidance
+- Maps ArcKit artifacts to Service Standard evidence requirements
+- Identifies what's ready vs what needs work before booking assessment
+
+**The 14 Service Standard Points**:
+1. Understand users and their needs
+2. Solve a whole problem for users
+3. Provide a joined up experience across all channels
+4. Make the service simple to use
+5. Make sure everyone can use the service
+6. Have a multidisciplinary team
+7. Use agile ways of working
+8. Iterate and improve frequently
+9. Create a secure service which protects users' privacy
+10. Define what success looks like and publish performance data
+11. Choose the right tools and technology
+12. Make new source code open
+13. Use and contribute to open standards, common components and patterns
+14. Operate a reliable service
+
+**Evidence Mapping Examples**:
+```
+Point 1 (Understand users) ← stakeholder-drivers.md + requirements.md (user stories)
+Point 5 (Accessibility) ← requirements.md (WCAG 2.1 AA) + ukgov-secure-by-design.md
+Point 9 (Security) ← ukgov-secure-by-design.md + data-model.md (GDPR) + atrs-record.md
+Point 11 (Right tools) ← research/ + wardley-maps/ + tcop-assessment.md
+Point 14 (Reliable) ← requirements.md (availability NFRs) + hld-review.md (resilience)
+```
+
+**RAG Rating System**:
+- **🟢 Green**: All critical evidence present → Ready to present confidently
+- **🟡 Amber**: Evidence exists but gaps/weaknesses → Needs strengthening (1-2 weeks)
+- **🔴 Red**: Critical evidence missing → Must address before booking (3+ weeks)
+
+**Overall Readiness**:
+- **🟢 Ready to book**: 12+ points Green, max 2 Amber, 0 Red
+- **🟡 Nearly ready**: 10+ points Green/Amber, max 2 Red
+- **🔴 Not ready**: More than 2 Red points (complete critical actions first)
+
+**Phase-Appropriate Evidence**:
+
+**Alpha** (lower bar - proving viability):
+- User research with real users (CRITICAL)
+- Technology viability proven
+- Team has right skills
+- Performance data not required (targets defined is enough)
+
+**Beta** (higher bar - proving production readiness):
+- WCAG 2.1 AA audit completed (CRITICAL)
+- Security testing done
+- Performance monitoring in place
+- End-to-end service working
+
+**Live** (highest bar - operational excellence):
+- Performance data published on GOV.UK (CRITICAL - 4 mandatory KPIs)
+- User satisfaction tracked
+- Continuous improvement demonstrated
+- Operational maturity proven
+
+**Outputs**:
+- `projects/{project-dir}/service-assessment-alpha-prep.md` (for alpha)
+- `projects/{project-dir}/service-assessment-beta-prep.md` (for beta)
+- `projects/{project-dir}/service-assessment-live-prep.md` (for live)
+
+**Report Structure**:
+1. **Executive Summary**: Overall readiness, score (X/14), critical gaps, timeline
+2. **14-Point Assessment**: Detailed section per point with evidence found, gaps, recommendations
+3. **Evidence Inventory**: Complete traceability matrix (Service Standard Point → ArcKit Artifacts)
+4. **Preparation Checklist**: Critical/High/Medium priority actions with timelines
+5. **Assessment Day Prep**: Documentation to share, who should attend, 4-hour timeline, tips
+6. **After Assessment**: Handling Amber ratings, tracking progress, next steps
+
+**When to use**:
+- **Early in phase**: Week 0-1 to understand evidence requirements and plan work
+- **Mid-phase**: Week 4-6 to check progress and identify emerging gaps
+- **Pre-assessment**: 2 weeks before assessment date for final readiness check
+- **Weekly**: Re-run weekly during assessment prep to track Red → Amber → Green progress
+
+**Assessment Timeline**:
+```
+Week 0: Run command, identify critical gaps (Red ratings)
+Week 1-2: Address Red ratings (user research, accessibility approach, security)
+Week 3-4: Strengthen Amber ratings (testing, documentation, reviews)
+Week 5-6: Final prep, book assessment (5 weeks in advance)
+Week 7: Share documentation with panel (1 week before)
+Week 8: Assessment day (4 hours with GDS panel)
+```
+
+**Time Savings**:
+- Manual assessment prep: **2-4 weeks**
+- With this command: **2-3 days**
+- **~80% reduction in preparation time**
+
+**UK Government Context**:
+Mandatory for all UK Government digital services at:
+- End of alpha (before building)
+- Mid-beta (private to public beta transition)
+- Before live (production launch)
+
+Assessments conducted by GDS-trained panels, 4 hours, resulting in Green (pass), Amber (conditional pass), or Red (fail) ratings.
+
+**Next steps**:
+- If Green/Amber → Book assessment 5 weeks in advance
+- If Red → Complete critical actions first, re-run command weekly
+- After assessment → Track any Amber points, update artifacts
+
+**Guide**: See [docs/guides/service-assessment.md](../docs/guides/service-assessment.md) for complete workflow
 
 ---
 
@@ -1263,5 +1427,449 @@ For issues or questions:
 
 ---
 
-**Last updated**: 2025-10-28
-**ArcKit Version**: 0.3.6
+**Last updated**: 2025-11-04
+**ArcKit Version**: 0.8.3
+
+### 19. `/arckit.backlog` - Product Backlog Generation
+
+**Purpose**: Automatically generate prioritised product backlogs from ArcKit artifacts, converting requirements into sprint-ready GDS-format user stories.
+
+**When to Use**: After HLD approval, before Sprint 1 (Alpha → Beta transition)
+
+**Usage**:
+```
+/arckit.backlog
+/arckit.backlog VELOCITY=25 SPRINTS=12
+/arckit.backlog FORMAT=all PRIORITY=risk
+```
+
+**Arguments**:
+- `SPRINT_LENGTH` (optional): Sprint duration - `1w`, `2w` (default), `3w`, `4w`
+- `SPRINTS` (optional): Number of sprints to plan (default: 8)
+- `VELOCITY` (optional): Team velocity in story points/sprint (default: 20)
+- `FORMAT` (optional): Output formats - `markdown` (default), `csv`, `json`, `all`
+- `PRIORITY` (optional): Prioritization approach - `multi` (default), `moscow`, `risk`, `value`, `dependency`
+
+**What It Does**:
+
+**1. Scans ArcKit Artifacts**:
+- `requirements.md` - BRs, FRs, NFRs, INTs, DRs
+- `hld.md` / `dld.md` - Component mapping
+- `stakeholder-analysis.md` - User personas
+- `risk-register.md` - Risk levels
+- `business-case.md` - Value priorities
+- `threat-model.md` - Security threats
+- `principles.md` - Definition of Done
+
+**2. Converts Requirements to User Stories**:
+
+| Requirement Type | Converts To | Example |
+|-----------------|-------------|---------|
+| BR-xxx (Business) | Epic | Epic: User Authentication (34 points, 8 stories) |
+| FR-xxx (Functional) | User Story | Story-001: Create user account (8 points) |
+| NFR-xxx (Non-Functional) | Technical Task | Task-NFR-005: Implement Redis caching (5 points) |
+| INT-xxx (Integration) | Integration Story | Story-015: Connect to Stripe API (8 points) |
+| DR-xxx (Data) | Data Task | Task-DR-002: Design payment history schema (3 points) |
+
+**3. Generates GDS-Compliant User Stories**:
+```markdown
+### Story-001: Create user account
+
+**As a** new user
+**I want** to create an account with email and password
+**So that** I can access the service and save my preferences
+
+**Acceptance Criteria**:
+- It's done when I can enter email and password on registration form
+- It's done when email verification is sent within 1 minute
+- It's done when account is created after I verify my email
+- It's done when GDPR consent is captured and stored
+
+**Technical Tasks**:
+- Task-001-A: Design user table schema (2 points)
+- Task-001-B: Implement registration API (3 points)
+- Task-001-C: Email verification service (3 points)
+
+**Story Points**: 8
+**Priority**: Must Have
+**Sprint**: 1
+**Component**: User Service
+**Requirements**: FR-001, NFR-008 (GDPR)
+```
+
+**4. Multi-Factor Prioritization**:
+```
+Priority Score = (
+  MoSCoW_Weight * 40% +
+  Risk_Weight * 20% +
+  Value_Weight * 20% +
+  Dependency_Weight * 20%
+)
+
+Weights:
+- MoSCoW: Must=4, Should=3, Could=2, Won't=1
+- Risk: Critical=4, High=3, Medium=2, Low=1
+- Value: High=4, Medium=3, Low=2, None=1
+- Dependency: Blocks many=4, some=3, few=2, none=1
+```
+
+**5. Organizes into Sprint Plan**:
+
+**Sprint Structure** (default 20-point velocity):
+```
+Sprint Capacity Allocation:
+  60% Features (12 points) - User-facing value
+  20% Technical (4 points) - Infrastructure, NFRs
+  15% Testing (3 points) - Quality assurance
+   5% Buffer (1 point) - Unexpected work
+
+Sprint 1 - Foundation:
+  ✅ User authentication (8+5 = 13 points)
+  ✅ Database setup (2 points)
+  ✅ CI/CD pipeline (2 points)
+  ✅ Testing framework (1 point)
+  ✅ Rate limiting (1 point)
+  Buffer: Story-003 (5 points, move if needed)
+
+Sprint 2 - Core Features:
+  ✅ Payment integration (8 points)
+  ✅ Process payment (8 points)
+  ✅ Redis caching (3 points)
+  ✅ GDPR audit log (2 points)
+```
+
+**Dependency Management**:
+- Sprint 1 always: Auth, Database, CI/CD, Testing
+- Technical foundation before features
+- Integration points before dependent features
+
+**6. Generates Traceability Matrix**:
+```
+| Requirement | Type | Stories | Sprint | Status |
+|-------------|------|---------|--------|--------|
+| BR-001 | Business | Story-001..008 | 1-2 | Planned |
+| FR-001 | Functional | Story-001 | 1 | Planned |
+| FR-005 | Functional | Story-016 | 2 | Planned |
+| NFR-005 | Non-Functional | Task-NFR-005 | 2 | Planned |
+```
+
+**Output Files**:
+```
+projects/{project-dir}/
+├── backlog.md (primary)
+├── backlog.csv (Jira/Azure DevOps import)
+└── backlog.json (API integration)
+```
+
+**Output Structure**:
+
+**backlog.md Contents**:
+1. Executive Summary
+   - Total stories, epics, story points
+   - Priority breakdown (Must/Should/Could)
+   - Epic breakdown
+
+2. How to Use section
+   - Guidance for Product Owners
+   - Guidance for Dev Teams
+   - Guidance for Scrum Masters
+   - Backlog refinement schedule
+
+3. Epics Section
+   - All epics with descriptions
+   - Stories grouped by epic
+   - Epic dependencies and points
+
+4. Prioritized Backlog
+   - All user stories (sorted by priority)
+   - Technical tasks
+   - Acceptance criteria
+   - Story points and sprint assignments
+
+5. Sprint Plan
+   - Detailed sprint backlogs (Sprints 1-8)
+   - Sprint goals
+   - Dependencies and risks
+   - Definition of Done
+
+6. Appendices
+   - Requirements traceability matrix
+   - Dependency graph
+   - Epic overview table
+   - Story points distribution
+   - Risk prioritization
+   - Definition of Done criteria
+
+**Story Point Estimation**:
+
+Fibonacci sequence: **1, 2, 3, 5, 8, 13**
+
+- **1 point**: Trivial, < 2 hours (config change)
+- **2 points**: Simple, half day (basic form)
+- **3 points**: Moderate, 1 day (API with validation)
+- **5 points**: Complex, 2-3 days (workflow)
+- **8 points**: Very complex, 1 week (major feature)
+- **13+ points**: Too large - break down
+
+**Time Savings**:
+
+**Manual backlog creation**:
+- Convert requirements: 2-3 weeks
+- Prioritize and sequence: 1 week
+- Sprint planning: 1 week
+- **Total: 4-6 weeks (80-120 hours)**
+
+**With /arckit.backlog**:
+- Run command: 2-5 minutes
+- Review and refine: 1-2 days
+- Team refinement: 2-3 days
+- **Total: 3-5 days (24-40 hours)**
+
+**Time savings: 75-85%**
+
+**Example - Real World**:
+
+**Project**: NHS Appointment Booking System
+**Requirements**: 65 (12 BR, 30 FR, 15 NFR, 5 INT, 3 DR)
+**Team**: 8 developers, 2 testers
+**Duration**: 16 weeks (8 sprints)
+
+```bash
+/arckit.backlog VELOCITY=25 SPRINTS=8
+```
+
+**Generated Backlog**:
+- Total Stories: 45
+- Total Epics: 8
+- Total Story Points: 197
+- Estimated Duration: 8 sprints (16 weeks at 25 points/sprint)
+
+**Top Epics**:
+1. User Registration & Authentication (34 points, 7 stories)
+2. Appointment Booking (42 points, 9 stories)
+3. NHS Spine Integration (28 points, 5 stories)
+4. GP Practice Management (25 points, 6 stories)
+5. Notifications (18 points, 4 stories)
+
+**Sprint 1** (25 points):
+- Story-001: Create patient account (8 pts) - Must Have
+- Story-002: Patient login with NHS number (5 pts) - Must Have
+- Task-DB-001: PostgreSQL setup (2 pts) - Must Have
+- Task-CI-001: GitHub Actions CI/CD (2 pts) - Must Have
+- Task-TEST-001: Jest + Supertest (2 pts) - Should Have
+- Task-NFR-008: GDPR audit logging (1 pt) - Must Have
+- Story-003: View appointments (3 pts) - Could Have [Buffer]
+
+**Best Practices**:
+
+**1. Velocity Calibration**:
+- Initial velocity (20) is assumed
+- After Sprint 1, calculate actual velocity
+- Adjust Sprint 2+ capacity accordingly
+- Track velocity trend over time
+
+**2. Team Poker**:
+- Review AI estimates with team
+- Use team poker for consensus
+- Re-estimate based on team context
+- Track actual vs estimated
+
+**3. Backlog Refinement**:
+- Weekly: Refine next 2 sprints
+- Bi-weekly: Groom beyond 2 sprints
+- Monthly: Review epic priorities
+- Per sprint: Update based on learnings
+
+**4. Definition of Done**:
+- Extracted from `principles.md`
+- Applied to every story
+- Includes quality, security, testing, documentation criteria
+
+**Integration with Other Commands**:
+
+**Inputs From**:
+- `/arckit.requirements` - Source of all stories (BRs, FRs, NFRs)
+- `/arckit.hld` - Component mapping
+- `/arckit.stakeholders` - User personas
+- `/arckit.risk-register` - Risk priorities
+- `/arckit.business-case` - Value priorities
+- `/arckit.threat-model` - Security stories
+
+**Outputs To**:
+- `/arckit.traceability` - Requirements → Stories → Sprints
+- `/arckit.test-strategy` - Test cases from acceptance criteria
+- `/arckit.analyze` - Backlog completeness validation
+
+**Common Pitfalls**:
+
+**❌ Don't**:
+- Accept AI estimates without team validation
+- Ignore dependencies (features before foundation)
+- Let backlog go stale (no refinement)
+- Skip DoD criteria
+- Forget to track velocity after Sprint 1
+
+**✅ Do**:
+- Review and refine all story points with team
+- Validate dependencies in sprint planning
+- Refine backlog weekly
+- Update DoD in principles.md
+- Calibrate velocity after each sprint
+- Re-generate when requirements change significantly
+
+**Export Formats**:
+
+**CSV (Jira/Azure DevOps import)**:
+```csv
+Type,Key,Epic,Summary,Description,Acceptance Criteria,Priority,Story Points,Sprint,Status
+Epic,EPIC-001,,"User Management","Foundation epic",,Must Have,34,1-2,To Do
+Story,STORY-001,EPIC-001,"Create user account","As a new user...",...,Must Have,8,1,To Do
+Task,TASK-001-A,STORY-001,"Design user table schema","PostgreSQL schema",,Must Have,2,1,To Do
+```
+
+**JSON (API integration)**:
+```json
+{
+  "project": "payment-gateway",
+  "summary": {
+    "total_stories": 87,
+    "total_points": 342
+  },
+  "stories": [
+    {
+      "id": "STORY-001",
+      "title": "Create user account",
+      "as_a": "new user",
+      "story_points": 8,
+      "sprint": 1
+    }
+  ]
+}
+```
+
+**Related Documentation**:
+- [Product Backlog Guide](docs/guides/backlog.md)
+- [Requirements Guide](docs/guides/requirements.md)
+- [Traceability Guide](docs/guides/traceability.md)
+- [GDS Agile Delivery](https://www.gov.uk/service-manual/agile-delivery)
+- [GDS User Stories](https://www.gov.uk/service-manual/agile-delivery/writing-user-stories)
+
+---
+
+### 20. `/arckit.story` - Project Story & Governance Summary
+
+**Purpose**: Create an executive-ready narrative that summarises delivery progress, governance outcomes, and next steps across the entire ArcKit lifecycle.
+
+**Usage**:
+```
+/arckit.story Generate programme story for payment gateway
+/arckit.story Create delivery update for Cabinet Office GenAI platform
+```
+
+**Prerequisites**:
+- Core governance artifacts (`plan.md`, `principles.md`, `stakeholder-drivers.md`, `risk-register.md`, `sobc.md`)
+- Delivery evidence (`requirements.md`, `traceability-matrix.md`, `backlog.md`, `hld-review.md`, `dld-review.md`)
+- Latest compliance outputs (`dpia.md`, `/arckit.secure`, `/arckit.service-assessment` where applicable)
+
+**What it does**:
+- Builds a timeline of major milestones, decisions, and approvals mapped to GDS phases
+- Highlights governance achievements (principles adoption, risk mitigation, compliance scores)
+- Summarises delivery health: scope burn-up, velocity trends, outstanding actions
+- Surfaces red/amber issues that require steering input and links back to source artifacts
+- Provides stakeholder-specific call-outs and recommended next milestones
+- Includes annexes with traceability snapshots and data protection status (e.g., DPIA readiness)
+
+**Outputs**:
+- `projects/NNN-project-name/story.md` (narrative)
+- `projects/NNN-project-name/story-summary.md` (bullet executive briefing)
+- Optional `story-slides.md` for rapid conversion into presentation format
+
+**Next step**: Circulate with the steering group, update `/arckit.plan` gates if dates change, and feed actions into `/arckit.backlog` or governance registers.
+
+---
+
+### 21. `/arckit.jsp-936` - MOD JSP 936 AI Assurance Documentation
+
+**Purpose**: Generate comprehensive JSP 936 (Dependable Artificial Intelligence in Defence) compliance documentation for UK Ministry of Defence AI/ML systems.
+
+**Usage**:
+```
+/arckit.jsp-936 Generate JSP 936 documentation for threat detection ML system
+/arckit.jsp-936 Assess satellite imagery analysis CNN model for JSP 936 compliance
+/arckit.jsp-936 Create AI assurance for autonomous drone navigation
+```
+
+**What it does**:
+- Identifies all AI/ML components in the project
+- Performs ethical risk classification using likelihood × impact matrix (1-5 scale)
+- Assesses against 5 Ethical Principles: Human-Centricity, Responsibility, Understanding, Bias & Harm Mitigation, Reliability
+- Documents all 8 AI Lifecycle Phases: Planning, Requirements, Architecture, Algorithm Design, Model Development, V&V, Integration & Use, Quality Assurance
+- Defines governance structure (RAISOs, Ethics Managers, Independent Assurance for Critical systems)
+- Determines approval pathway based on risk classification:
+  - **Critical (20-25)**: 2PUS or Ministerial approval
+  - **Severe/Major (10-19)**: Defence-Level (JROC/IAC)
+  - **Moderate/Minor (1-9)**: TLB-Level (delegated)
+- Designs human-AI teaming strategy (human-in-loop, human-on-loop, human-out-of-loop)
+- Assesses AI-specific security threats (adversarial examples, data poisoning, model extraction, model inversion, backdoors, drift)
+- Documents supplier assurance (if third-party AI components)
+- Creates continuous monitoring and re-assessment plan (drift detection, retraining triggers, annual review)
+- Generates comprehensive compliance matrix (27 JSP 936 requirements)
+
+**AI Component Types Identified**:
+1. **Machine Learning Models**: Supervised/unsupervised learning, deep learning, neural networks
+2. **AI Algorithms**: Decision trees, SVMs, Bayesian networks, expert systems
+3. **Autonomous Systems**: Autonomous vehicles/drones, robotic systems, automated decision-making
+4. **Decision Support Systems**: Recommendation engines, risk assessment tools, predictive analytics
+5. **Natural Language Processing**: Chatbots, text classification, NER, machine translation
+6. **Computer Vision**: Object detection, face recognition, image classification, video analysis
+7. **Generative AI**: Large language models, image generation, synthetic data generation
+
+**Ethical Risk Matrix**:
+```
+Risk Score = Likelihood (1-5) × Impact (1-5)
+
+Likelihood: Rare (1) → Unlikely (2) → Possible (3) → Likely (4) → Almost Certain (5)
+Impact: Insignificant (1) → Minor (2) → Moderate (3) → Major (4) → Catastrophic (5)
+
+Classification:
+20-25 = Critical → 2PUS/Ministerial approval
+15-19 = Severe → Defence-Level approval
+10-14 = Major → Defence-Level approval
+5-9 = Moderate → TLB-Level approval
+1-4 = Minor → TLB-Level approval
+```
+
+**Output**: `.arckit/jsp-936/jsp-936-assessment.md`
+
+**When to use**:
+- Discovery/Alpha: Initial ethical risk screening for AI/ML projects
+- Alpha: Full JSP 936 assessment before significant development
+- Beta: Updated assessment as AI system develops
+- Live: Annual re-assessment and continuous monitoring
+
+**Next steps**:
+- Submit to Ethics Manager for review
+- RAISO endorsement
+- Independent assurance (if Critical classification)
+- Submission to appropriate approval authority
+- Continuous monitoring implementation
+
+**Guide**: See [docs/guides/jsp-936.md](../docs/guides/jsp-936.md) for comprehensive guide
+
+**Integration**:
+- **Inputs From**: `/arckit.requirements`, `/arckit.architecture`, `/arckit.data-model`, `/arckit.mod-secure`
+- **Complements**: `/arckit.ai-playbook`, `/arckit.atrs`, `/arckit.risk`
+- **Outputs To**: `/arckit.backlog` (compliance tasks), `/arckit.traceability` (ethical requirements)
+
+**Example - Threat Detection ML System**:
+
+**AI Component**: Deep CNN for satellite imagery threat detection
+- **Risk Assessment**: Likelihood 4 (Likely) × Impact 4 (Major) = 16 (Severe classification)
+- **Approval**: Defence-Level (JROC/IAC)
+- **Human-AI Teaming**: Human-on-loop (analyst monitors, can override)
+- **Key Risks**: False negatives (missed threats), adversarial examples, bias in training data
+- **Mitigations**: Diverse training data, adversarial robustness testing, explainability (heatmaps), continuous bias monitoring
+
+---
+
+*Last updated: 2025-11-04 | Version: 0.8.3*
