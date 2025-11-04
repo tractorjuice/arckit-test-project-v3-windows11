@@ -43,7 +43,7 @@ Gemini CLI uses colon-separated namespaces for commands in subdirectories. ArcKi
 /arckit:stakeholders Analyze stakeholders for payment gateway project
 ```
 
-## ArcKit Commands (25 Available)
+## ArcKit Commands (31 Available)
 
 ### Phase 0: Project Planning
 
@@ -91,6 +91,9 @@ Creates: `projects/001-project-name/project-plan.md`
 # Data modelling
 /arckit:data-model Create data model for payment gateway with ERD and GDPR compliance
 
+# Data protection
+/arckit:dpia Generate Data Protection Impact Assessment for GDPR Article 35 compliance
+
 # Strategic planning
 /arckit:wardley Create Wardley map for digital services showing build vs buy strategy
 
@@ -101,6 +104,7 @@ Creates: `projects/001-project-name/project-plan.md`
 **Outputs:**
 - `projects/001-project-name/requirements.md`
 - `projects/001-project-name/data-model.md`
+- `projects/001-project-name/dpia.md`
 - `projects/001-project-name/wardley-map.md`
 - `projects/001-project-name/research/technology-name/`
 
@@ -131,8 +135,10 @@ Creates: `projects/001-project-name/project-plan.md`
 /arckit:dld-review Review detailed design for security
 
 # Compliance & security
+/arckit:service-assessment GDS Service Standard assessment preparation
 /arckit:secure UK Government Secure by Design review
 /arckit:mod-secure MOD Secure by Design review
+/arckit:jsp-936 Generate JSP 936 AI assurance documentation
 /arckit:tcop Technology Code of Practice assessment
 /arckit:atrs AI Transparency Risk Standards assessment
 /arckit:ai-playbook AI Playbook compliance check
@@ -142,14 +148,22 @@ Creates: `projects/001-project-name/project-plan.md`
 /arckit:diagram Generate architecture diagrams with Mermaid
 /arckit:traceability Generate requirements traceability matrix
 /arckit:servicenow Export architecture to ServiceNow CMDB
+
+# Delivery management
+/arckit:backlog Generate sprint-ready backlog with velocity 20 and 8 sprints
+/arckit:story Create executive story for steering committee update
 ```
 
 **Outputs:**
 - `projects/001-project-name/hld-review-YYYYMMDD.md`
 - `projects/001-project-name/dld-review-YYYYMMDD.md`
 - `projects/001-project-name/compliance/secure-by-design.md`
+- `projects/001-project-name/compliance/service-assessment.md`
+- `projects/001-project-name/compliance/jsp-936.md`
 - `projects/001-project-name/analysis/gap-analysis.md`
 - `projects/001-project-name/diagrams/`
+- `projects/001-project-name/backlog.md` (+ `.csv`, `.json`)
+- `projects/001-project-name/story.md` (+ `story-summary.md`)
 
 ## Workflow Example
 
@@ -172,6 +186,7 @@ gemini
 # 3. Alpha phase
 /arckit:requirements Create requirements for cloud migration
 /arckit:data-model Create data model for customer data with GDPR compliance
+/arckit:dpia Generate DPIA covering GDPR Article 35 requirements
 /arckit:wardley Create Wardley map showing build vs buy for cloud infrastructure
 
 # 4. Research & procurement
@@ -179,12 +194,17 @@ gemini
 /arckit:gcloud-search Search G-Cloud 14 for cloud hosting services
 /arckit:dos Generate Digital Outcomes and Specialists procurement
 /arckit:sow Generate RFP statement of work
+/arckit:evaluate Score supplier proposals against evaluation criteria
 
 # 5. Beta phase
 /arckit:hld-review Review high-level design for microservices architecture
 /arckit:secure Conduct Secure by Design review
 
-# 6. Analysis
+# 6. Delivery & reporting
+/arckit:backlog Generate sprint backlog with velocity 20 and 8 sprints
+/arckit:story Create executive story for steering committee update
+
+# 7. Analysis
 /arckit:analyze Comprehensive gap analysis across all artifacts
 /arckit:diagram Generate C4 architecture diagrams
 /arckit:traceability Generate requirements traceability matrix
@@ -198,32 +218,36 @@ your-project/
 │   ├── README.md (this file)
 │   └── commands/
 │       └── arckit/
-│           ├── plan.toml
-│           ├── principles.toml
-│           ├── stakeholders.toml
-│           ├── risk.toml
-│           ├── sobc.toml
-│           ├── requirements.toml
-│           ├── data-model.toml
-│           ├── wardley.toml
-│           ├── research.toml
-│           ├── digital-marketplace.toml
-│           ├── gcloud-search.toml
-│           ├── gcloud-clarify.toml
-│           ├── dos.toml
-│           ├── sow.toml
-│           ├── evaluate.toml
-│           ├── hld-review.toml
-│           ├── dld-review.toml
-│           ├── secure.toml
-│           ├── mod-secure.toml
-│           ├── tcop.toml
-│           ├── atrs.toml
 │           ├── ai-playbook.toml
 │           ├── analyze.toml
+│           ├── atrs.toml
+│           ├── backlog.toml
+│           ├── data-model.toml
 │           ├── diagram.toml
+│           ├── dld-review.toml
+│           ├── dos.toml
+│           ├── dpia.toml
+│           ├── evaluate.toml
+│           ├── gcloud-clarify.toml
+│           ├── gcloud-search.toml
+│           ├── hld-review.toml
+│           ├── jsp-936.toml
+│           ├── mod-secure.toml
+│           ├── plan.toml
+│           ├── principles.toml
+│           ├── requirements.toml
+│           ├── research.toml
+│           ├── risk.toml
+│           ├── secure.toml
+│           ├── service-assessment.toml
+│           ├── servicenow.toml
+│           ├── sobc.toml
+│           ├── sow.toml
+│           ├── stakeholders.toml
+│           ├── story.toml
+│           ├── tcop.toml
 │           ├── traceability.toml
-│           └── servicenow.toml
+│           └── wardley.toml
 ├── .arckit/
 │   ├── memory/
 │   │   └── architecture-principles.md
@@ -345,14 +369,24 @@ EOF
 
 ## Version
 
-ArcKit v0.4.1 (25 commands)
+ArcKit 0.8.3 (released 2025-11-04) — all 31 commands available in Gemini CLI, including DPIA, Backlog, Story, and Principles Compliance.
 
-**What's New in v0.4.1:**
+---
+
+ArcKit v0.8.2 (28 commands)
+
+**What's New in v0.8.2:**
+- 🔧 **Dependency Matrix**: Complete 31×31 command dependency matrix with mandatory, recommended, and optional relationships
+- 📊 **Workflow Diagrams**: Visual Mermaid diagrams for all 5 project paths (Standard, UK Gov, UK Gov AI, MOD, MOD AI)
+- 📝 **Gap Analysis**: Comprehensive analysis of 50+ missing dependencies with remediation recommendations
+- 🔧 **Version Consistency**: All version references synchronized to v0.8.2
+
+**What was New in v0.6.0:**
 - 🗓️ **Project Planning**: `/arckit:plan` - Comprehensive project planning with GDS Agile Delivery phases
 - 📚 **Documentation Expansion**: 660-line planning guide, expanded design review (+167 lines) and procurement (+191 lines) guides
 - 🚀 **Multi-AI Deployment**: Plan command deployed to all three AI systems (Claude, Codex, Gemini)
 - 📋 **Updated Workflow**: Plan-first approach with Phase 0 before all other phases
-- 🔧 **Version Consistency**: All version references synchronized to v0.4.1
+- 🔧 **Version Consistency**: All version references synchronized to v0.6.0
 
 **What was New in v0.3.6:**
 - 🗓️ Added `/arckit:plan` - Project planning with GDS Agile Delivery phases, Mermaid Gantt charts
