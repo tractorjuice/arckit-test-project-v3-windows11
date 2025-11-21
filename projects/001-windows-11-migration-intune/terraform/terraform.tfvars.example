@@ -1,0 +1,135 @@
+# Example Terraform Variables for Windows 11 Migration Database
+# Project 001: Windows 11 Migration with InTune
+# Copy this file to terraform.tfvars and customize for your environment
+
+# General configuration
+environment         = "prod"  # dev, test, or prod
+location            = "uksouth"  # UK South for data sovereignty
+create_resource_group = true
+resource_group_name = "rg-migration-prod-uks"
+
+# Key Vault configuration
+create_key_vault = true
+key_vault_name   = "kv-migration-prod-001"  # Must be globally unique (3-24 characters)
+
+# Networking configuration
+vnet_name                         = "vnet-migration-prod-uks"
+vnet_address_space                = ["10.100.0.0/16"]
+postgresql_subnet_name            = "snet-postgresql"
+postgresql_subnet_address_prefixes = ["10.100.1.0/24"]
+create_app_subnet                 = true  # For ServiceNow integration
+app_subnet_name                   = "snet-app"
+app_subnet_address_prefixes       = ["10.100.2.0/24"]
+allowed_source_address_prefixes   = ["10.100.0.0/16"]  # Allowed sources for PostgreSQL access
+
+# Flow logs (optional - requires storage account)
+enable_flow_logs       = false
+storage_account_name   = "stmigrationflowlogs001"  # Must be globally unique
+enable_traffic_analytics = false
+
+# Monitoring configuration
+log_analytics_workspace_name = "log-migration-prod-uks"
+log_analytics_sku           = "PerGB2018"
+log_retention_days          = 90  # 30-730 days
+create_application_insights = false
+application_insights_name   = "appi-migration-prod-uks"
+action_group_name           = "ag-migration-alerts"
+action_group_short_name     = "mig-alerts"  # Max 12 characters
+
+# Alert recipients
+alert_email_receivers = [
+  {
+    name  = "IT Operations"
+    email = "it-ops@example.com"
+  },
+  {
+    name  = "Database Admin"
+    email = "dba@example.com"
+  }
+]
+
+# Webhook receivers (Teams, Slack, etc.)
+webhook_receivers = [
+  # {
+  #   name = "Teams Channel"
+  #   uri  = "https://outlook.office.com/webhook/..."
+  # }
+]
+
+alert_prefix    = "migration"
+create_workbook = true
+
+# PostgreSQL configuration
+postgresql_server_name          = "psql-migration-prod-001"  # Must be globally unique
+postgresql_database_name        = "migration_db"
+postgresql_admin_username       = "psqladmin"
+postgresql_version              = "15"
+postgresql_sku_name             = "GP_Standard_D2s_v3"  # General Purpose, 2 vCores
+postgresql_storage_mb           = 32768  # 32 GB
+postgresql_backup_retention_days = 35  # Maximum retention
+geo_redundant_backup_enabled    = true  # Recommended for production
+enable_high_availability        = false  # Set to true for production (additional cost)
+availability_zone               = "1"
+standby_availability_zone       = "2"
+
+# PostgreSQL performance tuning
+max_connections         = "100"
+shared_buffers_mb       = "2048MB"  # 25% of RAM (8GB instance)
+effective_cache_size_mb = "6144MB"  # 75% of RAM
+
+# Security
+allow_azure_services = false  # Set to true if ServiceNow is hosted on Azure
+
+# Database schema
+schema_name = "public"
+
+# Tags
+tags = {
+  Project            = "Windows 11 Migration"
+  ProjectID          = "001"
+  Environment        = "Production"
+  ManagedBy          = "Terraform"
+  CostCenter         = "IT-Infrastructure"
+  DataClassification = "CONFIDENTIAL"
+  Compliance         = "UK-GDPR"
+  DataSovereignty    = "UK"
+  Owner              = "IT Operations"
+  BusinessUnit       = "Corporate IT"
+  SupportEmail       = "it-support@example.com"
+}
+
+# ===========================
+# Environment-specific examples
+# ===========================
+
+# Development environment example:
+# environment         = "dev"
+# resource_group_name = "rg-migration-dev-uks"
+# postgresql_sku_name = "B_Standard_B2s"  # Burstable for dev (lower cost)
+# postgresql_storage_mb = 10240  # 10 GB
+# postgresql_backup_retention_days = 7  # Minimum retention
+# geo_redundant_backup_enabled = false
+# enable_high_availability = false
+# log_retention_days = 30
+
+# Test environment example:
+# environment         = "test"
+# resource_group_name = "rg-migration-test-uks"
+# postgresql_sku_name = "GP_Standard_D2s_v3"
+# postgresql_storage_mb = 16384  # 16 GB
+# postgresql_backup_retention_days = 14
+# geo_redundant_backup_enabled = false
+# enable_high_availability = false
+# log_retention_days = 60
+
+# Production environment with HA:
+# environment         = "prod"
+# resource_group_name = "rg-migration-prod-uks"
+# postgresql_sku_name = "GP_Standard_D4s_v3"  # 4 vCores for HA
+# postgresql_storage_mb = 65536  # 64 GB
+# postgresql_backup_retention_days = 35
+# geo_redundant_backup_enabled = true
+# enable_high_availability = true  # Zone-redundant HA
+# availability_zone = "1"
+# standby_availability_zone = "2"
+# log_retention_days = 90
