@@ -4,12 +4,12 @@
 
 | Field | Value |
 |-------|-------|
-| **Document ID** | ARC-006-REQ-v2.0 |
+| **Document ID** | ARC-006-REQ-v3.0 |
 | **Document Type** | Business and Technical Requirements |
 | **Project** | Large Format Printing Service (Project 006) |
 | **Classification** | OFFICIAL |
 | **Status** | DRAFT |
-| **Version** | 2.0 |
+| **Version** | 3.0 |
 | **Created Date** | 2026-01-09 |
 | **Last Modified** | 2026-01-09 |
 | **Review Cycle** | Monthly |
@@ -17,7 +17,7 @@
 | **Owner** | [PENDING] |
 | **Reviewed By** | [PENDING] |
 | **Approved By** | [PENDING] |
-| **Distribution** | Project Team, Architecture Team, Procurement Team |
+| **Distribution** | Project Team, Architecture Team, Procurement Team, Security Team |
 
 ## Revision History
 
@@ -25,10 +25,13 @@
 |---------|------|--------|---------|-------------|---------------|
 | 1.0 | 2026-01-09 | ArcKit AI | Initial creation - in-house procurement model | [PENDING] | [PENDING] |
 | 2.0 | 2026-01-09 | ArcKit AI | Revised for third-party managed service model per user request | [PENDING] | [PENDING] |
+| 3.0 | 2026-01-09 | ArcKit AI | Enhanced security requirements based on MOD Secure by Design assessment (ARC-006-SECD-v1.0) | [PENDING] | [PENDING] |
 
 ## Document Purpose
 
 This document defines the comprehensive business, functional, and non-functional requirements for the procurement of a third-party managed large format printing service. This approach outsources hardware ownership, maintenance, consumables management, and service delivery to a specialist provider, enabling the organisation to focus on core business activities while achieving print capability requirements.
+
+**Version 3.0 Update**: Requirements enhanced based on MOD Secure by Design assessment findings to address supply chain security, accreditation, incident response, and vulnerability management gaps.
 
 ---
 
@@ -53,6 +56,7 @@ This service-based approach aligns with cloud-first operational principles, mini
 - Ensure service turnaround times meet business requirements (24 hours standard, 4 hours urgent)
 - Maintain document confidentiality through on-premises equipment managed by the service provider
 - Integrate seamlessly with existing IT infrastructure and Windows 11 managed endpoints
+- **Achieve MOD Secure by Design compliance** with JSP 440 accreditation before go-live
 
 ### Expected Outcomes
 
@@ -61,6 +65,7 @@ This service-based approach aligns with cloud-first operational principles, mini
 - **Service Quality**: Professional-grade output with SLA-backed turnaround times
 - **Flexibility**: Ability to scale service up/down based on business demand
 - **Confidentiality**: Sensitive materials printed on-premises (not at external print shop)
+- **Security Assurance**: Supplier security verified and service accredited for OFFICIAL data
 
 ### Procurement Approach
 
@@ -72,6 +77,7 @@ This service-based approach aligns with cloud-first operational principles, mini
 - Vendor provides remote monitoring and proactive maintenance
 - Organisation pays fixed monthly fee or per-print pricing
 - Contract term: 36-60 months typical for managed services
+- **Security certification mandatory** (Cyber Essentials+ minimum)
 
 **Procurement Route**:
 - G-Cloud Framework (Technology Services category) - preferred
@@ -88,6 +94,9 @@ This service-based approach aligns with cloud-first operational principles, mini
 - Service-level agreement covering availability, turnaround, and quality
 - Consumables management and replenishment by service provider
 - Print management software/portal provided by service provider
+- **Security accreditation** for OFFICIAL data handling (JSP 440)
+- **SIEM integration** for security monitoring
+- **Incident response procedures** for print service
 
 **Out of Scope**:
 - Organisation ownership of printing hardware
@@ -108,6 +117,7 @@ This service-based approach aligns with cloud-first operational principles, mini
 | [PENDING] | Business Analyst | IT | Requirements elicitation |
 | [PENDING] | Enterprise Architect | Architecture | Technical oversight |
 | [PENDING] | Security Lead | Information Security | Security review |
+| [PENDING] | **Information Assurance Owner (IAO)** | Information Security | **Accreditation owner** |
 | [PENDING] | Procurement Lead | Procurement | Vendor selection |
 | [PENDING] | End User Representative | Marketing | User acceptance |
 | [PENDING] | End User Representative | Engineering | User acceptance |
@@ -231,6 +241,30 @@ This service-based approach aligns with cloud-first operational principles, mini
 **Priority**: SHOULD_HAVE
 
 **Stakeholder**: Finance Business Partner, Facilities Management
+
+---
+
+### BR-007: Achieve Security Accreditation (NEW - from MOD SbD Assessment)
+
+**Description**: The service must achieve JSP 440 accreditation for handling OFFICIAL data before operational go-live.
+
+**Rationale**: MOD Secure by Design assessment identified accreditation as a critical issue. Risk Managed Accreditation is required for OFFICIAL data handling per JSP 440 Leaflet 5C.
+
+**Success Criteria**:
+- Information Assurance Owner (IAO) assigned before contract award
+- Business Impact Assessment (BIA) completed during implementation
+- Risk assessment completed with residual risks documented
+- Security controls verified against supplier documentation
+- IAO sign-off obtained before service go-live
+- IAMM Level 2 (Managed) achieved across all domains
+
+**Priority**: MUST_HAVE
+
+**Stakeholder**: Information Assurance Owner, Security Lead
+
+**Aligns With**: JSP 440 Defence IA Policy, MOD Secure by Design Principles
+
+**Source**: MOD Secure by Design Assessment (ARC-006-SECD-v1.0) Section 3.1
 
 ---
 
@@ -570,7 +604,7 @@ This service-based approach aligns with cloud-first operational principles, mini
 - [ ] Unreleased secure jobs auto-delete after 24 hours
 - [ ] Secure print jobs not visible to other users
 
-**Priority**: SHOULD_HAVE
+**Priority**: MUST_HAVE (upgraded from SHOULD_HAVE per MOD SbD assessment)
 
 ---
 
@@ -711,7 +745,7 @@ This service-based approach aligns with cloud-first operational principles, mini
 **Requirement**: Print files must be encrypted during transmission from user endpoint to print equipment.
 
 **Security Controls**:
-- TLS 1.2+ for all portal and driver communications
+- TLS 1.2+ for all portal and driver communications (TLS 1.3 preferred)
 - Secure upload protocols for file transfer
 - No print data transmitted outside organisation network (on-premises equipment)
 
@@ -729,7 +763,7 @@ This service-based approach aligns with cloud-first operational principles, mini
 - Print files deleted from equipment/server within 24 hours of job completion
 - Secure deletion (overwrite) of files
 - No archival of print files by service provider without explicit agreement
-- Encrypted storage for queued jobs
+- Encrypted storage for queued jobs (AES-256 minimum)
 
 **Priority**: MUST_HAVE
 
@@ -775,7 +809,118 @@ This service-based approach aligns with cloud-first operational principles, mini
 - Remote management by service provider via secure channel (VPN or equivalent)
 - Equipment firmware kept current with security patches
 
+**Priority**: MUST_HAVE (upgraded from SHOULD_HAVE per MOD SbD assessment)
+
+---
+
+#### NFR-SEC-006: Supplier Security Certification (NEW - from MOD SbD Assessment)
+
+**Requirement**: Service provider must hold and maintain current security certifications demonstrating adequate security posture.
+
+**Security Controls**:
+- **Cyber Essentials Plus certification**: MANDATORY (must be current at contract award)
+- ISO 27001 certification: Preferred (scored in evaluation)
+- UK Government G-Cloud accreditation: Preferred
+- Annual certification renewal evidence provided to organisation
+- Right to audit supplier security arrangements
+
+**Verification**:
+- Certificate verification during procurement (must be valid at contract signature)
+- Annual certificate renewal check
+- Immediate notification if certification lapses
+
+**Priority**: MUST_HAVE
+
+**Source**: MOD Secure by Design Assessment (ARC-006-SECD-v1.0) Section 7.1
+
+---
+
+#### NFR-SEC-007: Firmware and Patch Management (NEW - from MOD SbD Assessment)
+
+**Requirement**: Service provider must maintain current firmware and security patches on all equipment.
+
+**Security Controls**:
+- Critical security patches applied within 14 days of vendor release
+- High severity patches applied within 30 days
+- Medium/Low patches applied within 90 days or next scheduled maintenance
+- Monthly patch status reporting to organisation
+- Emergency patching capability for zero-day vulnerabilities
+- Firmware update notification before application (change control)
+
+**Priority**: MUST_HAVE
+
+**Source**: MOD Secure by Design Assessment (ARC-006-SECD-v1.0) Section 3.2 (Patch Management gap)
+
+---
+
+#### NFR-SEC-008: Secure Configuration (NEW - from MOD SbD Assessment)
+
+**Requirement**: Equipment must be deployed with secure default configurations.
+
+**Security Controls**:
+- All default/factory credentials changed before deployment
+- Unused services and ports disabled
+- Secure configuration baseline documented by supplier
+- Configuration hardening guide provided to organisation
+- Annual configuration review against baseline
+- Changes to security configuration require approval
+
+**Priority**: MUST_HAVE
+
+**Source**: MOD Secure by Design Assessment (ARC-006-SECD-v1.0) Section 2.2 (Secure by Default gap)
+
+---
+
+#### NFR-SEC-009: Penetration Testing Rights (NEW - from MOD SbD Assessment)
+
+**Requirement**: Organisation must have the right to conduct or commission security testing of the service.
+
+**Security Controls**:
+- Annual penetration testing of service portal and network components
+- Testing conducted by organisation-approved assessor
+- Service provider must remediate Critical/High findings within 30 days
+- Medium findings remediated within 90 days
+- Test scope includes: web portal, print drivers, network equipment
+- Service provider to provide evidence of their own annual penetration test
+
 **Priority**: SHOULD_HAVE
+
+**Source**: MOD Secure by Design Assessment (ARC-006-SECD-v1.0) Section 5.4 (Vulnerability Management gap)
+
+---
+
+#### NFR-SEC-010: Security Incident Notification (NEW - from MOD SbD Assessment)
+
+**Requirement**: Service provider must notify organisation of security incidents affecting the service.
+
+**Security Controls**:
+- Security incident notification within 1 hour of detection
+- Suspected data breach notification within 4 hours
+- Confirmed data breach notification within 24 hours (to support ICO 72-hour requirement)
+- Incident report provided within 5 business days
+- Root cause analysis provided within 15 business days
+- Evidence preservation for forensic investigation
+
+**Priority**: MUST_HAVE
+
+**Source**: MOD Secure by Design Assessment (ARC-006-SECD-v1.0) Section 8.2 (Incident Response gap)
+
+---
+
+#### NFR-SEC-011: Personnel Vetting - BPSS (NEW - from MOD SbD Assessment)
+
+**Requirement**: All service provider personnel with on-site access or access to organisation data must hold BPSS clearance.
+
+**Security Controls**:
+- BPSS (Baseline Personnel Security Standard) verification for all on-site personnel
+- Foreign nationals risk assessment required
+- Right to audit supplier vetting records
+- Notification within 24 hours if cleared personnel status changes
+- Escort required for non-cleared visitors
+
+**Priority**: MUST_HAVE
+
+**Source**: MOD Secure by Design Assessment (ARC-006-SECD-v1.0) Section 9.1 (Personnel Security gap)
 
 ---
 
@@ -818,6 +963,23 @@ This service-based approach aligns with cloud-first operational principles, mini
 - Alternative submission methods available (phone, email) for users who cannot use portal
 
 **Priority**: SHOULD_HAVE
+
+---
+
+#### NFR-C-004: JSP 440 Compliance (NEW - from MOD SbD Assessment)
+
+**Requirement**: The service must support JSP 440 compliance for handling OFFICIAL data.
+
+**Compliance Requirements**:
+- [ ] Service supports IAMM Level 2 (Managed) across all 8 domains
+- [ ] Supplier provides evidence for accreditation documentation
+- [ ] Supplier cooperates with Business Impact Assessment
+- [ ] Supplier participates in risk assessment process
+- [ ] Residual risks documented and accepted by IAO
+
+**Priority**: MUST_HAVE
+
+**Source**: MOD Secure by Design Assessment (ARC-006-SECD-v1.0) Section 3.2
 
 ---
 
@@ -875,8 +1037,9 @@ This service-based approach aligns with cloud-first operational principles, mini
 - Monthly service reports provided (SLA performance, volumes, issues)
 - Quarterly service review meetings with service owner
 - Annual strategic review and contract assessment
+- **Quarterly security review** (NEW - per MOD SbD assessment)
 
-**Priority**: SHOULD_HAVE
+**Priority**: MUST_HAVE (upgraded from SHOULD_HAVE)
 
 ---
 
@@ -911,6 +1074,7 @@ This service-based approach aligns with cloud-first operational principles, mini
 - [ ] Service portal supports Azure AD SSO
 - [ ] Just-in-time user provisioning (no manual account creation)
 - [ ] Department/cost centre attributes available for reporting
+- [ ] Conditional Access policies apply to service portal
 
 **Priority**: MUST_HAVE
 
@@ -980,6 +1144,37 @@ This service-based approach aligns with cloud-first operational principles, mini
 **Priority**: COULD_HAVE
 
 **Owner**: Finance Team
+
+---
+
+### INT-005: Integration with SIEM (NEW - from MOD SbD Assessment)
+
+**Purpose**: Export audit logs to organisation's Security Information and Event Management system for centralised security monitoring.
+
+**Integration Type**: Log export/forwarding
+
+**Data Exchanged**:
+- **From Service to SIEM**: Audit logs (authentication events, print job logs, admin actions, security events)
+
+**Integration Pattern**:
+- Syslog (RFC 5424) - Preferred
+- CEF (Common Event Format) - Acceptable
+- API-based log export - Acceptable
+- File-based export (SFTP) - Minimum acceptable
+
+**Requirements**:
+- [ ] Service provides audit logs in standard format (Syslog/CEF)
+- [ ] Near real-time log export (< 5 minute delay)
+- [ ] Log format documented with field mappings
+- [ ] Authentication failure events included
+- [ ] Administrative action events included
+- [ ] Security alert events included
+
+**Priority**: SHOULD_HAVE
+
+**Owner**: IT - Security Operations Team
+
+**Source**: MOD Secure by Design Assessment (ARC-006-SECD-v1.0) Section 5.5 (Security Monitoring gap)
 
 ---
 
@@ -1054,7 +1249,7 @@ This service-based approach aligns with cloud-first operational principles, mini
 
 ### Business Constraints
 
-**BC-1**: Budget: Annual service cost not to exceed £50,000/year
+**BC-1**: Budget: Annual service cost not to exceed £55,000/year (increased from £50,000 to accommodate enhanced security requirements)
 
 **BC-2**: Contract term: Maximum 36 months (with renewal option) to maintain flexibility
 
@@ -1063,6 +1258,8 @@ This service-based approach aligns with cloud-first operational principles, mini
 **BC-4**: Implementation timeline: Service operational within 8 weeks of contract signature
 
 **BC-5**: No capital expenditure - service must be fully OpEx
+
+**BC-6**: **Accreditation timeline**: IAO sign-off required before service go-live (NEW)
 
 ---
 
@@ -1078,7 +1275,11 @@ This service-based approach aligns with cloud-first operational principles, mini
 
 **A-5**: Internet connectivity available for service provider remote monitoring
 
-**A-6**: Service provider can achieve Cyber Essentials certification or equivalent
+**A-6**: Service provider can achieve Cyber Essentials Plus certification (MANDATORY)
+
+**A-7**: IAO will be assigned from IT Security Team before contract award (NEW)
+
+**A-8**: SIEM integration is technically feasible with organisation's existing SIEM platform (NEW)
 
 **Validation Plan**: Assumptions validated during vendor due diligence
 
@@ -1096,6 +1297,8 @@ This service-based approach aligns with cloud-first operational principles, mini
 | Issue response | < 2 hours | Ticket timestamps |
 | Equipment repair/replace | < 8 business hours | Incident records |
 | Proactive maintenance | No user-impacting failures from lack of maintenance | Incident analysis |
+| **Security incident notification** | < 1 hour | Incident records (NEW) |
+| **Critical patch application** | < 14 days | Patch reports (NEW) |
 
 ### Service Credits
 
@@ -1103,6 +1306,7 @@ Service credits should apply for systemic SLA failures:
 - Availability < 95%: X% credit of monthly fee
 - Turnaround SLA missed > 10% of jobs: Y% credit
 - Critical incident handling failed: Case-by-case credit
+- **Security incident notification SLA missed**: X% credit (NEW)
 
 *Specific percentages to be negotiated during contract*
 
@@ -1114,7 +1318,7 @@ Service credits should apply for systemic SLA failures:
 
 | Metric | Baseline | Target | Timeline | Measurement Method |
 |--------|----------|--------|----------|-------------------|
-| Annual print service cost | £75,000/year (estimated current outsourced) | < £50,000/year | Year 1 | Contract cost |
+| Annual print service cost | £75,000/year (estimated current outsourced) | < £55,000/year | Year 1 | Contract cost |
 | Internal management time | Unknown | < 1 hour/week | Month 3 | Time tracking |
 | Turnaround SLA met | N/A | 95% standard, 99% urgent | Ongoing | Service reports |
 | User satisfaction | N/A | > 85% | Month 6 | User survey |
@@ -1133,6 +1337,18 @@ Service credits should apply for systemic SLA failures:
 
 ---
 
+### Security Success Metrics (NEW - from MOD SbD Assessment)
+
+| Metric | Target | Measurement Method |
+|--------|--------|-------------------|
+| Supplier security certification | Cyber Essentials+ maintained | Annual certificate check |
+| Security patch compliance | 100% critical patches within 14 days | Patch reports |
+| Security incidents | < 2 per year | Incident records |
+| Accreditation status | Accredited before go-live | IAO sign-off |
+| IAMM maturity | Level 2 all domains | Annual assessment |
+
+---
+
 ## Dependencies and Risks
 
 ### Dependencies
@@ -1143,6 +1359,8 @@ Service credits should apply for systemic SLA failures:
 | Site preparation | Space, electrical, network at installation location | Facilities | MEDIUM - Delays installation |
 | Azure AD SSO configuration | SSO setup for portal authentication | IT Identity Team | MEDIUM - Users need manual logins |
 | InTune driver deployment | Driver testing and deployment | IT Endpoint Team | MEDIUM - Delays user rollout |
+| **IAO assignment** | Information Assurance Owner assigned | Security Team | HIGH - Blocks accreditation (NEW) |
+| **SIEM integration** | Log export configuration | Security Operations | MEDIUM - Delays security monitoring (NEW) |
 
 ---
 
@@ -1152,12 +1370,16 @@ Service credits should apply for systemic SLA failures:
 |---------|-------------|-------------|--------|---------------------|-------|
 | R-1 | Service provider fails to meet SLA consistently | LOW | HIGH | Strong SLA with service credits; exit clause for persistent failure | Procurement |
 | R-2 | Driver incompatible with Windows 11 ARM64 (Copilot+ PCs) | LOW | MEDIUM | Require ARM64 driver support as mandatory requirement | IT |
-| R-3 | Service provider security practices insufficient | LOW | HIGH | Require Cyber Essentials/ISO 27001; security assessment before award | Security |
+| R-3 | Service provider security practices insufficient | LOW | HIGH | Require Cyber Essentials+; security assessment before award | Security |
 | R-4 | Print volume exceeds contracted capacity | MEDIUM | MEDIUM | Size contract for expected peak; include on-demand scaling clause | Facilities |
 | R-5 | User adoption low due to change resistance | LOW | MEDIUM | Change management communications; demonstrate service benefits | Business Analyst |
 | R-6 | Service provider business failure | LOW | HIGH | Select established provider; check financial stability; exit/transition clause | Procurement |
 | R-7 | Colour accuracy insufficient for Marketing needs | LOW | MEDIUM | Require Delta E < 2 SLA; colour proofing capability | Marketing |
 | R-8 | Contract lock-in limits flexibility | MEDIUM | MEDIUM | Maximum 36-month term; exit for convenience clause with reasonable notice | Commercial |
+| **R-SEC-001** | Supplier security posture inadequate | MEDIUM | HIGH | Mandatory Cyber Essentials+; annual penetration testing rights; audit rights | Security (NEW) |
+| **R-SEC-002** | Accreditation delayed blocking go-live | MEDIUM | HIGH | Assign IAO immediately; start BIA during implementation | IAO (NEW) |
+| **R-SEC-003** | Security incident not notified promptly | LOW | HIGH | 1-hour notification SLA in contract; escalation procedure | Security (NEW) |
+| **R-SEC-004** | Audit log tampering by supplier | LOW | HIGH | SIEM integration; independent log storage; audit rights | Security (NEW) |
 
 ---
 
@@ -1166,7 +1388,7 @@ Service credits should apply for systemic SLA failures:
 ### Conflict C-1: Cost vs Service Quality
 
 **Conflicting Requirements**:
-- **Requirement A**: BR-001 - Achieve predictable, reduced costs (< £50,000/year)
+- **Requirement A**: BR-001 - Achieve predictable, reduced costs (< £55,000/year)
 - **Requirement B**: BR-004 - High quality output with Delta E < 2 colour accuracy and diverse media support
 
 **Stakeholders Involved**:
@@ -1268,6 +1490,46 @@ Managed print service providers typically offer better pricing for longer contra
 
 ---
 
+### Conflict C-4: Security Requirements vs Implementation Speed (NEW)
+
+**Conflicting Requirements**:
+- **Requirement A**: BR-007 - Achieve JSP 440 accreditation before go-live
+- **Requirement B**: BC-4 - Service operational within 8 weeks of contract signature
+
+**Stakeholders Involved**:
+- **IAO/Security Team**: Requires full accreditation before OFFICIAL data processed
+- **Business Sponsor**: Wants service available as quickly as possible
+
+**Nature of Conflict**:
+Full accreditation process (BIA, risk assessment, IAO sign-off) typically takes 4-8 weeks. Combined with 8-week implementation, this creates potential delay to service availability.
+
+**Trade-off Analysis**:
+
+| Option | Security Compliance | Speed | Risk |
+|--------|-------------------|-------|------|
+| **Full accreditation first** | ✅ Fully compliant | ❌ 12-16 weeks total | Low risk |
+| **Parallel workstreams** | ✅ Accredited at go-live | ✅ 8-10 weeks total | Medium - dependent on timing |
+| **Phased rollout** | ⚠️ Limited users initially | ✅ Quick initial availability | Medium - governance complexity |
+
+**Resolution Strategy**: INNOVATE
+
+**Decision**: Run accreditation workstream in parallel with implementation:
+- Assign IAO immediately upon contract award (Week 0)
+- Complete BIA during Weeks 1-3 using supplier documentation
+- Complete risk assessment during Weeks 4-6
+- Obtain IAO sign-off during Week 7-8 (before go-live)
+- Service available Week 8-10 with accreditation complete
+
+**Rationale**: Parallel execution satisfies both security and speed requirements. Key is early IAO assignment and supplier cooperation with accreditation evidence.
+
+**Decision Authority**: IAO and Executive Sponsor
+
+**Stakeholder Management**:
+- **IAO/Security**: Satisfied - proper accreditation before processing OFFICIAL data
+- **Business Sponsor**: Satisfied - service available within acceptable timeframe
+
+---
+
 ## Vendor Evaluation Criteria
 
 ### Mandatory Requirements (Pass/Fail)
@@ -1280,20 +1542,26 @@ All vendors must meet these to be considered:
 | Windows 11 x64 and ARM64 driver support | Driver documentation |
 | Azure AD SSO integration | Technical specification |
 | UK-based support (during business hours) | Support location statement |
-| Security certification (Cyber Essentials minimum) | Current certificate |
+| **Cyber Essentials Plus certification** | Current certificate (MANDATORY - upgraded from Cyber Essentials) |
 | Financial stability | Credit check / accounts |
 | G-Cloud listed (if procurement via framework) | G-Cloud service ID |
+| **BPSS clearance for on-site staff** | Confirmation in proposal (NEW) |
+| **TLS 1.2+ encryption** | Technical specification (NEW) |
+| **Audit log capability with 12-month retention** | Technical specification (NEW) |
 
 ### Scored Criteria
 
 | Criterion | Weighting | Scoring Basis |
 |-----------|-----------|---------------|
-| Price (TCO over contract term) | 30% | Lowest cost = highest score |
-| Technical capability (equipment, quality, features) | 25% | Demo and specification review |
-| Service levels and SLA terms | 20% | SLA commitments and remedies |
+| Price (TCO over contract term) | 25% | Lowest cost = highest score (reduced from 30%) |
+| Technical capability (equipment, quality, features) | 20% | Demo and specification review (reduced from 25%) |
+| Service levels and SLA terms | 15% | SLA commitments and remedies (reduced from 20%) |
+| **Security posture and certifications** | 20% | ISO 27001, security questionnaire, penetration test evidence (NEW) |
 | Implementation approach and timeline | 10% | Project plan credibility |
-| Reference customers | 10% | Quality of references |
+| Reference customers | 5% | Quality of references (reduced from 10%) |
 | Added value / innovation | 5% | Differentiating features |
+
+**Note**: Security weighting increased to 20% based on MOD Secure by Design assessment findings. ISO 27001 certification scores additional points in security evaluation.
 
 ---
 
@@ -1303,16 +1571,22 @@ All vendors must meet these to be considered:
 
 | Milestone | Description | Target Date | Dependencies |
 |-----------|-------------|-------------|--------------|
+| **IAO Assignment** | Information Assurance Owner assigned | TBD (immediately) | Requirements approval (NEW) |
 | Requirements Approval | Stakeholder sign-off on requirements | TBD | This document |
 | RFP/ITT Issued | Procurement documentation released | TBD + 2 weeks | Requirements |
 | Vendor Responses Received | Deadline for proposals | TBD + 5 weeks | RFP issuance |
-| Vendor Evaluation Complete | Scoring and shortlisting | TBD + 7 weeks | Responses received |
+| **Security Evaluation** | Vendor security assessment complete | TBD + 6 weeks | Responses received (NEW) |
+| Vendor Evaluation Complete | Scoring and shortlisting | TBD + 7 weeks | Security evaluation |
 | Contract Award | Preferred vendor selected | TBD + 8 weeks | Evaluation |
 | Contract Signature | Commercial agreement signed | TBD + 10 weeks | Award decision |
+| **BIA Completed** | Business Impact Assessment complete | TBD + 12 weeks | Contract (NEW) |
 | Site Preparation | Location ready for equipment | TBD + 12 weeks | Contract |
 | Equipment Installation | Service provider installs equipment | TBD + 13 weeks | Site prep |
+| **Risk Assessment Complete** | Security risk assessment complete | TBD + 14 weeks | BIA (NEW) |
 | User Training | Staff trained on service | TBD + 14 weeks | Installation |
-| Service Go-Live | Service available to all users | TBD + 15 weeks | Training |
+| **SIEM Integration** | Audit logs flowing to SIEM | TBD + 14 weeks | Installation (NEW) |
+| **IAO Sign-Off** | Accreditation complete | TBD + 15 weeks | Risk assessment (NEW) |
+| Service Go-Live | Service available to all users | TBD + 15 weeks | IAO sign-off |
 
 ---
 
@@ -1322,10 +1596,11 @@ All vendors must meet these to be considered:
 
 | Component | Annual Cost | Notes |
 |-----------|-------------|-------|
-| Managed service fee | £30,000 - £45,000 | Fixed monthly fee covering equipment, consumables, support |
+| Managed service fee | £35,000 - £48,000 | Fixed monthly fee covering equipment, consumables, support |
 | Per-print overages (if applicable) | £0 - £5,000 | If volume exceeds contracted baseline |
 | Premium media (on-demand) | £2,000 - £5,000 | Canvas, specialty materials |
-| **Total Annual Cost** | **£32,000 - £55,000** | |
+| **Security enhancements** | £0 - £2,000 | SIEM integration, penetration testing support (NEW) |
+| **Total Annual Cost** | **£37,000 - £60,000** | |
 
 ### Cost Comparison
 
@@ -1333,9 +1608,9 @@ All vendors must meet these to be considered:
 |-------|--------|--------|--------|--------------|
 | Current outsourced (estimate) | £75,000 | £78,000 | £81,000 | £234,000 |
 | In-house ownership (CapEx + OpEx) | £45,000 | £20,000 | £22,000 | £87,000 |
-| Managed service (proposed) | £45,000 | £45,000 | £45,000 | £135,000 |
+| Managed service (proposed) | £50,000 | £48,000 | £48,000 | £146,000 |
 
-**Note**: Managed service trades higher cost vs in-house ownership for zero CapEx, zero operational burden, and full vendor accountability.
+**Note**: Managed service cost increased slightly from v2.0 to accommodate enhanced security requirements (Cyber Essentials+ suppliers typically command premium, SIEM integration may incur setup costs). Still represents significant savings vs current outsourced approach and avoids CapEx/operational burden of in-house ownership.
 
 ---
 
@@ -1349,6 +1624,7 @@ All vendors must meet these to be considered:
 | [PENDING] | Service Owner (Facilities) | [ ] Approved | [DATE] | |
 | [PENDING] | Enterprise Architect | [ ] Approved | [DATE] | |
 | [PENDING] | Security | [ ] Approved | [DATE] | |
+| [PENDING] | **Information Assurance Owner** | [ ] Approved | [DATE] | (NEW) |
 | [PENDING] | Finance | [ ] Approved | [DATE] | |
 | [PENDING] | Commercial/Procurement | [ ] Approved | [DATE] | |
 
@@ -1369,14 +1645,20 @@ By signing below, stakeholders confirm that requirements are complete, understoo
 
 | Term | Definition |
 |------|------------|
+| **BPSS** | Baseline Personnel Security Standard - minimum vetting for government access |
+| **BIA** | Business Impact Assessment - analysis of impact from service disruption |
 | Delta E | Measure of colour difference; <2 is imperceptible to most observers |
 | DPA | Data Processing Agreement - contract covering GDPR data processor requirements |
 | G-Cloud | UK Government framework agreement for cloud services procurement |
+| **IAO** | Information Assurance Owner - accountable for security accreditation |
+| **IAMM** | Information Assurance Maturity Model - JSP 440 security maturity framework |
 | ICC Profile | International Color Consortium colour profile for accurate colour reproduction |
 | InTune | Microsoft's cloud-based device management platform |
+| **JSP 440** | Joint Service Publication 440 - Defence Information Assurance policy |
 | Large Format | Generally prints wider than A2 (420mm); often 24" (610mm) or wider |
 | MPS | Managed Print Service - outsourced print service with vendor-supplied equipment |
 | OpEx | Operational Expenditure - ongoing service costs (vs capital purchase) |
+| **SIEM** | Security Information and Event Management - centralised security monitoring |
 | SLA | Service Level Agreement - contractual performance commitments |
 | SSO | Single Sign-On - authentication via central identity provider (Azure AD) |
 
@@ -1386,6 +1668,7 @@ By signing below, stakeholders confirm that requirements are complete, understoo
 - Architecture Principle 1 - Cloud-First Endpoint Management
 - Architecture Principle 2 - Zero Trust Security Model
 - Architecture Principle 3A - Copilot+ PC Hardware and AI-Ready Devices
+- **`projects/006-large-format-printer/mod-secure-by-design.md`** - MOD Secure by Design Assessment (ARC-006-SECD-v1.0) (NEW)
 
 ### Appendix C: Media Size Reference
 
@@ -1399,11 +1682,26 @@ By signing below, stakeholders confirm that requirements are complete, understoo
 | 44" roll | 1118mm width | 44" width |
 | 60" roll | 1524mm width | 60" width |
 
+### Appendix D: Security Requirements Traceability (NEW)
+
+| Requirement ID | MOD SbD Assessment Section | Gap Addressed |
+|---------------|---------------------------|---------------|
+| BR-007 | 3.1 Security Accreditation Status | Accreditation not started |
+| NFR-SEC-006 | 7.1 Third-Party Risk Management | Supplier certification verification |
+| NFR-SEC-007 | 3.2 JSP 440 Compliance (Patch Management) | Patch management SLA gap |
+| NFR-SEC-008 | 2.2 Secure by Default | Default credentials, secure configuration |
+| NFR-SEC-009 | 5.4 Vulnerability Management | Penetration testing not specified |
+| NFR-SEC-010 | 8.2 Incident Response | Incident notification SLA gap |
+| NFR-SEC-011 | 9.1 Security Clearances | BPSS verification requirement |
+| NFR-C-004 | 3.2 JSP 440 Compliance | IAMM Level 2 target |
+| INT-005 | 5.5 Security Monitoring and Logging | SIEM integration gap |
+| C-4 | 3.1 / BC-4 | Accreditation timeline conflict |
+
 ---
 
 **Generated by**: ArcKit `/arckit.requirements` command
-**Generated on**: 2026-01-09 14:30 GMT
+**Generated on**: 2026-01-09 16:45 GMT
 **ArcKit Version**: 0.8.2
 **Project**: Large Format Printing Service (Project 006)
 **AI Model**: claude-opus-4-5-20251101
-**Generation Context**: Requirements revised from in-house hardware procurement model to third-party managed service model per user request. Aligned with Architecture Principles document. No stakeholder analysis available - recommend running /arckit.stakeholders for refinement.
+**Generation Context**: Requirements v3.0 updated based on MOD Secure by Design Assessment (ARC-006-SECD-v1.0) findings. Added 6 new security NFRs, 1 new business requirement, 1 new integration requirement, 1 new compliance NFR, 4 new security risks, 1 new conflict resolution. Security weighting in vendor evaluation increased to 20%. Budget adjusted to accommodate enhanced security requirements.
