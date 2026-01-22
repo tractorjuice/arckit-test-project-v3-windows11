@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-22T00:00:00Z",
+  "generated": "2026-01-22T08:35:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v3-windows11",
@@ -25,6 +25,11 @@
         {
           "path": "projects/001-windows-11-migration-intune/requirements.md",
           "title": "Requirements",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/frontend-requirements.md",
+          "title": "Frontend Requirements",
           "category": "Discovery"
         },
         {
@@ -55,6 +60,11 @@
         {
           "path": "projects/001-windows-11-migration-intune/backlog.md",
           "title": "Product Backlog",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/frontend-application-plan.md",
+          "title": "Frontend Application Plan",
           "category": "Planning"
         },
         {
@@ -133,14 +143,14 @@
           "category": "Procurement"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/frontend-requirements.md",
-          "title": "Frontend Requirements",
-          "category": "Discovery"
+          "path": "projects/001-windows-11-migration-intune/procurement/gcloud-requirements.md",
+          "title": "G-Cloud Requirements",
+          "category": "Procurement"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/frontend-application-plan.md",
-          "title": "Frontend Application Plan",
-          "category": "Planning"
+          "path": "projects/001-windows-11-migration-intune/PROJECT-STORY.md",
+          "title": "Project Story",
+          "category": "Reporting"
         }
       ],
       "diagrams": [
