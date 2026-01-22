@@ -1,0 +1,452 @@
+{
+  "generated": "2026-01-22T00:00:00Z",
+  "repository": {
+    "owner": "tractorjuice",
+    "name": "arckit-test-project-v3-windows11",
+    "branch": "main"
+  },
+  "global": [
+    {
+      "path": ".arckit/memory/architecture-principles.md",
+      "title": "Architecture Principles",
+      "category": "Architecture"
+    }
+  ],
+  "projects": [
+    {
+      "id": "001-windows-11-migration-intune",
+      "name": "Windows 11 Migration (Intune)",
+      "documents": [
+        {
+          "path": "projects/001-windows-11-migration-intune/stakeholder-drivers.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/requirements.md",
+          "title": "Requirements",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/research-findings.md",
+          "title": "Research Findings",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/sobc.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/project-plan.md",
+          "title": "Project Plan",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/project-plan-detailed.md",
+          "title": "Project Plan (Detailed)",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/roadmap.md",
+          "title": "Roadmap",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/backlog.md",
+          "title": "Product Backlog",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/hld.md",
+          "title": "High-Level Design",
+          "category": "Architecture"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/data-model.md",
+          "title": "Data Model",
+          "category": "Architecture"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/migration-database-data-model.md",
+          "title": "Migration Database Data Model",
+          "category": "Architecture"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/risk-register.md",
+          "title": "Risk Register",
+          "category": "Governance"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/traceability-matrix.md",
+          "title": "Traceability Matrix",
+          "category": "Governance"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/traceability-matrix-v4.md",
+          "title": "Traceability Matrix v4",
+          "category": "Governance"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/principles-compliance-assessment-2025-11-04.md",
+          "title": "Principles Compliance (2025-11-04)",
+          "category": "Governance"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/principles-compliance-assessment-2026-01-21.md",
+          "title": "Principles Compliance (2026-01-21)",
+          "category": "Governance"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/mod-secure-by-design.md",
+          "title": "MOD Secure by Design",
+          "category": "Compliance"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/dpia.md",
+          "title": "Data Protection Impact Assessment",
+          "category": "Compliance"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/servicenow-design.md",
+          "title": "ServiceNow Design",
+          "category": "Operations"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/servicenow-data-model.md",
+          "title": "ServiceNow Data Model",
+          "category": "Operations"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/sow.md",
+          "title": "Statement of Work",
+          "category": "Procurement"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/sow-frontend.md",
+          "title": "Statement of Work (Frontend)",
+          "category": "Procurement"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/evaluation-criteria.md",
+          "title": "Evaluation Criteria",
+          "category": "Procurement"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/frontend-requirements.md",
+          "title": "Frontend Requirements",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/frontend-application-plan.md",
+          "title": "Frontend Application Plan",
+          "category": "Planning"
+        }
+      ],
+      "diagrams": [
+        {
+          "path": "projects/001-windows-11-migration-intune/diagrams/container-intune-architecture.md",
+          "title": "Container: Intune Architecture"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/diagrams/deployment-azure-production.md",
+          "title": "Deployment: Azure Production"
+        }
+      ],
+      "decisions": [
+        {
+          "path": "projects/001-windows-11-migration-intune/decisions/ADR-001-cloud-native-endpoint-management-platform-selection.md",
+          "title": "ADR-001: Cloud-Native Endpoint Management Platform Selection"
+        }
+      ],
+      "wardley": [
+        {
+          "path": "projects/001-windows-11-migration-intune/wardley-maps/intune-policy-management.md",
+          "title": "Intune Policy Management"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/wardley-maps/procurement-strategy.md",
+          "title": "Procurement Strategy"
+        }
+      ],
+      "vendors": []
+    },
+    {
+      "id": "002-application-packaging-rationalisation",
+      "name": "Application Packaging Rationalisation",
+      "documents": [
+        {
+          "path": "projects/002-application-packaging-rationalisation/requirements.md",
+          "title": "Requirements",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/research-findings.md",
+          "title": "Research Findings",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/research-findings-automation-platforms.md",
+          "title": "Research Findings: Automation Platforms",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/project-plan.md",
+          "title": "Project Plan",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/backlog.md",
+          "title": "Product Backlog",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/data-model.md",
+          "title": "Data Model",
+          "category": "Architecture"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/traceability-matrix.md",
+          "title": "Traceability Matrix",
+          "category": "Governance"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/sow.md",
+          "title": "Statement of Work",
+          "category": "Procurement"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/evaluation-criteria.md",
+          "title": "Evaluation Criteria",
+          "category": "Procurement"
+        }
+      ],
+      "diagrams": [],
+      "decisions": [
+        {
+          "path": "projects/002-application-packaging-rationalisation/decisions/ADR-001-application-packaging-format-strategy.md",
+          "title": "ADR-001: Application Packaging Format Strategy"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/decisions/ADR-002-application-packaging-tool-selection.md",
+          "title": "ADR-002: Application Packaging Tool Selection"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/decisions/ADR-003-migration-automation-platform-selection.md",
+          "title": "ADR-003: Migration Automation Platform Selection"
+        }
+      ],
+      "vendors": []
+    },
+    {
+      "id": "003-peripherals-update-upgrade",
+      "name": "Peripherals Update/Upgrade",
+      "documents": [
+        {
+          "path": "projects/003-peripherals-update-upgrade/stakeholder-drivers.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/requirements.md",
+          "title": "Requirements",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/research-findings-dell.md",
+          "title": "Research Findings: Dell",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/backlog.md",
+          "title": "Product Backlog",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/risk-register.md",
+          "title": "Risk Register",
+          "category": "Governance"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/traceability-matrix.md",
+          "title": "Traceability Matrix",
+          "category": "Governance"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/sow.md",
+          "title": "Statement of Work",
+          "category": "Procurement"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/evaluation-criteria.md",
+          "title": "Evaluation Criteria",
+          "category": "Procurement"
+        }
+      ],
+      "diagrams": [],
+      "decisions": [
+        {
+          "path": "projects/003-peripherals-update-upgrade/adr-001-multi-vendor-peripheral-procurement-strategy.md",
+          "title": "ADR-001: Multi-Vendor Peripheral Procurement Strategy"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/adr-002-built-in-windows-hello-vs-external-webcam-strategy.md",
+          "title": "ADR-002: Built-in Windows Hello vs External Webcam Strategy"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/adr-003-fido2-security-key-standard-selection.md",
+          "title": "ADR-003: FIDO2 Security Key Standard Selection"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/adr-004-tiered-ergonomic-peripheral-distribution-strategy.md",
+          "title": "ADR-004: Tiered Ergonomic Peripheral Distribution Strategy"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/adr-005-user-choice-monitor-configuration-strategy.md",
+          "title": "ADR-005: User Choice Monitor Configuration Strategy"
+        }
+      ],
+      "vendors": []
+    },
+    {
+      "id": "004-conference-facilities-modernization",
+      "name": "Conference Facilities Modernization",
+      "documents": [
+        {
+          "path": "projects/004-conference-facilities-modernization/stakeholder-drivers.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/requirements.md",
+          "title": "Requirements",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/project-plan.md",
+          "title": "Project Plan",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/backlog.md",
+          "title": "Product Backlog",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/risk-register.md",
+          "title": "Risk Register",
+          "category": "Governance"
+        }
+      ],
+      "diagrams": [],
+      "decisions": [
+        {
+          "path": "projects/004-conference-facilities-modernization/decisions/ADR-001-use-microsoft-teams-rooms.md",
+          "title": "ADR-001: Use Microsoft Teams Rooms"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/decisions/ADR-002-deploy-room-analytics-occupancy-sensors.md",
+          "title": "ADR-002: Deploy Room Analytics Occupancy Sensors"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/decisions/ADR-003-network-architecture-teams-rooms.md",
+          "title": "ADR-003: Network Architecture for Teams Rooms"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/decisions/ADR-004-acoustic-treatment-strategy.md",
+          "title": "ADR-004: Acoustic Treatment Strategy"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/decisions/ADR-005-oem-vendor-selection-per-room-size.md",
+          "title": "ADR-005: OEM Vendor Selection Per Room Size"
+        }
+      ],
+      "vendors": []
+    },
+    {
+      "id": "005-cloud-pki",
+      "name": "Cloud PKI",
+      "documents": [
+        {
+          "path": "projects/005-cloud-pki/stakeholder-drivers.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/005-cloud-pki/requirements.md",
+          "title": "Requirements",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/005-cloud-pki/project-plan.md",
+          "title": "Project Plan",
+          "category": "Planning"
+        },
+        {
+          "path": "projects/005-cloud-pki/evaluation-criteria.md",
+          "title": "Evaluation Criteria",
+          "category": "Procurement"
+        }
+      ],
+      "diagrams": [
+        {
+          "path": "projects/005-cloud-pki/diagrams/block-hybrid-pki-components.md",
+          "title": "Block: Hybrid PKI Components"
+        },
+        {
+          "path": "projects/005-cloud-pki/diagrams/container-hybrid-pki.md",
+          "title": "Container: Hybrid PKI"
+        },
+        {
+          "path": "projects/005-cloud-pki/diagrams/deployment-cloud-pki.md",
+          "title": "Deployment: Cloud PKI"
+        }
+      ],
+      "decisions": [
+        {
+          "path": "projects/005-cloud-pki/decisions/ADR-001-use-cloud-pki-service.md",
+          "title": "ADR-001: Use Cloud PKI Service"
+        }
+      ],
+      "vendors": []
+    },
+    {
+      "id": "006-large-format-printer",
+      "name": "Large Format Printer",
+      "documents": [
+        {
+          "path": "projects/006-large-format-printer/requirements.md",
+          "title": "Requirements",
+          "category": "Discovery"
+        },
+        {
+          "path": "projects/006-large-format-printer/mod-secure-by-design.md",
+          "title": "MOD Secure by Design",
+          "category": "Compliance"
+        }
+      ],
+      "diagrams": [],
+      "decisions": [],
+      "vendors": []
+    },
+    {
+      "id": "007-vpn-service-windows11-autopilot",
+      "name": "VPN Service Windows 11 Autopilot",
+      "documents": [
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/requirements.md",
+          "title": "Requirements",
+          "category": "Discovery"
+        }
+      ],
+      "diagrams": [
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/diagrams/container-vpn-architecture.md",
+          "title": "Container: VPN Architecture"
+        }
+      ],
+      "decisions": [],
+      "vendors": []
+    }
+  ]
+}
