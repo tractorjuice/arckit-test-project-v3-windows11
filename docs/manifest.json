@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-24T12:00:00Z",
+  "generated": "2026-01-24T14:30:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v3-windows11",
@@ -234,6 +234,11 @@
           "path": "projects/002-application-packaging-rationalisation/evaluation-criteria.md",
           "title": "Evaluation Criteria",
           "category": "Procurement"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/sobc.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning"
         }
       ],
       "diagrams": [],
@@ -296,6 +301,11 @@
           "path": "projects/003-peripherals-update-upgrade/evaluation-criteria.md",
           "title": "Evaluation Criteria",
           "category": "Procurement"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/sobc.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning"
         }
       ],
       "diagrams": [],
@@ -351,6 +361,11 @@
           "path": "projects/004-conference-facilities-modernization/risk-register.md",
           "title": "Risk Register",
           "category": "Governance"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/sobc.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning"
         }
       ],
       "diagrams": [],
@@ -406,6 +421,11 @@
           "path": "projects/005-cloud-pki/evaluation-criteria.md",
           "title": "Evaluation Criteria",
           "category": "Procurement"
+        },
+        {
+          "path": "projects/005-cloud-pki/sobc.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning"
         }
       ],
       "diagrams": [
@@ -477,6 +497,11 @@
           "path": "projects/007-vpn-service-windows11-autopilot/risk-register.md",
           "title": "Risk Register",
           "category": "Governance"
+        },
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/sobc.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning"
         }
       ],
       "diagrams": [
