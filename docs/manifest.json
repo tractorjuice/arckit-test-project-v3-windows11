@@ -398,6 +398,11 @@
           "category": "Planning"
         },
         {
+          "path": "projects/005-cloud-pki/risk-register.md",
+          "title": "Risk Register",
+          "category": "Governance"
+        },
+        {
           "path": "projects/005-cloud-pki/evaluation-criteria.md",
           "title": "Evaluation Criteria",
           "category": "Procurement"
@@ -440,6 +445,11 @@
           "category": "Discovery"
         },
         {
+          "path": "projects/006-large-format-printer/risk-register.md",
+          "title": "Risk Register",
+          "category": "Governance"
+        },
+        {
           "path": "projects/006-large-format-printer/mod-secure-by-design.md",
           "title": "MOD Secure by Design",
           "category": "Compliance"
@@ -462,6 +472,11 @@
           "path": "projects/007-vpn-service-windows11-autopilot/requirements.md",
           "title": "Requirements",
           "category": "Discovery"
+        },
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/risk-register.md",
+          "title": "Risk Register",
+          "category": "Governance"
         }
       ],
       "diagrams": [
