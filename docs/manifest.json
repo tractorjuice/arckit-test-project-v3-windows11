@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-24T15:00:00Z",
+  "generated": "2026-01-24T15:15:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v3-windows11",
@@ -88,13 +88,8 @@
           "category": "Governance"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/traceability-matrix.md",
-          "title": "Traceability Matrix",
-          "category": "Governance"
-        },
-        {
           "path": "projects/001-windows-11-migration-intune/traceability-matrix-v4.md",
-          "title": "Traceability Matrix v4",
+          "title": "Traceability Matrix",
           "category": "Governance"
         },
         {
