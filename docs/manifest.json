@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-24T14:30:00Z",
+  "generated": "2026-01-24T15:00:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v3-windows11",
@@ -510,7 +510,12 @@
           "title": "Container: VPN Architecture"
         }
       ],
-      "decisions": [],
+      "decisions": [
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/decisions/ADR-001-cisco-anyconnect-vpn-deployment.md",
+          "title": "ADR-001: Cisco AnyConnect VPN Deployment"
+        }
+      ],
       "vendors": []
     }
   ]
