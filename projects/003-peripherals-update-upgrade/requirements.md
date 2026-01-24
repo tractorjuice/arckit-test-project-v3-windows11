@@ -1,12 +1,31 @@
 # Project Requirements: Peripherals Update and Upgrade
 
-**Document Type**: Business and Technical Requirements
-**Project ID**: 003
-**Version**: 2.0
-**Date**: 2025-10-28
-**Status**: DRAFT
-**Owner**: IT Operations Director
-**Stakeholders**: CIO, CFO, CISO, End Users (6,000), Procurement, IT Operations, Facilities
+## Document Control
+
+| Field | Value |
+|-------|-------|
+| **Document ID** | ARC-003-REQ-v3.0 |
+| **Document Type** | Business and Technical Requirements |
+| **Project** | Peripherals Update and Upgrade (Project 003) |
+| **Classification** | OFFICIAL |
+| **Status** | DRAFT |
+| **Version** | 3.0 |
+| **Created Date** | 2025-10-28 |
+| **Last Modified** | 2026-01-24 |
+| **Review Cycle** | Quarterly |
+| **Next Review Date** | 2026-04-24 |
+| **Owner** | IT Operations Director |
+| **Reviewed By** | PENDING |
+| **Approved By** | PENDING |
+| **Distribution** | CIO, CFO, CISO, Procurement, IT Operations, Facilities, End User Representatives |
+
+## Revision History
+
+| Version | Date | Author | Changes | Approved By | Approval Date |
+|---------|------|--------|---------|-------------|---------------|
+| 1.0 | 2025-10-28 | Enterprise Architect | Initial draft - comprehensive requirements for Project 003 Peripherals Update/Upgrade | PENDING | PENDING |
+| 2.0 | 2025-10-28 | Enterprise Architect | Removed external webcams (Project 001 laptops include Windows Hello), added monitor options (dual 24" vs ultrawide 34"), revised budget | PENDING | PENDING |
+| 3.0 | 2026-01-24 | ArcKit AI | Updated to latest template format - enhanced Document Control, Revision History with approval tracking, and generation metadata | PENDING | PENDING |
 
 ---
 
@@ -856,24 +875,6 @@ Windows 11 laptops will feature built-in 1080p+ webcams with infrared sensors fo
 
 ---
 
-### Revised Year 1 Budget (£500K) - RECOMMENDED APPROACH
-
-| Category | Quantity | Unit Cost | Total Cost | Notes |
-|----------|----------|-----------|------------|-------|
-| **Headsets** (3,000 units) | 3,000 | £43 | £129K | 15% volume discount (£50 → £43) |
-| **FIDO2 Security Keys** (500 units) | 500 | £43 | £22K | 15% volume discount (£50 → £43) |
-| **FIDO2 Fingerprint Readers** (900 units) | 900 | £26 | £23K | 15% volume discount (£30 → £26) |
-| **Keyboards & Mice - Ergonomic** (750 kits) | 750 | £85 | £64K | 50% Year 1, 15% discount (£100 → £85) |
-| **Keyboards & Mice - Standard** (2,250 kits) | 2,250 | £43 | £97K | 50% Year 1, 15% discount (£50 → £43) |
-| **E-Learning Development** | 1 | £20K | £20K | User training (peripheral setup, Windows Hello) |
-| **Project Management** | 0.3 FTE × 12 months | £30K | £30K | Project coordination |
-| **Shipping & Logistics** | - | - | £25K | Year 1 peripheral shipment |
-| **Spare Inventory (5%)** | - | - | £18K | 5% buffer for Year 1 peripherals |
-| **Contingency (10%)** | - | - | £42K | 10% contingency (increased for supply chain risk) |
-| **Year 1 Total** | - | - | **£470K** | Within £500K budget ✅ |
-
----
-
 ### Year 2 Budget (£500K) - Keyboards/Mice + Monitors
 
 | Category | Quantity | Unit Cost | Total Cost | Notes |
@@ -924,20 +925,26 @@ Windows 11 laptops will feature built-in 1080p+ webcams with infrared sensors fo
 
 ---
 
-## Approval
+## Validation & Sign-off
 
-### Requirements Review
+### Stakeholder Review
 
-| Reviewer | Role | Status | Date | Comments |
-|----------|------|--------|------|----------|
-| IT Operations Director | Project Sponsor | [ ] Approved | [PENDING] | Budget reconciliation complete (£470K Year 1 + £482K Year 2) |
-| CFO | Budget Owner | [ ] Approved | [PENDING] | 2-year phased budget acceptable, external webcams eliminated (£180K savings) |
-| CISO | Security Owner | [ ] Approved | [PENDING] | Windows Hello + FIDO2 requirements satisfy Zero Trust mandate |
-| Data Protection Officer (DPO) | Privacy/Compliance | [ ] Approved | [PENDING] | GDPR consent workflow and DPIA required before Windows Hello rollout |
-| Procurement Manager | Procurement Lead | [ ] Approved | [PENDING] | 15% volume discount negotiation required, vendor selection timeline acceptable |
-| Enterprise Architect | Technical Oversight | [ ] Approved | [PENDING] | Requirements align with architecture principles (Cloud-First, Zero Trust) |
-| End User Representative | User Advocate | [ ] Approved | [PENDING] | Ergonomic peripheral tiered approach acceptable, monitor choice option appreciated |
-| Project 001 Lead | Dependency Owner | [ ] Approved | [PENDING] | Windows 11 laptops include Windows Hello webcams (1080p IR), Project 001 laptop delivery Week 34 |
+| Stakeholder | Review Date | Comments | Status |
+|-------------|-------------|----------|--------|
+| IT Operations Director | PENDING | | PENDING |
+| CFO | PENDING | | PENDING |
+| CISO | PENDING | | PENDING |
+| CIO | PENDING | | PENDING |
+| Data Protection Officer | PENDING | | PENDING |
+| Enterprise Architect | PENDING | | PENDING |
+
+### Document Approval
+
+| Role | Name | Signature | Date |
+|------|------|-----------|------|
+| Project Sponsor | | | |
+| Budget Owner | | | |
+| Security Owner | | | |
 
 ---
 
@@ -997,9 +1004,8 @@ Windows 11 laptops will feature built-in 1080p+ webcams with infrared sensors fo
 
 ---
 
-**Document History**
-
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2025-10-28 | Enterprise Architect | Initial draft - comprehensive requirements for Project 003 Peripherals Update/Upgrade |
-| 2.0 | 2025-10-28 | Enterprise Architect | UPDATED: Removed external webcams (Project 001 laptops include Windows Hello), added monitor options (dual 24" vs ultrawide 34"), revised budget (£470K Year 1 + £482K Year 2), added monitor choice conflict resolution (C-003) |
+**Generated by**: ArcKit `/arckit.requirements` command
+**Generated on**: 2026-01-24
+**ArcKit Version**: 1.0
+**Project**: Peripherals Update and Upgrade (003)
+**Model**: claude-opus-4-5-20251101
