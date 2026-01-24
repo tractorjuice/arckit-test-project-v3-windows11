@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-23T10:00:00Z",
+  "generated": "2026-01-24T12:00:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v3-windows11",
@@ -15,7 +15,7 @@
   "projects": [
     {
       "id": "001-windows-11-migration-intune",
-      "name": "Windows 11 Migration (Intune)",
+      "name": "001 - Windows 11 Migration (Intune)",
       "documents": [
         {
           "path": "projects/001-windows-11-migration-intune/stakeholder-drivers.md",
@@ -183,8 +183,13 @@
     },
     {
       "id": "002-application-packaging-rationalisation",
-      "name": "Application Packaging Rationalisation",
+      "name": "002 - Application Packaging & Rationalisation",
       "documents": [
+        {
+          "path": "projects/002-application-packaging-rationalisation/stakeholder-drivers.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery"
+        },
         {
           "path": "projects/002-application-packaging-rationalisation/requirements.md",
           "title": "Requirements",
@@ -250,7 +255,7 @@
     },
     {
       "id": "003-peripherals-update-upgrade",
-      "name": "Peripherals Update/Upgrade",
+      "name": "003 - Peripherals Update & Upgrade",
       "documents": [
         {
           "path": "projects/003-peripherals-update-upgrade/stakeholder-drivers.md",
@@ -320,7 +325,7 @@
     },
     {
       "id": "004-conference-facilities-modernization",
-      "name": "Conference Facilities Modernization",
+      "name": "004 - Conference Facilities Modernization",
       "documents": [
         {
           "path": "projects/004-conference-facilities-modernization/stakeholder-drivers.md",
@@ -356,7 +361,7 @@
         },
         {
           "path": "projects/004-conference-facilities-modernization/decisions/ADR-002-deploy-room-analytics-occupancy-sensors.md",
-          "title": "ADR-002: Deploy Room Analytics Occupancy Sensors"
+          "title": "ADR-002: Deploy Room Analytics & Occupancy Sensors"
         },
         {
           "path": "projects/004-conference-facilities-modernization/decisions/ADR-003-network-architecture-teams-rooms.md",
@@ -375,7 +380,7 @@
     },
     {
       "id": "005-cloud-pki",
-      "name": "Cloud PKI",
+      "name": "005 - Hybrid PKI (Cloud PKI)",
       "documents": [
         {
           "path": "projects/005-cloud-pki/stakeholder-drivers.md",
@@ -422,8 +427,13 @@
     },
     {
       "id": "006-large-format-printer",
-      "name": "Large Format Printer",
+      "name": "006 - Large Format Printing Service",
       "documents": [
+        {
+          "path": "projects/006-large-format-printer/stakeholder-drivers.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery"
+        },
         {
           "path": "projects/006-large-format-printer/requirements.md",
           "title": "Requirements",
@@ -441,8 +451,13 @@
     },
     {
       "id": "007-vpn-service-windows11-autopilot",
-      "name": "VPN Service Windows 11 Autopilot",
+      "name": "007 - VPN Service for Windows 11 & Autopilot",
       "documents": [
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/stakeholder-drivers.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery"
+        },
         {
           "path": "projects/007-vpn-service-windows11-autopilot/requirements.md",
           "title": "Requirements",
