@@ -1,23 +1,30 @@
-# Stakeholder Drivers & Goals Analysis: Cloud Public Key Infrastructure (PKI)
+# Stakeholder Drivers & Goals Analysis: Hybrid Public Key Infrastructure (PKI)
 
-## Document Information
+## Document Control
 
 | Field | Value |
 |-------|-------|
-| **Document ID** | ARC-005-STKE-v1.0 |
-| **Project** | Cloud Public Key Infrastructure (PKI) (Project 005) |
-| **Document Type** | Stakeholder Drivers and Goals Analysis |
+| **Document ID** | ARC-005-STKE-v2.0 |
+| **Document Type** | Stakeholder Drivers & Goals Analysis |
+| **Project** | Hybrid Public Key Infrastructure (PKI) (Project 005) |
 | **Classification** | OFFICIAL-SENSITIVE |
-| **Version** | 1.0 |
 | **Status** | DRAFT |
-| **Date** | 2025-11-07 |
+| **Version** | 2.0 |
+| **Created Date** | 2025-11-07 |
+| **Last Modified** | 2026-01-24 |
+| **Review Cycle** | Quarterly |
+| **Next Review Date** | 2026-04-24 |
 | **Owner** | Enterprise Security Architect |
+| **Reviewed By** | PENDING |
+| **Approved By** | PENDING |
+| **Distribution** | Security Team, Infrastructure Team, Architecture Team, Executive Sponsors, Compliance Team |
 
 ## Revision History
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2025-11-07 | ArcKit AI | Initial creation from `/arckit.stakeholders` command |
+| Version | Date | Author | Changes | Approved By | Approval Date |
+|---------|------|--------|---------|-------------|---------------|
+| 1.0 | 2025-11-07 | ArcKit AI | Initial creation from `/arckit.stakeholders` command | PENDING | PENDING |
+| 2.0 | 2026-01-24 | ArcKit AI | Updated to latest template format, restructured document control, added Success Metrics Summary, aligned title with hybrid PKI approach | PENDING | PENDING |
 
 ---
 
@@ -1899,14 +1906,91 @@ Current manual certificate installation (email certificate file to user with com
 
 ### Appendix B: Reference Documents
 
-- [Architecture Principles (Enterprise)](/.arckit/memory/architecture-principles.md) - Enterprise architecture principles including Cloud-First (Principle 1) and Zero Trust Security (Principle 2) aligned with Cloud PKI goals
-- [Project Requirements (Cloud PKI)](/projects/005-cloud-pki/requirements.md) - Comprehensive business and technical requirements for Cloud PKI migration (85 requirements)
+- [Architecture Principles (Enterprise)](/.arckit/memory/architecture-principles.md) - Enterprise architecture principles including Cloud-First (Principle 1) and Zero Trust Security (Principle 2) aligned with hybrid PKI goals
+- [Project Requirements (Hybrid PKI)](/projects/005-cloud-pki/requirements.md) - Comprehensive business and technical requirements for hybrid PKI migration (85 requirements)
 - [Windows 11 Migration Project (Project 001)](/projects/001-windows-11-migration-intune/) - Related project leveraging Cloud PKI for device certificate enrollment (InTune integration)
 
 ---
 
+## Success Metrics Summary
+
+### Key Performance Indicators Dashboard
+
+| Metric Category | KPI | Baseline | Target | Timeline | Owner |
+|-----------------|-----|----------|--------|----------|-------|
+| **Security** | Certificate-Related Outages | 12/year | ≤1/year | 12 months post-deployment | CISO |
+| **Security** | PKI Availability (Cloud) | N/A | 99.9% (Year 1), 99.99% (Year 2+) | Ongoing | Infrastructure Manager |
+| **Security** | PKI Availability (On-Premises) | 95% | 99.5% | 6 months post-deployment | Infrastructure Manager |
+| **Security** | Zero Trust Certificate Coverage | 0% | 100% devices | 18 months | Security Architect |
+| **Operational** | Manual Certificate Management Effort | 40 hrs/month | 12 hrs/month | 12 months post-deployment | Infrastructure Manager |
+| **Operational** | Automated Certificate Issuance | 0% | 80-90% of volume | 12 months post-deployment | Infrastructure Manager |
+| **Operational** | Certificate Visibility | 60% | 100% | 6 months post-deployment | Security Architect |
+| **Financial** | Total Cost of Ownership (3-year) | $1.7M (on-prem refresh) | $980K (hybrid) | 3 years | CFO |
+| **Financial** | TCO Reduction | N/A | 42% reduction | 3 years | CFO |
+| **Financial** | ROI Positive | N/A | 24 months | 24 months | CFO |
+| **User Experience** | Device Enrollment Success Rate | 50% (manual) | 95% (zero-touch) | 12 months | Endpoint Manager |
+| **User Experience** | Helpdesk Certificate Tickets | 300/month | 60/month | 12 months post-deployment | Helpdesk Manager |
+| **Compliance** | SOC 2 Audit Findings | 3 findings | 0 findings | Annual audit | Compliance Officer |
+| **Compliance** | Audit Evidence Collection Time | 5 days | 1 day | 6 months post-deployment | Compliance Officer |
+| **DevOps** | Code Signing Turnaround | 3-5 days | <5 minutes | 6 months | Application Security Lead |
+| **DevOps** | Software Signing Coverage | 20% | 100% | 12 months | DevOps Lead |
+
+### Stakeholder Satisfaction Targets
+
+| Stakeholder | Driver Addressed | Success Criteria | Measurement |
+|-------------|------------------|------------------|-------------|
+| **CISO** | SD-1: Security Risk Elimination | Zero certificate outages, Zero Trust enabled, 99.99% availability | Monthly security dashboard |
+| **Infrastructure Manager** | SD-2: Operational Burden Reduction | 70% effort reduction, zero after-hours firefighting | Monthly operational review |
+| **CFO** | SD-3: Cost Optimization | 42% TCO reduction, positive ROI by Month 24 | Quarterly financial review |
+| **Security Architect** | SD-4: Zero Trust Enablement | 100% device certificate coverage, Azure AD integration | Architecture review |
+| **Compliance Officer** | SD-5: Compliance Achievement | Zero audit findings, automated evidence collection | Annual audit |
+| **Application Security Lead** | SD-6: Software Supply Chain Security | 100% production code signed, <5 min turnaround | Monthly AppSec metrics |
+| **DevOps Lead** | SD-7: CI/CD Acceleration | 3x deployment frequency, automated signing | Sprint velocity tracking |
+| **Network Security Engineer** | SD-8: Passwordless Authentication | 100% VPN/Wi-Fi certificate-based auth | Network access review |
+| **Endpoint Manager** | SD-9: Zero-Touch Enrollment | 95% enrollment success, 5-platform support | Device management dashboard |
+| **Helpdesk Manager** | SD-10: Ticket Reduction | 80% certificate ticket reduction | Monthly helpdesk metrics |
+
+### Leading vs Lagging Indicators
+
+**Leading Indicators** (Early Warning Signals):
+- **Month 1**: Vendor selection complete, architecture design approved
+- **Month 2**: Pilot environment deployed, 100 devices enrolled
+- **Month 3**: Zero issues during pilot phase, team trained
+- **Month 4**: Wave 1 (1,000 devices) deployed successfully
+- **Month 6**: Certificate management effort trending downward (40→25 hrs/month)
+- **Month 9**: Device enrollment success rate >90%
+
+**Lagging Indicators** (Final Validation):
+- **Month 12**: 90% reduction in certificate outages achieved (12→≤1/year)
+- **Month 12**: 70% operational effort reduction validated (40→12 hrs/month)
+- **Month 18**: 100% device certificate coverage (Zero Trust complete)
+- **Month 24**: Positive ROI achieved (cumulative savings exceed investment)
+- **Year 3**: 42% TCO reduction validated vs. on-premises baseline
+
+### Outcome Achievement Summary
+
+| Outcome | Description | Value Created | Status |
+|---------|-------------|---------------|--------|
+| **O-1** | Eliminate Certificate-Related Outages | 12→≤1 incidents/year; 96 hours downtime avoided | Target |
+| **O-2** | Reduce Operational Effort | 40→12 hrs/month; 1.5 FTE freed for strategic work | Target |
+| **O-3** | Achieve TCO Reduction | $1.7M→$980K (42% savings over 3 years) | Target |
+| **O-4** | Enable Zero Trust Architecture | 100% devices with certificate-based authentication | Target |
+| **O-5** | Achieve Compliance Excellence | Zero audit findings, automated evidence collection | Target |
+| **O-6** | Improve User Experience | 95% enrollment success, 80% helpdesk ticket reduction | Target |
+| **O-7** | Accelerate Software Delivery | 3x deployment frequency, 100% code signed | Target |
+
+### Hybrid PKI Architecture Summary
+
+| Component | Certificate Types | Volume | Automation Level | Owner |
+|-----------|------------------|--------|------------------|-------|
+| **Cloud PKI** | Device auth, User auth, Wi-Fi 802.1X, VPN, Dev/Test | 80-90% | Fully automated (SCEP, ACME, API) | Identity & Access Manager |
+| **On-Premises CA** | Production servers, Code signing, Legacy apps, Air-gapped | 10-20% | Semi-automated with approval gates | Infrastructure Manager |
+| **Unified Management** | All certificates | 100% | Centralized inventory and alerting | Security Architect |
+
+---
+
 **Generated by**: ArcKit `/arckit.stakeholders` command
-**Generated on**: 2025-11-07
-**ArcKit Version**: 0.8.3
-**Project**: Cloud Public Key Infrastructure (PKI) (Project 005)
-**AI Model**: claude-sonnet-4-5-20250929
+**Generated on**: 2026-01-24
+**ArcKit Version**: 0.11.0
+**Project**: Hybrid Public Key Infrastructure (PKI) (Project 005)
+**Model**: Claude Opus 4.5

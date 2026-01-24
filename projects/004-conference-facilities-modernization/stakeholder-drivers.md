@@ -1,23 +1,30 @@
 # Stakeholder Drivers & Goals Analysis: Conference Facilities Modernization
 
-## Document Information
+## Document Control
 
 | Field | Value |
 |-------|-------|
-| **Document ID** | ARC-004-STKE-v1.0 |
-| **Project** | Conference Facilities Modernization (Project 004) |
+| **Document ID** | ARC-004-STKE-v2.0 |
 | **Document Type** | Stakeholder Drivers & Goals Analysis |
+| **Project** | Conference Facilities Modernization (Project 004) |
 | **Classification** | OFFICIAL |
-| **Version** | 1.0 |
 | **Status** | DRAFT |
-| **Date** | 2025-11-04 |
+| **Version** | 2.0 |
+| **Created Date** | 2025-11-04 |
+| **Last Modified** | 2026-01-24 |
+| **Review Cycle** | Quarterly |
+| **Next Review Date** | 2026-04-24 |
 | **Owner** | Facilities Manager |
+| **Reviewed By** | PENDING |
+| **Approved By** | PENDING |
+| **Distribution** | Project Team, Architecture Team, Facilities Team, IT Operations, Executive Sponsors |
 
 ## Revision History
 
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 1.0 | 2025-11-04 | ArcKit AI | Initial creation from `/arckit.stakeholders` command |
+| Version | Date | Author | Changes | Approved By | Approval Date |
+|---------|------|--------|---------|-------------|---------------|
+| 1.0 | 2025-11-04 | ArcKit AI | Initial creation from `/arckit.stakeholders` command | PENDING | PENDING |
+| 2.0 | 2026-01-24 | ArcKit AI | Updated to latest template format, restructured document control, added Success Metrics Summary | PENDING | PENDING |
 
 ---
 
@@ -2170,8 +2177,67 @@ LOW POWER                                              HIGH INTEREST
 
 ---
 
+## Success Metrics Summary
+
+### Key Performance Indicators Dashboard
+
+| Metric Category | KPI | Baseline | Target | Timeline | Owner |
+|-----------------|-----|----------|--------|----------|-------|
+| **Financial** | Annual Net Savings | £0 | £251K/year | 12 months post-deployment | CFO |
+| **Financial** | ROI Payback | N/A | 18 months NPV | 18 months | CFO |
+| **Financial** | CapEx Avoidance | N/A | £350K (3-year) | Year 3 | CFO |
+| **Operational** | Support Tickets | 200/month | <40/month | 6 months post-deployment | IT Operations |
+| **Operational** | MTTR | 4 hours | <1 hour | 6 months post-deployment | IT Operations |
+| **Operational** | Remote Resolution Rate | 20% | >80% | 6 months post-deployment | IT Operations |
+| **User Experience** | Meeting Setup Time | 15-20 min | <3 min | 3 months post-deployment | Facilities Manager |
+| **User Experience** | User Satisfaction | 45% | >85% | 6 months post-deployment | Facilities Manager |
+| **User Experience** | Remote Participant Quality | 35% "good/excellent" | >95% "good/excellent" | 9 months post-deployment | Facilities Manager |
+| **Space Utilization** | Room Utilization Rate | 50% | 65% | 12 months post-deployment | Facilities Manager |
+| **Space Utilization** | No-Show Rate | 30% | <10% | 6 months post-deployment | Facilities Manager |
+| **Deployment** | Rooms Deployed | 0 | 50 rooms | 26 weeks | Facilities Manager |
+| **Deployment** | Budget Variance | N/A | <5% (±£36K) | Week 26 | CFO |
+
+### Stakeholder Satisfaction Targets
+
+| Stakeholder | Driver Addressed | Success Criteria | Measurement |
+|-------------|------------------|------------------|-------------|
+| **CIO** | SD-1: Hybrid Work Enablement | Strategic objective achieved, 95% remote quality, 6-month deployment | Quarterly Board reporting |
+| **CFO** | SD-2: Cost Reduction & ROI | £251K/year savings, 18-month payback, budget <£750K | Monthly financial review |
+| **Facilities Manager** | SD-3: Operational Excellence | 85% user satisfaction, 65% utilization, <40 tickets/month | Monthly KPI dashboard |
+| **IT Operations** | SD-4: Support Reduction | 80% ticket reduction, 80% remote resolution, 1.2 FTE freed | Weekly ticket trend analysis |
+| **End Users** | SD-9: Ease of Use | One-touch join, wireless presentation, consistent experience | Quarterly satisfaction survey |
+| **Executive Assistants** | SD-10: Boardroom Quality | Professional boardroom experience, wireless presentation works | Post-deployment walkthrough |
+
+### Leading vs Lagging Indicators
+
+**Leading Indicators** (Early Warning Signals):
+- Week 4: Pilot phase acoustic testing meets MOS >4.0
+- Month 2: Support ticket trend declining (200 → 150)
+- Month 3: User survey shows satisfaction trending upward (45% → 60%)
+- Month 4: Remote participant quality improving (35% → 70%)
+- Month 5: Check-in adoption rate >60%
+
+**Lagging Indicators** (Final Validation):
+- Month 9: 95% remote participant satisfaction achieved
+- Month 12: £251K annual savings validated by Finance
+- Month 12: 85% user satisfaction sustained
+- Month 12: 65% room utilization achieved
+- Month 18: NPV payback achieved, ROI validated by independent audit
+
+### Outcome Achievement Summary
+
+| Outcome | Description | Value Created | Status |
+|---------|-------------|---------------|--------|
+| **O-1** | £251K Annual Net Savings | £200K productivity + £120K support - £69K OpEx | Target |
+| **O-2** | 85% User Satisfaction | From 45% baseline; 89% improvement | Target |
+| **O-3** | 95% Remote Participant Quality | From 35% baseline; 171% improvement | Target |
+| **O-4** | 65% Room Utilization | From 50% baseline; £350K CapEx avoidance | Target |
+| **O-5** | Zero Major Delays/Overruns | 6-month timeline, <5% budget variance | Target |
+
+---
+
 **Generated by**: ArcKit `/arckit.stakeholders` command
-**Generated on**: 2025-11-04
-**ArcKit Version**: 0.6.0
+**Generated on**: 2026-01-24
+**ArcKit Version**: 0.11.0
 **Project**: Conference Facilities Modernization (Project 004)
-**AI Model**: claude-sonnet-4-5-20250929
+**Model**: Claude Opus 4.5
