@@ -104,6 +104,7 @@
             background: white;
             border-bottom: 1px solid var(--border-color);
             flex-shrink: 0;
+            position: relative;
         }
 
         .app-search-input {
@@ -739,7 +740,7 @@
             <div class="app-sidebar-header">
                 <h2>Documents</h2>
                 <button class="app-sidebar-toggle" id="sidebar-toggle" aria-label="Collapse sidebar" title="Collapse sidebar (Ctrl+B)">
-                    ◀
+                    &#9664;
                 </button>
             </div>
             <div class="app-search" id="search-container">
@@ -759,7 +760,7 @@
         <div class="app-content-wrapper">
             <!-- Sidebar expand button -->
             <button class="app-sidebar-expand" id="sidebar-expand" aria-label="Expand sidebar">
-                ▶
+                &#9654;
             </button>
 
             <!-- Table of Contents (Left Side) -->
@@ -968,13 +969,13 @@
                         });
                     }
 
-                    if (project.wardley) {
-                        project.wardley.forEach(doc => {
+                    if (project.wardleyMaps) {
+                        project.wardleyMaps.forEach(doc => {
                             allDocuments.push({
                                 ...doc,
                                 project: projectName,
                                 category: 'Wardley Maps',
-                                searchText: `${doc.title} wardley map ${projectName}`.toLowerCase()
+                                searchText: `${doc.title} wardley map strategy ${projectName}`.toLowerCase()
                             });
                         });
                     }
@@ -1223,18 +1224,18 @@
                 });
             }
 
-            // Decisions (ADRs)
-            if (project.decisions && project.decisions.length > 0) {
-                listHtml += `<li class="app-nav-category">Decisions</li>`;
-                project.decisions.forEach(doc => {
+            // Wardley Maps
+            if (project.wardleyMaps && project.wardleyMaps.length > 0) {
+                listHtml += `<li class="app-nav-category">Wardley Maps</li>`;
+                project.wardleyMaps.forEach(doc => {
                     listHtml += `<li><a href="#${doc.path}" data-path="${doc.path}">${doc.title}</a></li>`;
                 });
             }
 
-            // Wardley Maps
-            if (project.wardley && project.wardley.length > 0) {
-                listHtml += `<li class="app-nav-category">Wardley Maps</li>`;
-                project.wardley.forEach(doc => {
+            // Decisions (ADRs)
+            if (project.decisions && project.decisions.length > 0) {
+                listHtml += `<li class="app-nav-category">Decisions</li>`;
+                project.decisions.forEach(doc => {
                     listHtml += `<li><a href="#${doc.path}" data-path="${doc.path}">${doc.title}</a></li>`;
                 });
             }
@@ -1411,16 +1412,16 @@
                         `Generated: ${date.toLocaleDateString()}`;
                 }
 
+                // Build search index
+                buildSearchIndex(manifest);
+
                 // Update header stats
-                const totalDocs = allDocuments.length || countDocuments(manifest);
+                const totalDocs = allDocuments.length;
                 const projectCount = manifest.projects ? manifest.projects.length : 0;
                 document.getElementById('header-stats').innerHTML = `
                     <span class="app-stat"><span class="app-stat-value">${totalDocs}</span> documents</span>
                     <span class="app-stat"><span class="app-stat-value">${projectCount}</span> projects</span>
                 `;
-
-                // Build search index
-                buildSearchIndex(manifest);
 
                 // Build navigation
                 buildNavigation(manifest);
@@ -1434,13 +1435,22 @@
                 // Setup keyboard shortcuts
                 setupKeyboardShortcuts();
 
-                // Handle initial hash
+                // Handle initial hash or load default document
                 if (window.location.hash) {
                     const path = window.location.hash.slice(1);
                     loadDocument(path);
 
                     // Mark as active
                     const link = document.querySelector(`a[data-path="${path}"]`);
+                    if (link) link.classList.add('active');
+                } else if (manifest.defaultDocument) {
+                    // Load default document (Architecture Principles)
+                    const defaultPath = manifest.defaultDocument;
+                    window.location.hash = defaultPath;
+                    loadDocument(defaultPath);
+
+                    // Mark as active
+                    const link = document.querySelector(`a[data-path="${defaultPath}"]`);
                     if (link) link.classList.add('active');
                 }
 
@@ -1451,25 +1461,6 @@
                     </div>
                 `;
             }
-        }
-
-        function countDocuments(manifest) {
-            let count = 0;
-            if (manifest.global) count += manifest.global.length;
-            if (manifest.projects) {
-                manifest.projects.forEach(p => {
-                    if (p.documents) count += p.documents.length;
-                    if (p.diagrams) count += p.diagrams.length;
-                    if (p.decisions) count += p.decisions.length;
-                    if (p.wardley) count += p.wardley.length;
-                    if (p.vendors) {
-                        p.vendors.forEach(v => {
-                            if (v.documents) count += v.documents.length;
-                        });
-                    }
-                });
-            }
-            return count;
         }
 
         // Mobile toggle

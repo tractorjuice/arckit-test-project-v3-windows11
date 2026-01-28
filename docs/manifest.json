@@ -1,516 +1,529 @@
 {
-  "generated": "2026-01-25T10:00:00Z",
+  "generated": "2026-01-28T10:30:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v3-windows11",
     "branch": "main"
   },
+  "defaultDocument": "projects/000-global/ARC-000-PRIN-v1.0.md",
   "global": [
     {
-      "path": ".arckit/memory/architecture-principles.md",
+      "path": "projects/000-global/ARC-000-PRIN-v1.0.md",
       "title": "Architecture Principles",
-      "category": "Architecture"
+      "category": "Architecture",
+      "documentId": "ARC-000-PRIN-v1.0",
+      "isDefault": true
     }
   ],
   "projects": [
     {
       "id": "001-windows-11-migration-intune",
-      "name": "001 - Windows 11 Migration (Intune)",
+      "name": "Windows 11 Migration with InTune",
       "documents": [
         {
-          "path": "projects/001-windows-11-migration-intune/stakeholder-drivers.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/requirements.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-REQ-v1.0.md",
           "title": "Requirements",
-          "category": "Discovery"
+          "category": "Discovery",
+          "documentId": "ARC-001-REQ-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/frontend-requirements.md",
-          "title": "Frontend Requirements",
-          "category": "Discovery"
+          "path": "projects/001-windows-11-migration-intune/ARC-001-STKE-v1.0.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery",
+          "documentId": "ARC-001-STKE-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/research-findings.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-RSCH-v1.0.md",
           "title": "Research Findings",
-          "category": "Discovery"
+          "category": "Discovery",
+          "documentId": "ARC-001-RSCH-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/sobc.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-SOBC-v1.0.md",
           "title": "Strategic Outline Business Case",
-          "category": "Planning"
+          "category": "Planning",
+          "documentId": "ARC-001-SOBC-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/project-plan.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-PLAN-v1.0.md",
           "title": "Project Plan",
-          "category": "Planning"
+          "category": "Planning",
+          "documentId": "ARC-001-PLAN-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/project-plan-detailed.md",
-          "title": "Project Plan (Detailed)",
-          "category": "Planning"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/roadmap.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-ROADMAP-v1.0.md",
           "title": "Roadmap",
-          "category": "Planning"
+          "category": "Planning",
+          "documentId": "ARC-001-ROADMAP-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/backlog.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-BLOG-v1.0.md",
           "title": "Product Backlog",
-          "category": "Planning"
+          "category": "Planning",
+          "documentId": "ARC-001-BLOG-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/frontend-application-plan.md",
-          "title": "Frontend Application Plan",
-          "category": "Planning"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/hld.md",
-          "title": "High-Level Design",
-          "category": "Architecture"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/data-model.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-DATA-v1.0.md",
           "title": "Data Model",
-          "category": "Architecture"
+          "category": "Architecture",
+          "documentId": "ARC-001-DATA-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/migration-database-data-model.md",
-          "title": "Migration Database Data Model",
-          "category": "Architecture"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/risk-register.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-RISK-v1.0.md",
           "title": "Risk Register",
-          "category": "Governance"
+          "category": "Governance",
+          "documentId": "ARC-001-RISK-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/traceability-matrix-v4.md",
-          "title": "Traceability Matrix",
-          "category": "Governance"
+          "path": "projects/001-windows-11-migration-intune/ARC-001-PRIN-COMP-v1.0.md",
+          "title": "Principles Compliance",
+          "category": "Governance",
+          "documentId": "ARC-001-PRIN-COMP-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/principles-compliance-assessment-2025-11-04.md",
-          "title": "Principles Compliance (2025-11-04)",
-          "category": "Governance"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/principles-compliance-assessment-2026-01-21.md",
-          "title": "Principles Compliance (2026-01-21)",
-          "category": "Governance"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/mod-secure-by-design.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-SECD-MOD-v1.0.md",
           "title": "MOD Secure by Design",
-          "category": "Compliance"
+          "category": "Compliance",
+          "documentId": "ARC-001-SECD-MOD-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/dpia.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-DPIA-v1.0.md",
           "title": "Data Protection Impact Assessment",
-          "category": "Compliance"
+          "category": "Compliance",
+          "documentId": "ARC-001-DPIA-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/servicenow-design.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-SNOW-v1.0.md",
           "title": "ServiceNow Design",
-          "category": "Operations"
+          "category": "Operations",
+          "documentId": "ARC-001-SNOW-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/servicenow-data-model.md",
-          "title": "ServiceNow Data Model",
-          "category": "Operations"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/sow.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-SOW-v1.0.md",
           "title": "Statement of Work",
-          "category": "Procurement"
+          "category": "Procurement",
+          "documentId": "ARC-001-SOW-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/sow-frontend.md",
-          "title": "Statement of Work (Frontend)",
-          "category": "Procurement"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/evaluation-criteria.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-EVAL-v1.0.md",
           "title": "Evaluation Criteria",
-          "category": "Procurement"
+          "category": "Procurement",
+          "documentId": "ARC-001-EVAL-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/procurement/gcloud-requirements.md",
-          "title": "G-Cloud Requirements",
-          "category": "Procurement"
+          "path": "projects/001-windows-11-migration-intune/ARC-001-GCLD-v1.0.md",
+          "title": "G-Cloud Search",
+          "category": "Procurement",
+          "documentId": "ARC-001-GCLD-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/PROJECT-STORY.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-STORY-v1.0.md",
           "title": "Project Story",
-          "category": "Reporting"
+          "category": "Other",
+          "documentId": "ARC-001-STORY-v1.0"
         }
       ],
       "diagrams": [
         {
-          "path": "projects/001-windows-11-migration-intune/diagrams/container-intune-architecture.md",
-          "title": "Container: Intune Architecture"
+          "path": "projects/001-windows-11-migration-intune/diagrams/ARC-001-DIAG-001-v1.0.md",
+          "title": "C4 Container: InTune Architecture",
+          "documentId": "ARC-001-DIAG-001-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/diagrams/deployment-azure-production.md",
-          "title": "Deployment: Azure Production"
+          "path": "projects/001-windows-11-migration-intune/diagrams/ARC-001-DIAG-002-v1.0.md",
+          "title": "Deployment: Azure Infrastructure",
+          "documentId": "ARC-001-DIAG-002-v1.0"
         }
       ],
       "decisions": [
         {
-          "path": "projects/001-windows-11-migration-intune/decisions/ADR-001-cloud-native-endpoint-management-platform-selection.md",
-          "title": "ADR-001: Cloud-Native Endpoint Management Platform Selection"
+          "path": "projects/001-windows-11-migration-intune/decisions/ARC-001-ADR-001-v1.0.md",
+          "title": "ADR-001: Cloud-Native Endpoint Management Platform",
+          "documentId": "ARC-001-ADR-001-v1.0"
         }
       ],
-      "wardley": [
+      "wardleyMaps": [
         {
-          "path": "projects/001-windows-11-migration-intune/wardley-maps/intune-policy-management.md",
-          "title": "Intune Policy Management"
+          "path": "projects/001-windows-11-migration-intune/wardley-maps/ARC-001-WARD-001-v1.0.md",
+          "title": "InTune Policy Management",
+          "documentId": "ARC-001-WARD-001-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/wardley-maps/procurement-strategy.md",
-          "title": "Procurement Strategy"
+          "path": "projects/001-windows-11-migration-intune/wardley-maps/ARC-001-WARD-002-v1.0.md",
+          "title": "Procurement Strategy",
+          "documentId": "ARC-001-WARD-002-v1.0"
         }
       ],
       "vendors": []
     },
     {
       "id": "002-application-packaging-rationalisation",
-      "name": "002 - Application Packaging & Rationalisation",
+      "name": "Application Packaging Rationalisation",
       "documents": [
         {
-          "path": "projects/002-application-packaging-rationalisation/stakeholder-drivers.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery"
-        },
-        {
-          "path": "projects/002-application-packaging-rationalisation/requirements.md",
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-REQ-v1.0.md",
           "title": "Requirements",
-          "category": "Discovery"
+          "category": "Discovery",
+          "documentId": "ARC-002-REQ-v1.0"
         },
         {
-          "path": "projects/002-application-packaging-rationalisation/research-findings.md",
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-STKE-v1.0.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery",
+          "documentId": "ARC-002-STKE-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-RSCH-v1.0.md",
           "title": "Research Findings",
-          "category": "Discovery"
+          "category": "Discovery",
+          "documentId": "ARC-002-RSCH-v1.0"
         },
         {
-          "path": "projects/002-application-packaging-rationalisation/research-findings-automation-platforms.md",
-          "title": "Research Findings: Automation Platforms",
-          "category": "Discovery"
-        },
-        {
-          "path": "projects/002-application-packaging-rationalisation/project-plan.md",
-          "title": "Project Plan",
-          "category": "Planning"
-        },
-        {
-          "path": "projects/002-application-packaging-rationalisation/backlog.md",
-          "title": "Product Backlog",
-          "category": "Planning"
-        },
-        {
-          "path": "projects/002-application-packaging-rationalisation/data-model.md",
-          "title": "Data Model",
-          "category": "Architecture"
-        },
-        {
-          "path": "projects/002-application-packaging-rationalisation/traceability-matrix.md",
-          "title": "Traceability Matrix",
-          "category": "Governance"
-        },
-        {
-          "path": "projects/002-application-packaging-rationalisation/sow.md",
-          "title": "Statement of Work",
-          "category": "Procurement"
-        },
-        {
-          "path": "projects/002-application-packaging-rationalisation/evaluation-criteria.md",
-          "title": "Evaluation Criteria",
-          "category": "Procurement"
-        },
-        {
-          "path": "projects/002-application-packaging-rationalisation/sobc.md",
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-SOBC-v1.0.md",
           "title": "Strategic Outline Business Case",
-          "category": "Planning"
+          "category": "Planning",
+          "documentId": "ARC-002-SOBC-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-PLAN-v1.0.md",
+          "title": "Project Plan",
+          "category": "Planning",
+          "documentId": "ARC-002-PLAN-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-BLOG-v1.0.md",
+          "title": "Product Backlog",
+          "category": "Planning",
+          "documentId": "ARC-002-BLOG-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-DATA-v1.0.md",
+          "title": "Data Model",
+          "category": "Architecture",
+          "documentId": "ARC-002-DATA-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-RISK-v1.0.md",
+          "title": "Risk Register",
+          "category": "Governance",
+          "documentId": "ARC-002-RISK-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-TRAC-v1.0.md",
+          "title": "Traceability Matrix",
+          "category": "Governance",
+          "documentId": "ARC-002-TRAC-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-SOW-v1.0.md",
+          "title": "Statement of Work",
+          "category": "Procurement",
+          "documentId": "ARC-002-SOW-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-EVAL-v1.0.md",
+          "title": "Evaluation Criteria",
+          "category": "Procurement",
+          "documentId": "ARC-002-EVAL-v1.0"
         }
       ],
       "diagrams": [],
       "decisions": [
         {
-          "path": "projects/002-application-packaging-rationalisation/decisions/ADR-001-application-packaging-format-strategy.md",
-          "title": "ADR-001: Application Packaging Format Strategy"
+          "path": "projects/002-application-packaging-rationalisation/decisions/ARC-002-ADR-001-v1.0.md",
+          "title": "ADR-001: Application Packaging Format Strategy",
+          "documentId": "ARC-002-ADR-001-v1.0"
         },
         {
-          "path": "projects/002-application-packaging-rationalisation/decisions/ADR-002-application-packaging-tool-selection.md",
-          "title": "ADR-002: Application Packaging Tool Selection"
+          "path": "projects/002-application-packaging-rationalisation/decisions/ARC-002-ADR-002-v1.0.md",
+          "title": "ADR-002: Application Packaging Tool Selection",
+          "documentId": "ARC-002-ADR-002-v1.0"
         },
         {
-          "path": "projects/002-application-packaging-rationalisation/decisions/ADR-003-migration-automation-platform-selection.md",
-          "title": "ADR-003: Migration Automation Platform Selection"
+          "path": "projects/002-application-packaging-rationalisation/decisions/ARC-002-ADR-003-v1.0.md",
+          "title": "ADR-003: Migration Automation Platform Selection",
+          "documentId": "ARC-002-ADR-003-v1.0"
         }
       ],
+      "wardleyMaps": [],
       "vendors": []
     },
     {
       "id": "003-peripherals-update-upgrade",
-      "name": "003 - Peripherals Update & Upgrade",
+      "name": "Peripherals Update/Upgrade",
       "documents": [
         {
-          "path": "projects/003-peripherals-update-upgrade/stakeholder-drivers.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery"
-        },
-        {
-          "path": "projects/003-peripherals-update-upgrade/requirements.md",
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-REQ-v1.0.md",
           "title": "Requirements",
-          "category": "Discovery"
+          "category": "Discovery",
+          "documentId": "ARC-003-REQ-v1.0"
         },
         {
-          "path": "projects/003-peripherals-update-upgrade/research-findings-dell.md",
-          "title": "Research Findings: Dell",
-          "category": "Discovery"
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-STKE-v1.0.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery",
+          "documentId": "ARC-003-STKE-v1.0"
         },
         {
-          "path": "projects/003-peripherals-update-upgrade/backlog.md",
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-SOBC-v1.0.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning",
+          "documentId": "ARC-003-SOBC-v1.0"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-BLOG-v1.0.md",
           "title": "Product Backlog",
-          "category": "Planning"
+          "category": "Planning",
+          "documentId": "ARC-003-BLOG-v1.0"
         },
         {
-          "path": "projects/003-peripherals-update-upgrade/risk-register.md",
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-RISK-v1.0.md",
           "title": "Risk Register",
-          "category": "Governance"
+          "category": "Governance",
+          "documentId": "ARC-003-RISK-v1.0"
         },
         {
-          "path": "projects/003-peripherals-update-upgrade/traceability-matrix.md",
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-TRAC-v1.0.md",
           "title": "Traceability Matrix",
-          "category": "Governance"
+          "category": "Governance",
+          "documentId": "ARC-003-TRAC-v1.0"
         },
         {
-          "path": "projects/003-peripherals-update-upgrade/sow.md",
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-SOW-v1.0.md",
           "title": "Statement of Work",
-          "category": "Procurement"
+          "category": "Procurement",
+          "documentId": "ARC-003-SOW-v1.0"
         },
         {
-          "path": "projects/003-peripherals-update-upgrade/evaluation-criteria.md",
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-EVAL-v1.0.md",
           "title": "Evaluation Criteria",
-          "category": "Procurement"
-        },
-        {
-          "path": "projects/003-peripherals-update-upgrade/sobc.md",
-          "title": "Strategic Outline Business Case",
-          "category": "Planning"
-        }
-      ],
-      "diagrams": [],
-      "decisions": [
-        {
-          "path": "projects/003-peripherals-update-upgrade/adr-001-multi-vendor-peripheral-procurement-strategy.md",
-          "title": "ADR-001: Multi-Vendor Peripheral Procurement Strategy"
-        },
-        {
-          "path": "projects/003-peripherals-update-upgrade/adr-002-built-in-windows-hello-vs-external-webcam-strategy.md",
-          "title": "ADR-002: Built-in Windows Hello vs External Webcam Strategy"
-        },
-        {
-          "path": "projects/003-peripherals-update-upgrade/adr-003-fido2-security-key-standard-selection.md",
-          "title": "ADR-003: FIDO2 Security Key Standard Selection"
-        },
-        {
-          "path": "projects/003-peripherals-update-upgrade/adr-004-tiered-ergonomic-peripheral-distribution-strategy.md",
-          "title": "ADR-004: Tiered Ergonomic Peripheral Distribution Strategy"
-        },
-        {
-          "path": "projects/003-peripherals-update-upgrade/adr-005-user-choice-monitor-configuration-strategy.md",
-          "title": "ADR-005: User Choice Monitor Configuration Strategy"
-        }
-      ],
-      "vendors": []
-    },
-    {
-      "id": "004-conference-facilities-modernization",
-      "name": "004 - Conference Facilities Modernization",
-      "documents": [
-        {
-          "path": "projects/004-conference-facilities-modernization/stakeholder-drivers.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery"
-        },
-        {
-          "path": "projects/004-conference-facilities-modernization/requirements.md",
-          "title": "Requirements",
-          "category": "Discovery"
-        },
-        {
-          "path": "projects/004-conference-facilities-modernization/project-plan.md",
-          "title": "Project Plan",
-          "category": "Planning"
-        },
-        {
-          "path": "projects/004-conference-facilities-modernization/backlog.md",
-          "title": "Product Backlog",
-          "category": "Planning"
-        },
-        {
-          "path": "projects/004-conference-facilities-modernization/risk-register.md",
-          "title": "Risk Register",
-          "category": "Governance"
-        },
-        {
-          "path": "projects/004-conference-facilities-modernization/sobc.md",
-          "title": "Strategic Outline Business Case",
-          "category": "Planning"
-        }
-      ],
-      "diagrams": [],
-      "decisions": [
-        {
-          "path": "projects/004-conference-facilities-modernization/decisions/ADR-001-use-microsoft-teams-rooms.md",
-          "title": "ADR-001: Use Microsoft Teams Rooms"
-        },
-        {
-          "path": "projects/004-conference-facilities-modernization/decisions/ADR-002-deploy-room-analytics-occupancy-sensors.md",
-          "title": "ADR-002: Deploy Room Analytics & Occupancy Sensors"
-        },
-        {
-          "path": "projects/004-conference-facilities-modernization/decisions/ADR-003-network-architecture-teams-rooms.md",
-          "title": "ADR-003: Network Architecture for Teams Rooms"
-        },
-        {
-          "path": "projects/004-conference-facilities-modernization/decisions/ADR-004-acoustic-treatment-strategy.md",
-          "title": "ADR-004: Acoustic Treatment Strategy"
-        },
-        {
-          "path": "projects/004-conference-facilities-modernization/decisions/ADR-005-oem-vendor-selection-per-room-size.md",
-          "title": "ADR-005: OEM Vendor Selection Per Room Size"
-        }
-      ],
-      "vendors": []
-    },
-    {
-      "id": "005-cloud-pki",
-      "name": "005 - Hybrid PKI (Cloud PKI)",
-      "documents": [
-        {
-          "path": "projects/005-cloud-pki/stakeholder-drivers.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery"
-        },
-        {
-          "path": "projects/005-cloud-pki/requirements.md",
-          "title": "Requirements",
-          "category": "Discovery"
-        },
-        {
-          "path": "projects/005-cloud-pki/project-plan.md",
-          "title": "Project Plan",
-          "category": "Planning"
-        },
-        {
-          "path": "projects/005-cloud-pki/risk-register.md",
-          "title": "Risk Register",
-          "category": "Governance"
-        },
-        {
-          "path": "projects/005-cloud-pki/evaluation-criteria.md",
-          "title": "Evaluation Criteria",
-          "category": "Procurement"
-        },
-        {
-          "path": "projects/005-cloud-pki/sobc.md",
-          "title": "Strategic Outline Business Case",
-          "category": "Planning"
-        }
-      ],
-      "diagrams": [
-        {
-          "path": "projects/005-cloud-pki/diagrams/block-hybrid-pki-components.md",
-          "title": "Block: Hybrid PKI Components"
-        },
-        {
-          "path": "projects/005-cloud-pki/diagrams/container-hybrid-pki.md",
-          "title": "Container: Hybrid PKI"
-        },
-        {
-          "path": "projects/005-cloud-pki/diagrams/deployment-cloud-pki.md",
-          "title": "Deployment: Cloud PKI"
-        }
-      ],
-      "decisions": [
-        {
-          "path": "projects/005-cloud-pki/decisions/ADR-001-use-cloud-pki-service.md",
-          "title": "ADR-001: Use Cloud PKI Service"
-        }
-      ],
-      "vendors": []
-    },
-    {
-      "id": "006-large-format-printer",
-      "name": "006 - Large Format Printing Service",
-      "documents": [
-        {
-          "path": "projects/006-large-format-printer/stakeholder-drivers.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery"
-        },
-        {
-          "path": "projects/006-large-format-printer/requirements.md",
-          "title": "Requirements",
-          "category": "Discovery"
-        },
-        {
-          "path": "projects/006-large-format-printer/risk-register.md",
-          "title": "Risk Register",
-          "category": "Governance"
-        },
-        {
-          "path": "projects/006-large-format-printer/mod-secure-by-design.md",
-          "title": "MOD Secure by Design",
-          "category": "Compliance"
+          "category": "Procurement",
+          "documentId": "ARC-003-EVAL-v1.0"
         }
       ],
       "diagrams": [],
       "decisions": [],
+      "wardleyMaps": [],
       "vendors": []
     },
     {
-      "id": "007-vpn-service-windows11-autopilot",
-      "name": "007 - VPN Service for Windows 11 & Autopilot",
+      "id": "004-conference-facilities-modernization",
+      "name": "Conference Facilities Modernization",
       "documents": [
         {
-          "path": "projects/007-vpn-service-windows11-autopilot/stakeholder-drivers.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery"
-        },
-        {
-          "path": "projects/007-vpn-service-windows11-autopilot/requirements.md",
+          "path": "projects/004-conference-facilities-modernization/ARC-004-REQ-v1.0.md",
           "title": "Requirements",
-          "category": "Discovery"
+          "category": "Discovery",
+          "documentId": "ARC-004-REQ-v1.0"
         },
         {
-          "path": "projects/007-vpn-service-windows11-autopilot/risk-register.md",
-          "title": "Risk Register",
-          "category": "Governance"
+          "path": "projects/004-conference-facilities-modernization/ARC-004-STKE-v1.0.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery",
+          "documentId": "ARC-004-STKE-v1.0"
         },
         {
-          "path": "projects/007-vpn-service-windows11-autopilot/sobc.md",
+          "path": "projects/004-conference-facilities-modernization/ARC-004-SOBC-v1.0.md",
           "title": "Strategic Outline Business Case",
-          "category": "Planning"
+          "category": "Planning",
+          "documentId": "ARC-004-SOBC-v1.0"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/ARC-004-PLAN-v1.0.md",
+          "title": "Project Plan",
+          "category": "Planning",
+          "documentId": "ARC-004-PLAN-v1.0"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/ARC-004-BLOG-v1.0.md",
+          "title": "Product Backlog",
+          "category": "Planning",
+          "documentId": "ARC-004-BLOG-v1.0"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/ARC-004-RISK-v1.0.md",
+          "title": "Risk Register",
+          "category": "Governance",
+          "documentId": "ARC-004-RISK-v1.0"
+        }
+      ],
+      "diagrams": [],
+      "decisions": [
+        {
+          "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-001-v1.0.md",
+          "title": "ADR-001: Use Microsoft Teams Rooms",
+          "documentId": "ARC-004-ADR-001-v1.0"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-002-v1.0.md",
+          "title": "ADR-002: Room Analytics and Occupancy Sensors",
+          "documentId": "ARC-004-ADR-002-v1.0"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-003-v1.0.md",
+          "title": "ADR-003: Network Architecture for Teams Rooms",
+          "documentId": "ARC-004-ADR-003-v1.0"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-004-v1.0.md",
+          "title": "ADR-004: Acoustic Treatment Strategy",
+          "documentId": "ARC-004-ADR-004-v1.0"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-005-v1.0.md",
+          "title": "ADR-005: OEM Vendor Selection by Room Size",
+          "documentId": "ARC-004-ADR-005-v1.0"
+        }
+      ],
+      "wardleyMaps": [],
+      "vendors": []
+    },
+    {
+      "id": "005-cloud-pki",
+      "name": "Cloud PKI",
+      "documents": [
+        {
+          "path": "projects/005-cloud-pki/ARC-005-REQ-v1.0.md",
+          "title": "Requirements",
+          "category": "Discovery",
+          "documentId": "ARC-005-REQ-v1.0"
+        },
+        {
+          "path": "projects/005-cloud-pki/ARC-005-STKE-v1.0.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery",
+          "documentId": "ARC-005-STKE-v1.0"
+        },
+        {
+          "path": "projects/005-cloud-pki/ARC-005-SOBC-v1.0.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning",
+          "documentId": "ARC-005-SOBC-v1.0"
+        },
+        {
+          "path": "projects/005-cloud-pki/ARC-005-PLAN-v1.0.md",
+          "title": "Project Plan",
+          "category": "Planning",
+          "documentId": "ARC-005-PLAN-v1.0"
+        },
+        {
+          "path": "projects/005-cloud-pki/ARC-005-RISK-v1.0.md",
+          "title": "Risk Register",
+          "category": "Governance",
+          "documentId": "ARC-005-RISK-v1.0"
+        },
+        {
+          "path": "projects/005-cloud-pki/ARC-005-EVAL-v1.0.md",
+          "title": "Evaluation Criteria",
+          "category": "Procurement",
+          "documentId": "ARC-005-EVAL-v1.0"
         }
       ],
       "diagrams": [
         {
-          "path": "projects/007-vpn-service-windows11-autopilot/diagrams/container-vpn-architecture.md",
-          "title": "Container: VPN Architecture"
+          "path": "projects/005-cloud-pki/diagrams/ARC-005-DIAG-001-v1.0.md",
+          "title": "Block Diagram: Hybrid PKI Components",
+          "documentId": "ARC-005-DIAG-001-v1.0"
+        },
+        {
+          "path": "projects/005-cloud-pki/diagrams/ARC-005-DIAG-002-v1.0.md",
+          "title": "Container View: Hybrid PKI",
+          "documentId": "ARC-005-DIAG-002-v1.0"
+        },
+        {
+          "path": "projects/005-cloud-pki/diagrams/ARC-005-DIAG-003-v1.0.md",
+          "title": "Cloud Deployment: PKI Infrastructure",
+          "documentId": "ARC-005-DIAG-003-v1.0"
         }
       ],
       "decisions": [
         {
-          "path": "projects/007-vpn-service-windows11-autopilot/decisions/ADR-001-cisco-anyconnect-vpn-deployment.md",
-          "title": "ADR-001: Cisco AnyConnect VPN Deployment"
+          "path": "projects/005-cloud-pki/decisions/ARC-005-ADR-001-v1.0.md",
+          "title": "ADR-001: Use Cloud PKI Service",
+          "documentId": "ARC-005-ADR-001-v1.0"
         }
       ],
+      "wardleyMaps": [],
+      "vendors": []
+    },
+    {
+      "id": "006-large-format-printer",
+      "name": "Large Format Printer",
+      "documents": [
+        {
+          "path": "projects/006-large-format-printer/ARC-006-REQ-v1.0.md",
+          "title": "Requirements",
+          "category": "Discovery",
+          "documentId": "ARC-006-REQ-v1.0"
+        },
+        {
+          "path": "projects/006-large-format-printer/ARC-006-STKE-v1.0.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery",
+          "documentId": "ARC-006-STKE-v1.0"
+        },
+        {
+          "path": "projects/006-large-format-printer/ARC-006-RISK-v1.0.md",
+          "title": "Risk Register",
+          "category": "Governance",
+          "documentId": "ARC-006-RISK-v1.0"
+        },
+        {
+          "path": "projects/006-large-format-printer/ARC-006-SECD-MOD-v1.0.md",
+          "title": "MOD Secure by Design",
+          "category": "Compliance",
+          "documentId": "ARC-006-SECD-MOD-v1.0"
+        }
+      ],
+      "diagrams": [],
+      "decisions": [],
+      "wardleyMaps": [],
+      "vendors": []
+    },
+    {
+      "id": "007-vpn-service-windows11-autopilot",
+      "name": "VPN Service for Windows 11 Autopilot",
+      "documents": [
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-REQ-v1.0.md",
+          "title": "Requirements",
+          "category": "Discovery",
+          "documentId": "ARC-007-REQ-v1.0"
+        },
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-STKE-v1.0.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery",
+          "documentId": "ARC-007-STKE-v1.0"
+        },
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-SOBC-v1.0.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning",
+          "documentId": "ARC-007-SOBC-v1.0"
+        },
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-RISK-v1.0.md",
+          "title": "Risk Register",
+          "category": "Governance",
+          "documentId": "ARC-007-RISK-v1.0"
+        }
+      ],
+      "diagrams": [
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/diagrams/ARC-007-DIAG-001-v1.0.md",
+          "title": "VPN Architecture Diagram",
+          "documentId": "ARC-007-DIAG-001-v1.0"
+        }
+      ],
+      "decisions": [
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/decisions/ARC-007-ADR-001-v1.0.md",
+          "title": "ADR-001: Cisco AnyConnect VPN Deployment",
+          "documentId": "ARC-007-ADR-001-v1.0"
+        }
+      ],
+      "wardleyMaps": [],
       "vendors": []
     }
   ]
