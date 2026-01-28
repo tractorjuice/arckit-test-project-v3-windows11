@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-28T10:30:00Z",
+  "generated": "2026-01-28T18:10:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v3-windows11",
@@ -73,6 +73,12 @@
           "title": "Risk Register",
           "category": "Governance",
           "documentId": "ARC-001-RISK-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-TRAC-v1.0.md",
+          "title": "Traceability Matrix",
+          "category": "Governance",
+          "documentId": "ARC-001-TRAC-v1.0"
         },
         {
           "path": "projects/001-windows-11-migration-intune/ARC-001-PRIN-COMP-v1.0.md",
@@ -152,6 +158,13 @@
           "path": "projects/001-windows-11-migration-intune/wardley-maps/ARC-001-WARD-002-v1.0.md",
           "title": "Procurement Strategy",
           "documentId": "ARC-001-WARD-002-v1.0"
+        }
+      ],
+      "reviews": [
+        {
+          "path": "projects/001-windows-11-migration-intune/reviews/ARC-001-HLD-v1.0.md",
+          "title": "High-Level Design Review",
+          "documentId": "ARC-001-HLD-v1.0"
         }
       ],
       "vendors": []
@@ -246,6 +259,7 @@
         }
       ],
       "wardleyMaps": [],
+      "reviews": [],
       "vendors": []
     },
     {
@@ -302,8 +316,35 @@
         }
       ],
       "diagrams": [],
-      "decisions": [],
+      "decisions": [
+        {
+          "path": "projects/003-peripherals-update-upgrade/decisions/ARC-003-ADR-001-v1.0.md",
+          "title": "ADR-001: Multi-Vendor Peripheral Procurement Strategy",
+          "documentId": "ARC-003-ADR-001-v1.0"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/decisions/ARC-003-ADR-002-v1.0.md",
+          "title": "ADR-002: Windows Hello vs External Webcam Strategy",
+          "documentId": "ARC-003-ADR-002-v1.0"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/decisions/ARC-003-ADR-003-v1.0.md",
+          "title": "ADR-003: FIDO2 Security Key Standard Selection",
+          "documentId": "ARC-003-ADR-003-v1.0"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/decisions/ARC-003-ADR-004-v1.0.md",
+          "title": "ADR-004: Tiered Ergonomic Peripheral Distribution Strategy",
+          "documentId": "ARC-003-ADR-004-v1.0"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/decisions/ARC-003-ADR-005-v1.0.md",
+          "title": "ADR-005: User Choice Monitor Configuration Strategy",
+          "documentId": "ARC-003-ADR-005-v1.0"
+        }
+      ],
       "wardleyMaps": [],
+      "reviews": [],
       "vendors": []
     },
     {
@@ -376,6 +417,7 @@
         }
       ],
       "wardleyMaps": [],
+      "reviews": [],
       "vendors": []
     },
     {
@@ -444,6 +486,7 @@
         }
       ],
       "wardleyMaps": [],
+      "reviews": [],
       "vendors": []
     },
     {
@@ -478,6 +521,7 @@
       "diagrams": [],
       "decisions": [],
       "wardleyMaps": [],
+      "reviews": [],
       "vendors": []
     },
     {
@@ -524,6 +568,7 @@
         }
       ],
       "wardleyMaps": [],
+      "reviews": [],
       "vendors": []
     }
   ]

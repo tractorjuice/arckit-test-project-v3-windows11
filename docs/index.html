@@ -980,6 +980,17 @@
                         });
                     }
 
+                    if (project.reviews) {
+                        project.reviews.forEach(doc => {
+                            allDocuments.push({
+                                ...doc,
+                                project: projectName,
+                                category: 'Reviews',
+                                searchText: `${doc.title} review hld dld design ${projectName}`.toLowerCase()
+                            });
+                        });
+                    }
+
                     if (project.vendors) {
                         project.vendors.forEach(vendor => {
                             if (vendor.documents) {
@@ -1236,6 +1247,14 @@
             if (project.decisions && project.decisions.length > 0) {
                 listHtml += `<li class="app-nav-category">Decisions</li>`;
                 project.decisions.forEach(doc => {
+                    listHtml += `<li><a href="#${doc.path}" data-path="${doc.path}">${doc.title}</a></li>`;
+                });
+            }
+
+            // Reviews (HLD/DLD)
+            if (project.reviews && project.reviews.length > 0) {
+                listHtml += `<li class="app-nav-category">Reviews</li>`;
+                project.reviews.forEach(doc => {
                     listHtml += `<li><a href="#${doc.path}" data-path="${doc.path}">${doc.title}</a></li>`;
                 });
             }
