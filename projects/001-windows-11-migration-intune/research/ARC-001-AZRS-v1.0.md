@@ -1,6 +1,6 @@
 # Azure Technology Research: Windows 11 Deployment with Microsoft Intune
 
-> **Template Status**: Experimental | **Version**: 1.0.1 | **Command**: `/arckit.azure-research`
+> **Template Status**: Experimental | **Version**: 1.0.2 | **Command**: `/arckit.azure-research`
 
 ## Document Control
 
@@ -26,6 +26,7 @@
 | Version | Date | Author | Changes | Approved By | Approval Date |
 |---------|------|--------|---------|-------------|---------------|
 | 1.0 | 2026-01-29 | ArcKit AI | Initial creation from `/arckit.azure-research` command | PENDING | PENDING |
+| 1.1 | 2026-01-29 | ArcKit AI | Enhanced with Microsoft Learn MCP service data: detailed Autopilot workflows, Conditional Access policies, BitLocker silent encryption, expanded code samples, Zero Trust endpoint guidance | PENDING | PENDING |
 
 ---
 
@@ -39,7 +40,7 @@ This document presents Azure-specific technology research findings for the Windo
 
 **Azure Services Evaluated**: 12 Azure services across 6 categories
 
-**Research Sources**: Microsoft Learn, Azure Architecture Center, Azure Well-Architected Framework, Microsoft Documentation (via web fetch)
+**Research Sources**: Microsoft Learn MCP Server, Azure Architecture Center, Azure Well-Architected Framework, Azure Security Benchmark
 
 ### Key Recommendations
 
@@ -86,13 +87,22 @@ This document presents Azure-specific technology research findings for the Windo
 - **Category**: Endpoint Management / Mobile Device Management (MDM)
 - **Documentation**: https://learn.microsoft.com/en-us/mem/intune/
 
-**Key Features**:
+**Key Features** (Source: Microsoft Learn MCP):
 - **Mobile Device Management (MDM)**: Full device control for organization-owned devices with policy enforcement
 - **Mobile Application Management (MAM)**: App-level security for BYOD without full device management
 - **Windows Autopilot Integration**: Zero-touch device provisioning with Enrollment Status Page
 - **Co-Management Support**: Gradual transition from Configuration Manager with workload sliders
+- **Win32 App Management**: Deploy large traditional desktop apps with detection rules, dependencies, and requirements
+- **Windows Driver Update Management**: Control driver updates with approval workflows and pause commands
+- **Config Refresh**: Automatically reset policy settings that drift from intended values (every 90 mins default)
 - **Microsoft Copilot in Intune**: AI-powered policy analysis and troubleshooting
 - **Remote Help**: Remote assistance capabilities for helpdesk support
+- **Endpoint Privilege Management (EPM)**: Run specific tasks with elevation without full admin rights
+
+**Intune Management Extension (IME)** (from Microsoft Learn MCP):
+- Automatically installed when a PowerShell script or Win32 app is assigned
+- Enables Win32 app deployment, PowerShell scripts, and remediation scripts
+- Required for modern app management beyond Microsoft Store apps
 
 **Pricing Tiers**:
 
@@ -164,23 +174,38 @@ This document presents Azure-specific technology research findings for the Windo
 - **Category**: Identity / Access Management
 - **Documentation**: https://learn.microsoft.com/en-us/entra/
 
-**Key Features**:
+**Key Features** (Source: Microsoft Learn MCP):
 - **Conditional Access**: Zero Trust policy engine aggregating signals for access decisions
-- **Device Join**: Azure AD Join and Hybrid Azure AD Join support
-- **Multi-Factor Authentication (MFA)**: Microsoft Authenticator, SMS, phone call options
+- **Device Join Types**: Microsoft Entra joined, Microsoft Entra hybrid joined, and Microsoft Entra registered devices
+- **Multi-Factor Authentication (MFA)**: Microsoft Authenticator, SMS, phone call, FIDO2 security keys
 - **Single Sign-On (SSO)**: Seamless access to Microsoft 365 and SaaS applications
 - **Identity Protection**: Risk-based authentication and user risk detection
+- **Device Filters**: Filter policies by device attributes (extensionAttribute, deviceOwnership, etc.)
 
-**Conditional Access Capabilities**:
+**Conditional Access Capabilities** (from Microsoft Learn MCP):
 
-| Signal Source | Use Case |
-|---------------|----------|
-| User/Group membership | Role-based access policies |
-| IP location | Block/allow by geography or custom ranges |
-| Device compliance | Require Intune-compliant device |
-| Application | Protect specific cloud apps |
-| Real-time risk | Block risky sign-ins (Entra ID Protection) |
-| Defender for Cloud Apps | Session monitoring and control |
+| Signal Source | Use Case | Implementation |
+|---------------|----------|----------------|
+| User/Group membership | Role-based access policies | Directory roles, security groups |
+| IP location | Block/allow by geography | Named locations, trusted IPs |
+| Device compliance | Require Intune-compliant device | `Require device to be marked as compliant` grant control |
+| Device state | Require Hybrid Entra joined | `Require Microsoft Entra hybrid joined device` grant control |
+| Application | Protect specific cloud apps | Target resources selection |
+| Real-time risk | Block risky sign-ins | Entra ID Protection integration |
+| Device filters | Target by device attributes | Filter for devices condition |
+
+**Device Compliance Integration with Conditional Access** (from Microsoft Learn MCP):
+
+When devices enroll in Intune, they register in Microsoft Entra ID and report compliance status. Conditional Access policies can then:
+- **Require device to be marked as compliant**: Block non-compliant devices from accessing resources
+- **Require Microsoft Entra hybrid joined device**: For organizations transitioning from on-premises AD
+- **Require approved client app**: Limit access to specific applications (Edge, Outlook, Teams)
+- **Block legacy authentication**: Prevent POP, IMAP, SMTP access
+
+**User Exclusions** (Best Practice from Microsoft Learn):
+- **Emergency access accounts**: Break-glass accounts to prevent lockout
+- **Service accounts and service principals**: Use Conditional Access for workload identities instead
+- **Directory Synchronization Accounts**: Exclude Microsoft Entra Connect sync accounts
 
 **Pricing Tiers**:
 
@@ -230,22 +255,35 @@ This document presents Azure-specific technology research findings for the Windo
 - **Category**: Device Provisioning / Deployment
 - **Documentation**: https://learn.microsoft.com/en-us/mem/autopilot/
 
-**Key Features**:
-- **Zero-Touch Deployment**: OEM pre-registration or IT-registered devices
-- **User-Driven Mode**: Standard users authenticate and device configures automatically
-- **Self-Deploying Mode**: Kiosk and shared devices without user authentication
-- **White Glove (Pre-provisioning)**: IT pre-stages devices for VIP users
-- **Enrollment Status Page**: Real-time progress during deployment
-- **Reset and Repurposing**: Quick preparation for new users
+**Key Features** (Source: Microsoft Learn MCP):
+- **Zero-Touch Deployment**: OEM pre-registration or IT-registered devices via hardware hash
+- **User-Driven Mode**: Standard users authenticate and device configures automatically via Microsoft Entra join
+- **Self-Deploying Mode**: Kiosk and shared devices without user authentication (requires TPM 2.0)
+- **Pre-Provisioned (White Glove)**: IT pre-stages devices for VIP users with technician and user flow phases
+- **Enrollment Status Page (ESP)**: Real-time progress during deployment with app installation tracking
+- **Autopilot for Existing Devices**: Deploy Windows Autopilot experience to existing Windows 10/11 devices via Configuration Manager task sequence
 
-**Deployment Modes**:
+**Deployment Modes** (from Microsoft Learn):
 
-| Mode | Use Case | User Interaction |
-|------|----------|------------------|
-| User-driven | Standard employees | User authenticates |
-| Self-deploying | Kiosk, shared devices | No user auth required |
-| Pre-provisioned | Executive/VIP users | IT pre-stages |
-| Reset | Device repurposing | Automated reset |
+| Mode | Use Case | User Interaction | Requirements |
+|------|----------|------------------|--------------|
+| User-driven Microsoft Entra join | Standard employees | User authenticates | Entra ID, Intune |
+| User-driven Hybrid Entra join | Devices requiring on-prem AD | User authenticates | AD, Entra Connect, Intune |
+| Self-deploying | Kiosk, shared devices | No user auth required | TPM 2.0, Entra ID, Intune |
+| Pre-provisioned (Entra join) | Executive/VIP users | IT pre-stages, user completes | TPM 2.0, Entra ID, Intune |
+| Pre-provisioned (Hybrid) | VIPs needing on-prem AD | IT pre-stages | AD, Entra Connect, TPM 2.0 |
+| Existing devices | Migration scenario | JSON config file deployed | ConfigMgr, existing Autopilot profile |
+
+**Pre-Provisioned Deployment Workflow** (from Microsoft Learn MCP):
+1. **Step 1**: Set up Windows automatic Intune enrollment in Entra ID
+2. **Step 2**: Allow users to join devices to Microsoft Entra ID
+3. **Step 3**: Register devices as Windows Autopilot devices (hardware hash)
+4. **Step 4**: Create a device group for Autopilot devices
+5. **Step 5**: Configure and assign Enrollment Status Page (ESP)
+6. **Step 6**: Create and assign Windows Autopilot profile
+7. **Step 7**: (Optional) Assign Autopilot device to a user
+8. **Step 8**: Technician flow - IT staff pre-provision device
+9. **Step 9**: User flow - End user completes setup
 
 **Requirements**:
 
@@ -291,23 +329,46 @@ This document presents Azure-specific technology research findings for the Windo
 - **Category**: Security / Endpoint Detection and Response (EDR)
 - **Documentation**: https://learn.microsoft.com/en-us/defender-endpoint/
 
-**Key Features**:
-- **Endpoint Detection and Response (EDR)**: Advanced threat hunting and investigation
-- **Attack Surface Reduction**: Network protection, web filtering, exploit guard
-- **Next-Generation Protection**: AI-powered antivirus, cloud-delivered protection
-- **Automated Investigation and Remediation**: Automatic threat response
+**Key Features** (Source: Microsoft Learn MCP):
+- **Endpoint Detection and Response (EDR)**: Advanced threat hunting and investigation across Windows, macOS, Linux, Android, iOS
+- **Attack Surface Reduction (ASR)**: Network protection, web filtering, exploit guard, controlled folder access
+- **Next-Generation Protection**: AI-powered Microsoft Defender Antivirus with cloud-delivered protection
+- **Automatic Attack Disruption**: AI-powered incident-level response to contain devices and users
+- **Automated Investigation and Remediation**: Automatic threat response reducing SOC workload
 - **Advanced Hunting**: KQL-based threat hunting with custom detections
-- **Integration with Intune**: Device risk scores for Conditional Access
+- **Device Control**: Control USB, removable storage, printers, Bluetooth devices
+- **Integration with Intune**: Device risk scores for Conditional Access, security policy management
 
-**Capabilities**:
+**Capabilities** (from Microsoft Learn MCP):
 
-| Capability | Description |
-|------------|-------------|
-| Real-time protection | On-access, on-write, on-execute scanning |
-| Behavioral analysis | Ransomware and fileless attack detection |
-| Cloud protection | Zero-day threat detection via cloud AI |
-| Device isolation | Network cutoff for compromised devices |
-| Threat analytics | Intel on emerging threats |
+| Capability | Description | Plan |
+|------------|-------------|------|
+| Endpoint behavioral sensors | Collect and process OS signals | P1, P2 |
+| Real-time protection | On-access, on-write, on-execute scanning | P1, P2 |
+| Cloud security analytics | Behavioral signals translated to insights | P1, P2 |
+| Attack surface reduction rules | Reduce vulnerable attack surfaces | P1, P2 |
+| Device control | Manage removable storage, USB, printers | P1, P2 |
+| Endpoint firewall | Host-based firewall management | P1, P2 |
+| EDR (Endpoint Detection & Response) | Advanced hunting, investigation | P2 only |
+| Automated investigation and remediation | AI-powered response | P2 only |
+| Threat analytics | Intel on emerging threats | P2 only |
+| Microsoft Threat Experts | Managed hunting service | P2 only |
+| Device isolation | Network cutoff for compromised devices | P2 only |
+
+**Defender for Endpoint Plans** (from Microsoft Learn MCP):
+
+| Plan | Included In | Key Differentiators |
+|------|-------------|---------------------|
+| Plan 1 (P1) | Microsoft 365 E3/A3/G3 | Core protection: anti-malware, ASR, device control, firewall |
+| Plan 2 (P2) | Microsoft 365 E5/A5/G5 | P1 + EDR, automated remediation, threat analytics, advanced hunting |
+| Defender for Business | Microsoft 365 Business Premium | Simplified for SMB, includes EDR basics |
+| Defender for Endpoint Server | Separate license per server | For Windows/Linux servers |
+
+**Intune Integration** (from Microsoft Learn MCP):
+- Deploy Defender for Endpoint via Intune endpoint security policies
+- Endpoint security policies available: Antivirus, Disk encryption, Firewall, EDR, ASR
+- Device risk scores shared with Conditional Access for risk-based policies
+- Security settings management allows Intune to manage Defender on non-enrolled devices
 
 **Pricing Tiers**:
 
@@ -437,6 +498,72 @@ This document presents Azure-specific technology research findings for the Windo
 
 ---
 
+### Category 7: Disk Encryption (BitLocker)
+
+**Requirements Addressed**: NFR-SEC-002, DR-003
+
+**Why This Category**: Data at rest encryption is a MUST_HAVE requirement for Zero Trust and UK Government OFFICIAL-SENSITIVE classification.
+
+---
+
+#### Recommended: BitLocker via Microsoft Intune
+
+**Service Overview** (Source: Microsoft Learn MCP):
+- **Full Name**: BitLocker Drive Encryption (managed via Intune)
+- **Category**: Data Protection / Encryption
+- **Documentation**: https://learn.microsoft.com/en-us/intune/protect/encrypt-devices
+
+**Key Features**:
+- **Silent Encryption**: Automatically enable BitLocker without user interaction
+- **Recovery Key Escrow**: Keys stored in Microsoft Entra ID, accessible via Intune
+- **AES-256 Encryption**: Enterprise-grade encryption for OS and data drives
+- **Removable Drive Encryption**: BitLocker To Go for USB drives
+- **Compliance Reporting**: Encryption status visible in Intune compliance reports
+
+**Silent Encryption Prerequisites** (from Microsoft Learn MCP):
+1. **TPM chip** (version 1.2 or 2.0) that must be unlocked
+2. **Windows Recovery Environment (WinRE)** must be enabled
+3. **UEFI BIOS** required for TPM 2.0 devices
+4. **Disk partitioning**: OS drive (NTFS) + system drive (≥350 MB, FAT32 for UEFI)
+5. **Device must be Microsoft Entra joined** or hybrid joined
+
+**Intune Policy Configuration for Silent BitLocker** (from Microsoft Learn MCP):
+
+| Setting | Value | Notes |
+|---------|-------|-------|
+| Require Device Encryption | Enabled | Triggers silent encryption |
+| Allow Warning For Other Disk Encryption | Disabled | Required for silent enable |
+| Allow Standard User Encryption | Enabled | For non-admin users |
+| Configure Recovery Password Rotation | Enabled | Auto-rotate after key use |
+| Require device to back up recovery info to Azure AD | Yes | Ensures key escrow |
+
+**Recovery Key Management**:
+- Keys viewable in Microsoft Intune admin center under **Devices > All Devices > [Device] > Recovery keys**
+- Requires `microsoft.directory/bitlockerKeys/key/read` permission in Entra ID
+- Audit logging enabled for all key access attempts
+- Cloud Device Administrator and Helpdesk Administrator roles have access by default
+
+**Estimated Cost for This Project**:
+
+| Resource | Configuration | Monthly Cost | Notes |
+|----------|---------------|--------------|-------|
+| BitLocker (Windows) | 6,000 devices | £0 | Included with Windows Pro/Enterprise |
+| Intune management | Encryption policies | £0 | Included with Intune Plan 1 |
+| Key Vault (optional) | Additional key storage | £0-50 | Only if custom key management needed |
+| **Total** | | **£0** | |
+
+**Azure Well-Architected Assessment**:
+
+| Pillar | Rating | Notes |
+|--------|--------|-------|
+| **Reliability** | ⭐⭐⭐⭐⭐ | TPM-backed keys, recovery key escrow to cloud |
+| **Security** | ⭐⭐⭐⭐⭐ | AES-256, TPM attestation, recovery key audit |
+| **Cost Optimization** | ⭐⭐⭐⭐⭐ | Included with Windows and Intune |
+| **Operational Excellence** | ⭐⭐⭐⭐⭐ | Silent deployment, centralized key management |
+| **Performance Efficiency** | ⭐⭐⭐⭐⭐ | Hardware-accelerated encryption via TPM |
+
+---
+
 ## Architecture Pattern
 
 ### Recommended Azure Reference Architecture
@@ -452,6 +579,13 @@ This architecture implements a cloud-native endpoint management solution using M
 The architecture leverages Windows Autopilot for zero-touch device provisioning, enabling IT staff to ship devices directly to end users without pre-imaging. Microsoft Defender for Endpoint provides advanced threat protection with EDR capabilities, with device risk scores fed back to Conditional Access for dynamic access decisions.
 
 All data remains within UK Azure regions (UK South primary, UK West DR) ensuring compliance with UK Government data residency requirements and G-Cloud procurement framework alignment.
+
+**Windows 11 Preparation Guidance** (from Microsoft Learn MCP):
+- **Feature Update Policies**: Use Intune feature update deployments to select Windows 11 version and upgrade devices
+- **Update Rings**: Configure quality update deferrals (Preview: 0 days, Pilot: 3 days, Production: 7 days)
+- **Endpoint Analytics Hardware Readiness**: Assess which managed devices are eligible for Windows 11 upgrade
+- **Co-management Path**: For environments with ConfigMgr, enable co-management, tenant attach, or cloud management gateway
+- **Target Version Setting**: Use TargetReleaseVersion CSP or feature update profile to control upgrade timing
 
 ### Architecture Diagram
 
@@ -612,6 +746,72 @@ $compliancePolicy = @{
 }
 
 New-MgDeviceManagementDeviceCompliancePolicy -BodyParameter $compliancePolicy
+```
+
+#### Export Windows Autopilot Profiles (from Microsoft Learn MCP)
+
+```powershell
+# Connect to Microsoft Graph with Autopilot permissions
+Connect-MgGraph -Scopes "Device.ReadWrite.All", `
+    "DeviceManagementManagedDevices.ReadWrite.All", `
+    "DeviceManagementServiceConfig.ReadWrite.All", `
+    "Domain.ReadWrite.All", `
+    "Group.ReadWrite.All", `
+    "GroupMember.ReadWrite.All", `
+    "User.Read"
+
+# Get all Autopilot profiles and export as JSON
+$AutopilotProfile = Get-AutopilotProfile
+$targetDirectory = "C:\Autopilot"
+
+$AutopilotProfile | ForEach-Object {
+    New-Item -ItemType Directory -Path "$targetDirectory\$($_.displayName)" -Force
+    $_ | ConvertTo-AutopilotConfigurationJSON |
+        Set-Content -Encoding Ascii "$targetDirectory\$($_.displayName)\AutopilotConfigurationFile.json"
+}
+```
+
+#### Create Device Configuration Profile (from Microsoft Learn MCP)
+
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement
+
+$params = @{
+    "@odata.type" = "#microsoft.graph.windows10GeneralConfiguration"
+    description = "Windows 11 Security Configuration"
+    displayName = "Win11-Security-Baseline"
+    passwordRequired = $true
+    passwordMinimumLength = 12
+    passwordRequiredType = "alphanumeric"
+    defenderScanType = "full"
+    defenderScheduledScanDay = "everyday"
+    smartScreenEnableAppInstallControl = $true
+    smartScreenBlockOverrideForFiles = $true
+}
+
+New-MgDeviceManagementDeviceConfiguration -BodyParameter $params
+```
+
+#### Update Device Configuration Status (from Microsoft Learn MCP)
+
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement
+
+$params = @{
+    "@odata.type" = "#microsoft.graph.deviceConfigurationDeviceStatus"
+    deviceDisplayName = "Device Display Name value"
+    userName = "User Name value"
+    deviceModel = "Device Model value"
+    complianceGracePeriodExpirationDateTime = [System.DateTime]::Parse("2026-12-31T23:56:44.951111-08:00")
+    status = "compliant"
+    lastReportedDateTime = [System.DateTime]::Parse("2026-01-29T00:00:17.7769392-08:00")
+    userPrincipalName = "user@contoso.com"
+}
+
+Update-MgDeviceManagementDeviceConfigurationDeviceStatus `
+    -DeviceConfigurationId $deviceConfigurationId `
+    -DeviceConfigurationDeviceStatusId $deviceConfigurationDeviceStatusId `
+    -BodyParameter $params
 ```
 
 #### Bicep Example for Azure Virtual Desktop Testing Environment
@@ -817,18 +1017,31 @@ stages:
 
 ## References
 
-### Microsoft Learn Documentation
+### Microsoft Learn Documentation (via MCP Server)
 
 | Topic | Link |
 |-------|------|
 | Microsoft Intune Overview | https://learn.microsoft.com/en-us/mem/intune/fundamentals/what-is-intune |
-| Windows Autopilot | https://learn.microsoft.com/en-us/mem/autopilot/windows-autopilot |
-| Conditional Access | https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview |
+| Win32 App Management in Intune | https://learn.microsoft.com/en-us/intune/intune-service/apps/apps-win32-app-management |
+| Windows Autopilot Overview | https://learn.microsoft.com/en-us/mem/autopilot/windows-autopilot |
+| Autopilot Pre-provisioned Deployment | https://learn.microsoft.com/en-us/autopilot/tutorial/pre-provisioning/azure-ad-join-workflow |
+| Autopilot for Existing Devices | https://learn.microsoft.com/en-us/autopilot/existing-devices |
+| Conditional Access Overview | https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview |
+| Require Device Compliance | https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-device-compliance |
+| Conditional Access Device Filters | https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-condition-filters-for-devices |
 | Defender for Endpoint | https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint |
+| Manage Endpoint Security Policies | https://learn.microsoft.com/en-us/defender-endpoint/manage-security-policies |
+| BitLocker via Intune | https://learn.microsoft.com/en-us/intune/intune-service/protect/encrypt-devices |
+| BitLocker Troubleshooting | https://learn.microsoft.com/en-us/troubleshoot/mem/intune/device-protection/troubleshoot-bitlocker-admin-center |
 | Endpoint Analytics | https://learn.microsoft.com/en-us/mem/analytics/overview |
 | Azure Virtual Desktop | https://learn.microsoft.com/en-us/azure/virtual-desktop/overview |
+| Windows 365 Architecture | https://learn.microsoft.com/en-us/windows-365/enterprise/architecture |
+| Zero Trust Endpoint Deployment | https://learn.microsoft.com/en-us/security/zero-trust/deploy/endpoints |
+| Manage Devices with Intune | https://learn.microsoft.com/en-us/security/zero-trust/manage-devices-with-intune-overview |
+| Prepare for Windows 11 | https://learn.microsoft.com/en-us/windows/whats-new/windows-11-prepare |
 | Azure Well-Architected Framework | https://learn.microsoft.com/azure/well-architected/ |
 | Azure Security Benchmark | https://learn.microsoft.com/security/benchmark/azure/ |
+| Microsoft Entra Device Management | https://learn.microsoft.com/en-us/entra/identity/devices/manage-device-identities |
 
 ### Azure Architecture Center References
 
@@ -868,7 +1081,8 @@ stages:
 
 **Generated by**: ArcKit `/arckit.azure-research` command
 **Generated on**: 2026-01-29
-**ArcKit Version**: 1.0.1
+**Last Updated**: 2026-01-29
+**ArcKit Version**: 1.0.2
 **Project**: Windows 11 Deployment with Microsoft Intune (Project 001)
 **Model**: Claude Opus 4.5
-**Sources**: Microsoft Learn Documentation (via WebFetch)
+**Sources**: Microsoft Learn MCP Server (microsoft_docs_search, microsoft_docs_fetch, microsoft_code_sample_search)
