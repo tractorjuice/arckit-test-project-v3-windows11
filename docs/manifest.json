@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-29T11:30:00Z",
+  "generated": "2026-01-29T12:15:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v3-windows11",
@@ -244,6 +244,12 @@
           "title": "Evaluation Criteria",
           "category": "Procurement",
           "documentId": "ARC-002-EVAL-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/research/ARC-002-AZRS-v1.0.md",
+          "title": "Azure Technology Research",
+          "category": "Discovery",
+          "documentId": "ARC-002-AZRS-v1.0"
         }
       ],
       "diagrams": [],
