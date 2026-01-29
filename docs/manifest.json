@@ -127,6 +127,12 @@
           "title": "Project Story",
           "category": "Other",
           "documentId": "ARC-001-STORY-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/research/ARC-001-AZRS-v1.0.md",
+          "title": "Azure Technology Research",
+          "category": "Discovery",
+          "documentId": "ARC-001-AZRS-v1.0"
         }
       ],
       "diagrams": [
@@ -167,14 +173,6 @@
           "documentId": "ARC-001-HLD-v1.0"
         }
       ],
-      "research": [
-        {
-          "path": "projects/001-windows-11-migration-intune/research/ARC-001-AZRS-v1.0.md",
-          "title": "Azure Technology Research",
-          "documentId": "ARC-001-AZRS-v1.0"
-        }
-      ],
-      "dataContracts": [],
       "vendors": []
     },
     {
