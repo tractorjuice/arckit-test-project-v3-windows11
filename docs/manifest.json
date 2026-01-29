@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-28T18:10:00Z",
+  "generated": "2026-01-29T09:15:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v3-windows11",
@@ -167,6 +167,14 @@
           "documentId": "ARC-001-HLD-v1.0"
         }
       ],
+      "research": [
+        {
+          "path": "projects/001-windows-11-migration-intune/research/ARC-001-AZRS-v1.0.md",
+          "title": "Azure Technology Research",
+          "documentId": "ARC-001-AZRS-v1.0"
+        }
+      ],
+      "dataContracts": [],
       "vendors": []
     },
     {
