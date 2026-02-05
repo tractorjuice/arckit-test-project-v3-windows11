@@ -509,6 +509,68 @@
             margin: 2rem 0;
         }
 
+        /* Guides list */
+        .app-guides-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .app-guides-list li {
+            margin: 0;
+        }
+
+        .app-guides-list a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background: var(--background-light);
+            border-left: 4px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+
+        .app-guides-list a:hover {
+            background: #e8e8e8;
+        }
+
+        /* Guide status badges */
+        .guide-status {
+            font-size: 0.65em;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            flex-shrink: 0;
+            margin-left: 8px;
+        }
+
+        .guide-status.live {
+            background: #00703c;
+            color: white;
+        }
+
+        .guide-status.beta {
+            background: #1d70b8;
+            color: white;
+        }
+
+        .guide-status.alpha {
+            background: #f47738;
+            color: white;
+        }
+
+        .guide-status.experimental {
+            background: #912b88;
+            color: white;
+        }
+
         /* Mermaid Diagrams - Full Width */
         .app-markdown .mermaid {
             background: #fff;
@@ -623,6 +685,17 @@
             text-decoration: underline;
         }
 
+        .app-header__guides-link {
+            color: white !important;
+            background: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 3px;
+        }
+
+        .app-header__guides-link:hover {
+            background: var(--primary-dark);
+        }
+
         /* Footer */
         .app-footer {
             background: var(--background-light);
@@ -641,45 +714,6 @@
 
         .app-footer a {
             color: var(--primary-color);
-        }
-
-        .app-header__guides-link {
-            color: white !important;
-            background: var(--primary-color);
-            padding: 0.25rem 0.75rem;
-            border-radius: 3px;
-        }
-
-        .app-header__guides-link:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Guides list */
-        .app-guides-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 2rem 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 0.5rem;
-        }
-
-        .app-guides-list li {
-            margin: 0;
-        }
-
-        .app-guides-list a {
-            display: block;
-            padding: 0.75rem 1rem;
-            background: var(--background-light);
-            border-left: 4px solid var(--primary-color);
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: background 0.15s;
-        }
-
-        .app-guides-list a:hover {
-            background: #e8e8e8;
         }
 
         /* Responsive */
@@ -1159,7 +1193,10 @@
             sortedCategories.forEach(category => {
                 guidesHtml += `<h2>${category}</h2><ul class="app-guides-list">`;
                 byCategory[category].forEach(guide => {
-                    guidesHtml += `<li><a href="#${guide.path}" data-path="${guide.path}">${guide.title}</a></li>`;
+                    const statusBadge = guide.status
+                        ? `<span class="guide-status ${guide.status}">${guide.status}</span>`
+                        : '';
+                    guidesHtml += `<li><a href="#${guide.path}" data-path="${guide.path}"><span>${guide.title}</span>${statusBadge}</a></li>`;
                 });
                 guidesHtml += '</ul>';
             });
