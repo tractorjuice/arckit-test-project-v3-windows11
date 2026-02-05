@@ -284,7 +284,7 @@ graph TB
 ### Deliverables
 
 - **ARC-005-REQ-v2.0**: Complete Requirements (8 BR + 21 FR + 15 NFR + INT + DR = 106 total) ✅ (COMPLETED)
-- **ARC-005-HLD-v1.0**: High-Level Design document (hybrid architecture, technology stack, integration patterns)
+- **ARC-005-HLDR-v1.0**: High-Level Design document (hybrid architecture, technology stack, integration patterns)
 - **ARC-005-DIAG-CONTAINER-v1.0**: C4 Container Diagram ✅ (COMPLETED)
 - **ARC-005-DIAG-BLOCK-v1.0**: Block Diagram (42 components) ✅ (COMPLETED)
 - **Wardley Map**: Build vs Buy positioning with evolution stages
@@ -393,7 +393,7 @@ graph TB
 
 ### Deliverables
 
-- **ARC-005-DLD-v1.0**: Detailed Design document with component specifications
+- **ARC-005-DLDR-v1.0**: Detailed Design document with component specifications
 - **Component Diagrams**: C4 Component diagrams for Inventory System, Discovery Agents, Alert Engine
 - **Sequence Diagrams**: Device enrollment, Kubernetes cert, Production server cert workflows
 - **Cloud PKI Configuration**: Root CA, Issuing CA, SCEP/ACME/REST endpoints, templates, OCSP, CRL

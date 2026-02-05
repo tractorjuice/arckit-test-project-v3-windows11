@@ -104,16 +104,16 @@
           "documentId": "ARC-001-PLAN-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-ROADMAP-v1.0.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-ROAD-v1.0.md",
           "title": "Roadmap",
           "category": "Planning",
-          "documentId": "ARC-001-ROADMAP-v1.0"
+          "documentId": "ARC-001-ROAD-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-BLOG-v1.0.md",
+          "path": "projects/001-windows-11-migration-intune/ARC-001-BKLG-v1.0.md",
           "title": "Product Backlog",
           "category": "Planning",
-          "documentId": "ARC-001-BLOG-v1.0"
+          "documentId": "ARC-001-BKLG-v1.0"
         },
         {
           "path": "projects/001-windows-11-migration-intune/ARC-001-DATA-v1.0.md",
@@ -221,9 +221,9 @@
       ],
       "reviews": [
         {
-          "path": "projects/001-windows-11-migration-intune/reviews/ARC-001-HLD-v1.0.md",
+          "path": "projects/001-windows-11-migration-intune/reviews/ARC-001-HLDR-v1.0.md",
           "title": "High-Level Design Review",
-          "documentId": "ARC-001-HLD-v1.0"
+          "documentId": "ARC-001-HLDR-v1.0"
         }
       ],
       "vendors": []
@@ -263,10 +263,10 @@
           "documentId": "ARC-002-PLAN-v1.0"
         },
         {
-          "path": "projects/002-application-packaging-rationalisation/ARC-002-BLOG-v1.0.md",
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-BKLG-v1.0.md",
           "title": "Product Backlog",
           "category": "Planning",
-          "documentId": "ARC-002-BLOG-v1.0"
+          "documentId": "ARC-002-BKLG-v1.0"
         },
         {
           "path": "projects/002-application-packaging-rationalisation/ARC-002-DATA-v1.0.md",
@@ -350,10 +350,10 @@
           "documentId": "ARC-003-SOBC-v1.0"
         },
         {
-          "path": "projects/003-peripherals-update-upgrade/ARC-003-BLOG-v1.0.md",
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-BKLG-v1.0.md",
           "title": "Product Backlog",
           "category": "Planning",
-          "documentId": "ARC-003-BLOG-v1.0"
+          "documentId": "ARC-003-BKLG-v1.0"
         },
         {
           "path": "projects/003-peripherals-update-upgrade/ARC-003-RISK-v1.0.md",
@@ -441,10 +441,10 @@
           "documentId": "ARC-004-PLAN-v1.0"
         },
         {
-          "path": "projects/004-conference-facilities-modernization/ARC-004-BLOG-v1.0.md",
+          "path": "projects/004-conference-facilities-modernization/ARC-004-BKLG-v1.0.md",
           "title": "Product Backlog",
           "category": "Planning",
-          "documentId": "ARC-004-BLOG-v1.0"
+          "documentId": "ARC-004-BKLG-v1.0"
         },
         {
           "path": "projects/004-conference-facilities-modernization/ARC-004-RISK-v1.0.md",
