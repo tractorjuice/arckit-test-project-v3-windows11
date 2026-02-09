@@ -1211,6 +1211,10 @@
             return `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${path}`;
         }
 
+        function getGitHubUrl(path) {
+            return `https://github.com/${CONFIG.owner}/${CONFIG.repo}/blob/${CONFIG.branch}/${path}`;
+        }
+
         function getDocumentId(path) {
             return path.replace(/[^a-zA-Z0-9]/g, '-');
         }
@@ -2130,7 +2134,7 @@
                 } else {
                     const response = await fetch(getRawUrl(path));
                     if (!response.ok) {
-                        throw new Error(`Failed to load document: ${response.status}`);
+                        throw new Error(response.status === 404 ? 'not_found' : `fetch_error_${response.status}`);
                     }
                     markdown = await response.text();
                     documentCache.set(path, markdown);
@@ -2170,13 +2174,25 @@
                 document.getElementById('main-content').scrollTo(0, 0);
 
             } catch (error) {
+                const githubUrl = getGitHubUrl(path);
+                const isPrivateRepo = error.message === 'not_found' || error.message.startsWith('fetch_error');
                 content.innerHTML = `
-                    <div class="app-error">
-                        <strong>Error loading document</strong><br>
-                        ${error.message}
+                    <div class="app-doc-header">
+                        <div class="app-doc-breadcrumb">${path.split('/').slice(0, -1).join(' / ')}</div>
+                        <h1 class="app-doc-title">${extractTitle(path)}</h1>
                     </div>
-                    <p>Path: ${path}</p>
-                    <p><a href="${getRawUrl(path)}" target="_blank">Try opening directly</a></p>
+                    <div style="background:var(--background-light);border-left:4px solid var(--primary-color);padding:1.25rem;margin:1.5rem 0;">
+                        <p style="margin:0 0 0.75rem 0;font-weight:700;">This document cannot be displayed inline</p>
+                        <p style="margin:0 0 1rem 0;color:var(--text-muted);">
+                            ${isPrivateRepo
+                                ? 'This is likely a private repository. Documents from private repos require GitHub authentication, which is not available to the browser on GitHub Pages.'
+                                : error.message}
+                        </p>
+                        <a href="${githubUrl}" target="_blank" rel="noopener"
+                           style="display:inline-block;background:var(--primary-color);color:#fff;padding:0.5rem 1rem;text-decoration:none;font-weight:700;">
+                            View on GitHub &rarr;
+                        </a>
+                    </div>
                 `;
             }
         }

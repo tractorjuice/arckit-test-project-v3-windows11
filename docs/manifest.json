@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-06T12:00:00Z",
+  "generated": "2026-02-09T00:00:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v3-windows11",
@@ -529,6 +529,11 @@
           "path": "projects/001-windows-11-migration-intune/wardley-maps/ARC-001-WARD-002-v1.0.md",
           "title": "Wardley Map: Procurement Strategy",
           "documentId": "ARC-001-WARD-002-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/wardley-maps/ARC-001-WARD-003-v1.0.md",
+          "title": "Wardley Map: Full Landscape Gap Analysis",
+          "documentId": "ARC-001-WARD-003-v1.0"
         }
       ],
       "dataContracts": [],
