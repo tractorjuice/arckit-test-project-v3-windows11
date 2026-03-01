@@ -1,190 +1,14 @@
 {
-  "generated": "2026-02-09T00:00:00Z",
+  "generated": "2026-03-01T17:41:46.202Z",
   "repository": {
-    "owner": "tractorjuice",
-    "name": "arckit-test-project-v3-windows11",
-    "branch": "main"
+    "name": "arckit-test-project-v3-windows11"
   },
   "defaultDocument": "projects/000-global/ARC-000-PRIN-v1.0.md",
   "guides": [
     {
-      "path": "docs/guides/requirements.md",
-      "title": "Requirements Guide",
-      "category": "Discovery",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/stakeholders.md",
-      "title": "Stakeholder Analysis Playbook",
-      "category": "Discovery",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/stakeholder-analysis.md",
-      "title": "Stakeholder Analysis Guide",
-      "category": "Discovery",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/research.md",
-      "title": "Technology Research Guide",
-      "category": "Discovery",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/datascout.md",
-      "title": "Data Source Discovery Guide",
-      "category": "Discovery",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/sobc.md",
-      "title": "Strategic Outline Business Case Playbook",
-      "category": "Planning",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/business-case.md",
-      "title": "Strategic Outline Business Case (SOBC) Guide",
-      "category": "Planning",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/plan.md",
-      "title": "Project Plan Playbook",
-      "category": "Planning",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/roadmap.md",
-      "title": "Architecture Roadmap Playbook",
-      "category": "Planning",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/backlog.md",
-      "title": "Product Backlog Quick Guide",
-      "category": "Planning",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/principles.md",
-      "title": "Architecture Principles Guide",
-      "category": "Architecture",
-      "status": "live"
-    },
-    {
       "path": "docs/guides/adr.md",
       "title": "Architecture Decision Record (ADR) Guide",
       "category": "Architecture",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/diagram.md",
-      "title": "Architecture Diagram Guide",
-      "category": "Architecture",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/wardley.md",
-      "title": "Wardley Mapping Playbook",
-      "category": "Architecture",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/data-model.md",
-      "title": "Data Model Quick Guide",
-      "category": "Architecture",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/hld-review.md",
-      "title": "High-Level Design Review Playbook",
-      "category": "Architecture",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/dld-review.md",
-      "title": "Detailed Design Review Playbook",
-      "category": "Architecture",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/design-review.md",
-      "title": "Design Review Guide",
-      "category": "Architecture",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/platform-design.md",
-      "title": "Platform Strategy Design Guide",
-      "category": "Architecture",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/data-mesh-contract.md",
-      "title": "Data Mesh Contract Quick Guide",
-      "category": "Architecture",
-      "status": "alpha"
-    },
-    {
-      "path": "docs/guides/strategy.md",
-      "title": "Architecture Strategy Playbook",
-      "category": "Architecture",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/risk.md",
-      "title": "Risk Register Playbook",
-      "category": "Governance",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/risk-management.md",
-      "title": "Risk Management Guide",
-      "category": "Governance",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/traceability.md",
-      "title": "Traceability Guide",
-      "category": "Governance",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/principles-compliance.md",
-      "title": "Principles Compliance Guide",
-      "category": "Governance",
-      "status": "live"
-    },
-    {
-      "path": "docs/guides/analyze.md",
-      "title": "Project Analysis Playbook",
-      "category": "Governance",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/tcop.md",
-      "title": "Technology Code of Practice Playbook",
-      "category": "Compliance",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/secure.md",
-      "title": "Secure by Design Playbook",
-      "category": "Compliance",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/mod-secure.md",
-      "title": "MOD Secure by Design Playbook",
-      "category": "Compliance",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/dpia.md",
-      "title": "Data Protection Impact Assessment (DPIA) Guide",
-      "category": "Compliance",
       "status": "beta"
     },
     {
@@ -194,88 +18,22 @@
       "status": "alpha"
     },
     {
+      "path": "docs/guides/analyze.md",
+      "title": "Project Analysis Playbook",
+      "category": "Governance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/artifact-health.md",
+      "title": "Artifact Health Guide",
+      "category": "Governance",
+      "status": "beta"
+    },
+    {
       "path": "docs/guides/atrs.md",
       "title": "Algorithmic Transparency Recording Standard Playbook",
       "category": "Compliance",
       "status": "alpha"
-    },
-    {
-      "path": "docs/guides/jsp-936.md",
-      "title": "JSP 936 AI Assurance Guide",
-      "category": "Compliance",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/service-assessment.md",
-      "title": "GDS Service Assessment Guide",
-      "category": "Compliance",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/devops.md",
-      "title": "DevOps Strategy Playbook",
-      "category": "Operations",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/mlops.md",
-      "title": "MLOps Strategy Playbook",
-      "category": "Operations",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/finops.md",
-      "title": "FinOps Strategy Playbook",
-      "category": "Operations",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/servicenow.md",
-      "title": "ServiceNow Service Design Playbook",
-      "category": "Operations",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/operationalize.md",
-      "title": "Operational Readiness Playbook",
-      "category": "Operations",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/sow.md",
-      "title": "Statement of Work Playbook",
-      "category": "Procurement",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/evaluate.md",
-      "title": "Vendor Evaluation Playbook",
-      "category": "Procurement",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/dos.md",
-      "title": "Digital Outcomes and Specialists Playbook",
-      "category": "Procurement",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/gcloud-search.md",
-      "title": "G-Cloud Search Playbook",
-      "category": "Procurement",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/gcloud-clarify.md",
-      "title": "G-Cloud Clarification Questions Playbook",
-      "category": "Procurement",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/procurement.md",
-      "title": "Vendor Procurement Guide",
-      "category": "Procurement",
-      "status": "experimental"
     },
     {
       "path": "docs/guides/aws-research.md",
@@ -290,8 +48,332 @@
       "status": "experimental"
     },
     {
+      "path": "docs/guides/backlog.md",
+      "title": "Product Backlog Quick Guide",
+      "category": "Planning",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/business-case.md",
+      "title": "Strategic Outline Business Case (SOBC) Guide",
+      "category": "Planning",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/c4-layout-science.md",
+      "title": "C4 Layout Science Guide",
+      "category": "Architecture",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/codes-of-practice.md",
+      "title": "UK Government Codes of Practice — ArcKit Reference Guide",
+      "category": "Compliance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/conformance.md",
+      "title": "Architecture Conformance Guide",
+      "category": "Other",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/customize.md",
+      "title": "Template Customization Guide",
+      "category": "Other",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/data-mesh-contract.md",
+      "title": "Data Mesh Contract Quick Guide",
+      "category": "Architecture",
+      "status": "alpha"
+    },
+    {
+      "path": "docs/guides/data-model.md",
+      "title": "Data Model Quick Guide",
+      "category": "Architecture",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/data-quality-framework.md",
+      "title": "UK Government Data Quality Framework — ArcKit Reference Guide",
+      "category": "Governance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/datascout.md",
+      "title": "Data Source Discovery Guide",
+      "category": "Discovery",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/design-review.md",
+      "title": "Design Review Guide",
+      "category": "Architecture",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/devops.md",
+      "title": "DevOps Strategy Playbook",
+      "category": "Operations",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/diagram.md",
+      "title": "Architecture Diagram Guide",
+      "category": "Architecture",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/dld-review.md",
+      "title": "Detailed Design Review Playbook",
+      "category": "Architecture",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/dos.md",
+      "title": "Digital Outcomes and Specialists Playbook",
+      "category": "Procurement",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/dpia.md",
+      "title": "Data Protection Impact Assessment (DPIA) Guide",
+      "category": "Compliance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/evaluate.md",
+      "title": "Vendor Evaluation Playbook",
+      "category": "Procurement",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/finops.md",
+      "title": "FinOps Strategy Playbook",
+      "category": "Operations",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/gcloud-clarify.md",
+      "title": "G-Cloud Clarification Questions Playbook",
+      "category": "Procurement",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/gcloud-search.md",
+      "title": "G-Cloud Search Playbook",
+      "category": "Procurement",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/gcp-research.md",
+      "title": "Google Cloud Technology Research Guide",
+      "category": "Research",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/govs-007-security.md",
+      "title": "GovS 007: Security — ArcKit Reference Guide",
+      "category": "Compliance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/hld-review.md",
+      "title": "High-Level Design Review Playbook",
+      "category": "Architecture",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/jsp-936.md",
+      "title": "JSP 936 AI Assurance Guide",
+      "category": "Compliance",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/knowledge-compounding.md",
+      "title": "Knowledge Compounding Guide",
+      "category": "Governance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/mcp-servers.md",
+      "title": "ArcKit Plugin Setup Guide",
+      "category": "Other",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/migration.md",
+      "title": "File Migration Playbook",
+      "category": "Other",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/mlops.md",
+      "title": "MLOps Strategy Playbook",
+      "category": "Operations",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/mod-secure.md",
+      "title": "MOD Secure by Design Playbook",
+      "category": "Compliance",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/national-data-strategy.md",
+      "title": "UK National Data Strategy — ArcKit Reference Guide",
+      "category": "Compliance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/operationalize.md",
+      "title": "Operational Readiness Playbook",
+      "category": "Operations",
+      "status": "experimental"
+    },
+    {
       "path": "docs/guides/pages.md",
       "title": "GitHub Pages Generator Playbook",
+      "category": "Other",
+      "status": "alpha"
+    },
+    {
+      "path": "docs/guides/pinecone-mcp.md",
+      "title": "Pinecone MCP Integration Guide",
+      "category": "Other",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/plan.md",
+      "title": "Project Plan Playbook",
+      "category": "Planning",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/platform-design.md",
+      "title": "Platform Strategy Design Guide",
+      "category": "Architecture",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/presentation.md",
+      "title": "Presentation Guide",
+      "category": "Other",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/principles-compliance.md",
+      "title": "Principles Compliance Guide",
+      "category": "Governance",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/principles.md",
+      "title": "Architecture Principles Guide",
+      "category": "Architecture",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/procurement.md",
+      "title": "Vendor Procurement Guide",
+      "category": "Procurement",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/productivity.md",
+      "title": "Architecture Productivity Guide",
+      "category": "Other",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/remote-control.md",
+      "title": "Govern Architecture from Anywhere: Using Claude Code Remote Control with ArcKit",
+      "category": "Other",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/requirements.md",
+      "title": "Requirements Guide",
+      "category": "Discovery",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/research.md",
+      "title": "Technology Research Guide",
+      "category": "Discovery",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/risk-management.md",
+      "title": "Risk Management Guide",
+      "category": "Governance",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/risk.md",
+      "title": "Risk Register Playbook",
+      "category": "Governance",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/roadmap.md",
+      "title": "Architecture Roadmap Playbook",
+      "category": "Planning",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/secure.md",
+      "title": "Secure by Design Playbook",
+      "category": "Compliance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/security-hooks.md",
+      "title": "Security Hooks Guide",
+      "category": "Compliance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/service-assessment.md",
+      "title": "GDS Service Assessment Guide",
+      "category": "Compliance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/servicenow.md",
+      "title": "ServiceNow Service Design Playbook",
+      "category": "Operations",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/sobc.md",
+      "title": "Strategic Outline Business Case Playbook",
+      "category": "Planning",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/sow.md",
+      "title": "Statement of Work Playbook",
+      "category": "Procurement",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/stakeholder-analysis.md",
+      "title": "Stakeholder Analysis Guide",
+      "category": "Discovery",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/stakeholders.md",
+      "title": "Stakeholder Analysis Playbook",
+      "category": "Discovery",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/start.md",
+      "title": "Getting Started with ArcKit",
       "category": "Other",
       "status": "beta"
     },
@@ -302,20 +384,26 @@
       "status": "live"
     },
     {
-      "path": "docs/guides/trello.md",
-      "title": "Trello Export Quick Guide",
-      "category": "Other",
-      "status": "experimental"
-    },
-    {
-      "path": "docs/guides/migration.md",
-      "title": "File Migration Playbook",
-      "category": "Other",
+      "path": "docs/guides/strategy.md",
+      "title": "Architecture Strategy Playbook",
+      "category": "Planning",
       "status": "beta"
     },
     {
-      "path": "docs/guides/customize.md",
-      "title": "Template Customization Guide",
+      "path": "docs/guides/tcop.md",
+      "title": "Technology Code of Practice Playbook",
+      "category": "Compliance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/traceability.md",
+      "title": "Traceability Guide",
+      "category": "Governance",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/trello.md",
+      "title": "Trello Export Quick Guide",
       "category": "Other",
       "status": "experimental"
     },
@@ -326,46 +414,120 @@
       "status": "beta"
     },
     {
-      "path": "docs/guides/uk-government/technology-code-of-practice.md",
-      "title": "Technology Code of Practice (TCoP) Guide",
-      "category": "Compliance",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/uk-government/secure-by-design.md",
-      "title": "UK Government Secure by Design Guide",
-      "category": "Compliance",
-      "status": "beta"
-    },
-    {
-      "path": "docs/guides/uk-government/ai-playbook.md",
-      "title": "UK Government AI Playbook Guide",
-      "category": "Compliance",
-      "status": "alpha"
-    },
-    {
-      "path": "docs/guides/uk-government/algorithmic-transparency.md",
-      "title": "Algorithmic Transparency Recording Standard (ATRS) Guide",
-      "category": "Compliance",
-      "status": "alpha"
-    },
-    {
-      "path": "docs/guides/uk-government/digital-marketplace.md",
-      "title": "Digital Marketplace Procurement Guide",
-      "category": "Procurement",
+      "path": "docs/guides/wardley.md",
+      "title": "Wardley Mapping Playbook",
+      "category": "Architecture",
       "status": "experimental"
+    }
+  ],
+  "roleGuides": [
+    {
+      "path": "docs/guides/roles/business-analyst.md",
+      "title": "Business Analyst",
+      "family": "Product and Delivery",
+      "commandCount": 4
     },
     {
-      "path": "docs/guides/uk-government/standards-map.md",
-      "title": "UK Government Digital Policy & Standards Map",
-      "category": "Compliance",
-      "status": "beta"
+      "path": "docs/guides/roles/business-architect.md",
+      "title": "Business Architect",
+      "family": "Architecture",
+      "commandCount": 5
     },
     {
-      "path": "docs/guides/uk-mod/secure-by-design.md",
-      "title": "MOD Secure by Design Guide",
-      "category": "Compliance",
-      "status": "experimental"
+      "path": "docs/guides/roles/cdo.md",
+      "title": "CDO (Chief Data Officer)",
+      "family": "Chief Digital and Data",
+      "commandCount": 4
+    },
+    {
+      "path": "docs/guides/roles/ciso.md",
+      "title": "CISO (Chief Information Security Officer)",
+      "family": "Chief Digital and Data",
+      "commandCount": 5
+    },
+    {
+      "path": "docs/guides/roles/cto-cdio.md",
+      "title": "CTO / CDIO",
+      "family": "Chief Digital and Data",
+      "commandCount": 5
+    },
+    {
+      "path": "docs/guides/roles/data-architect.md",
+      "title": "Data Architect",
+      "family": "Architecture",
+      "commandCount": 4
+    },
+    {
+      "path": "docs/guides/roles/data-governance-manager.md",
+      "title": "Data Governance Manager",
+      "family": "Data",
+      "commandCount": 4
+    },
+    {
+      "path": "docs/guides/roles/delivery-manager.md",
+      "title": "Delivery Manager",
+      "family": "Product and Delivery",
+      "commandCount": 6
+    },
+    {
+      "path": "docs/guides/roles/devops-engineer.md",
+      "title": "DevOps Engineer",
+      "family": "Software Development",
+      "commandCount": 3
+    },
+    {
+      "path": "docs/guides/roles/enterprise-architect.md",
+      "title": "Enterprise Architect",
+      "family": "Architecture",
+      "commandCount": 12
+    },
+    {
+      "path": "docs/guides/roles/it-service-manager.md",
+      "title": "IT Service Manager",
+      "family": "IT Operations",
+      "commandCount": 3
+    },
+    {
+      "path": "docs/guides/roles/network-architect.md",
+      "title": "Network Architect",
+      "family": "Architecture",
+      "commandCount": 3
+    },
+    {
+      "path": "docs/guides/roles/performance-analyst.md",
+      "title": "Performance Analyst",
+      "family": "Data",
+      "commandCount": 4
+    },
+    {
+      "path": "docs/guides/roles/product-manager.md",
+      "title": "Product Manager",
+      "family": "Product and Delivery",
+      "commandCount": 5
+    },
+    {
+      "path": "docs/guides/roles/security-architect.md",
+      "title": "Security Architect",
+      "family": "Architecture",
+      "commandCount": 5
+    },
+    {
+      "path": "docs/guides/roles/service-owner.md",
+      "title": "Service Owner",
+      "family": "Product and Delivery",
+      "commandCount": 3
+    },
+    {
+      "path": "docs/guides/roles/solution-architect.md",
+      "title": "Solution Architect",
+      "family": "Architecture",
+      "commandCount": 10
+    },
+    {
+      "path": "docs/guides/roles/technical-architect.md",
+      "title": "Technical Architect",
+      "family": "Architecture",
+      "commandCount": 5
     }
   ],
   "global": [
@@ -377,49 +539,81 @@
       "isDefault": true
     }
   ],
-  "globalExternal": [],
-  "globalPolicies": [],
+  "typeCategories": {
+    "REQ": "Discovery",
+    "STKE": "Discovery",
+    "RSCH": "Discovery",
+    "DSCT": "Discovery",
+    "SOBC": "Planning",
+    "PLAN": "Planning",
+    "ROAD": "Planning",
+    "STRAT": "Planning",
+    "BKLG": "Planning",
+    "PRIN": "Architecture",
+    "HLDR": "Architecture",
+    "DLDR": "Architecture",
+    "DATA": "Architecture",
+    "WARD": "Architecture",
+    "DIAG": "Architecture",
+    "DFD": "Architecture",
+    "ADR": "Architecture",
+    "PLAT": "Architecture",
+    "RISK": "Governance",
+    "TRAC": "Governance",
+    "PRIN-COMP": "Governance",
+    "CONF": "Governance",
+    "PRES": "Governance",
+    "ANAL": "Governance",
+    "GAPS": "Governance",
+    "TCOP": "Compliance",
+    "SECD": "Compliance",
+    "SECD-MOD": "Compliance",
+    "AIPB": "Compliance",
+    "ATRS": "Compliance",
+    "DPIA": "Compliance",
+    "JSP936": "Compliance",
+    "SVCASS": "Compliance",
+    "SNOW": "Operations",
+    "DEVOPS": "Operations",
+    "MLOPS": "Operations",
+    "FINOPS": "Operations",
+    "OPS": "Operations",
+    "SOW": "Procurement",
+    "EVAL": "Procurement",
+    "DOS": "Procurement",
+    "GCLD": "Procurement",
+    "GCLC": "Procurement",
+    "DMC": "Procurement",
+    "VEND": "Procurement",
+    "AWRS": "Research",
+    "AZRS": "Research",
+    "GCRS": "Research",
+    "STORY": "Other"
+  },
+  "globalExternal": [
+    {
+      "path": "projects/000-global/external/.gitkeep",
+      "title": ".gitkeep",
+      "type": "file"
+    }
+  ],
+  "globalPolicies": [
+    {
+      "path": "projects/000-global/policies/.gitkeep",
+      "title": ".gitkeep",
+      "type": "file"
+    },
+    {
+      "path": "projects/000-global/policies/README.md",
+      "title": "README.md",
+      "type": "md"
+    }
+  ],
   "projects": [
     {
       "id": "001-windows-11-migration-intune",
-      "name": "Windows 11 Migration (Intune)",
+      "name": "Windows 11 Migration Intune",
       "documents": [
-        {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-REQ-v1.0.md",
-          "title": "Requirements",
-          "category": "Discovery",
-          "documentId": "ARC-001-REQ-v1.0"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-STKE-v1.0.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery",
-          "documentId": "ARC-001-STKE-v1.0"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-RSCH-v1.0.md",
-          "title": "Research Findings",
-          "category": "Discovery",
-          "documentId": "ARC-001-RSCH-v1.0"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-SOBC-v1.0.md",
-          "title": "Strategic Outline Business Case",
-          "category": "Planning",
-          "documentId": "ARC-001-SOBC-v1.0"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-PLAN-v1.0.md",
-          "title": "Project Plan",
-          "category": "Planning",
-          "documentId": "ARC-001-PLAN-v1.0"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-ROAD-v1.0.md",
-          "title": "Roadmap",
-          "category": "Planning",
-          "documentId": "ARC-001-ROAD-v1.0"
-        },
         {
           "path": "projects/001-windows-11-migration-intune/ARC-001-BKLG-v1.0.md",
           "title": "Product Backlog",
@@ -433,46 +627,10 @@
           "documentId": "ARC-001-DATA-v1.0"
         },
         {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-RISK-v1.0.md",
-          "title": "Risk Register",
-          "category": "Governance",
-          "documentId": "ARC-001-RISK-v1.0"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-TRAC-v1.0.md",
-          "title": "Traceability Matrix",
-          "category": "Governance",
-          "documentId": "ARC-001-TRAC-v1.0"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-PRIN-COMP-v1.0.md",
-          "title": "Principles Compliance",
-          "category": "Governance",
-          "documentId": "ARC-001-PRIN-COMP-v1.0"
-        },
-        {
           "path": "projects/001-windows-11-migration-intune/ARC-001-DPIA-v1.0.md",
           "title": "Data Protection Impact Assessment",
           "category": "Compliance",
           "documentId": "ARC-001-DPIA-v1.0"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-SECD-MOD-v1.0.md",
-          "title": "MOD Secure by Design",
-          "category": "Compliance",
-          "documentId": "ARC-001-SECD-MOD-v1.0"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-SNOW-v1.0.md",
-          "title": "ServiceNow Design",
-          "category": "Operations",
-          "documentId": "ARC-001-SNOW-v1.0"
-        },
-        {
-          "path": "projects/001-windows-11-migration-intune/ARC-001-SOW-v1.0.md",
-          "title": "Statement of Work",
-          "category": "Procurement",
-          "documentId": "ARC-001-SOW-v1.0"
         },
         {
           "path": "projects/001-windows-11-migration-intune/ARC-001-EVAL-v1.0.md",
@@ -487,70 +645,170 @@
           "documentId": "ARC-001-GCLD-v1.0"
         },
         {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-PLAN-v1.0.md",
+          "title": "Project Plan",
+          "category": "Planning",
+          "documentId": "ARC-001-PLAN-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-PRIN-COMP-v1.0.md",
+          "title": "Principles Compliance",
+          "category": "Governance",
+          "documentId": "ARC-001-PRIN-COMP-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-REQ-v1.0.md",
+          "title": "Requirements",
+          "category": "Discovery",
+          "documentId": "ARC-001-REQ-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-RISK-v1.0.md",
+          "title": "Risk Register",
+          "category": "Governance",
+          "documentId": "ARC-001-RISK-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-ROAD-v1.0.md",
+          "title": "Roadmap",
+          "category": "Planning",
+          "documentId": "ARC-001-ROAD-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-RSCH-v1.0.md",
+          "title": "Research Findings",
+          "category": "Discovery",
+          "documentId": "ARC-001-RSCH-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-SECD-MOD-v1.0.md",
+          "title": "MOD Secure by Design",
+          "category": "Compliance",
+          "documentId": "ARC-001-SECD-MOD-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-SNOW-v1.0.md",
+          "title": "ServiceNow Design",
+          "category": "Operations",
+          "documentId": "ARC-001-SNOW-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-SOBC-v1.0.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning",
+          "documentId": "ARC-001-SOBC-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-SOW-v1.0.md",
+          "title": "Statement of Work",
+          "category": "Procurement",
+          "documentId": "ARC-001-SOW-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-STKE-v1.0.md",
+          "title": "Stakeholder Analysis",
+          "category": "Discovery",
+          "documentId": "ARC-001-STKE-v1.0"
+        },
+        {
           "path": "projects/001-windows-11-migration-intune/ARC-001-STORY-v1.0.md",
           "title": "Project Story",
           "category": "Other",
           "documentId": "ARC-001-STORY-v1.0"
+        },
+        {
+          "path": "projects/001-windows-11-migration-intune/ARC-001-TRAC-v1.0.md",
+          "title": "Traceability Matrix",
+          "category": "Governance",
+          "documentId": "ARC-001-TRAC-v1.0"
         }
       ],
       "diagrams": [
         {
           "path": "projects/001-windows-11-migration-intune/diagrams/ARC-001-DIAG-001-v1.0.md",
-          "title": "C4 Container Diagram: InTune Endpoint Management",
+          "title": "C4 Container Diagram: Microsoft InTune Endpoint Management Architecture",
           "documentId": "ARC-001-DIAG-001-v1.0"
         },
         {
           "path": "projects/001-windows-11-migration-intune/diagrams/ARC-001-DIAG-002-v1.0.md",
-          "title": "Deployment Diagram: Azure Cloud Infrastructure",
+          "title": "Deployment Diagram: Azure Cloud Infrastructure for Windows 11 Migration",
           "documentId": "ARC-001-DIAG-002-v1.0"
-        }
-      ],
-      "research": [
-        {
-          "path": "projects/001-windows-11-migration-intune/research/ARC-001-AZRS-v1.0.md",
-          "title": "Azure Research: Windows 11 Deployment with Intune",
-          "documentId": "ARC-001-AZRS-v1.0"
         }
       ],
       "decisions": [
         {
           "path": "projects/001-windows-11-migration-intune/decisions/ARC-001-ADR-001-v1.0.md",
-          "title": "ADR-001: Cloud-Native Endpoint Management Platform Selection",
+          "title": "Architecture Decision Record: Cloud-Native Endpoint Management Platform Selection",
           "documentId": "ARC-001-ADR-001-v1.0"
         }
       ],
       "wardleyMaps": [
         {
           "path": "projects/001-windows-11-migration-intune/wardley-maps/ARC-001-WARD-001-v1.0.md",
-          "title": "Wardley Map: InTune Policy Management",
+          "title": "Wardley Map: InTune Policy Management for Windows 11 Migration",
           "documentId": "ARC-001-WARD-001-v1.0"
         },
         {
           "path": "projects/001-windows-11-migration-intune/wardley-maps/ARC-001-WARD-002-v1.0.md",
-          "title": "Wardley Map: Procurement Strategy",
+          "title": "Wardley Map: Windows 10 to Windows 11 Migration - Procurement Strategy",
           "documentId": "ARC-001-WARD-002-v1.0"
         },
         {
           "path": "projects/001-windows-11-migration-intune/wardley-maps/ARC-001-WARD-003-v1.0.md",
-          "title": "Wardley Map: Full Landscape Gap Analysis",
+          "title": "Wardley Map: Windows 11 Migration - Full Landscape Gap Analysis",
           "documentId": "ARC-001-WARD-003-v1.0"
         }
       ],
-      "dataContracts": [],
       "reviews": [
         {
           "path": "projects/001-windows-11-migration-intune/reviews/ARC-001-HLDR-v1.0.md",
-          "title": "High-Level Design Review",
+          "title": "High-Level Design (HLD): Windows 10 to Windows 11 Migration with Microsoft InTune",
           "documentId": "ARC-001-HLDR-v1.0"
         }
       ],
-      "vendors": [],
-      "external": []
+      "research": [
+        {
+          "path": "projects/001-windows-11-migration-intune/research/ARC-001-AZRS-v1.0.md",
+          "title": "Azure Technology Research: Windows 11 Deployment with Microsoft Intune",
+          "documentId": "ARC-001-AZRS-v1.0"
+        }
+      ],
+      "external": [
+        {
+          "path": "projects/001-windows-11-migration-intune/external/.gitkeep",
+          "title": ".gitkeep",
+          "type": "file"
+        }
+      ]
     },
     {
       "id": "002-application-packaging-rationalisation",
       "name": "Application Packaging Rationalisation",
       "documents": [
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-BKLG-v1.0.md",
+          "title": "Product Backlog",
+          "category": "Planning",
+          "documentId": "ARC-002-BKLG-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-DATA-v1.0.md",
+          "title": "Data Model",
+          "category": "Architecture",
+          "documentId": "ARC-002-DATA-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-EVAL-v1.0.md",
+          "title": "Evaluation Criteria",
+          "category": "Procurement",
+          "documentId": "ARC-002-EVAL-v1.0"
+        },
+        {
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-PLAN-v1.0.md",
+          "title": "Project Plan",
+          "category": "Planning",
+          "documentId": "ARC-002-PLAN-v1.0"
+        },
         {
           "path": "projects/002-application-packaging-rationalisation/ARC-002-REQ-v1.0.md",
           "title": "Requirements",
@@ -558,10 +816,10 @@
           "documentId": "ARC-002-REQ-v1.0"
         },
         {
-          "path": "projects/002-application-packaging-rationalisation/ARC-002-STKE-v1.0.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery",
-          "documentId": "ARC-002-STKE-v1.0"
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-RISK-v1.0.md",
+          "title": "Risk Register",
+          "category": "Governance",
+          "documentId": "ARC-002-RISK-v1.0"
         },
         {
           "path": "projects/002-application-packaging-rationalisation/ARC-002-RSCH-v1.0.md",
@@ -576,28 +834,16 @@
           "documentId": "ARC-002-SOBC-v1.0"
         },
         {
-          "path": "projects/002-application-packaging-rationalisation/ARC-002-PLAN-v1.0.md",
-          "title": "Project Plan",
-          "category": "Planning",
-          "documentId": "ARC-002-PLAN-v1.0"
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-SOW-v1.0.md",
+          "title": "Statement of Work",
+          "category": "Procurement",
+          "documentId": "ARC-002-SOW-v1.0"
         },
         {
-          "path": "projects/002-application-packaging-rationalisation/ARC-002-BKLG-v1.0.md",
-          "title": "Product Backlog",
-          "category": "Planning",
-          "documentId": "ARC-002-BKLG-v1.0"
-        },
-        {
-          "path": "projects/002-application-packaging-rationalisation/ARC-002-DATA-v1.0.md",
-          "title": "Data Model",
-          "category": "Architecture",
-          "documentId": "ARC-002-DATA-v1.0"
-        },
-        {
-          "path": "projects/002-application-packaging-rationalisation/ARC-002-RISK-v1.0.md",
-          "title": "Risk Register",
-          "category": "Governance",
-          "documentId": "ARC-002-RISK-v1.0"
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-STKE-v1.0.md",
+          "title": "Stakeholder Analysis",
+          "category": "Discovery",
+          "documentId": "ARC-002-STKE-v1.0"
         },
         {
           "path": "projects/002-application-packaging-rationalisation/ARC-002-TRAC-v1.0.md",
@@ -606,30 +852,16 @@
           "documentId": "ARC-002-TRAC-v1.0"
         },
         {
-          "path": "projects/002-application-packaging-rationalisation/ARC-002-SOW-v1.0.md",
-          "title": "Statement of Work",
-          "category": "Procurement",
-          "documentId": "ARC-002-SOW-v1.0"
-        },
-        {
-          "path": "projects/002-application-packaging-rationalisation/ARC-002-EVAL-v1.0.md",
-          "title": "Evaluation Criteria",
-          "category": "Procurement",
-          "documentId": "ARC-002-EVAL-v1.0"
-        }
-      ],
-      "diagrams": [],
-      "research": [
-        {
-          "path": "projects/002-application-packaging-rationalisation/research/ARC-002-AZRS-v1.0.md",
-          "title": "Azure Research: Application Packaging and Rationalisation",
-          "documentId": "ARC-002-AZRS-v1.0"
+          "path": "projects/002-application-packaging-rationalisation/ARC-002-TRAC-v1.1.md",
+          "title": "Traceability Matrix",
+          "category": "Governance",
+          "documentId": "ARC-002-TRAC-v1.1"
         }
       ],
       "decisions": [
         {
           "path": "projects/002-application-packaging-rationalisation/decisions/ARC-002-ADR-001-v1.0.md",
-          "title": "ADR-001: Application Packaging Format Strategy",
+          "title": "ADR-001: Application Packaging Format Strategy (MSIX vs. Win32 vs. App-V)",
           "documentId": "ARC-002-ADR-001-v1.0"
         },
         {
@@ -643,39 +875,42 @@
           "documentId": "ARC-002-ADR-003-v1.0"
         }
       ],
-      "wardleyMaps": [],
-      "dataContracts": [],
-      "reviews": [],
-      "vendors": [],
-      "external": []
+      "research": [
+        {
+          "path": "projects/002-application-packaging-rationalisation/research/ARC-002-AZRS-v1.0.md",
+          "title": "Azure Technology Research: Application Packaging and Rationalisation",
+          "documentId": "ARC-002-AZRS-v1.0"
+        }
+      ],
+      "external": [
+        {
+          "path": "projects/002-application-packaging-rationalisation/external/.gitkeep",
+          "title": ".gitkeep",
+          "type": "file"
+        }
+      ]
     },
     {
       "id": "003-peripherals-update-upgrade",
-      "name": "Peripherals Update/Upgrade",
+      "name": "Peripherals Update Upgrade",
       "documents": [
-        {
-          "path": "projects/003-peripherals-update-upgrade/ARC-003-REQ-v1.0.md",
-          "title": "Requirements",
-          "category": "Discovery",
-          "documentId": "ARC-003-REQ-v1.0"
-        },
-        {
-          "path": "projects/003-peripherals-update-upgrade/ARC-003-STKE-v1.0.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery",
-          "documentId": "ARC-003-STKE-v1.0"
-        },
-        {
-          "path": "projects/003-peripherals-update-upgrade/ARC-003-SOBC-v1.0.md",
-          "title": "Strategic Outline Business Case",
-          "category": "Planning",
-          "documentId": "ARC-003-SOBC-v1.0"
-        },
         {
           "path": "projects/003-peripherals-update-upgrade/ARC-003-BKLG-v1.0.md",
           "title": "Product Backlog",
           "category": "Planning",
           "documentId": "ARC-003-BKLG-v1.0"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-EVAL-v1.0.md",
+          "title": "Evaluation Criteria",
+          "category": "Procurement",
+          "documentId": "ARC-003-EVAL-v1.0"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-REQ-v1.0.md",
+          "title": "Requirements",
+          "category": "Discovery",
+          "documentId": "ARC-003-REQ-v1.0"
         },
         {
           "path": "projects/003-peripherals-update-upgrade/ARC-003-RISK-v1.0.md",
@@ -684,10 +919,10 @@
           "documentId": "ARC-003-RISK-v1.0"
         },
         {
-          "path": "projects/003-peripherals-update-upgrade/ARC-003-TRAC-v1.0.md",
-          "title": "Traceability Matrix",
-          "category": "Governance",
-          "documentId": "ARC-003-TRAC-v1.0"
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-SOBC-v1.0.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning",
+          "documentId": "ARC-003-SOBC-v1.0"
         },
         {
           "path": "projects/003-peripherals-update-upgrade/ARC-003-SOW-v1.0.md",
@@ -696,14 +931,18 @@
           "documentId": "ARC-003-SOW-v1.0"
         },
         {
-          "path": "projects/003-peripherals-update-upgrade/ARC-003-EVAL-v1.0.md",
-          "title": "Evaluation Criteria",
-          "category": "Procurement",
-          "documentId": "ARC-003-EVAL-v1.0"
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-STKE-v1.0.md",
+          "title": "Stakeholder Analysis",
+          "category": "Discovery",
+          "documentId": "ARC-003-STKE-v1.0"
+        },
+        {
+          "path": "projects/003-peripherals-update-upgrade/ARC-003-TRAC-v1.0.md",
+          "title": "Traceability Matrix",
+          "category": "Governance",
+          "documentId": "ARC-003-TRAC-v1.0"
         }
       ],
-      "diagrams": [],
-      "research": [],
       "decisions": [
         {
           "path": "projects/003-peripherals-update-upgrade/decisions/ARC-003-ADR-001-v1.0.md",
@@ -731,33 +970,23 @@
           "documentId": "ARC-003-ADR-005-v1.0"
         }
       ],
-      "wardleyMaps": [],
-      "dataContracts": [],
-      "reviews": [],
-      "vendors": [],
-      "external": []
+      "external": [
+        {
+          "path": "projects/003-peripherals-update-upgrade/external/.gitkeep",
+          "title": ".gitkeep",
+          "type": "file"
+        }
+      ]
     },
     {
       "id": "004-conference-facilities-modernization",
       "name": "Conference Facilities Modernization",
       "documents": [
         {
-          "path": "projects/004-conference-facilities-modernization/ARC-004-REQ-v1.0.md",
-          "title": "Requirements",
-          "category": "Discovery",
-          "documentId": "ARC-004-REQ-v1.0"
-        },
-        {
-          "path": "projects/004-conference-facilities-modernization/ARC-004-STKE-v1.0.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery",
-          "documentId": "ARC-004-STKE-v1.0"
-        },
-        {
-          "path": "projects/004-conference-facilities-modernization/ARC-004-SOBC-v1.0.md",
-          "title": "Strategic Outline Business Case",
+          "path": "projects/004-conference-facilities-modernization/ARC-004-BKLG-v1.0.md",
+          "title": "Product Backlog",
           "category": "Planning",
-          "documentId": "ARC-004-SOBC-v1.0"
+          "documentId": "ARC-004-BKLG-v1.0"
         },
         {
           "path": "projects/004-conference-facilities-modernization/ARC-004-PLAN-v1.0.md",
@@ -766,74 +995,74 @@
           "documentId": "ARC-004-PLAN-v1.0"
         },
         {
-          "path": "projects/004-conference-facilities-modernization/ARC-004-BKLG-v1.0.md",
-          "title": "Product Backlog",
-          "category": "Planning",
-          "documentId": "ARC-004-BKLG-v1.0"
+          "path": "projects/004-conference-facilities-modernization/ARC-004-REQ-v1.0.md",
+          "title": "Requirements",
+          "category": "Discovery",
+          "documentId": "ARC-004-REQ-v1.0"
         },
         {
           "path": "projects/004-conference-facilities-modernization/ARC-004-RISK-v1.0.md",
           "title": "Risk Register",
           "category": "Governance",
           "documentId": "ARC-004-RISK-v1.0"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/ARC-004-SOBC-v1.0.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning",
+          "documentId": "ARC-004-SOBC-v1.0"
+        },
+        {
+          "path": "projects/004-conference-facilities-modernization/ARC-004-STKE-v1.0.md",
+          "title": "Stakeholder Analysis",
+          "category": "Discovery",
+          "documentId": "ARC-004-STKE-v1.0"
         }
       ],
-      "diagrams": [],
-      "research": [],
       "decisions": [
         {
           "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-001-v1.0.md",
-          "title": "ADR-001: Microsoft Teams Rooms for Conference Room Standardization",
+          "title": "Architecture Decision Record: Use Microsoft Teams Rooms for Conference Room Standardization",
           "documentId": "ARC-004-ADR-001-v1.0"
         },
         {
           "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-002-v1.0.md",
-          "title": "ADR-002: Room Analytics and Occupancy Sensors",
+          "title": "Architecture Decision Record: Deploy Room Analytics and Occupancy Sensors for Utilization Optimization",
           "documentId": "ARC-004-ADR-002-v1.0"
         },
         {
           "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-003-v1.0.md",
-          "title": "ADR-003: Network Architecture for Teams Rooms",
+          "title": "Architecture Decision Record: Network Architecture for Microsoft Teams Rooms (VLAN Segregation, QoS, PoE+ Switches)",
           "documentId": "ARC-004-ADR-003-v1.0"
         },
         {
           "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-004-v1.0.md",
-          "title": "ADR-004: Acoustic Treatment Strategy",
+          "title": "Architecture Decision Record: Acoustic Treatment Strategy for Conference Rooms",
           "documentId": "ARC-004-ADR-004-v1.0"
         },
         {
           "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-005-v1.0.md",
-          "title": "ADR-005: OEM Vendor Selection by Room Size",
+          "title": "Architecture Decision Record: OEM Vendor Selection Strategy by Room Size (Logitech, Poly, Yealink)",
           "documentId": "ARC-004-ADR-005-v1.0"
         }
       ],
-      "wardleyMaps": [],
-      "dataContracts": [],
-      "reviews": [],
-      "vendors": [],
-      "external": []
+      "external": [
+        {
+          "path": "projects/004-conference-facilities-modernization/external/.gitkeep",
+          "title": ".gitkeep",
+          "type": "file"
+        }
+      ]
     },
     {
       "id": "005-cloud-pki",
-      "name": "Cloud PKI",
+      "name": "Cloud Pki",
       "documents": [
         {
-          "path": "projects/005-cloud-pki/ARC-005-REQ-v1.0.md",
-          "title": "Requirements",
-          "category": "Discovery",
-          "documentId": "ARC-005-REQ-v1.0"
-        },
-        {
-          "path": "projects/005-cloud-pki/ARC-005-STKE-v1.0.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery",
-          "documentId": "ARC-005-STKE-v1.0"
-        },
-        {
-          "path": "projects/005-cloud-pki/ARC-005-SOBC-v1.0.md",
-          "title": "Strategic Outline Business Case",
-          "category": "Planning",
-          "documentId": "ARC-005-SOBC-v1.0"
+          "path": "projects/005-cloud-pki/ARC-005-EVAL-v1.0.md",
+          "title": "Evaluation Criteria",
+          "category": "Procurement",
+          "documentId": "ARC-005-EVAL-v1.0"
         },
         {
           "path": "projects/005-cloud-pki/ARC-005-PLAN-v1.0.md",
@@ -842,22 +1071,34 @@
           "documentId": "ARC-005-PLAN-v1.0"
         },
         {
+          "path": "projects/005-cloud-pki/ARC-005-REQ-v1.0.md",
+          "title": "Requirements",
+          "category": "Discovery",
+          "documentId": "ARC-005-REQ-v1.0"
+        },
+        {
           "path": "projects/005-cloud-pki/ARC-005-RISK-v1.0.md",
           "title": "Risk Register",
           "category": "Governance",
           "documentId": "ARC-005-RISK-v1.0"
         },
         {
-          "path": "projects/005-cloud-pki/ARC-005-EVAL-v1.0.md",
-          "title": "Evaluation Criteria",
-          "category": "Procurement",
-          "documentId": "ARC-005-EVAL-v1.0"
+          "path": "projects/005-cloud-pki/ARC-005-SOBC-v1.0.md",
+          "title": "Strategic Outline Business Case",
+          "category": "Planning",
+          "documentId": "ARC-005-SOBC-v1.0"
+        },
+        {
+          "path": "projects/005-cloud-pki/ARC-005-STKE-v1.0.md",
+          "title": "Stakeholder Analysis",
+          "category": "Discovery",
+          "documentId": "ARC-005-STKE-v1.0"
         }
       ],
       "diagrams": [
         {
           "path": "projects/005-cloud-pki/diagrams/ARC-005-DIAG-001-v1.0.md",
-          "title": "Architecture Block Diagram: Hybrid PKI",
+          "title": "Architecture Block Diagram: Hybrid PKI - All Components",
           "documentId": "ARC-005-DIAG-001-v1.0"
         },
         {
@@ -867,23 +1108,24 @@
         },
         {
           "path": "projects/005-cloud-pki/diagrams/ARC-005-DIAG-003-v1.0.md",
-          "title": "Cloud Deployment Diagram: Hybrid PKI",
+          "title": "Cloud Deployment Diagram: Hybrid PKI - Cloud Infrastructure",
           "documentId": "ARC-005-DIAG-003-v1.0"
         }
       ],
-      "research": [],
       "decisions": [
         {
           "path": "projects/005-cloud-pki/decisions/ARC-005-ADR-001-v1.0.md",
-          "title": "ADR-001: Cloud PKI Service for High-Volume Certificate Issuance",
+          "title": "Architecture Decision Record: Use Cloud PKI Service for High-Volume Certificate Issuance",
           "documentId": "ARC-005-ADR-001-v1.0"
         }
       ],
-      "wardleyMaps": [],
-      "dataContracts": [],
-      "reviews": [],
-      "vendors": [],
-      "external": []
+      "external": [
+        {
+          "path": "projects/005-cloud-pki/external/.gitkeep",
+          "title": ".gitkeep",
+          "type": "file"
+        }
+      ]
     },
     {
       "id": "006-large-format-printer",
@@ -896,12 +1138,6 @@
           "documentId": "ARC-006-REQ-v1.0"
         },
         {
-          "path": "projects/006-large-format-printer/ARC-006-STKE-v1.0.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery",
-          "documentId": "ARC-006-STKE-v1.0"
-        },
-        {
           "path": "projects/006-large-format-printer/ARC-006-RISK-v1.0.md",
           "title": "Risk Register",
           "category": "Governance",
@@ -912,20 +1148,25 @@
           "title": "MOD Secure by Design",
           "category": "Compliance",
           "documentId": "ARC-006-SECD-MOD-v1.0"
+        },
+        {
+          "path": "projects/006-large-format-printer/ARC-006-STKE-v1.0.md",
+          "title": "Stakeholder Analysis",
+          "category": "Discovery",
+          "documentId": "ARC-006-STKE-v1.0"
         }
       ],
-      "diagrams": [],
-      "research": [],
-      "decisions": [],
-      "wardleyMaps": [],
-      "dataContracts": [],
-      "reviews": [],
-      "vendors": [],
-      "external": []
+      "external": [
+        {
+          "path": "projects/006-large-format-printer/external/.gitkeep",
+          "title": ".gitkeep",
+          "type": "file"
+        }
+      ]
     },
     {
       "id": "007-vpn-service-windows11-autopilot",
-      "name": "VPN Service Windows 11 Autopilot",
+      "name": "Vpn Service Windows11 Autopilot",
       "documents": [
         {
           "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-REQ-v1.0.md",
@@ -934,10 +1175,10 @@
           "documentId": "ARC-007-REQ-v1.0"
         },
         {
-          "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-STKE-v1.0.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery",
-          "documentId": "ARC-007-STKE-v1.0"
+          "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-RISK-v1.0.md",
+          "title": "Risk Register",
+          "category": "Governance",
+          "documentId": "ARC-007-RISK-v1.0"
         },
         {
           "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-SOBC-v1.0.md",
@@ -946,10 +1187,10 @@
           "documentId": "ARC-007-SOBC-v1.0"
         },
         {
-          "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-RISK-v1.0.md",
-          "title": "Risk Register",
-          "category": "Governance",
-          "documentId": "ARC-007-RISK-v1.0"
+          "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-STKE-v1.0.md",
+          "title": "Stakeholder Analysis",
+          "category": "Discovery",
+          "documentId": "ARC-007-STKE-v1.0"
         }
       ],
       "diagrams": [
@@ -959,7 +1200,6 @@
           "documentId": "ARC-007-DIAG-001-v1.0"
         }
       ],
-      "research": [],
       "decisions": [
         {
           "path": "projects/007-vpn-service-windows11-autopilot/decisions/ARC-007-ADR-001-v1.0.md",
@@ -967,11 +1207,13 @@
           "documentId": "ARC-007-ADR-001-v1.0"
         }
       ],
-      "wardleyMaps": [],
-      "dataContracts": [],
-      "reviews": [],
-      "vendors": [],
-      "external": []
+      "external": [
+        {
+          "path": "projects/007-vpn-service-windows11-autopilot/external/.gitkeep",
+          "title": ".gitkeep",
+          "type": "file"
+        }
+      ]
     }
   ]
 }

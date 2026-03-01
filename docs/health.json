@@ -1,0 +1,113 @@
+{
+  "generated": "2026-03-01T17:35:41.832Z",
+  "scanned": {
+    "projects": 7,
+    "artifacts": 81
+  },
+  "summary": {
+    "HIGH": 1,
+    "MEDIUM": 5,
+    "LOW": 1,
+    "total": 7
+  },
+  "byType": {
+    "STALE-RSCH": 0,
+    "FORGOTTEN-ADR": 1,
+    "UNRESOLVED-COND": 0,
+    "STALE-EXT": 0,
+    "ORPHAN-REQ": 5,
+    "MISSING-TRACE": 0,
+    "VERSION-DRIFT": 1
+  },
+  "projects": [
+    {
+      "id": "001-windows-11-migration-intune",
+      "artifacts": 25,
+      "findings": [
+        {
+          "severity": "HIGH",
+          "rule": "FORGOTTEN-ADR",
+          "file": "decisions/ARC-001-ADR-001-v1.0.md",
+          "message": "Status: Proposed since 2025-11-12 (109 days without review)",
+          "action": "Schedule architecture review or accept/reject the decision"
+        },
+        {
+          "severity": "MEDIUM",
+          "rule": "ORPHAN-REQ",
+          "file": "ARC-001-REQ-v1.0.md",
+          "message": "Total requirements: 62\n  Requirements not referenced by any ADR: 6\n  Examples: NFR-SEC-009, NFR-SEC-010, NFR-M-002, NFR-M-003, NFR-S-003 (+1 more)",
+          "action": "Review whether these requirements need architectural decisions documented as ADRs"
+        }
+      ]
+    },
+    {
+      "id": "002-application-packaging-rationalisation",
+      "artifacts": 12,
+      "findings": []
+    },
+    {
+      "id": "003-peripherals-update-upgrade",
+      "artifacts": 13,
+      "findings": []
+    },
+    {
+      "id": "004-conference-facilities-modernization",
+      "artifacts": 11,
+      "findings": [
+        {
+          "severity": "MEDIUM",
+          "rule": "ORPHAN-REQ",
+          "file": "ARC-004-REQ-v1.0.md",
+          "message": "Total requirements: 52\n  Requirements not referenced by any ADR: 24\n  Examples: BR-007, BR-008, FR-007, FR-010, FR-011 (+19 more)",
+          "action": "Review whether these requirements need architectural decisions documented as ADRs"
+        }
+      ]
+    },
+    {
+      "id": "005-cloud-pki",
+      "artifacts": 10,
+      "findings": [
+        {
+          "severity": "MEDIUM",
+          "rule": "ORPHAN-REQ",
+          "file": "ARC-005-REQ-v1.0.md",
+          "message": "Total requirements: 55\n  Requirements not referenced by any ADR: 25\n  Examples: BR-008, FR-002, FR-006, FR-007, FR-009 (+20 more)",
+          "action": "Review whether these requirements need architectural decisions documented as ADRs"
+        },
+        {
+          "severity": "LOW",
+          "rule": "VERSION-DRIFT",
+          "file": "diagrams/ARC-005-DIAG-001-v1.0.md",
+          "message": "Versions found: v1.0, v1.0, v1.0\n  Latest version: diagrams/ARC-005-DIAG-001-v1.0.md (last modified: 2025-11-07, 114 days ago)",
+          "action": "Confirm the latest version is current, or archive superseded versions"
+        }
+      ]
+    },
+    {
+      "id": "006-large-format-printer",
+      "artifacts": 4,
+      "findings": [
+        {
+          "severity": "MEDIUM",
+          "rule": "ORPHAN-REQ",
+          "file": "ARC-006-REQ-v1.0.md",
+          "message": "Total requirements: 47\n  Requirements not referenced by any ADR: 47\n  Examples: BR-001, BR-002, BR-003, BR-004, BR-005 (+42 more)",
+          "action": "Review whether these requirements need architectural decisions documented as ADRs"
+        }
+      ]
+    },
+    {
+      "id": "007-vpn-service-windows11-autopilot",
+      "artifacts": 6,
+      "findings": [
+        {
+          "severity": "MEDIUM",
+          "rule": "ORPHAN-REQ",
+          "file": "ARC-007-REQ-v1.0.md",
+          "message": "Total requirements: 45\n  Requirements not referenced by any ADR: 29\n  Examples: BR-004, BR-005, BR-006, FR-004, FR-008 (+24 more)",
+          "action": "Review whether these requirements need architectural decisions documented as ADRs"
+        }
+      ]
+    }
+  ]
+}
