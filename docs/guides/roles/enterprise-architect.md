@@ -1,11 +1,13 @@
 # Enterprise Architect — ArcKit Command Guide
 
+> **Guide Origin**: Official | **ArcKit Version**: [VERSION]
+
 > **DDaT Role Family**: [Architecture](https://ddat-capability-framework.service.gov.uk/role/enterprise-architect)
 > **Framework**: [UK Government DDaT Capability Framework](https://ddat-capability-framework.service.gov.uk/)
 
 ## Overview
 
-The Enterprise Architect owns the architecture governance framework and is the primary ArcKit user. All 53 commands are relevant to this role — you set up principles, define the governance lifecycle, and ensure all architecture artifacts meet organisational standards.
+The Enterprise Architect owns the architecture governance framework and is the primary ArcKit user. All 60 commands are relevant to this role — you set up principles, define the governance lifecycle, and ensure all architecture artifacts meet organisational standards.
 
 ## Primary Commands
 

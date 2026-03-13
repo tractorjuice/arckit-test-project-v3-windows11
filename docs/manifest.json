@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-01T17:41:46.202Z",
+  "generated": "2026-03-13T10:46:18.935Z",
   "repository": {
     "name": "arckit-test-project-v3-windows11"
   },
@@ -38,13 +38,13 @@
     {
       "path": "docs/guides/aws-research.md",
       "title": "AWS Technology Research Guide",
-      "category": "Research",
+      "category": "Integrations",
       "status": "experimental"
     },
     {
       "path": "docs/guides/azure-research.md",
       "title": "Azure Technology Research Guide",
-      "category": "Research",
+      "category": "Integrations",
       "status": "experimental"
     },
     {
@@ -74,13 +74,13 @@
     {
       "path": "docs/guides/conformance.md",
       "title": "Architecture Conformance Guide",
-      "category": "Other",
+      "category": "Governance",
       "status": "beta"
     },
     {
       "path": "docs/guides/customize.md",
       "title": "Template Customization Guide",
-      "category": "Other",
+      "category": "Getting Started",
       "status": "live"
     },
     {
@@ -120,6 +120,12 @@
       "status": "experimental"
     },
     {
+      "path": "docs/guides/dfd.md",
+      "title": "Data Flow Diagram Guide",
+      "category": "Architecture",
+      "status": "experimental"
+    },
+    {
       "path": "docs/guides/diagram.md",
       "title": "Architecture Diagram Guide",
       "category": "Architecture",
@@ -156,6 +162,12 @@
       "status": "experimental"
     },
     {
+      "path": "docs/guides/framework.md",
+      "title": "Framework Guide",
+      "category": "Architecture",
+      "status": "experimental"
+    },
+    {
       "path": "docs/guides/gcloud-clarify.md",
       "title": "G-Cloud Clarification Questions Playbook",
       "category": "Procurement",
@@ -170,7 +182,13 @@
     {
       "path": "docs/guides/gcp-research.md",
       "title": "Google Cloud Technology Research Guide",
-      "category": "Research",
+      "category": "Integrations",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/glossary.md",
+      "title": "Glossary Guide",
+      "category": "Reporting",
       "status": "experimental"
     },
     {
@@ -180,10 +198,28 @@
       "status": "beta"
     },
     {
+      "path": "docs/guides/health.md",
+      "title": "Health Check Guide",
+      "category": "Governance",
+      "status": "experimental"
+    },
+    {
       "path": "docs/guides/hld-review.md",
       "title": "High-Level Design Review Playbook",
       "category": "Architecture",
       "status": "beta"
+    },
+    {
+      "path": "docs/guides/impact.md",
+      "title": "Impact Analysis",
+      "category": "Governance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/init.md",
+      "title": "Init Guide",
+      "category": "Getting Started",
+      "status": "experimental"
     },
     {
       "path": "docs/guides/jsp-936.md",
@@ -198,15 +234,21 @@
       "status": "beta"
     },
     {
+      "path": "docs/guides/maturity-model.md",
+      "title": "Maturity Model Guide",
+      "category": "Governance",
+      "status": "experimental"
+    },
+    {
       "path": "docs/guides/mcp-servers.md",
       "title": "ArcKit Plugin Setup Guide",
-      "category": "Other",
+      "category": "Integrations",
       "status": "beta"
     },
     {
       "path": "docs/guides/migration.md",
       "title": "File Migration Playbook",
-      "category": "Other",
+      "category": "Planning",
       "status": "experimental"
     },
     {
@@ -236,13 +278,13 @@
     {
       "path": "docs/guides/pages.md",
       "title": "GitHub Pages Generator Playbook",
-      "category": "Other",
+      "category": "Reporting",
       "status": "alpha"
     },
     {
       "path": "docs/guides/pinecone-mcp.md",
       "title": "Pinecone MCP Integration Guide",
-      "category": "Other",
+      "category": "Integrations",
       "status": "experimental"
     },
     {
@@ -260,7 +302,7 @@
     {
       "path": "docs/guides/presentation.md",
       "title": "Presentation Guide",
-      "category": "Other",
+      "category": "Reporting",
       "status": "beta"
     },
     {
@@ -284,13 +326,13 @@
     {
       "path": "docs/guides/productivity.md",
       "title": "Architecture Productivity Guide",
-      "category": "Other",
+      "category": "Getting Started",
       "status": "beta"
     },
     {
       "path": "docs/guides/remote-control.md",
       "title": "Govern Architecture from Anywhere: Using Claude Code Remote Control with ArcKit",
-      "category": "Other",
+      "category": "Getting Started",
       "status": "beta"
     },
     {
@@ -324,6 +366,18 @@
       "status": "beta"
     },
     {
+      "path": "docs/guides/score.md",
+      "title": "Vendor Scoring",
+      "category": "Procurement",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/search.md",
+      "title": "Project Search",
+      "category": "Governance",
+      "status": "beta"
+    },
+    {
       "path": "docs/guides/secure.md",
       "title": "Secure by Design Playbook",
       "category": "Compliance",
@@ -344,7 +398,7 @@
     {
       "path": "docs/guides/servicenow.md",
       "title": "ServiceNow Service Design Playbook",
-      "category": "Operations",
+      "category": "Integrations",
       "status": "beta"
     },
     {
@@ -374,13 +428,13 @@
     {
       "path": "docs/guides/start.md",
       "title": "Getting Started with ArcKit",
-      "category": "Other",
+      "category": "Getting Started",
       "status": "beta"
     },
     {
       "path": "docs/guides/story.md",
       "title": "Project Story Guide",
-      "category": "Other",
+      "category": "Reporting",
       "status": "live"
     },
     {
@@ -396,6 +450,12 @@
       "status": "beta"
     },
     {
+      "path": "docs/guides/template-builder.md",
+      "title": "Template Builder Guide",
+      "category": "Getting Started",
+      "status": "alpha"
+    },
+    {
       "path": "docs/guides/traceability.md",
       "title": "Traceability Guide",
       "category": "Governance",
@@ -404,13 +464,13 @@
     {
       "path": "docs/guides/trello.md",
       "title": "Trello Export Quick Guide",
-      "category": "Other",
+      "category": "Integrations",
       "status": "experimental"
     },
     {
       "path": "docs/guides/upgrading.md",
       "title": "Upgrading ArcKit",
-      "category": "Other",
+      "category": "Getting Started",
       "status": "beta"
     },
     {
@@ -562,7 +622,7 @@
     "TRAC": "Governance",
     "PRIN-COMP": "Governance",
     "CONF": "Governance",
-    "PRES": "Governance",
+    "PRES": "Reporting",
     "ANAL": "Governance",
     "GAPS": "Governance",
     "TCOP": "Compliance",
@@ -588,21 +648,9 @@
     "AWRS": "Research",
     "AZRS": "Research",
     "GCRS": "Research",
-    "STORY": "Other"
+    "STORY": "Reporting"
   },
-  "globalExternal": [
-    {
-      "path": "projects/000-global/external/.gitkeep",
-      "title": ".gitkeep",
-      "type": "file"
-    }
-  ],
   "globalPolicies": [
-    {
-      "path": "projects/000-global/policies/.gitkeep",
-      "title": ".gitkeep",
-      "type": "file"
-    },
     {
       "path": "projects/000-global/policies/README.md",
       "title": "README.md",
@@ -713,7 +761,7 @@
         {
           "path": "projects/001-windows-11-migration-intune/ARC-001-STORY-v1.0.md",
           "title": "Project Story",
-          "category": "Other",
+          "category": "Reporting",
           "documentId": "ARC-001-STORY-v1.0"
         },
         {
@@ -771,13 +819,6 @@
           "path": "projects/001-windows-11-migration-intune/research/ARC-001-AZRS-v1.0.md",
           "title": "Azure Technology Research: Windows 11 Deployment with Microsoft Intune",
           "documentId": "ARC-001-AZRS-v1.0"
-        }
-      ],
-      "external": [
-        {
-          "path": "projects/001-windows-11-migration-intune/external/.gitkeep",
-          "title": ".gitkeep",
-          "type": "file"
         }
       ]
     },
@@ -881,13 +922,6 @@
           "title": "Azure Technology Research: Application Packaging and Rationalisation",
           "documentId": "ARC-002-AZRS-v1.0"
         }
-      ],
-      "external": [
-        {
-          "path": "projects/002-application-packaging-rationalisation/external/.gitkeep",
-          "title": ".gitkeep",
-          "type": "file"
-        }
       ]
     },
     {
@@ -969,13 +1003,6 @@
           "title": "ADR-005: User Choice Monitor Configuration Strategy",
           "documentId": "ARC-003-ADR-005-v1.0"
         }
-      ],
-      "external": [
-        {
-          "path": "projects/003-peripherals-update-upgrade/external/.gitkeep",
-          "title": ".gitkeep",
-          "type": "file"
-        }
       ]
     },
     {
@@ -1045,13 +1072,6 @@
           "title": "Architecture Decision Record: OEM Vendor Selection Strategy by Room Size (Logitech, Poly, Yealink)",
           "documentId": "ARC-004-ADR-005-v1.0"
         }
-      ],
-      "external": [
-        {
-          "path": "projects/004-conference-facilities-modernization/external/.gitkeep",
-          "title": ".gitkeep",
-          "type": "file"
-        }
       ]
     },
     {
@@ -1118,13 +1138,6 @@
           "title": "Architecture Decision Record: Use Cloud PKI Service for High-Volume Certificate Issuance",
           "documentId": "ARC-005-ADR-001-v1.0"
         }
-      ],
-      "external": [
-        {
-          "path": "projects/005-cloud-pki/external/.gitkeep",
-          "title": ".gitkeep",
-          "type": "file"
-        }
       ]
     },
     {
@@ -1154,13 +1167,6 @@
           "title": "Stakeholder Analysis",
           "category": "Discovery",
           "documentId": "ARC-006-STKE-v1.0"
-        }
-      ],
-      "external": [
-        {
-          "path": "projects/006-large-format-printer/external/.gitkeep",
-          "title": ".gitkeep",
-          "type": "file"
         }
       ]
     },
@@ -1206,14 +1212,1053 @@
           "title": "ADR-001: Cisco AnyConnect VPN Deployment for Windows 11 Autopilot",
           "documentId": "ARC-007-ADR-001-v1.0"
         }
-      ],
-      "external": [
-        {
-          "path": "projects/007-vpn-service-windows11-autopilot/external/.gitkeep",
-          "title": ".gitkeep",
-          "type": "file"
-        }
       ]
     }
-  ]
+  ],
+  "dependencyGraph": {
+    "nodes": {
+      "ARC-000-PRIN-v1.0": {
+        "type": "PRIN",
+        "project": "000-global",
+        "path": "projects/000-global/ARC-000-PRIN-v1.0.md",
+        "title": "Enterprise Architecture Principles: Windows 10 to Windows 11 Migration",
+        "status": "DRAFT",
+        "severity": "MEDIUM",
+        "createdDate": "2025-10-14",
+        "lastModified": "2026-01-26"
+      },
+      "ARC-001-BKLG-v1.0": {
+        "type": "BKLG",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-BKLG-v1.0.md",
+        "title": "Product Backlog: Windows 11 Migration with Microsoft InTune",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-DATA-v1.0": {
+        "type": "DATA",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-DATA-v1.0.md",
+        "title": "Data Model: Windows 10 to Windows 11 Migration using Microsoft InTune",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-DPIA-v1.0": {
+        "type": "DPIA",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-DPIA-v1.0.md",
+        "title": "Data Protection Impact Assessment (DPIA): Windows 10 to Windows 11 Migration with Microsoft InTune",
+        "status": "",
+        "severity": "HIGH",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-EVAL-v1.0": {
+        "type": "EVAL",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-EVAL-v1.0.md",
+        "title": "Vendor Evaluation Criteria: Windows 10 to Windows 11 Migration using Microsoft InTune",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-GCLD-v1.0": {
+        "type": "GCLD",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-GCLD-v1.0.md",
+        "title": "UK Digital Marketplace: G-Cloud Service Procurement",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-PLAN-v1.0": {
+        "type": "PLAN",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-PLAN-v1.0.md",
+        "title": "Project Plan: Windows 10 to Windows 11 Migration with Microsoft InTune",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-PRIN-COMP-v1.0": {
+        "type": "PRIN-COMP",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-PRIN-COMP-v1.0.md",
+        "title": "Architecture Principles Compliance Assessment",
+        "status": "DRAFT",
+        "severity": "HIGH",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-REQ-v1.0": {
+        "type": "REQ",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-REQ-v1.0.md",
+        "title": "Requirements Specification: Windows 11 Deployment with Microsoft InTune",
+        "status": "APPROVED",
+        "severity": "LOW",
+        "createdDate": "2025-10-14",
+        "lastModified": "2026-01-26"
+      },
+      "ARC-001-RISK-v1.0": {
+        "type": "RISK",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-RISK-v1.0.md",
+        "title": "Risk Register: Windows 11 Migration with Microsoft InTune",
+        "status": "DRAFT",
+        "severity": "HIGH",
+        "createdDate": "2025-10-20",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-001-ROAD-v1.0": {
+        "type": "ROAD",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-ROAD-v1.0.md",
+        "title": "Architecture Roadmap: Enterprise Endpoint Management & Cloud Transformation",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-11-21",
+        "lastModified": "2025-11-21"
+      },
+      "ARC-001-RSCH-v1.0": {
+        "type": "RSCH",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-RSCH-v1.0.md",
+        "title": "Technology Research Findings: Windows 11 Migration Tools",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-SECD-MOD-v1.0": {
+        "type": "SECD-MOD",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-SECD-MOD-v1.0.md",
+        "title": "MOD Secure by Design Assessment - CORRECTED",
+        "status": "",
+        "severity": "HIGH",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-SNOW-v1.0": {
+        "type": "SNOW",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-SNOW-v1.0.md",
+        "title": "ServiceNow Service Design: Windows 11 Migration",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-SOBC-v1.0": {
+        "type": "SOBC",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-SOBC-v1.0.md",
+        "title": "Strategic Outline Business Case (SOBC)",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-10-21",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-001-SOW-v1.0": {
+        "type": "SOW",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-SOW-v1.0.md",
+        "title": "Statement of Work (SOW): Windows 10 to Windows 11 Migration using Microsoft InTune",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-STKE-v1.0": {
+        "type": "STKE",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-STKE-v1.0.md",
+        "title": "Stakeholder Drivers & Goals Analysis: Windows 11 Migration",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-10-20",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-001-STORY-v1.0": {
+        "type": "STORY",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-STORY-v1.0.md",
+        "title": "Project Story: Windows 11 Migration with Microsoft InTune",
+        "status": "PROPOSED (Pending ARB Approval)",
+        "severity": "LOW",
+        "createdDate": "2025-11-04",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-001-TRAC-v1.0": {
+        "type": "TRAC",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/ARC-001-TRAC-v1.0.md",
+        "title": "Requirements Traceability Matrix: Windows 10 to Windows 11 Migration",
+        "status": "DRAFT",
+        "severity": "HIGH",
+        "createdDate": "2025-10-28",
+        "lastModified": "2025-11-21"
+      },
+      "ARC-001-ADR-001-v1.0": {
+        "type": "ADR",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/decisions/ARC-001-ADR-001-v1.0.md",
+        "title": "Architecture Decision Record: Cloud-Native Endpoint Management Platform Selection",
+        "status": "PROPOSED",
+        "severity": "MEDIUM",
+        "createdDate": "2025-11-12",
+        "lastModified": "2025-11-12"
+      },
+      "ARC-001-DIAG-001-v1.0": {
+        "type": "DIAG",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/diagrams/ARC-001-DIAG-001-v1.0.md",
+        "title": "C4 Container Diagram: Microsoft InTune Endpoint Management Architecture",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-DIAG-002-v1.0": {
+        "type": "DIAG",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/diagrams/ARC-001-DIAG-002-v1.0.md",
+        "title": "Deployment Diagram: Azure Cloud Infrastructure for Windows 11 Migration",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-WARD-001-v1.0": {
+        "type": "WARD",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/wardley-maps/ARC-001-WARD-001-v1.0.md",
+        "title": "Wardley Map: InTune Policy Management for Windows 11 Migration",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-WARD-002-v1.0": {
+        "type": "WARD",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/wardley-maps/ARC-001-WARD-002-v1.0.md",
+        "title": "Wardley Map: Windows 10 to Windows 11 Migration - Procurement Strategy",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-WARD-003-v1.0": {
+        "type": "WARD",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/wardley-maps/ARC-001-WARD-003-v1.0.md",
+        "title": "Wardley Map: Windows 11 Migration - Full Landscape Gap Analysis",
+        "status": "DRAFT",
+        "severity": "MEDIUM",
+        "createdDate": "2026-02-09",
+        "lastModified": "2026-02-09"
+      },
+      "ARC-001-HLDR-v1.0": {
+        "type": "HLDR",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/reviews/ARC-001-HLDR-v1.0.md",
+        "title": "High-Level Design (HLD): Windows 10 to Windows 11 Migration with Microsoft InTune",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-001-AZRS-v1.0": {
+        "type": "AZRS",
+        "project": "001-windows-11-migration-intune",
+        "path": "projects/001-windows-11-migration-intune/research/ARC-001-AZRS-v1.0.md",
+        "title": "Azure Technology Research: Windows 11 Deployment with Microsoft Intune",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-29",
+        "lastModified": "2026-01-29"
+      },
+      "ARC-002-BKLG-v1.0": {
+        "type": "BKLG",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/ARC-002-BKLG-v1.0.md",
+        "title": "Product Backlog: Application Packaging and Rationalisation",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-002-DATA-v1.0": {
+        "type": "DATA",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/ARC-002-DATA-v1.0.md",
+        "title": "Data Model: Application Catalogue",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-002-PLAN-v1.0": {
+        "type": "PLAN",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/ARC-002-PLAN-v1.0.md",
+        "title": "Project Plan: Application Packaging and Rationalisation",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-002-REQ-v1.0": {
+        "type": "REQ",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/ARC-002-REQ-v1.0.md",
+        "title": "Project Requirements: Application Packaging and Rationalisation",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-10-27",
+        "lastModified": "2026-01-26"
+      },
+      "ARC-002-RISK-v1.0": {
+        "type": "RISK",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/ARC-002-RISK-v1.0.md",
+        "title": "Risk Register: Application Packaging and Rationalisation",
+        "status": "DRAFT",
+        "severity": "HIGH",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-002-RSCH-v1.0": {
+        "type": "RSCH",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/ARC-002-RSCH-v1.0.md",
+        "title": "Research Findings: InTune Application Packaging Tools & Best Practices",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-002-SOBC-v1.0": {
+        "type": "SOBC",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/ARC-002-SOBC-v1.0.md",
+        "title": "Strategic Outline Business Case (SOBC)",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-002-STKE-v1.0": {
+        "type": "STKE",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/ARC-002-STKE-v1.0.md",
+        "title": "Stakeholder Drivers & Goals Analysis: Application Packaging and Rationalisation",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-002-TRAC-v1.1": {
+        "type": "TRAC",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/ARC-002-TRAC-v1.1.md",
+        "title": "Requirements Traceability Matrix: Application Packaging and Rationalisation",
+        "status": "DRAFT",
+        "severity": "HIGH",
+        "createdDate": "2025-10-27",
+        "lastModified": "2026-03-01"
+      },
+      "ARC-002-ADR-001-v1.0": {
+        "type": "ADR",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/decisions/ARC-002-ADR-001-v1.0.md",
+        "title": "ADR-001: Application Packaging Format Strategy (MSIX vs. Win32 vs. App-V)",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-002-ADR-002-v1.0": {
+        "type": "ADR",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/decisions/ARC-002-ADR-002-v1.0.md",
+        "title": "ADR-002: Application Packaging Tool Selection",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-002-ADR-003-v1.0": {
+        "type": "ADR",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/decisions/ARC-002-ADR-003-v1.0.md",
+        "title": "ADR-003: Migration Automation Platform Selection",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-002-AZRS-v1.0": {
+        "type": "AZRS",
+        "project": "002-application-packaging-rationalisation",
+        "path": "projects/002-application-packaging-rationalisation/research/ARC-002-AZRS-v1.0.md",
+        "title": "Azure Technology Research: Application Packaging and Rationalisation",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-29",
+        "lastModified": "2026-01-29"
+      },
+      "ARC-003-BKLG-v1.0": {
+        "type": "BKLG",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/ARC-003-BKLG-v1.0.md",
+        "title": "Product Backlog: Peripherals Update and Upgrade",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-003-EVAL-v1.0": {
+        "type": "EVAL",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/ARC-003-EVAL-v1.0.md",
+        "title": "Evaluation Criteria: Peripherals Update and Upgrade",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-003-REQ-v1.0": {
+        "type": "REQ",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/ARC-003-REQ-v1.0.md",
+        "title": "Project Requirements: Peripherals Update and Upgrade",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-10-28",
+        "lastModified": "2026-01-26"
+      },
+      "ARC-003-RISK-v1.0": {
+        "type": "RISK",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/ARC-003-RISK-v1.0.md",
+        "title": "Risk Register: Peripherals Update and Upgrade",
+        "status": "DRAFT",
+        "severity": "HIGH",
+        "createdDate": "2025-10-29",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-003-SOBC-v1.0": {
+        "type": "SOBC",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/ARC-003-SOBC-v1.0.md",
+        "title": "Strategic Outline Business Case (SOBC)",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-003-SOW-v1.0": {
+        "type": "SOW",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/ARC-003-SOW-v1.0.md",
+        "title": "Statement of Work (SOW): Peripherals Update and Upgrade",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-003-STKE-v1.0": {
+        "type": "STKE",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/ARC-003-STKE-v1.0.md",
+        "title": "Stakeholder Drivers & Goals Analysis: Peripherals Update and Upgrade",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-10-29",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-003-TRAC-v1.0": {
+        "type": "TRAC",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/ARC-003-TRAC-v1.0.md",
+        "title": "Requirements Traceability Matrix: Peripherals Update and Upgrade",
+        "status": "",
+        "severity": "HIGH",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-003-ADR-001-v1.0": {
+        "type": "ADR",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/decisions/ARC-003-ADR-001-v1.0.md",
+        "title": "ADR-001: Multi-Vendor Peripheral Procurement Strategy",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-003-ADR-002-v1.0": {
+        "type": "ADR",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/decisions/ARC-003-ADR-002-v1.0.md",
+        "title": "ADR-002: Built-in Windows Hello vs External Webcam Strategy",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-003-ADR-003-v1.0": {
+        "type": "ADR",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/decisions/ARC-003-ADR-003-v1.0.md",
+        "title": "ADR-003: FIDO2 Security Key Standard Selection",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-003-ADR-004-v1.0": {
+        "type": "ADR",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/decisions/ARC-003-ADR-004-v1.0.md",
+        "title": "ADR-004: Tiered Ergonomic Peripheral Distribution Strategy",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-003-ADR-005-v1.0": {
+        "type": "ADR",
+        "project": "003-peripherals-update-upgrade",
+        "path": "projects/003-peripherals-update-upgrade/decisions/ARC-003-ADR-005-v1.0.md",
+        "title": "ADR-005: User Choice Monitor Configuration Strategy",
+        "status": "",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-004-BKLG-v1.0": {
+        "type": "BKLG",
+        "project": "004-conference-facilities-modernization",
+        "path": "projects/004-conference-facilities-modernization/ARC-004-BKLG-v1.0.md",
+        "title": "Product Backlog: Conference Facilities Modernization",
+        "status": "",
+        "severity": "LOW",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-004-PLAN-v1.0": {
+        "type": "PLAN",
+        "project": "004-conference-facilities-modernization",
+        "path": "projects/004-conference-facilities-modernization/ARC-004-PLAN-v1.0.md",
+        "title": "Project Plan: Conference Facilities Modernization",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-11-04",
+        "lastModified": "2025-11-04"
+      },
+      "ARC-004-REQ-v1.0": {
+        "type": "REQ",
+        "project": "004-conference-facilities-modernization",
+        "path": "projects/004-conference-facilities-modernization/ARC-004-REQ-v1.0.md",
+        "title": "Project Requirements: Conference Facilities Modernization",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-11-04",
+        "lastModified": "2026-01-26"
+      },
+      "ARC-004-RISK-v1.0": {
+        "type": "RISK",
+        "project": "004-conference-facilities-modernization",
+        "path": "projects/004-conference-facilities-modernization/ARC-004-RISK-v1.0.md",
+        "title": "Risk Register: Conference Facilities Modernization",
+        "status": "DRAFT",
+        "severity": "HIGH",
+        "createdDate": "2025-11-04",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-004-SOBC-v1.0": {
+        "type": "SOBC",
+        "project": "004-conference-facilities-modernization",
+        "path": "projects/004-conference-facilities-modernization/ARC-004-SOBC-v1.0.md",
+        "title": "Strategic Outline Business Case (SOBC)",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-004-STKE-v1.0": {
+        "type": "STKE",
+        "project": "004-conference-facilities-modernization",
+        "path": "projects/004-conference-facilities-modernization/ARC-004-STKE-v1.0.md",
+        "title": "Stakeholder Drivers & Goals Analysis: Conference Facilities Modernization",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-11-04",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-004-ADR-001-v1.0": {
+        "type": "ADR",
+        "project": "004-conference-facilities-modernization",
+        "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-001-v1.0.md",
+        "title": "Architecture Decision Record: Use Microsoft Teams Rooms for Conference Room Standardization",
+        "status": "Proposed",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-004-ADR-002-v1.0": {
+        "type": "ADR",
+        "project": "004-conference-facilities-modernization",
+        "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-002-v1.0.md",
+        "title": "Architecture Decision Record: Deploy Room Analytics and Occupancy Sensors for Utilization Optimization",
+        "status": "Proposed",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-004-ADR-003-v1.0": {
+        "type": "ADR",
+        "project": "004-conference-facilities-modernization",
+        "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-003-v1.0.md",
+        "title": "Architecture Decision Record: Network Architecture for Microsoft Teams Rooms (VLAN Segregation, QoS, PoE+ Switches)",
+        "status": "Proposed",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-004-ADR-004-v1.0": {
+        "type": "ADR",
+        "project": "004-conference-facilities-modernization",
+        "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-004-v1.0.md",
+        "title": "Architecture Decision Record: Acoustic Treatment Strategy for Conference Rooms",
+        "status": "Proposed",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-004-ADR-005-v1.0": {
+        "type": "ADR",
+        "project": "004-conference-facilities-modernization",
+        "path": "projects/004-conference-facilities-modernization/decisions/ARC-004-ADR-005-v1.0.md",
+        "title": "Architecture Decision Record: OEM Vendor Selection Strategy by Room Size (Logitech, Poly, Yealink)",
+        "status": "Proposed",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-005-EVAL-v1.0": {
+        "type": "EVAL",
+        "project": "005-cloud-pki",
+        "path": "projects/005-cloud-pki/ARC-005-EVAL-v1.0.md",
+        "title": "Vendor Evaluation Criteria: Cloud PKI Service for Hybrid PKI Architecture",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-11-09",
+        "lastModified": "2025-11-09"
+      },
+      "ARC-005-PLAN-v1.0": {
+        "type": "PLAN",
+        "project": "005-cloud-pki",
+        "path": "projects/005-cloud-pki/ARC-005-PLAN-v1.0.md",
+        "title": "Project Plan: Hybrid Public Key Infrastructure (PKI)",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-11-07",
+        "lastModified": null
+      },
+      "ARC-005-REQ-v1.0": {
+        "type": "REQ",
+        "project": "005-cloud-pki",
+        "path": "projects/005-cloud-pki/ARC-005-REQ-v1.0.md",
+        "title": "Project Requirements: Hybrid Public Key Infrastructure (PKI)",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-11-07",
+        "lastModified": "2026-01-26"
+      },
+      "ARC-005-RISK-v1.0": {
+        "type": "RISK",
+        "project": "005-cloud-pki",
+        "path": "projects/005-cloud-pki/ARC-005-RISK-v1.0.md",
+        "title": "Risk Register: Hybrid Public Key Infrastructure (PKI)",
+        "status": "DRAFT",
+        "severity": "HIGH",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-005-SOBC-v1.0": {
+        "type": "SOBC",
+        "project": "005-cloud-pki",
+        "path": "projects/005-cloud-pki/ARC-005-SOBC-v1.0.md",
+        "title": "Strategic Outline Business Case (SOBC)",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-005-STKE-v1.0": {
+        "type": "STKE",
+        "project": "005-cloud-pki",
+        "path": "projects/005-cloud-pki/ARC-005-STKE-v1.0.md",
+        "title": "Stakeholder Drivers & Goals Analysis: Hybrid Public Key Infrastructure (PKI)",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2025-11-07",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-005-ADR-001-v1.0": {
+        "type": "ADR",
+        "project": "005-cloud-pki",
+        "path": "projects/005-cloud-pki/decisions/ARC-005-ADR-001-v1.0.md",
+        "title": "Architecture Decision Record: Use Cloud PKI Service for High-Volume Certificate Issuance",
+        "status": "Proposed",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-005-DIAG-001-v1.0": {
+        "type": "DIAG",
+        "project": "005-cloud-pki",
+        "path": "projects/005-cloud-pki/diagrams/ARC-005-DIAG-001-v1.0.md",
+        "title": "Architecture Block Diagram: Hybrid PKI - All Components",
+        "status": "DRAFT",
+        "severity": "MEDIUM",
+        "createdDate": "2025-11-07",
+        "lastModified": null
+      },
+      "ARC-005-DIAG-002-v1.0": {
+        "type": "DIAG",
+        "project": "005-cloud-pki",
+        "path": "projects/005-cloud-pki/diagrams/ARC-005-DIAG-002-v1.0.md",
+        "title": "Architecture Diagram: Hybrid PKI Container View",
+        "status": "DRAFT",
+        "severity": "MEDIUM",
+        "createdDate": "2025-11-07",
+        "lastModified": null
+      },
+      "ARC-005-DIAG-003-v1.0": {
+        "type": "DIAG",
+        "project": "005-cloud-pki",
+        "path": "projects/005-cloud-pki/diagrams/ARC-005-DIAG-003-v1.0.md",
+        "title": "Cloud Deployment Diagram: Hybrid PKI - Cloud Infrastructure",
+        "status": "DRAFT",
+        "severity": "MEDIUM",
+        "createdDate": "2025-11-09",
+        "lastModified": null
+      },
+      "ARC-006-REQ-v1.0": {
+        "type": "REQ",
+        "project": "006-large-format-printer",
+        "path": "projects/006-large-format-printer/ARC-006-REQ-v1.0.md",
+        "title": "Project Requirements: Large Format Printing Service",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-09",
+        "lastModified": "2026-01-26"
+      },
+      "ARC-006-RISK-v1.0": {
+        "type": "RISK",
+        "project": "006-large-format-printer",
+        "path": "projects/006-large-format-printer/ARC-006-RISK-v1.0.md",
+        "title": "Risk Register",
+        "status": "DRAFT",
+        "severity": "HIGH",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-006-SECD-MOD-v1.0": {
+        "type": "SECD-MOD",
+        "project": "006-large-format-printer",
+        "path": "projects/006-large-format-printer/ARC-006-SECD-MOD-v1.0.md",
+        "title": "MOD Secure by Design Assessment",
+        "status": "DRAFT",
+        "severity": "HIGH",
+        "createdDate": "2026-01-09",
+        "lastModified": "2026-01-09"
+      },
+      "ARC-006-STKE-v1.0": {
+        "type": "STKE",
+        "project": "006-large-format-printer",
+        "path": "projects/006-large-format-printer/ARC-006-STKE-v1.0.md",
+        "title": "Stakeholder Drivers & Goals Analysis: Large Format Printing Service",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-007-REQ-v1.0": {
+        "type": "REQ",
+        "project": "007-vpn-service-windows11-autopilot",
+        "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-REQ-v1.0.md",
+        "title": "Requirements Specification: VPN Service for Windows 11 and Autopilot",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-09",
+        "lastModified": "2026-01-26"
+      },
+      "ARC-007-RISK-v1.0": {
+        "type": "RISK",
+        "project": "007-vpn-service-windows11-autopilot",
+        "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-RISK-v1.0.md",
+        "title": "Risk Register",
+        "status": "DRAFT",
+        "severity": "HIGH",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-007-SOBC-v1.0": {
+        "type": "SOBC",
+        "project": "007-vpn-service-windows11-autopilot",
+        "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-SOBC-v1.0.md",
+        "title": "Strategic Outline Business Case (SOBC)",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-007-STKE-v1.0": {
+        "type": "STKE",
+        "project": "007-vpn-service-windows11-autopilot",
+        "path": "projects/007-vpn-service-windows11-autopilot/ARC-007-STKE-v1.0.md",
+        "title": "Stakeholder Drivers & Goals Analysis: VPN Service for Windows 11 and Autopilot",
+        "status": "DRAFT",
+        "severity": "LOW",
+        "createdDate": "2026-01-24",
+        "lastModified": "2026-01-24"
+      },
+      "ARC-007-ADR-001-v1.0": {
+        "type": "ADR",
+        "project": "007-vpn-service-windows11-autopilot",
+        "path": "projects/007-vpn-service-windows11-autopilot/decisions/ARC-007-ADR-001-v1.0.md",
+        "title": "ADR-001: Cisco AnyConnect VPN Deployment for Windows 11 Autopilot",
+        "status": "Proposed",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      },
+      "ARC-007-DIAG-001-v1.0": {
+        "type": "DIAG",
+        "project": "007-vpn-service-windows11-autopilot",
+        "path": "projects/007-vpn-service-windows11-autopilot/diagrams/ARC-007-DIAG-001-v1.0.md",
+        "title": "Architecture Diagram: VPN Service for Windows 11 and Autopilot",
+        "status": "DRAFT",
+        "severity": "MEDIUM",
+        "createdDate": null,
+        "lastModified": null
+      }
+    },
+    "edges": [
+      {
+        "from": "ARC-001-PRIN-COMP-v1.0",
+        "to": "ARC-001-PRIN",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WARD-003-v1.0",
+        "to": "ARC-000-PRIN",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WARD-003-v1.0",
+        "to": "ARC-001-REQ",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WARD-003-v1.0",
+        "to": "ARC-001-STKE",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WARD-003-v1.0",
+        "to": "ARC-001-RSCH",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WARD-003-v1.0",
+        "to": "ARC-001-DATA",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WARD-003-v1.0",
+        "to": "ARC-001-WARD-001",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WARD-003-v1.0",
+        "to": "ARC-001-WARD-002",
+        "type": "references"
+      },
+      {
+        "from": "ARC-002-TRAC-v1.1",
+        "to": "ARC-002-REQ",
+        "type": "references"
+      },
+      {
+        "from": "ARC-002-TRAC-v1.1",
+        "to": "ARC-002-ADR-001",
+        "type": "references"
+      },
+      {
+        "from": "ARC-002-TRAC-v1.1",
+        "to": "ARC-002-ADR-002",
+        "type": "references"
+      },
+      {
+        "from": "ARC-002-TRAC-v1.1",
+        "to": "ARC-002-ADR-003",
+        "type": "references"
+      },
+      {
+        "from": "ARC-002-TRAC-v1.1",
+        "to": "ARC-002-AZRS",
+        "type": "references"
+      },
+      {
+        "from": "ARC-002-TRAC-v1.1",
+        "to": "ARC-002-RSCH",
+        "type": "references"
+      },
+      {
+        "from": "ARC-002-TRAC-v1.1",
+        "to": "ARC-002-DATA",
+        "type": "references"
+      },
+      {
+        "from": "ARC-002-TRAC-v1.1",
+        "to": "ARC-002-STKE",
+        "type": "references"
+      },
+      {
+        "from": "ARC-002-TRAC-v1.1",
+        "to": "ARC-002-RISK",
+        "type": "references"
+      },
+      {
+        "from": "ARC-004-RISK-v1.0",
+        "to": "ARC-004-STKE",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-EVAL-v1.0",
+        "to": "ARC-005-REQ",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-EVAL-v1.0",
+        "to": "ARC-005-PLAN",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-EVAL-v1.0",
+        "to": "ARC-005-DIAG",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-PLAN-v1.0",
+        "to": "ARC-005-STKE",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-PLAN-v1.0",
+        "to": "ARC-005-REQ",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-PLAN-v1.0",
+        "to": "ARC-005-HLDR",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-PLAN-v1.0",
+        "to": "ARC-005-DIAG",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-PLAN-v1.0",
+        "to": "ARC-005-DLDR",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-RISK-v1.0",
+        "to": "ARC-005-STKE",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-DIAG-001-v1.0",
+        "to": "ARC-005-DIAG",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-DIAG-001-v1.0",
+        "to": "ARC-005-REQ",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-DIAG-001-v1.0",
+        "to": "ARC-005-STKE",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-DIAG-002-v1.0",
+        "to": "ARC-005-DIAG",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-DIAG-002-v1.0",
+        "to": "ARC-005-REQ",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-DIAG-002-v1.0",
+        "to": "ARC-005-STKE",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-DIAG-003-v1.0",
+        "to": "ARC-005-DIAG",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-DIAG-003-v1.0",
+        "to": "ARC-005-REQ",
+        "type": "references"
+      },
+      {
+        "from": "ARC-005-DIAG-003-v1.0",
+        "to": "ARC-005-PLAN",
+        "type": "references"
+      },
+      {
+        "from": "ARC-006-REQ-v1.0",
+        "to": "ARC-006-SECD",
+        "type": "references"
+      },
+      {
+        "from": "ARC-006-SECD-MOD-v1.0",
+        "to": "ARC-006-SECD",
+        "type": "references"
+      },
+      {
+        "from": "ARC-006-STKE-v1.0",
+        "to": "ARC-006-SECD",
+        "type": "references"
+      },
+      {
+        "from": "ARC-007-DIAG-001-v1.0",
+        "to": "ARC-007-DIAG",
+        "type": "references"
+      }
+    ]
+  }
 }

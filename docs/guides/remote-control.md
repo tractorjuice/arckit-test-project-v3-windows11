@@ -1,5 +1,7 @@
 # Govern Architecture from Anywhere: Using Claude Code Remote Control with ArcKit
 
+> **Guide Origin**: Official | **ArcKit Version**: [VERSION]
+
 Enterprise architecture governance shouldn't be chained to a single workstation. With Claude Code's **Remote Control** feature, you can start an ArcKit session at your desk, then continue it from your phone during a commute, a stakeholder meeting, or from a browser on any other machine — all while your local environment, MCP servers, and project files stay exactly where they are.
 
 This guide explains what Remote Control is, why it matters for ArcKit workflows, and how to set it up.
@@ -15,7 +17,7 @@ The key distinction: **your session never leaves your machine**. Claude Code con
 This means:
 
 - Your `projects/` directory, templates, and generated artifacts stay local
-- All 53 ArcKit commands and 5 research agents remain fully available
+- All 60 ArcKit commands and 6 research agents remain fully available
 - MCP servers for cloud research (AWS, Azure, GCP) keep working
 - Automation hooks (session init, project context injection, filename enforcement) continue to fire
 - You can send messages from terminal, browser, and phone interchangeably — the conversation stays in sync

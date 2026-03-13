@@ -1,5 +1,7 @@
 # Getting Started with ArcKit
 
+> **Guide Origin**: Official | **ArcKit Version**: [VERSION]
+
 `/arckit.start` and `/arckit.init` are your entry points to ArcKit. Start gives you orientation and routes you to the right workflow; init creates the project structure.
 
 ---
@@ -48,7 +50,7 @@ Output: Console only (no file created). This is a navigation aid, not a governan
 
 ```text
 ArcKit — Enterprise Architecture Governance Toolkit
-Version 2.10.0 | 53 commands | Plugin mode
+Version 2.10.0 | 60 commands | Plugin mode
 
 Your AI-powered assistant for architecture governance, vendor procurement,
 and compliance — all driven by templates and traceability.

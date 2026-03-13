@@ -1,5 +1,7 @@
 # Upgrading ArcKit
 
+> **Guide Origin**: Official | **ArcKit Version**: [VERSION]
+
 How to upgrade the ArcKit CLI and update your existing projects.
 
 ---
@@ -34,7 +36,7 @@ arckit init --here --ai codex
 
 | Updated | Preserved |
 |---------|-----------|
-| Slash commands (`.codex/prompts/`) | Project data (`projects/`) |
+| Skills (`.agents/skills/`) | Project data (`projects/`) |
 | Default templates (`.arckit/templates/`) | Custom templates (`.arckit/templates-custom/`) |
 | Helper scripts (`.arckit/scripts/`) | |
 | Documentation and guides (`docs/`) | |
